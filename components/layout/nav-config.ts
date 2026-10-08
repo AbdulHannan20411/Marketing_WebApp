@@ -20,6 +20,7 @@ export const footerNav = {
     { key: "about", href: "/about" },
     { key: "contact", href: "/contact" },
     { key: "faq", href: "/faq" },
+    { key: "account", href: "/account" },
   ],
   legal: [
     { key: "privacy", href: "/privacy" },

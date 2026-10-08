@@ -4,6 +4,8 @@ import { createBrowserClient } from "@supabase/ssr";
 
 import { publicEnv } from "@/lib/env/public";
 
+import type { Database } from "./database.types";
+
 /** Supabase client for Client Components (realtime, client-side reads under RLS). */
 export function createSupabaseBrowserClient() {
   const url = publicEnv.NEXT_PUBLIC_SUPABASE_URL;
@@ -13,5 +15,5 @@ export function createSupabaseBrowserClient() {
       "Supabase is not configured: set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY.",
     );
   }
-  return createBrowserClient(url, anonKey);
+  return createBrowserClient<Database>(url, anonKey);
 }

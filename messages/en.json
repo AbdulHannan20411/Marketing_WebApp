@@ -74,7 +74,8 @@
       "faq": "FAQ",
       "privacy": "Privacy Policy",
       "terms": "Terms of Service",
-      "refund": "Refund Policy"
+      "refund": "Refund Policy",
+      "account": "Support account"
     },
     "copyright": "© {year} NextReach. All rights reserved.",
     "madeIn": "Made for businesses in Pakistan."
@@ -1439,5 +1440,139 @@
       "noPlans": "Plans are being updated right now. See the app for current pricing."
     },
     "productDescription": "WhatsApp marketing, shared inbox, CRM and sales tools for businesses in Pakistan."
+  },
+  "validation": {
+    "required": "This field is required.",
+    "email": "Enter a valid email address.",
+    "nameLength": "Enter your name (2 to 120 characters).",
+    "phone": "Enter a Pakistani number, for example 0300 1234567 or +92 42 35761234.",
+    "passwordMin": "Use at least 8 characters.",
+    "passwordMax": "Use 72 characters or fewer.",
+    "passwordMismatch": "The passwords don't match.",
+    "consent": "Please agree to the Terms and Privacy Policy."
+  },
+  "auth": {
+    "appNotice": "This account is only for messages with the NextReach team. To use NextReach itself, <link>sign in to the app</link>.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "errors": {
+      "invalidCredentials": "That email and password don't match. Please try again.",
+      "emailNotConfirmed": "Please confirm your email first. Check your inbox for the link.",
+      "suspended": "This account has been suspended. Please contact us if you think this is a mistake.",
+      "rateLimited": "Too many attempts. Please wait a few minutes and try again.",
+      "weakPassword": "Please choose a stronger password.",
+      "samePassword": "Your new password must be different from the old one.",
+      "wrongCurrentPassword": "Your current password is not correct.",
+      "linkExpired": "This link has expired or was already used. Please request a new one.",
+      "notSignedIn": "Please sign in again.",
+      "generic": "Something went wrong. Please try again.",
+      "link": "That link has expired or was already used. Please sign in, or request a new link.",
+      "signedOut": "You have been signed out."
+    },
+    "signIn": {
+      "metaTitle": "Sign in",
+      "title": "Sign in to your support account",
+      "subtitle": "Follow your questions and our replies in one place.",
+      "email": "Email",
+      "password": "Password",
+      "forgot": "Forgot password?",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Create one",
+      "resend": "Resend confirmation email",
+      "resent": "If that email has an account waiting for confirmation, we've sent a new link."
+    },
+    "signUp": {
+      "metaTitle": "Create an account",
+      "title": "Create your support account",
+      "subtitle": "Track your questions and see our replies. It's free.",
+      "fullName": "Full name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "phoneHint": "Pakistani number, e.g. 0300 1234567",
+      "password": "Password",
+      "passwordHint": "At least 8 characters.",
+      "confirmPassword": "Confirm password",
+      "language": "Preferred language for emails",
+      "consent": "I agree to the <terms>Terms of Service</terms> and <privacy>Privacy Policy</privacy>.",
+      "submit": "Create account",
+      "submitting": "Creating account…",
+      "haveAccount": "Already have an account?",
+      "signInLink": "Sign in",
+      "successTitle": "Check your email",
+      "successBody": "We've sent a confirmation link to {email}. Open it to activate your account. Any questions you sent earlier with this email will appear in your account.",
+      "successHint": "Can't find it? Check your spam folder, or resend the link."
+    },
+    "forgot": {
+      "metaTitle": "Forgot password",
+      "title": "Reset your password",
+      "subtitle": "Enter your email and we'll send you a link to choose a new password.",
+      "email": "Email",
+      "submit": "Send reset link",
+      "submitting": "Sending…",
+      "sentTitle": "Check your email",
+      "sentBody": "If {email} has an account, a reset link is on its way. The link works once and expires soon.",
+      "back": "Back to sign in"
+    },
+    "reset": {
+      "metaTitle": "Choose a new password",
+      "title": "Choose a new password",
+      "subtitle": "Pick a password you don't use anywhere else.",
+      "password": "New password",
+      "confirmPassword": "Confirm new password",
+      "submit": "Save new password",
+      "submitting": "Saving…",
+      "requestNew": "Request a new link"
+    }
+  },
+  "account": {
+    "metaTitle": "Your account",
+    "nav": {
+      "label": "Account",
+      "queries": "Your queries",
+      "profile": "Profile",
+      "signOut": "Sign out",
+      "admin": "Admin area"
+    },
+    "signedInAs": "Signed in as {email}",
+    "loading": "Loading your account…",
+    "status": {
+      "passwordUpdated": "Your password has been updated."
+    },
+    "queries": {
+      "title": "Your queries",
+      "empty": "You haven't sent us any questions yet.",
+      "emptyHint": "Questions you send with this email address will appear here, with our replies.",
+      "ask": "Ask a question"
+    },
+    "profile": {
+      "metaTitle": "Profile",
+      "title": "Profile",
+      "detailsTitle": "Your details",
+      "email": "Email",
+      "emailHint": "Your sign-in email can't be changed here. Contact us if you need to change it.",
+      "fullName": "Full name",
+      "phone": "Phone (optional)",
+      "phoneHint": "Pakistani number, e.g. 0300 1234567",
+      "language": "Preferred language for emails",
+      "save": "Save changes",
+      "saving": "Saving…",
+      "saved": "Your details have been saved.",
+      "passwordTitle": "Change password",
+      "currentPassword": "Current password",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm new password",
+      "changePassword": "Change password",
+      "changingPassword": "Changing…",
+      "passwordChanged": "Your password has been changed."
+    }
+  },
+  "admin": {
+    "metaTitle": "Admin",
+    "title": "Admin area",
+    "welcome": "Signed in as a Super Admin ({email}).",
+    "comingSoon": "The queries inbox, dashboard and settings arrive in the next phases.",
+    "backToSite": "Back to the website"
   }
 }

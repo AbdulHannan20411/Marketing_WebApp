@@ -1,0 +1,112 @@
+<!-- Supabase → Authentication → Emails → "Confirm signup". Subject:
+     {{ if eq .Data.locale "ur" }}اپنی ای میل کی تصدیق کریں | NextReach{{ else }}Confirm your email | NextReach{{ end }}
+     The link uses token_hash so it works on any device. RedirectTo always contains
+     "?next=…" (set by the site), so the extra parameters are appended with "&". -->
+{{ if eq .Data.locale "ur" }}
+<div
+  dir="rtl"
+  lang="ur"
+  style="
+    margin: 0;
+    padding: 24px;
+    background: #f8fafc;
+    font-family: &quot;Noto Nastaliq Urdu&quot;, Tahoma, Arial, sans-serif;
+    color: #0f172a;
+    line-height: 2;
+  "
+>
+  <div
+    style="
+      max-width: 520px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 32px;
+    "
+  >
+    <p
+      style="
+        margin: 0 0 16px;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        font-size: 20px;
+        color: #16a34a;
+      "
+      dir="ltr"
+    >
+      NextReach
+    </p>
+    <h1 style="margin: 0 0 12px; font-size: 22px">اپنی ای میل کی تصدیق کریں</h1>
+    <p style="margin: 0 0 24px">
+      NextReach سپورٹ اکاؤنٹ بنانے کا شکریہ۔ اپنا اکاؤنٹ فعال کرنے کے لیے نیچے دیے گئے بٹن پر کلک
+      کریں۔
+    </p>
+    <p style="margin: 0 0 24px">
+      <a
+        href="{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email"
+        style="
+          display: inline-block;
+          background: #15803d;
+          color: #ffffff;
+          text-decoration: none;
+          padding: 12px 20px;
+          border-radius: 8px;
+          font-weight: bold;
+        "
+        >ای میل کی تصدیق کریں</a
+      >
+    </p>
+    <p style="margin: 0; font-size: 13px; color: #475569">
+      اگر آپ نے یہ اکاؤنٹ نہیں بنایا تو اس ای میل کو نظرانداز کر دیں۔
+    </p>
+  </div>
+</div>
+{{ else }}
+<div
+  style="
+    margin: 0;
+    padding: 24px;
+    background: #f8fafc;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #0f172a;
+    line-height: 1.6;
+  "
+>
+  <div
+    style="
+      max-width: 520px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 32px;
+    "
+  >
+    <p style="margin: 0 0 16px; font-weight: bold; font-size: 20px; color: #16a34a">NextReach</p>
+    <h1 style="margin: 0 0 12px; font-size: 22px">Confirm your email</h1>
+    <p style="margin: 0 0 24px">
+      Thanks for creating a NextReach support account. Click the button below to activate it. Any
+      questions you sent us earlier with this email will appear in your account.
+    </p>
+    <p style="margin: 0 0 24px">
+      <a
+        href="{{ .RedirectTo }}&token_hash={{ .TokenHash }}&type=email"
+        style="
+          display: inline-block;
+          background: #15803d;
+          color: #ffffff;
+          text-decoration: none;
+          padding: 12px 20px;
+          border-radius: 8px;
+          font-weight: bold;
+        "
+        >Confirm my email</a
+      >
+    </p>
+    <p style="margin: 0; font-size: 13px; color: #475569">
+      If you didn't create this account, you can ignore this email.
+    </p>
+  </div>
+</div>
+{{ end }}

@@ -17,6 +17,12 @@ jobs:
       NEXT_TELEMETRY_DISABLED: 1
       NEXT_PUBLIC_SITE_URL: https://example.com
       NEXT_PUBLIC_APP_URL: https://app.example.com
+      # Optional: add these repository secrets to run the database and auth tests
+      # against a Supabase test project. Without them those tests are skipped.
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      SUPABASE_DB_URL: ${{ secrets.SUPABASE_DB_URL }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -32,6 +38,9 @@ jobs:
         run: npm run typecheck
       - name: Unit tests
         run: npm run test
+      - name: Database security tests (RLS, grants, triggers)
+        if: env.SUPABASE_DB_URL != ''
+        run: npm run test:db
       - name: Build
         run: npm run build
       - name: Client bundle secret check

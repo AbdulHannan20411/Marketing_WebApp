@@ -43,3 +43,21 @@ npm run dev                  # http://localhost:3000 → redirects to /en
 - **Links:** import `Link` from `@/lib/i18n/navigation`, not `next/link`, so the locale prefix is kept.
 - **Secrets:** server-only values are read through `@/lib/env/server` (guarded by `server-only`).
   Never commit `.env.local`.
+
+## Database and auth (Supabase)
+
+Migrations live in `supabase/migrations`. Set `SUPABASE_DB_URL` (session pooler string) in `.env.local`, then:
+
+| Script                               | What it does                                                     |
+| ------------------------------------ | ---------------------------------------------------------------- |
+| `npm run db:push`                    | Apply pending migrations (`-- --dry-run` to preview)             |
+| `npm run db:seed`                    | Insert starter saved replies (idempotent)                        |
+| `npm run db:types`                   | Regenerate `lib/supabase/database.types.ts`                      |
+| `npm run test:db`                    | RLS, grant and trigger tests (each in a rolled-back transaction) |
+| `npm run make-superadmin -- <email>` | Promote a signed-up account to Super Admin                       |
+
+Roles: every account is a `customer`. The `superadmin` role can only be set by
+`make-superadmin` (service role) or SQL: `select public.promote_to_superadmin('you@example.com');`.
+
+Email templates for confirmation and password reset are in `supabase/templates/` (English/Urdu,
+chosen by the user's sign-up language).

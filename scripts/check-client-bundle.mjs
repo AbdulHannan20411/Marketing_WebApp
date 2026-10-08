@@ -16,6 +16,7 @@ const SECRET_NAMES = [
   "TURNSTILE_SECRET_KEY",
   "NEXTREACH_API_URL",
   "REVALIDATE_SECRET",
+  "SUPABASE_DB_URL",
 ];
 
 function loadDotEnv(file) {

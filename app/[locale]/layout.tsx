@@ -7,6 +7,7 @@ import { getMessages, getTranslations } from "next-intl/server";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { latinFont, urduFont } from "@/lib/fonts";
+import { BASE_CLIENT_NAMESPACES, pickMessages } from "@/lib/i18n/client-messages";
 import { localeMeta, routing } from "@/lib/i18n/routing";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -48,18 +49,13 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-/** Message namespaces that Client Components need. Everything else stays on the server. */
-const CLIENT_NAMESPACES = ["common", "nav", "cta", "errors"] as const;
-
 export default async function LocaleLayout({ children }: LayoutProps<"/[locale]">) {
   const locale = await rootLocale();
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const { dir, htmlLang } = localeMeta[locale];
   const [messages, t] = await Promise.all([getMessages(), getTranslations("common")]);
-  const clientMessages = Object.fromEntries(
-    CLIENT_NAMESPACES.map((namespace) => [namespace, messages[namespace]]),
-  );
+  const clientMessages = pickMessages(messages, BASE_CLIENT_NAMESPACES);
 
   return (
     <html

@@ -3,6 +3,8 @@ import "server-only";
 import { createClient } from "@supabase/supabase-js";
 
 import { publicEnv } from "@/lib/env/public";
+
+import type { Database } from "./database.types";
 import { serverEnv } from "@/lib/env/server";
 
 /**
@@ -20,7 +22,7 @@ export function createSupabaseAdminClient() {
     );
   }
 
-  return createClient(url, serviceRoleKey, {
+  return createClient<Database>(url, serviceRoleKey, {
     auth: {
       autoRefreshToken: false,
       persistSession: false,

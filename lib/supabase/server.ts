@@ -5,6 +5,8 @@ import { cookies } from "next/headers";
 
 import { publicEnv } from "@/lib/env/public";
 
+import type { Database } from "./database.types";
+
 /**
  * Supabase client for Server Components, Server Actions and Route Handlers, acting as
  * the signed-in user (RLS applies). Reading cookies makes the caller request-time,
@@ -21,7 +23,7 @@ export async function createSupabaseServerClient() {
 
   const cookieStore = await cookies();
 
-  return createServerClient(url, anonKey, {
+  return createServerClient<Database>(url, anonKey, {
     cookies: {
       getAll() {
         return cookieStore.getAll();
