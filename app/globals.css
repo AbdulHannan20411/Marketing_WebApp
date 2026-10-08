@@ -1,0 +1,229 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Dark mode is class-based so the toggle (not the OS) decides; light is the default. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+ * Design tokens. Colours are CSS variables so both themes share one set of utilities.
+ *
+ * Contrast notes (WCAG 2.2 AA):
+ * - --brand (#16a34a) is the exact brand green. It is ~3.3:1 on white, so use it for
+ *   icons, large display text, decorative fills and focus rings, never for body text.
+ * - --primary is the accessible brand tone for text and filled buttons:
+ *   light #15803d on white = 5.0:1 (white text on it = 5.0:1);
+ *   dark #22c55e on slate-950 = 9.6:1 (green-950 text on it = 8.9:1).
+ * - --input is the form-control border; #7c8aa0 meets the 3:1 non-text contrast rule.
+ */
+:root {
+  --radius: 0.75rem;
+
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+
+  --brand: #16a34a;
+  --brand-soft: #dcfce7;
+  --primary: #15803d;
+  --primary-hover: #166534;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #475569;
+  --accent: #f0fdf4;
+  --accent-foreground: #14532d;
+
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --success: #15803d;
+  --warning: #b45309;
+
+  --border: #e2e8f0;
+  --input: #7c8aa0;
+  --ring: #16a34a;
+
+  --surface-subtle: #f8fafc;
+  --whatsapp-bubble-out: #d9fdd3;
+  --whatsapp-bubble-in: #ffffff;
+  --whatsapp-wallpaper: #efeae2;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+
+  --brand: #22c55e;
+  --brand-soft: #052e16;
+  --primary: #22c55e;
+  --primary-hover: #4ade80;
+  --primary-foreground: #052e16;
+
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #052e16;
+  --accent-foreground: #bbf7d0;
+
+  --destructive: #b91c1c;
+  --destructive-foreground: #ffffff;
+  --success: #4ade80;
+  --warning: #fbbf24;
+
+  --border: #1e293b;
+  --input: #64748b;
+  --ring: #22c55e;
+
+  --surface-subtle: #0b1222;
+  --whatsapp-bubble-out: #005c4b;
+  --whatsapp-bubble-in: #1f2c34;
+  --whatsapp-wallpaper: #0b141a;
+
+  color-scheme: dark;
+}
+
+/*
+ * Urdu: Nastaliq needs a taller line box. Tailwind's text-* utilities read their
+ * line-height from these theme variables, so redefining them fixes every size at once.
+ * Fixed line-heights also keep the layout stable while the font swaps in.
+ * Letter-spacing is zeroed because tracking breaks the joins of cursive script.
+ */
+:lang(ur) {
+  --text-xs--line-height: 2;
+  --text-sm--line-height: 2;
+  --text-base--line-height: 2.1;
+  --text-lg--line-height: 2.1;
+  --text-xl--line-height: 2;
+  --text-2xl--line-height: 1.9;
+  --text-3xl--line-height: 1.85;
+  --text-4xl--line-height: 1.8;
+  --text-5xl--line-height: 1.75;
+  --text-6xl--line-height: 1.7;
+  --text-7xl--line-height: 1.7;
+  --tracking-tighter: 0;
+  --tracking-tight: 0;
+  --tracking-wide: 0;
+  --tracking-wider: 0;
+  --tracking-widest: 0;
+}
+
+@theme inline {
+  --font-sans: var(--font-latin), ui-sans-serif, system-ui, sans-serif;
+  --font-urdu: var(--font-nastaliq), var(--font-latin), serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-wa-out: var(--whatsapp-bubble-out);
+  --color-wa-in: var(--whatsapp-bubble-in);
+  --color-wa-wallpaper: var(--whatsapp-wallpaper);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+}
+
+/* Page container: 16px gutter on phones (360px+), wider on larger screens. */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 76rem;
+  padding-inline: 1rem;
+  @media (width >= 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Urdu body font; see the :lang(ur) variable overrides above for line-heights. */
+  :lang(ur) body {
+    font-family: var(--font-urdu);
+    line-height: 2.1;
+  }
+  :lang(ur) :is(h1, h2, h3, h4) {
+    line-height: 1.9;
+    letter-spacing: 0;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-soft);
+    color: var(--color-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+}
+
+/* Respect reduced-motion everywhere, including CSS animations from tw-animate. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

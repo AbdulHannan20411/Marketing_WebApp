@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "siteName": "NextReach",
+    "titleTemplate": "%s | NextReach",
+    "defaultTitle": "NextReach — WhatsApp marketing and sales for growing businesses",
+    "description": "Run WhatsApp campaigns, answer every customer from one inbox, and turn chats into sales. Built for businesses in Pakistan."
+  },
+  "common": {
+    "skipToContent": "Skip to main content",
+    "brandHome": "NextReach home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "close": "Close",
+    "menuTitle": "Menu",
+    "opensInNewTab": "(opens in a new tab)",
+    "theme": {
+      "label": "Theme",
+      "toggle": "Switch theme",
+      "light": "Light",
+      "dark": "Dark",
+      "switchToLight": "Switch to light theme",
+      "switchToDark": "Switch to dark theme"
+    },
+    "language": {
+      "label": "Language",
+      "change": "Change language",
+      "current": "Current language: {language}",
+      "names": {
+        "en": "English",
+        "ur": "اردو"
+      }
+    }
+  },
+  "nav": {
+    "primaryLabel": "Main",
+    "features": "Features",
+    "pricing": "Pricing",
+    "useCases": "Use cases",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "cta": {
+    "startTrial": "Start free trial",
+    "signIn": "Sign in",
+    "signInToApp": "Sign in to the app",
+    "talkToUs": "Talk to us"
+  },
+  "footer": {
+    "tagline": "WhatsApp marketing, inbox and sales in one place, made for businesses in Pakistan.",
+    "navLabel": "Footer",
+    "columns": {
+      "product": "Product",
+      "company": "Company",
+      "legal": "Legal"
+    },
+    "links": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "useCases": "Use cases",
+      "about": "About",
+      "contact": "Contact",
+      "faq": "FAQ",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "refund": "Refund Policy"
+    },
+    "copyright": "© {year} NextReach. All rights reserved.",
+    "madeIn": "Made for businesses in Pakistan."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "WhatsApp marketing for growing businesses",
+      "title": "Turn WhatsApp chats into sales",
+      "subtitle": "Send campaigns your customers actually read, answer every message from one shared inbox, and see exactly who is ready to buy.",
+      "primaryCta": "Start free trial",
+      "secondaryCta": "See how it works"
+    }
+  }
+}
