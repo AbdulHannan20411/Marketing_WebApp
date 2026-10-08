@@ -49,7 +49,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /** Message namespaces that Client Components need. Everything else stays on the server. */
-const CLIENT_NAMESPACES = ["common", "nav", "cta"] as const;
+const CLIENT_NAMESPACES = ["common", "nav", "cta", "errors"] as const;
 
 export default async function LocaleLayout({ children }: LayoutProps<"/[locale]">) {
   const locale = await rootLocale();

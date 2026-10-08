@@ -109,6 +109,10 @@
   --text-5xl--line-height: 1.75;
   --text-6xl--line-height: 1.7;
   --text-7xl--line-height: 1.7;
+  --leading-tight: 1.8;
+  --leading-snug: 1.9;
+  --leading-normal: 2;
+  --leading-relaxed: 2.2;
   --tracking-tighter: 0;
   --tracking-tight: 0;
   --tracking-wide: 0;
@@ -213,6 +217,66 @@
 
   [hidden] {
     display: none !important;
+  }
+}
+
+/*
+ * Scroll reveals (see components/motion/reveal*.tsx). Only transform and opacity move.
+ * Hidden only when JS is running and the visitor allows motion. If the observer never
+ * starts (a script error), the failsafe animation shows everything after 4 seconds.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-js] [data-reveal] {
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  html[data-js] [data-reveal]:not([data-revealed]) {
+    opacity: 0;
+    transform: translate3d(0, 1.5rem, 0);
+  }
+  html[data-js]:not([data-reveal-ready]) [data-reveal]:not([data-revealed]) {
+    animation: reveal-failsafe 0.01s 4s forwards;
+  }
+}
+
+/*
+ * Mock-up micro-animations, triggered when the surrounding <Reveal> is revealed.
+ * .mock-grow: bars grow from the inline start. .mock-pop: items rise in, staggered by --i.
+ */
+.mock-grow {
+  transform-origin: left center;
+}
+[dir="rtl"] .mock-grow {
+  transform-origin: right center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html[data-js] .mock-grow,
+  html[data-js] .mock-pop {
+    transition:
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.6s ease-out;
+    transition-delay: calc(var(--i, 0) * 120ms + 250ms);
+  }
+  html[data-js] [data-reveal]:not([data-revealed]) .mock-grow {
+    transform: scaleX(0.04);
+  }
+  html[data-js] [data-reveal]:not([data-revealed]) .mock-pop {
+    opacity: 0;
+    transform: translate3d(0, 0.75rem, 0) scale(0.98);
+  }
+  html[data-js]:not([data-reveal-ready])
+    [data-reveal]:not([data-revealed])
+    :is(.mock-grow, .mock-pop) {
+    animation: reveal-failsafe 0.01s 4s forwards;
+  }
+}
+
+@keyframes reveal-failsafe {
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 

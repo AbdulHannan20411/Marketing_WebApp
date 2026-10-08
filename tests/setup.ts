@@ -10,6 +10,7 @@ afterEach(() => {
   cleanup();
   document.documentElement.className = "";
   document.documentElement.removeAttribute("style");
+  document.documentElement.removeAttribute("data-js");
   try {
     localStorage.clear();
   } catch {

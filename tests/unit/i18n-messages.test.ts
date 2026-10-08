@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import en from "@/messages/en.json";
+import globalMessages from "@/messages/global.json";
 import ur from "@/messages/ur.json";
 
 type Tree = { [key: string]: string | Tree };
@@ -54,13 +55,34 @@ describe("message catalogues", () => {
     }
   });
 
-  it("writes Urdu copy in Urdu script (except proper names and language names)", () => {
+  it("writes Urdu copy in Urdu script (except names, codes and units)", () => {
+    // Values that are intentionally Latin in Urdu: brand, language names, codes, units, prices.
+    const intentionallyLatin = new Set([
+      "metadata.siteName",
+      "metadata.titleTemplate",
+      "errors.notFound.code",
+      "limits.gb",
+      "limits.mb",
+      "mockups.crm.tagVip",
+      "mockups.catalog.price1",
+      "mockups.catalog.price2",
+      "mockups.catalog.price3",
+      // "CRM" and "AI" are used as-is in Urdu.
+      "modules.labels.crm",
+      "features.areas.crm.nav",
+      "featurePages.pages.ai.name",
+    ]);
+    // The character class below is the Arabic-script block, U+0600 to U+06FF.
     const latinOnly = Object.entries(urFlat).filter(
       ([key, value]) =>
         !/[؀-ۿ]/.test(value) &&
         !key.startsWith("common.language.names") &&
-        !["metadata.siteName", "metadata.titleTemplate"].includes(key),
+        !intentionallyLatin.has(key),
     );
     expect(latinOnly.map(([key]) => key)).toEqual([]);
+  });
+
+  it("global fallback messages have the same keys in both languages", () => {
+    expect(Object.keys(globalMessages.ur).sort()).toEqual(Object.keys(globalMessages.en).sort());
   });
 });

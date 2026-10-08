@@ -1,0 +1,132 @@
+import type { Plan } from "@/lib/pricing/schemas";
+
+/**
+ * Shown only when the pricing API is unreachable, always with the banner
+ * "Prices may have changed. See the app for current pricing."
+ *
+ * TODO: keep these in step with the live plans in the NextReach admin. The Growth plan
+ * mirrors the API's documented example; Starter and Business are placeholders that
+ * must be replaced with real figures before launch.
+ */
+export const fallbackPlans: Plan[] = [
+  {
+    id: "fallback-starter",
+    name: "Starter",
+    tagline: "For small shops getting started on WhatsApp",
+    monthlyPrice: 2500, // TODO: confirm real price
+    yearlyPrice: 25000, // TODO: confirm real price
+    currency: "PKR",
+    trialDays: 14,
+    discountPercent: 0,
+    isPromotional: false,
+    isMostPopular: false,
+    isRecommended: false,
+    supportLevel: "community",
+    modules: {
+      whatsapp: true,
+      crm: true,
+      sales: false,
+      leads: false,
+      automations: false,
+      reporting: true,
+      ai: false,
+      lead_scoring: false,
+      employees: false,
+    },
+    limits: {
+      maxEmployees: 1,
+      maxContacts: 2000,
+      maxCampaigns: 10,
+      maxWhatsAppAccounts: 1,
+      maxStorageMb: 1024,
+      dailyMessageLimit: 250,
+      monthlyMessageLimit: 5000,
+      monthlyAiReplyLimit: 0,
+      maxSearchRadiusKm: 0,
+      maxActiveAutomations: 0,
+    },
+    highlights: ["WhatsApp campaigns", "Contacts and groups"],
+    sortOrder: 1,
+    autoReplyTriggers: {},
+  },
+  {
+    id: "fallback-growth",
+    name: "Growth",
+    tagline: "For growing teams",
+    monthlyPrice: 4500,
+    yearlyPrice: 45000,
+    currency: "PKR",
+    trialDays: 14,
+    discountPercent: 0,
+    isPromotional: false,
+    isMostPopular: true,
+    isRecommended: false,
+    supportLevel: "email",
+    modules: {
+      whatsapp: true,
+      crm: true,
+      sales: true,
+      leads: true,
+      automations: true,
+      reporting: true,
+      ai: false,
+      lead_scoring: false,
+      employees: true,
+    },
+    limits: {
+      maxEmployees: 5,
+      maxContacts: 10000,
+      maxCampaigns: null,
+      maxWhatsAppAccounts: 1,
+      maxStorageMb: 5120,
+      dailyMessageLimit: 1000,
+      monthlyMessageLimit: 20000,
+      monthlyAiReplyLimit: 0,
+      maxSearchRadiusKm: 5,
+      maxActiveAutomations: 3,
+    },
+    highlights: ["Shared inbox", "Catalog links"],
+    sortOrder: 2,
+    autoReplyTriggers: { greeting: true, first_message: false, unanswered: false },
+  },
+  {
+    id: "fallback-business",
+    name: "Business",
+    tagline: "For teams that sell on WhatsApp every day",
+    monthlyPrice: 9500, // TODO: confirm real price
+    yearlyPrice: 95000, // TODO: confirm real price
+    currency: "PKR",
+    trialDays: 14,
+    discountPercent: 0,
+    isPromotional: false,
+    isMostPopular: false,
+    isRecommended: true,
+    supportLevel: "priority",
+    modules: {
+      whatsapp: true,
+      crm: true,
+      sales: true,
+      leads: true,
+      automations: true,
+      reporting: true,
+      ai: true,
+      lead_scoring: true,
+      employees: true,
+    },
+    limits: {
+      maxEmployees: 20,
+      maxContacts: 50000,
+      maxCampaigns: null,
+      maxWhatsAppAccounts: 3,
+      maxStorageMb: 20480,
+      dailyMessageLimit: 5000,
+      monthlyMessageLimit: 100000,
+      monthlyAiReplyLimit: 2000,
+      maxSearchRadiusKm: null,
+      maxActiveAutomations: 15,
+    },
+    highlights: ["AI auto-reply", "AI lead scoring"],
+    sortOrder: 3,
+    autoReplyTriggers: { greeting: true, first_message: true, unanswered: true },
+  },
+];

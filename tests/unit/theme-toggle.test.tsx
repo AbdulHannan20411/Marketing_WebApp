@@ -50,4 +50,9 @@ describe("theme init script", () => {
     new Function(themeInitScript)();
     expect(document.documentElement).not.toHaveClass("dark");
   });
+
+  it("marks the document as JS-enabled for scroll reveals", () => {
+    new Function(themeInitScript)();
+    expect(document.documentElement).toHaveAttribute("data-js");
+  });
 });

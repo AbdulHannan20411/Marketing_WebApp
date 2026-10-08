@@ -1,0 +1,18 @@
+{
+  "en": {
+    "errorTitle": "Something went wrong",
+    "errorDescription": "Please try again. If it keeps happening, let us know.",
+    "retry": "Try again",
+    "notFoundTitle": "Page not found",
+    "notFoundDescription": "We couldn't find that page.",
+    "home": "Go to the home page"
+  },
+  "ur": {
+    "errorTitle": "کچھ غلط ہو گیا",
+    "errorDescription": "براہِ کرم دوبارہ کوشش کریں۔ اگر یہ بار بار ہو تو ہمیں بتائیں۔",
+    "retry": "دوبارہ کوشش کریں",
+    "notFoundTitle": "صفحہ نہیں ملا",
+    "notFoundDescription": "ہمیں یہ صفحہ نہیں ملا۔",
+    "home": "ہوم پیج پر جائیں"
+  }
+}

@@ -29,7 +29,18 @@
         "en": "English",
         "ur": "اردو"
       }
-    }
+    },
+    "learnMore": "Learn more",
+    "learnMoreAbout": "Learn more about {topic}",
+    "backToTop": "Back to top",
+    "onThisPage": "On this page",
+    "previous": "Previous",
+    "next": "Next",
+    "slideOf": "{current} of {total}",
+    "carousel": "carousel",
+    "slide": "slide",
+    "included": "Included",
+    "notIncluded": "Not included"
   },
   "nav": {
     "primaryLabel": "Main",
@@ -74,7 +85,1217 @@
       "title": "Turn WhatsApp chats into sales",
       "subtitle": "Send campaigns your customers actually read, answer every message from one shared inbox, and see exactly who is ready to buy.",
       "primaryCta": "Start free trial",
-      "secondaryCta": "See how it works"
+      "secondaryCta": "See how it works",
+      "assurances": {
+        "official": "Official Meta sign-up",
+        "payments": "Pay with JazzCash, EasyPaisa or bank",
+        "trial": "Free trial"
+      },
+      "mockupLabel": "Example: a customer asks about a product on WhatsApp, the business replies with a catalog link, and an Eid campaign is delivered and read."
+    },
+    "metaTitle": "WhatsApp marketing and sales for growing businesses",
+    "metaDescription": "Send WhatsApp campaigns your customers read, answer every chat from one shared inbox, and see who is ready to buy. Free trial, local payments.",
+    "problem": {
+      "eyebrow": "Why NextReach",
+      "title": "WhatsApp is where your customers are. Managing it shouldn't be chaos.",
+      "beforeTitle": "Without NextReach",
+      "afterTitle": "With NextReach",
+      "before": {
+        "p1": "Chats are spread across personal phones, and messages slip through the cracks.",
+        "p2": "Bulk messages from a normal number get ignored, reported or blocked.",
+        "p3": "You can't tell who is just browsing and who is ready to buy.",
+        "p4": "Follow-ups only happen if someone remembers."
+      },
+      "after": {
+        "p1": "One shared inbox where your whole team sees and answers every chat.",
+        "p2": "Campaigns through WhatsApp's official platform, with approved templates.",
+        "p3": "A lead board that shows who is cold, warm, interested or won.",
+        "p4": "Follow-ups that run on their own and stop when the customer replies."
+      }
+    },
+    "features": {
+      "eyebrow": "Everything in one place",
+      "title": "One app for marketing, chats and sales on WhatsApp",
+      "subtitle": "Switch on the modules you need. Each one works on its own and gets better together.",
+      "cta": "Explore all features"
+    },
+    "facts": {
+      "title": "NextReach at a glance",
+      "modules": "modules you can switch on",
+      "recipes": "ready-made automation recipes",
+      "payments": "local ways to pay",
+      "languages": "languages on this site"
+    },
+    "steps": {
+      "eyebrow": "How it works",
+      "title": "Up and running in three steps",
+      "items": {
+        "connect": {
+          "title": "Connect your WhatsApp Business number",
+          "description": "Use Meta's official sign-up inside NextReach. No technical setup, and your number stays yours."
+        },
+        "contacts": {
+          "title": "Bring in your customers",
+          "description": "Import a CSV, add contacts by hand, or find businesses near you on a map and add them in one click."
+        },
+        "sell": {
+          "title": "Send, reply and sell",
+          "description": "Launch campaigns, answer every chat from the shared inbox, and watch interested customers move up your lead board."
+        }
+      }
+    },
+    "automation": {
+      "eyebrow": "Automations",
+      "title": "Follow-ups that never forget",
+      "subtitle": "Pick a ready-made recipe, adjust the wording, and turn it on. NextReach follows up at the right time and steps back as soon as a customer replies.",
+      "flowLabel": "Example automation: when a customer becomes interested, wait one day, send a follow-up template, then stop if they reply or alert the team if they don't.",
+      "nodes": {
+        "trigger": "Customer became interested",
+        "wait": "Wait 1 day",
+        "send": "Send follow-up template",
+        "check": "Did they reply?",
+        "yes": "Yes: stop and keep the chat in the inbox",
+        "no": "No: alert the team"
+      },
+      "kinds": {
+        "trigger": "When",
+        "wait": "Then",
+        "send": "Then",
+        "check": "Check"
+      },
+      "guards": {
+        "quiet": "Quiet hours",
+        "cap": "Daily cap per customer",
+        "stop": "Stops on reply"
+      },
+      "cta": "See how automations work"
+    },
+    "modules": {
+      "eyebrow": "Modules",
+      "title": "Switch on what you need",
+      "subtitle": "Every plan is made of modules. Start small and add more as you grow."
+    },
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "Answers before you ask",
+      "cta": "See all questions"
+    },
+    "finalCta": {
+      "title": "Ready to sell more on WhatsApp?",
+      "subtitle": "Start your free trial today, or talk to us and we'll show you around.",
+      "primary": "Start free trial",
+      "secondary": "Talk to us"
+    }
+  },
+  "modules": {
+    "labels": {
+      "whatsapp": "WhatsApp Marketing",
+      "crm": "CRM",
+      "sales": "Products & Catalog",
+      "leads": "Lead board",
+      "automations": "Automations",
+      "reporting": "Reporting",
+      "ai": "AI Assistant & Auto-reply",
+      "lead_scoring": "AI Lead scoring",
+      "employees": "Employee Management"
+    },
+    "descriptions": {
+      "whatsapp": "Approved templates, bulk campaigns on a schedule, and delivery and read tracking for every message.",
+      "crm": "Every contact in one list, with groups, tags, CSV import and a map to find new businesses nearby.",
+      "sales": "A product catalog with photos and prices that customers open from a button in WhatsApp.",
+      "leads": "A board that shows who is cold, warm, fully interested or won, and moves people as they act.",
+      "automations": "Follow-ups that run on their own, respect quiet hours and stop the moment a customer replies.",
+      "reporting": "Clear reports on campaigns and your team, ready to export.",
+      "ai": "Help writing templates and campaigns, plus automatic replies grounded in your own business details.",
+      "lead_scoring": "The AI reads each chat and places the customer on your lead board.",
+      "employees": "Invite your team and decide exactly what each person can see and do."
+    }
+  },
+  "pricingTeaser": {
+    "eyebrow": "Pricing",
+    "title": "Plans that grow with your business",
+    "subtitle": "Start with a free trial. Pay monthly or yearly with JazzCash, EasyPaisa or bank transfer.",
+    "from": "From",
+    "perMonth": "/month",
+    "perYear": "/year",
+    "trial": "{days, plural, one {# day free trial} other {# days free trial}}",
+    "mostPopular": "Most popular",
+    "recommended": "Recommended",
+    "seeAllPlans": "See all plans",
+    "comparePlans": "Compare plans",
+    "fallbackNotice": "Prices may have changed. See the app for current pricing.",
+    "fallbackLink": "See current pricing",
+    "noPlans": "Plans are being updated. See the app for current pricing.",
+    "custom": {
+      "title": "Build your own plan",
+      "description": "Pick only the modules you need. From <strong>{price}/month</strong>.",
+      "cta": "Build my plan"
+    }
+  },
+  "limits": {
+    "unlimited": "Unlimited",
+    "notIncluded": "Not included",
+    "gb": "{value} GB",
+    "mb": "{value} MB",
+    "km": "{value} km",
+    "upToKm": "Up to {value} km"
+  },
+  "errors": {
+    "notFound": {
+      "metaTitle": "Page not found",
+      "code": "404",
+      "title": "We couldn't find that page",
+      "description": "The link may be old, or the page may have moved. These might help:",
+      "home": "Go to the home page",
+      "links": "Popular pages"
+    },
+    "error": {
+      "title": "Something went wrong on our side",
+      "description": "Please try again. If it keeps happening, let us know and we'll look into it.",
+      "retry": "Try again",
+      "home": "Go to the home page",
+      "reference": "Reference: {digest}"
+    }
+  },
+  "mockups": {
+    "chat": {
+      "business": "Rang Boutique",
+      "status": "online",
+      "today": "Today",
+      "customer1": "Hi! Is the blue lawn suit still available in medium?",
+      "reply": "Yes, it is! Here's our new summer collection 👇",
+      "catalogTitle": "Summer Collection",
+      "catalogSubtitle": "24 products",
+      "catalogButton": "View catalog",
+      "customer2": "Love it, I'll take two 😊",
+      "typing": "typing…",
+      "composer": "Type a message",
+      "leadMoved": "Moved to Fully interested"
+    },
+    "campaign": {
+      "title": "Eid Sale",
+      "schedule": "Scheduled · Friday, 10:00 AM",
+      "template": "Template: eid_offer (image)",
+      "sent": "Sent",
+      "delivered": "Delivered",
+      "read": "Read",
+      "failed": "Failed",
+      "quality": "Number quality: High",
+      "status": "Sending"
+    },
+    "inbox": {
+      "title": "Inbox",
+      "mine": "Assigned to me",
+      "all": "All chats",
+      "window": "Reply window: 18h left",
+      "assignedTo": "Assigned to Sana",
+      "c1Name": "Ahmed Raza",
+      "c1Text": "Can I pay on delivery?",
+      "c2Name": "Fatima Noor",
+      "c2Text": "Photo",
+      "c3Name": "Bilal Traders",
+      "c3Text": "Please send the price list",
+      "reply": "Yes, cash on delivery is available in Lahore."
+    },
+    "crm": {
+      "title": "Contacts",
+      "search": "Search contacts",
+      "import": "Import CSV",
+      "tagVip": "VIP",
+      "tagWholesale": "Wholesale",
+      "tagNew": "New",
+      "r1": "Ayesha Siddiqui",
+      "r2": "Kamran Ali",
+      "r3": "Hina Bakery",
+      "discovery": "Nearby businesses",
+      "radius": "Within 3 km",
+      "found": "Bakeries · Gulberg",
+      "add": "Add to contacts"
+    },
+    "catalog": {
+      "title": "Summer Collection",
+      "p1": "Blue lawn suit",
+      "p2": "Printed kurta",
+      "p3": "Chiffon dupatta",
+      "price1": "PKR 4,950",
+      "price2": "PKR 2,800",
+      "price3": "PKR 1,600",
+      "opened": "Opened by Ayesha · 2 min ago"
+    },
+    "leadBoard": {
+      "cold": "Cold",
+      "warm": "Warm",
+      "interested": "Fully interested",
+      "won": "Won",
+      "l1": "Usman",
+      "l2": "Mehwish",
+      "l3": "Hassan",
+      "l4": "Nadia",
+      "l5": "Saad"
+    },
+    "ai": {
+      "prompt": "Write an Eid offer for our regular customers",
+      "suggestion": "Eid Mubarak! As one of our valued customers, enjoy 20% off the new collection until Sunday. Tap below to browse.",
+      "use": "Use this",
+      "autoReply": "Auto-reply",
+      "autoReplyText": "Walaikum Assalam! We're open 10 AM to 9 PM. Which product can I help you with?",
+      "grounded": "Based on your business details"
+    },
+    "scoring": {
+      "reading": "Reading chat…",
+      "signal": "Asked about delivery and price",
+      "result": "Fully interested",
+      "moved": "Placed on the lead board"
+    },
+    "reporting": {
+      "title": "Campaign report",
+      "week": "This week",
+      "export": "Export",
+      "delivered": "Delivered",
+      "read": "Read",
+      "replied": "Replied"
+    },
+    "employees": {
+      "title": "Sana Khan",
+      "role": "Sales team",
+      "campaigns": "Campaigns",
+      "inbox": "Inbox",
+      "contacts": "Contacts",
+      "reports": "Reports",
+      "view": "View",
+      "edit": "Edit"
+    },
+    "automation": {
+      "title": "Interested follow-up",
+      "active": "Active"
+    }
+  },
+  "features": {
+    "metaTitle": "Features",
+    "metaDescription": "WhatsApp campaigns, a shared inbox, CRM with nearby business discovery, catalogs, a lead board, AI replies, automations, reports and team permissions.",
+    "eyebrow": "Features",
+    "title": "Everything you need to market and sell on WhatsApp",
+    "subtitle": "Ten areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
+    "jumpTo": "Jump to a feature",
+    "detailLink": "See {name} in detail",
+    "areas": {
+      "whatsapp": {
+        "nav": "Campaigns",
+        "title": "WhatsApp Marketing",
+        "headline": "Campaigns your customers actually open",
+        "summary": "Reach your whole customer list through WhatsApp's official platform, on your schedule, and see what happened to every message.",
+        "points": {
+          "connect": "Connect your WhatsApp Business number with Meta's official sign-up.",
+          "templates": "Create approved message templates with text, image or video headers.",
+          "campaigns": "Send bulk campaigns now, later, or on a repeating schedule.",
+          "tracking": "Track sent, delivered, read and failed for every message.",
+          "quality": "Keep an eye on each number's quality rating."
+        }
+      },
+      "inbox": {
+        "nav": "Inbox",
+        "title": "Shared Inbox",
+        "headline": "Every customer chat in one place",
+        "summary": "Your whole team works from one inbox, so no customer waits and no chat gets lost on someone's phone.",
+        "points": {
+          "oneInbox": "All WhatsApp conversations together, with photos, videos and documents.",
+          "window": "WhatsApp's 24-hour reply window is tracked for you, with templates ready when it closes.",
+          "media": "Send and receive media without leaving the chat.",
+          "assign": "Assign chats to team members so everyone knows who is answering."
+        }
+      },
+      "crm": {
+        "nav": "CRM",
+        "title": "CRM & Discovery",
+        "headline": "Know your customers, and find new ones nearby",
+        "summary": "Keep every contact organised with groups and tags, and discover businesses around you on a map.",
+        "points": {
+          "contacts": "Contacts, groups and tags that make targeting simple.",
+          "import": "Import a CSV and match its columns in a few clicks, or export any list.",
+          "history": "See the full history of every contact record.",
+          "discovery": "Find businesses on a map within a radius and import them as contacts."
+        }
+      },
+      "catalog": {
+        "nav": "Catalog",
+        "title": "Products & Catalog",
+        "headline": "Your shop window, inside WhatsApp",
+        "summary": "Build a catalog with photos and prices, share it as a link with a button, and see who opened what.",
+        "points": {
+          "products": "Products with images, prices and descriptions.",
+          "link": "A shareable catalog link sent in WhatsApp with a tap-to-open button.",
+          "opens": "See which customer opened which products."
+        }
+      },
+      "leads": {
+        "nav": "Lead board",
+        "title": "Lead board",
+        "headline": "See who is ready to buy",
+        "summary": "A simple board of cold, warm, fully interested and won customers that updates itself as people act.",
+        "points": {
+          "stages": "Four clear stages: cold, warm, fully interested and won.",
+          "automatic": "Customers move automatically when they reply, open your catalog or ask about prices.",
+          "focus": "Your team spends its time on the people most likely to buy."
+        }
+      },
+      "aiAssistant": {
+        "nav": "AI Assistant",
+        "title": "AI Assistant & Auto-reply",
+        "headline": "Help when you write, answers when you're busy",
+        "summary": "Write templates and campaigns faster, and reply automatically to greetings, first messages or chats nobody has answered yet.",
+        "points": {
+          "writing": "AI help writing templates and campaign messages.",
+          "autoReply": "Automatic replies to greetings, first messages or unanswered chats.",
+          "grounded": "Replies use your own business details and never invent prices."
+        }
+      },
+      "leadScoring": {
+        "nav": "Lead scoring",
+        "title": "AI Lead scoring",
+        "headline": "Let the AI sort your leads",
+        "summary": "The AI reads each conversation and places the customer at the right stage of your lead board.",
+        "points": {
+          "reads": "Reads chats for buying signals, like questions about price or delivery.",
+          "places": "Places each lead on the board automatically.",
+          "review": "You can always move a lead yourself."
+        }
+      },
+      "automations": {
+        "nav": "Automations",
+        "title": "Automations",
+        "headline": "Follow-ups that run themselves",
+        "summary": "Build sequences like: customer became interested, wait a day, send a template, and alert the team if there's no reply.",
+        "points": {
+          "sequences": "Follow-up sequences with waits, templates, checks and team alerts.",
+          "recipes": "Eight ready-made recipes to start from.",
+          "quiet": "Quiet hours, so nobody gets a message at midnight.",
+          "cap": "A daily cap on messages per customer.",
+          "stop": "Sequences stop as soon as the customer replies."
+        }
+      },
+      "reporting": {
+        "nav": "Reporting",
+        "title": "Reporting",
+        "headline": "Know what's working",
+        "summary": "Campaign and team reports that show results clearly, ready to export.",
+        "points": {
+          "campaigns": "Campaign reports: delivered, read, failed and replied.",
+          "team": "Team reports that show how your people are doing.",
+          "exports": "Export any report to share or keep."
+        }
+      },
+      "employees": {
+        "nav": "Team",
+        "title": "Employees",
+        "headline": "Bring your team, keep control",
+        "summary": "Invite your team and give each person exactly the access they need.",
+        "points": {
+          "invite": "Invite employees to your workspace.",
+          "permissions": "Fine-grained permissions for every feature.",
+          "security": "Security and session controls to keep your account safe."
+        }
+      }
+    }
+  },
+  "featurePages": {
+    "shared": {
+      "benefitsTitle": "Why it matters",
+      "stepsTitle": "How it works",
+      "capabilitiesTitle": "What you can do",
+      "faqTitle": "Common questions",
+      "relatedTitle": "Works well with",
+      "allFeatures": "All features",
+      "breadcrumb": "Breadcrumb"
+    },
+    "pages": {
+      "whatsapp-campaigns": {
+        "metaTitle": "WhatsApp campaigns",
+        "metaDescription": "Send approved WhatsApp templates in bulk, schedule or repeat campaigns, and track delivered, read and failed for every message.",
+        "name": "WhatsApp campaigns",
+        "eyebrow": "WhatsApp Marketing",
+        "title": "Campaigns your customers actually open",
+        "subtitle": "Send offers, reminders and updates to your whole list through WhatsApp's official platform, and see exactly what happened to each message.",
+        "benefits": {
+          "official": {
+            "title": "Official and safe",
+            "description": "Messages go through the WhatsApp Business Platform, using templates approved by Meta."
+          },
+          "read": {
+            "title": "Read, not ignored",
+            "description": "WhatsApp is the app your customers already check all day."
+          },
+          "schedule": {
+            "title": "On your schedule",
+            "description": "Send now, at a set time, or on a repeating schedule for regular updates."
+          },
+          "quality": {
+            "title": "Protect your number",
+            "description": "Watch your number's quality rating and spot problems early."
+          }
+        },
+        "steps": {
+          "connect": {
+            "title": "Connect your number",
+            "description": "Use Meta's official sign-up inside NextReach to connect your WhatsApp Business number."
+          },
+          "template": {
+            "title": "Create a template",
+            "description": "Write your message with a text, image or video header and submit it for approval."
+          },
+          "send": {
+            "title": "Pick an audience and send",
+            "description": "Choose groups or tags, then send now or schedule it."
+          }
+        },
+        "capabilities": {
+          "signup": "Meta's official Embedded Signup",
+          "templateTypes": "Templates with text, image and video headers",
+          "audiences": "Target by group or tag",
+          "recurrence": "Scheduled and repeating campaigns",
+          "statuses": "Sent, delivered, read and failed tracking",
+          "qualityRating": "Quality rating for each number"
+        },
+        "faqs": {
+          "approval": {
+            "q": "Who approves my templates?",
+            "a": "Meta reviews every template before it can be sent. NextReach shows the status of each one, and you can edit and resubmit a template that isn't approved."
+          },
+          "bulk": {
+            "q": "Can I send to my whole customer list?",
+            "a": "Yes, as long as your customers have agreed to hear from you. Sending through the official platform with approved templates is how WhatsApp expects businesses to message at scale."
+          },
+          "cost": {
+            "q": "Do I need any technical skills?",
+            "a": "No. Connecting your number, writing templates and sending campaigns all happen through simple screens in NextReach."
+          }
+        }
+      },
+      "inbox": {
+        "metaTitle": "Shared WhatsApp inbox",
+        "metaDescription": "Answer every WhatsApp chat from one shared inbox. Assign conversations, send media, and let NextReach track the 24-hour reply window.",
+        "name": "Shared Inbox",
+        "eyebrow": "Shared Inbox",
+        "title": "Every customer chat in one place",
+        "subtitle": "Your whole team answers from one inbox, so customers get quick replies and nothing gets lost on a personal phone.",
+        "benefits": {
+          "together": {
+            "title": "One inbox for everyone",
+            "description": "Your team sees the same conversations, so customers never have to repeat themselves."
+          },
+          "window": {
+            "title": "The 24-hour rule, handled",
+            "description": "WhatsApp allows free replies for 24 hours after a customer's last message. NextReach shows the time left and offers templates once it closes."
+          },
+          "context": {
+            "title": "Full context",
+            "description": "See past messages, media and the customer's details before you reply."
+          },
+          "nothingLost": {
+            "title": "Nothing slips through",
+            "description": "Assign every chat to someone, so it's always clear who is answering."
+          }
+        },
+        "steps": {
+          "arrive": {
+            "title": "Messages arrive",
+            "description": "Every WhatsApp message lands in the shared inbox."
+          },
+          "assign": {
+            "title": "Assign the chat",
+            "description": "Hand it to the right person, or let them pick it up."
+          },
+          "reply": {
+            "title": "Reply with confidence",
+            "description": "Answer with text, photos, videos or documents, inside the reply window."
+          }
+        },
+        "capabilities": {
+          "allChats": "All conversations in one list",
+          "assignment": "Assign chats to team members",
+          "windowTimer": "24-hour reply window shown on every chat",
+          "media": "Send and receive photos, videos and documents",
+          "templatesOutside": "Templates ready when the window has closed",
+          "history": "Full message history for each customer"
+        },
+        "faqs": {
+          "window": {
+            "q": "What is the 24-hour reply window?",
+            "a": "WhatsApp lets a business reply freely for 24 hours after the customer's last message. After that, you can only send an approved template. NextReach shows the time left on every chat."
+          },
+          "phones": {
+            "q": "Do my staff need the WhatsApp app on their phones?",
+            "a": "No. Your team replies from NextReach in the browser, so you don't have to share one phone."
+          },
+          "team": {
+            "q": "Can two people reply to the same chat by mistake?",
+            "a": "Assigning a chat shows the whole team who owns it, which keeps replies clear and consistent."
+          }
+        }
+      },
+      "crm-discovery": {
+        "metaTitle": "CRM and nearby business discovery",
+        "metaDescription": "Organise WhatsApp contacts with groups and tags, import from CSV, and find businesses near you on a map to add as contacts.",
+        "name": "CRM & Discovery",
+        "eyebrow": "CRM & Discovery",
+        "title": "Know your customers, and find new ones nearby",
+        "subtitle": "Keep every contact organised, and discover businesses around you on a map, ready to import.",
+        "benefits": {
+          "organised": {
+            "title": "Organised from day one",
+            "description": "Groups and tags make it easy to send the right message to the right people."
+          },
+          "importEasy": {
+            "title": "Bring your list in minutes",
+            "description": "Import a CSV and match its columns to fields, without reformatting anything."
+          },
+          "discover": {
+            "title": "Find new customers",
+            "description": "Search the map for businesses within a radius and add them as contacts."
+          },
+          "history": {
+            "title": "A clear record",
+            "description": "See every change made to a contact, and who made it."
+          }
+        },
+        "steps": {
+          "import": {
+            "title": "Import or discover",
+            "description": "Upload a CSV, add people by hand, or search for nearby businesses."
+          },
+          "organise": {
+            "title": "Group and tag",
+            "description": "Sort contacts by area, interest, customer type or anything you like."
+          },
+          "reach": {
+            "title": "Reach them",
+            "description": "Use your groups and tags as audiences for campaigns and automations."
+          }
+        },
+        "capabilities": {
+          "groupsTags": "Groups and tags",
+          "csvMapping": "CSV import with column matching",
+          "exports": "Export any list",
+          "recordHistory": "History for every contact",
+          "mapSearch": "Map search for businesses by radius",
+          "importBusinesses": "Import found businesses as contacts"
+        },
+        "faqs": {
+          "csv": {
+            "q": "What format does the import need?",
+            "a": "A standard CSV file. You match each column to a field, such as name or phone number, before anything is imported."
+          },
+          "discoveryData": {
+            "q": "Where do nearby businesses come from?",
+            "a": "Discovery searches the map around a location you choose, within the radius your plan allows, and lists the businesses it finds."
+          },
+          "consent": {
+            "q": "Can I message businesses I discover?",
+            "a": "Make sure you have a fair reason to contact them and follow WhatsApp's rules. A good first step is a short, respectful introduction."
+          }
+        }
+      },
+      "sales-leads": {
+        "metaTitle": "WhatsApp catalog and lead board",
+        "metaDescription": "Share a product catalog in WhatsApp with one button, see who opened it, and track leads from cold to won on a board that updates itself.",
+        "name": "Sales & Leads",
+        "eyebrow": "Products, Catalog & Lead board",
+        "title": "Show your products, and see who's ready to buy",
+        "subtitle": "Share a catalog in WhatsApp with one tap, see who opened what, and follow every lead from cold to won.",
+        "benefits": {
+          "showcase": {
+            "title": "A shop window in chat",
+            "description": "Products with photos and prices, presented neatly instead of a pile of screenshots."
+          },
+          "oneTap": {
+            "title": "One tap to open",
+            "description": "Your catalog link arrives with a button customers can tap straight away."
+          },
+          "knowInterest": {
+            "title": "Know who's interested",
+            "description": "See which customers opened the catalog and which products they looked at."
+          },
+          "boardMoves": {
+            "title": "A board that keeps itself",
+            "description": "Leads move between cold, warm, fully interested and won as customers act."
+          }
+        },
+        "steps": {
+          "addProducts": {
+            "title": "Add your products",
+            "description": "Upload photos, set prices and write short descriptions."
+          },
+          "share": {
+            "title": "Share the catalog",
+            "description": "Send the link in a chat or campaign with a tap-to-open button."
+          },
+          "follow": {
+            "title": "Follow up with the warmest leads",
+            "description": "Check the lead board and spend your time where it counts."
+          }
+        },
+        "capabilities": {
+          "productCards": "Products with images and prices",
+          "catalogLink": "Shareable catalog link with a WhatsApp button",
+          "openTracking": "See who opened which products",
+          "stages": "Cold, warm, fully interested and won",
+          "autoMove": "Leads move automatically",
+          "filters": "Move any lead yourself at any time"
+        },
+        "faqs": {
+          "checkout": {
+            "q": "Can customers pay inside the catalog?",
+            "a": "The catalog shows your products and prices. Customers confirm their order with you in the chat, where you agree payment and delivery."
+          },
+          "stages": {
+            "q": "What moves a lead from one stage to the next?",
+            "a": "What customers do: replying, opening your catalog, or asking about price and delivery. With AI Lead scoring, the AI reads the chat and places the lead for you."
+          },
+          "manual": {
+            "q": "Can I move leads myself?",
+            "a": "Yes. You can always drag a lead to a different stage."
+          }
+        }
+      },
+      "ai": {
+        "metaTitle": "AI assistant, auto-reply and lead scoring",
+        "metaDescription": "AI that helps write WhatsApp templates and campaigns, replies automatically using your own business details, and scores leads from chats.",
+        "name": "AI",
+        "eyebrow": "AI Assistant, Auto-reply & Lead scoring",
+        "title": "An assistant that knows your business",
+        "subtitle": "Write faster, reply even when you're busy, and let the AI sort your leads, all grounded in your own business information.",
+        "benefits": {
+          "writeFaster": {
+            "title": "Write in seconds",
+            "description": "Get a strong first draft for any template or campaign, then make it yours."
+          },
+          "neverMiss": {
+            "title": "Never leave a customer waiting",
+            "description": "Reply automatically to greetings, first messages or chats nobody has answered."
+          },
+          "grounded": {
+            "title": "Grounded in your facts",
+            "description": "Auto-replies use the business details you provide and never make up prices."
+          },
+          "scoring": {
+            "title": "Leads sorted for you",
+            "description": "The AI reads each chat and places the customer on your lead board."
+          }
+        },
+        "steps": {
+          "teach": {
+            "title": "Add your business details",
+            "description": "Opening hours, services, policies and anything customers often ask about."
+          },
+          "choose": {
+            "title": "Choose when to auto-reply",
+            "description": "Greetings, first messages, unanswered chats, or any mix of them."
+          },
+          "review": {
+            "title": "Review and adjust",
+            "description": "Read what the AI sent and improve your details at any time."
+          }
+        },
+        "capabilities": {
+          "templateHelp": "AI writing help for templates",
+          "campaignHelp": "AI writing help for campaigns",
+          "greetingReplies": "Auto-reply to greetings",
+          "firstMessage": "Auto-reply to first messages",
+          "unanswered": "Auto-reply to unanswered chats",
+          "leadScoring": "AI lead scoring from conversations"
+        },
+        "faqs": {
+          "prices": {
+            "q": "Will the AI make up prices or promises?",
+            "a": "No. Auto-replies are grounded in the information you provide. If a price isn't in your details, the AI won't invent one."
+          },
+          "control": {
+            "q": "Can I switch auto-reply off?",
+            "a": "Yes. You choose which situations get an automatic reply, and you can turn it off at any time."
+          },
+          "language": {
+            "q": "Which languages can it write in?",
+            "a": "Tell the assistant the language you want, such as English, Urdu or Roman Urdu, and review the draft before you use it."
+          }
+        }
+      },
+      "automations": {
+        "metaTitle": "WhatsApp automations and follow-ups",
+        "metaDescription": "Automatic WhatsApp follow-up sequences with eight ready-made recipes, quiet hours, a daily cap per customer and stop-on-reply.",
+        "name": "Automations",
+        "eyebrow": "Automations",
+        "title": "Follow-ups that run themselves",
+        "subtitle": "Set up a sequence once, and NextReach follows up at the right moment, politely, and stops as soon as the customer replies.",
+        "benefits": {
+          "followUp": {
+            "title": "No lead forgotten",
+            "description": "Every interested customer gets a timely follow-up, even on your busiest days."
+          },
+          "recipes": {
+            "title": "Start from a recipe",
+            "description": "Eight ready-made recipes cover the most common follow-ups."
+          },
+          "polite": {
+            "title": "Polite by design",
+            "description": "Quiet hours and a daily cap per customer keep messages welcome."
+          },
+          "stops": {
+            "title": "Stops when they reply",
+            "description": "When a customer answers, the sequence steps aside and the chat goes to your inbox."
+          }
+        },
+        "steps": {
+          "pick": {
+            "title": "Pick a recipe",
+            "description": "Choose a ready-made sequence or start from scratch."
+          },
+          "adjust": {
+            "title": "Adjust the details",
+            "description": "Set the wait times, templates and who gets alerted."
+          },
+          "turnOn": {
+            "title": "Turn it on",
+            "description": "NextReach handles the timing, and you see every step."
+          }
+        },
+        "capabilities": {
+          "triggers": "Start when a customer's stage changes",
+          "waits": "Wait for hours or days",
+          "templates": "Send approved templates",
+          "conditions": "Check whether the customer replied",
+          "alerts": "Alert your team",
+          "limits": "Quiet hours and daily caps"
+        },
+        "faqs": {
+          "recipes": {
+            "q": "What are the ready-made recipes?",
+            "a": "Eight common sequences, such as following up with interested customers or nudging people who opened your catalog. Each one can be edited before you turn it on."
+          },
+          "spam": {
+            "q": "Will customers get too many messages?",
+            "a": "Quiet hours, a daily cap per customer and stop-on-reply are built in, so follow-ups stay friendly."
+          },
+          "replies": {
+            "q": "What happens when a customer replies?",
+            "a": "The sequence stops for that customer, and the conversation continues in your shared inbox."
+          }
+        }
+      }
+    }
+  },
+  "useCases": {
+    "metaTitle": "Use cases by industry",
+    "metaDescription": "How retail shops, real estate agents, schools, clinics, online stores and agencies in Pakistan use NextReach to market and sell on WhatsApp.",
+    "eyebrow": "Use cases",
+    "title": "Built for the way Pakistani businesses sell",
+    "subtitle": "Whatever you sell, your customers are already on WhatsApp. Here's how businesses like yours can use NextReach.",
+    "jumpTo": "Choose your industry",
+    "challengesTitle": "The challenge",
+    "solutionsTitle": "How NextReach helps",
+    "modulesTitle": "Modules that fit",
+    "exampleTitle": "For example",
+    "industries": {
+      "retail": {
+        "name": "Retail shops",
+        "summary": "Clothing, electronics, furniture and every shop in between.",
+        "challenges": {
+          "c1": "New stock arrives, but only walk-in customers hear about it.",
+          "c2": "Customers ask for prices and photos one by one, all day.",
+          "c3": "Sale announcements get lost in busy family groups."
+        },
+        "solutions": {
+          "s1": "Send a new-arrivals campaign with photos to the customers who want it.",
+          "s2": "Share one catalog link with prices instead of sending dozens of screenshots.",
+          "s3": "See who opened the catalog and follow up with the interested ones."
+        },
+        "example": "A boutique sends its Eid collection to regular customers on Friday morning. Customers open the catalog from the button, ask about sizes in the shared inbox, and the lead board shows the staff who to call first."
+      },
+      "realEstate": {
+        "name": "Real estate",
+        "summary": "Agents, builders and property dealers.",
+        "challenges": {
+          "c1": "Enquiries come from many ads, and agents keep them in their own phones.",
+          "c2": "Serious buyers and casual browsers look the same in a chat list.",
+          "c3": "Following up on every enquiry by hand takes hours."
+        },
+        "solutions": {
+          "s1": "Keep every enquiry in one CRM with tags for area, budget and property type.",
+          "s2": "Use the lead board to see who is fully interested and ready to visit.",
+          "s3": "Let automations follow up with new enquiries and alert an agent if there's no reply."
+        },
+        "example": "A property dealer tags each enquiry by society and budget. When a buyer becomes interested, an automation sends the brochure the next day and alerts the agent if the buyer hasn't replied."
+      },
+      "education": {
+        "name": "Education",
+        "summary": "Schools, colleges, academies and tutors.",
+        "challenges": {
+          "c1": "Admission season brings a flood of the same questions.",
+          "c2": "Parents miss important notices sent by SMS or on paper.",
+          "c3": "Front-desk staff can't answer every chat after hours."
+        },
+        "solutions": {
+          "s1": "Send admission dates, fee reminders and notices to the right class or group.",
+          "s2": "Auto-reply to common questions with your own details, even after hours.",
+          "s3": "Track enquiries from first message to enrolment on the lead board."
+        },
+        "example": "An academy groups contacts by class. During admissions, auto-reply answers questions about timings and documents from the academy's own details, and staff pick up the chats that need a person."
+      },
+      "clinics": {
+        "name": "Clinics",
+        "summary": "Clinics, labs, dentists and wellness centres.",
+        "challenges": {
+          "c1": "The phone rings all day with questions about timings and doctors.",
+          "c2": "Patients forget follow-up visits.",
+          "c3": "Several receptionists share one phone and lose track of chats."
+        },
+        "solutions": {
+          "s1": "Answer common questions automatically using your clinic's own information.",
+          "s2": "Send reminders and health-camp announcements with approved templates.",
+          "s3": "Give each receptionist their own access in a shared inbox."
+        },
+        "example": "A dental clinic sends a reminder template the day before follow-up visits. Patients reply to confirm, and receptionists handle the chats from the shared inbox instead of one phone."
+      },
+      "ecommerce": {
+        "name": "E-commerce",
+        "summary": "Online stores and social sellers.",
+        "challenges": {
+          "c1": "Customers ask the same questions about stock, price and delivery.",
+          "c2": "Abandoned interest: people ask, then go quiet.",
+          "c3": "It's hard to tell which campaigns actually bring sales."
+        },
+        "solutions": {
+          "s1": "Share your catalog with a tap-to-open button in every chat.",
+          "s2": "Let AI lead scoring spot buyers, and automations nudge the quiet ones.",
+          "s3": "Use reports to see which campaigns were read and replied to."
+        },
+        "example": "An online store sends a weekend sale campaign. The AI places customers who ask about delivery on the fully interested column, and a follow-up template goes to those who opened the catalog but didn't reply."
+      },
+      "agencies": {
+        "name": "Agencies",
+        "summary": "Marketing agencies and consultants managing clients.",
+        "challenges": {
+          "c1": "Clients want WhatsApp marketing but don't know where to start.",
+          "c2": "Sending campaigns from personal numbers is risky.",
+          "c3": "Showing clients clear results takes time."
+        },
+        "solutions": {
+          "s1": "Run campaigns for clients through WhatsApp's official platform.",
+          "s2": "Invite your team with permissions that fit each role.",
+          "s3": "Export campaign reports to share with clients."
+        },
+        "example": "An agency sets up a workspace for a client, invites two team members with campaign permissions only, and shares an exported report at the end of each month. Talk to us about partnership options."
+      }
+    },
+    "cta": {
+      "title": "Don't see your industry?",
+      "subtitle": "If your customers use WhatsApp, NextReach can help. Tell us about your business and we'll suggest a setup.",
+      "button": "Talk to us"
+    }
+  },
+  "about": {
+    "metaTitle": "About us",
+    "metaDescription": "NextReach helps businesses in Pakistan market and sell on WhatsApp, the app their customers already use every day.",
+    "eyebrow": "About NextReach",
+    "title": "We help Pakistani businesses sell where their customers already are",
+    "subtitle": "Almost every customer in Pakistan has WhatsApp. We build the tools that let businesses use it properly, from the first campaign to the final sale.",
+    "story": {
+      "title": "Why we built NextReach",
+      "p1": "Businesses across Pakistan already run on WhatsApp. Orders, enquiries, payments and complaints all arrive in the same chat list, often on one person's phone.",
+      "p2": "That works until it doesn't: messages get missed, broadcasts get ignored, and nobody knows which customer to call back first. We built NextReach to fix that, with WhatsApp's official platform, local payments and copy that makes sense here."
+    },
+    "principles": {
+      "title": "What we believe",
+      "official": {
+        "title": "Do it properly",
+        "description": "We use WhatsApp's official platform and Meta's sign-up, so your number and your reputation stay safe."
+      },
+      "plain": {
+        "title": "Keep it simple",
+        "description": "Plain words, clear screens and no jargon. If it needs a manual, we haven't finished designing it."
+      },
+      "local": {
+        "title": "Built for Pakistan",
+        "description": "Pay with JazzCash, EasyPaisa or bank transfer, and read this site in English or Urdu."
+      },
+      "fair": {
+        "title": "Pay for what you use",
+        "description": "Choose a ready-made plan, or build your own with only the modules you need."
+      }
+    },
+    "audience": {
+      "title": "Who we work with",
+      "description": "Small and medium businesses in retail, real estate, education, healthcare, e-commerce and services, plus the agencies that support them.",
+      "cta": "See use cases"
+    },
+    "team": {
+      "title": "The team",
+      "description": "We build NextReach together with the businesses that use it, and we read every message they send us."
+    },
+    "cta": {
+      "title": "Let's talk",
+      "subtitle": "Questions, ideas or partnership enquiries are always welcome.",
+      "button": "Contact us"
+    }
+  },
+  "faq": {
+    "metaTitle": "Frequently asked questions",
+    "metaDescription": "Answers about NextReach: getting started, WhatsApp's official platform, templates, the 24-hour window, plans, payments, data and support.",
+    "eyebrow": "FAQ",
+    "title": "Frequently asked questions",
+    "subtitle": "Can't find what you're looking for? Send us a question and we'll reply.",
+    "searchLabel": "Search questions",
+    "searchPlaceholder": "Try: templates",
+    "clear": "Clear search",
+    "results": "{count, plural, =0 {No questions match your search.} one {# question matches your search.} other {# questions match your search.}}",
+    "noResults": "No questions match “{query}”.",
+    "noResultsHint": "Try a different word, or ask us directly.",
+    "askUs": "Ask a question",
+    "groups": {
+      "gettingStarted": "Getting started",
+      "whatsapp": "WhatsApp",
+      "plans": "Plans and payments",
+      "data": "Your data and team",
+      "support": "Support"
+    },
+    "items": {
+      "whatIs": {
+        "q": "What is NextReach?",
+        "a": "NextReach is a web app for marketing and selling on WhatsApp. It brings campaigns, a shared inbox, a CRM, catalogs, a lead board, AI replies, automations and reports together in one workspace."
+      },
+      "whoFor": {
+        "q": "Who is NextReach for?",
+        "a": "Small and medium businesses in Pakistan, such as shops, property dealers, schools, clinics and online stores, plus agencies that run WhatsApp marketing for clients."
+      },
+      "needs": {
+        "q": "What do I need to get started?",
+        "a": "A Meta business account and a phone number for WhatsApp Business. NextReach walks you through Meta's official sign-up step by step."
+      },
+      "trial": {
+        "q": "Is there a free trial?",
+        "a": "Yes. Plans come with a free trial so you can try NextReach before you pay. The length of the trial is shown on each plan."
+      },
+      "official": {
+        "q": "Does NextReach use the official WhatsApp platform?",
+        "a": "Yes. You connect through Meta's official sign-up, and campaigns use templates approved by Meta. That keeps your number in good standing."
+      },
+      "templates": {
+        "q": "What is a message template?",
+        "a": "A pre-approved message format that Meta allows businesses to send first, for example an offer or a reminder. Templates can include text and an image or video header."
+      },
+      "window": {
+        "q": "What is the 24-hour reply window?",
+        "a": "After a customer messages you, WhatsApp lets you reply freely for 24 hours. After that, you can only start the conversation again with an approved template. NextReach tracks this on every chat."
+      },
+      "quality": {
+        "q": "What is a quality rating?",
+        "a": "WhatsApp rates each business number based on how customers respond to its messages. NextReach shows the rating so you can adjust before problems grow."
+      },
+      "numbers": {
+        "q": "Can I connect more than one WhatsApp number?",
+        "a": "Yes, depending on your plan. Each plan shows how many WhatsApp numbers it includes."
+      },
+      "plans": {
+        "q": "How do plans work?",
+        "a": "Choose a ready-made plan, billed monthly or yearly, or build your own by picking modules and limits. The price updates as you choose."
+      },
+      "buildOwn": {
+        "q": "What does “Build your own plan” mean?",
+        "a": "Pick only the modules you need, such as WhatsApp Marketing and CRM, and choose a size for each limit. You pay for what you pick."
+      },
+      "payment": {
+        "q": "How can I pay?",
+        "a": "With JazzCash, EasyPaisa or bank transfer. Upload your payment receipt in the app and our team approves it."
+      },
+      "approval": {
+        "q": "How long does payment approval take?",
+        "a": "Our team checks receipts as quickly as possible during working hours. You'll see the status in the app, and you can contact us if anything looks wrong."
+      },
+      "workspace": {
+        "q": "Who can see my business data?",
+        "a": "Each business has its own workspace. Only the people you invite can access it, and only with the permissions you give them."
+      },
+      "importing": {
+        "q": "Can I bring my existing contacts?",
+        "a": "Yes. Import a CSV file and match its columns to contact fields, or add contacts by hand."
+      },
+      "team": {
+        "q": "Can I control what each employee can do?",
+        "a": "Yes. Permissions are set per feature, so a salesperson can work in the inbox without seeing billing or settings."
+      },
+      "help": {
+        "q": "How do I get help?",
+        "a": "Send us a question from the contact page. If you create an account on this site, you can follow our replies in one place."
+      },
+      "demo": {
+        "q": "Can I see a demo first?",
+        "a": "Of course. Choose “Book a demo” on the contact page and pick a time that suits you."
+      },
+      "agencies": {
+        "q": "Do you work with agencies?",
+        "a": "Yes. Choose “Partnership / agency” on the contact page and tell us about your clients."
+      }
+    }
+  },
+  "legal": {
+    "shared": {
+      "effective": "Effective date: {date}",
+      "contents": "Contents",
+      "draftNotice": "This page is a template awaiting legal review."
+    },
+    "privacy": {
+      "metaTitle": "Privacy Policy",
+      "metaDescription": "How NextReach collects, uses and protects personal information on this website and in the NextReach service.",
+      "title": "Privacy Policy",
+      "intro": "This policy explains what personal information {company} collects, why, and the choices you have.",
+      "sections": {
+        "intro": {
+          "title": "Who we are",
+          "body": "{company} (“NextReach”, “we”) runs this website and the NextReach service. Our registered address is {address}. For privacy questions, contact {email}."
+        },
+        "collect": {
+          "title": "Information we collect",
+          "body": "When you contact us or create an account on this website, we collect your name, email address and phone number, the content of your messages and any file you attach. When you use the NextReach app, we process the business and contact information you add to your workspace. We also collect basic technical data, such as your IP address, browser type and pages visited, to keep the site secure and working."
+        },
+        "use": {
+          "title": "How we use information",
+          "body": "We use your information to answer your questions, provide and improve the service, process payments, send messages you've asked for, keep accounts secure and meet legal obligations. We do not sell your personal information."
+        },
+        "whatsapp": {
+          "title": "WhatsApp and Meta",
+          "body": "The NextReach service connects to the WhatsApp Business Platform operated by Meta. Messages you send and receive through NextReach are processed by Meta under its own terms and policies. Businesses using NextReach are responsible for having their customers' permission to message them."
+        },
+        "sharing": {
+          "title": "Who we share it with",
+          "body": "We share information only with service providers that help us run NextReach, such as hosting, email delivery and payment processing, and only as needed for that work. We may disclose information if the law requires it."
+        },
+        "retention": {
+          "title": "How long we keep it",
+          "body": "We keep personal information only as long as needed for the purposes above, or as the law requires. You can ask us to delete your information at any time."
+        },
+        "security": {
+          "title": "How we protect it",
+          "body": "We use reasonable technical and organisational measures to protect your information, including access controls and encrypted connections. No system is perfectly secure, so please tell us at once if you notice anything unusual."
+        },
+        "rights": {
+          "title": "Your choices and rights",
+          "body": "You can ask to see, correct or delete your personal information, or object to how we use it, by contacting {email}. We will respond within a reasonable time."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "body": "This website uses only the cookies it needs to work, such as remembering your language and keeping you signed in. If we turn on analytics, we will tell you and ask first where required."
+        },
+        "children": {
+          "title": "Children",
+          "body": "NextReach is a service for businesses and is not intended for children. We do not knowingly collect information from children."
+        },
+        "changes": {
+          "title": "Changes to this policy",
+          "body": "We may update this policy from time to time. We will post the new version here with a new effective date, and tell account holders about important changes."
+        },
+        "contact": {
+          "title": "Contact us",
+          "body": "Questions about this policy? Email {email} or write to {company}, {address}."
+        }
+      }
+    },
+    "terms": {
+      "metaTitle": "Terms of Service",
+      "metaDescription": "The terms that apply when you use the NextReach website and service.",
+      "title": "Terms of Service",
+      "intro": "These terms apply when you use this website and the NextReach service provided by {company}.",
+      "sections": {
+        "acceptance": {
+          "title": "Accepting these terms",
+          "body": "By using NextReach, you agree to these terms. If you use NextReach for a business, you confirm that you can accept them on its behalf."
+        },
+        "service": {
+          "title": "The service",
+          "body": "NextReach provides tools for WhatsApp marketing, conversations, contacts, catalogs, leads, automations, AI assistance and reporting. Features depend on your plan and may change as we improve the service."
+        },
+        "accounts": {
+          "title": "Your account",
+          "body": "Keep your login details safe and tell us at once about any unauthorised use. You are responsible for activity in your workspace, including that of the employees you invite."
+        },
+        "acceptableUse": {
+          "title": "Acceptable use",
+          "body": "You must follow the law and the WhatsApp Business policies set by Meta. Only message people who have agreed to hear from you. Do not send spam, misleading or harmful content, or use NextReach to break anyone's rights."
+        },
+        "payments": {
+          "title": "Plans and payments",
+          "body": "Prices are shown in the app. Payments are made by JazzCash, EasyPaisa or bank transfer and confirmed by our team after you upload a receipt. Your plan starts once payment is approved."
+        },
+        "trials": {
+          "title": "Free trials",
+          "body": "Free trials let you try NextReach for the period shown on the plan. At the end of a trial, you need an approved payment to keep using paid features."
+        },
+        "cancellation": {
+          "title": "Renewal and cancellation",
+          "body": "Plans run for the period you paid for. You can choose not to renew at any time. Refunds follow our Refund Policy."
+        },
+        "content": {
+          "title": "Your content",
+          "body": "You own the content and contact data you add to NextReach. You give us permission to process it only to provide the service to you."
+        },
+        "availability": {
+          "title": "Availability",
+          "body": "We work hard to keep NextReach running, but we cannot promise it will always be available or free of errors. Parts of the service depend on Meta and other providers."
+        },
+        "liability": {
+          "title": "Limitation of liability",
+          "body": "To the extent the law allows, NextReach is not liable for indirect or consequential losses, and our total liability is limited to the amount you paid us in the three months before the claim."
+        },
+        "termination": {
+          "title": "Suspension and termination",
+          "body": "We may suspend or close accounts that break these terms or put other users, Meta's platform or NextReach at risk. You may stop using NextReach at any time."
+        },
+        "law": {
+          "title": "Governing law",
+          "body": "These terms are governed by the laws of Pakistan. Courts in Pakistan have jurisdiction over any dispute."
+        },
+        "changes": {
+          "title": "Changes to these terms",
+          "body": "We may update these terms. We will post the new version here with a new effective date, and tell account holders about important changes."
+        },
+        "contact": {
+          "title": "Contact us",
+          "body": "Questions about these terms? Email {email} or write to {company}, {address}."
+        }
+      }
+    },
+    "refund": {
+      "metaTitle": "Refund Policy",
+      "metaDescription": "When and how you can request a refund for a NextReach plan.",
+      "title": "Refund Policy",
+      "intro": "We want you to be happy with NextReach. This policy explains when refunds are available and how to ask for one.",
+      "sections": {
+        "overview": {
+          "title": "Overview",
+          "body": "Because every plan comes with a free trial, we encourage you to try NextReach fully before you pay."
+        },
+        "trials": {
+          "title": "Free trials",
+          "body": "Free trials are free. You are never charged for a trial, so there is nothing to refund."
+        },
+        "eligible": {
+          "title": "When you can get a refund",
+          "body": "You can request a refund if you were charged the wrong amount, paid twice, or could not use the service because of a problem on our side that we could not fix."
+        },
+        "notEligible": {
+          "title": "When refunds are not available",
+          "body": "Refunds are not usually available for partly used billing periods, for changing your mind after the trial, or for accounts suspended for breaking our Terms of Service."
+        },
+        "request": {
+          "title": "How to request a refund",
+          "body": "Contact us from the contact page or at {email} with your payment receipt, the date and the reason. We aim to reply within a few working days."
+        },
+        "processing": {
+          "title": "How refunds are paid",
+          "body": "Approved refunds are sent back through the original payment method, JazzCash, EasyPaisa or bank transfer, where possible."
+        },
+        "contact": {
+          "title": "Contact us",
+          "body": "Questions about this policy? Email {email} or write to {company}, {address}."
+        }
+      }
     }
   }
 }

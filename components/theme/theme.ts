@@ -10,10 +10,12 @@ export function isTheme(value: unknown): value is Theme {
 /**
  * Runs synchronously in <head> before first paint, so a saved dark preference never
  * flashes light. Light is the default; the OS preference is intentionally not used.
+ * It also marks the document as JS-enabled (`data-js`) so scroll reveals can start
+ * hidden without a flash; without JavaScript, content is simply shown.
  */
-export const themeInitScript = `(function(){try{var t=localStorage.getItem(${JSON.stringify(
+export const themeInitScript = `(function(){var d=document.documentElement;d.setAttribute("data-js","");try{var t=localStorage.getItem(${JSON.stringify(
   THEME_STORAGE_KEY,
-)});if(t==="dark"){document.documentElement.classList.add("dark");document.documentElement.style.colorScheme="dark"}}catch(e){}})()`;
+)});if(t==="dark"){d.classList.add("dark");d.style.colorScheme="dark"}}catch(e){}})()`;
 
 export function applyTheme(theme: Theme) {
   const root = document.documentElement;

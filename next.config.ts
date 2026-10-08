@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   poweredByHeader: false,
+  experimental: {
+    // Styled 404 for URLs outside /en and /ur (app/global-not-found.tsx).
+    globalNotFound: true,
+  },
   reactStrictMode: true,
   turbopack: {
     rules: {
