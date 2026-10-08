@@ -14,6 +14,7 @@ export const serverEnvSchema = z.object({
   RESEND_API_KEY: optionalString,
   EMAIL_FROM: optionalString,
   TURNSTILE_SECRET_KEY: optionalString,
+  REVALIDATE_SECRET: optionalString,
 });
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>;
@@ -32,4 +33,5 @@ export const serverEnv: ServerEnv = parseServerEnv({
   RESEND_API_KEY: process.env.RESEND_API_KEY ?? "",
   EMAIL_FROM: process.env.EMAIL_FROM ?? "",
   TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY ?? "",
+  REVALIDATE_SECRET: process.env.REVALIDATE_SECRET ?? "",
 });

@@ -1297,5 +1297,147 @@
         }
       }
     }
+  },
+  "pricing": {
+    "metaTitle": "Pricing",
+    "metaDescription": "Simple plans for WhatsApp marketing and sales, billed monthly or yearly, with a free trial. Pay with JazzCash, EasyPaisa or bank transfer.",
+    "eyebrow": "Pricing",
+    "title": "Simple plans, paid the way you already pay",
+    "subtitle": "Start with a free trial, then pay monthly or yearly with JazzCash, EasyPaisa or bank transfer. Payment happens in the app.",
+    "billing": {
+      "label": "Billing period",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "saveUpTo": "Save up to {percent}%"
+    },
+    "plan": {
+      "perMonth": "/month",
+      "perYear": "/year",
+      "approxPerMonth": "≈ {price}/month",
+      "save": "Save {percent}%",
+      "promo": "{percent}% off",
+      "trial": "{days, plural, one {# day free trial} other {# days free trial}}",
+      "startTrial": "Start free trial",
+      "getStarted": "Get started",
+      "ctaLabel": "{action} with the {plan} plan",
+      "mostPopular": "Most popular",
+      "recommended": "Recommended",
+      "includes": "What's included",
+      "limitsTitle": "Limits",
+      "autoReplyTitle": "AI auto-reply",
+      "fullComparison": "See the full comparison"
+    },
+    "autoReply": {
+      "greeting": "Auto-reply to greetings",
+      "first_message": "Auto-reply to first messages",
+      "unanswered": "Auto-reply to unanswered messages"
+    },
+    "support": {
+      "community": "Community support",
+      "email": "Email support",
+      "priority": "Priority support",
+      "dedicated": "Dedicated manager"
+    },
+    "limits": {
+      "contacts": "Contacts",
+      "employees": "Employee seats",
+      "campaigns": "Campaigns",
+      "whatsappNumbers": "WhatsApp numbers",
+      "dailyMessages": "Messages per day",
+      "monthlyMessages": "Messages per month",
+      "aiReplies": "AI replies per month",
+      "automations": "Active automations",
+      "storage": "Storage",
+      "searchRadius": "Business search radius",
+      "support": "Support"
+    },
+    "comparison": {
+      "title": "Compare every plan",
+      "subtitle": "Every module and limit, side by side.",
+      "caption": "Plan comparison: modules, limits and support for each plan",
+      "feature": "Feature",
+      "groups": {
+        "modules": "Modules",
+        "limits": "Limits",
+        "support": "Support"
+      },
+      "scrollHint": "Scroll sideways to see every plan."
+    },
+    "custom": {
+      "eyebrow": "Flexible",
+      "title": "Build your own plan",
+      "descriptionMonthly": "Pick only the modules you need. From <strong>{price}/month</strong>.",
+      "descriptionYearly": "Pick only the modules you need. From <strong>{price}/year</strong>, save {percent}%.",
+      "alwaysIncluded": "Always included",
+      "addOns": "Add what you need",
+      "addOnPrice": "+{price}/month",
+      "cta": "Build my plan"
+    },
+    "payments": {
+      "eyebrow": "Payments",
+      "title": "Pay with what you already use",
+      "subtitle": "No card needed. Pay in the app with a local method, upload your receipt, and our team approves it.",
+      "methods": {
+        "jazzcash": {
+          "name": "JazzCash",
+          "description": "Send the payment from your JazzCash wallet."
+        },
+        "easypaisa": {
+          "name": "EasyPaisa",
+          "description": "Pay from your EasyPaisa account in a few taps."
+        },
+        "bank": {
+          "name": "Bank transfer",
+          "description": "Transfer from any Pakistani bank account."
+        }
+      },
+      "stepsTitle": "How payment works",
+      "steps": {
+        "choose": "Choose a plan in the NextReach app.",
+        "pay": "Pay with JazzCash, EasyPaisa or bank transfer.",
+        "upload": "Upload your payment receipt in the app.",
+        "approve": "Our team checks it and your plan starts."
+      }
+    },
+    "faq": {
+      "title": "Pricing questions",
+      "items": {
+        "currency": {
+          "q": "Which currency are prices in?",
+          "a": "Each plan shows its price with the currency code, for example PKR for Pakistani rupees."
+        },
+        "billing": {
+          "q": "What's the difference between monthly and yearly?",
+          "a": "Monthly plans are paid every month. Yearly plans are paid once a year, and each plan shows how much you save compared with paying monthly."
+        },
+        "trialEnd": {
+          "q": "What happens when my free trial ends?",
+          "a": "Choose a plan and pay in the app to keep using paid features. Your trial is never charged."
+        },
+        "changePlan": {
+          "q": "Can I change my plan later?",
+          "a": "Yes. You can move to a different plan in the app as your business grows. Contact us if you'd like help choosing."
+        },
+        "custom": {
+          "q": "How does “Build your own plan” work?",
+          "a": "Some modules are always included, and you add only the others you need. The price updates as you choose, so you only pay for what you use."
+        },
+        "approval": {
+          "q": "How long does payment approval take?",
+          "a": "Our team checks receipts as quickly as possible during working hours, and you can see the status in the app."
+        },
+        "refunds": {
+          "q": "Can I get a refund?",
+          "a": "Refunds follow our Refund Policy, which explains when they're available and how to ask for one."
+        }
+      },
+      "more": "More questions? See the full FAQ"
+    },
+    "notice": {
+      "fallback": "Prices may have changed. See the app for current pricing.",
+      "link": "See current pricing",
+      "noPlans": "Plans are being updated right now. See the app for current pricing."
+    },
+    "productDescription": "WhatsApp marketing, shared inbox, CRM and sales tools for businesses in Pakistan."
   }
 }

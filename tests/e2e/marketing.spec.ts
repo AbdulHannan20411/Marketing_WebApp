@@ -9,6 +9,7 @@ const pages = [
   "/features/sales-leads",
   "/features/ai",
   "/features/automations",
+  "/pricing",
   "/use-cases",
   "/about",
   "/faq",

@@ -15,6 +15,7 @@ const SECRET_NAMES = [
   "RESEND_API_KEY",
   "TURNSTILE_SECRET_KEY",
   "NEXTREACH_API_URL",
+  "REVALIDATE_SECRET",
 ];
 
 function loadDotEnv(file) {
