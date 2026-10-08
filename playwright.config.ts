@@ -54,6 +54,8 @@ export default defineConfig({
           url: `${baseURL}/en`,
           reuseExistingServer: !process.env.CI,
           timeout: 120_000,
+          // Show server logs (e.g. emails logged when Resend isn't configured).
+          stdout: "pipe",
           env: {
             NEXTREACH_API_URL: MOCK_API_URL,
             REVALIDATE_SECRET: E2E_REVALIDATE_SECRET,

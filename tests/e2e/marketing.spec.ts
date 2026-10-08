@@ -11,6 +11,7 @@ const pages = [
   "/features/automations",
   "/pricing",
   "/use-cases",
+  "/contact",
   "/about",
   "/faq",
   "/privacy",

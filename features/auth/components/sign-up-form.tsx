@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MailCheckIcon } from "lucide-react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState, useTransition } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -28,12 +29,13 @@ export function SignUpForm({ locale }: { locale: Locale }) {
   const [resent, setResent] = useState(false);
   const [pending, startTransition] = useTransition();
   const successRef = useRef<HTMLHeadingElement>(null);
+  const emailFromLink = useSearchParams().get("email")?.slice(0, 254) ?? "";
 
   const form = useForm<SignUpInput, unknown, SignUpOutput>({
     resolver: zodResolver(signUpSchema),
     defaultValues: {
       fullName: "",
-      email: "",
+      email: emailFromLink,
       phone: "",
       password: "",
       confirmPassword: "",

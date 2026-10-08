@@ -2,6 +2,8 @@ import { ArrowUpRightIcon } from "lucide-react";
 
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
+import type { QuerySource } from "@/features/queries/definitions";
+import { QueryDialogButton } from "@/features/queries/components/query-dialog-button";
 import { Link } from "@/lib/i18n/navigation";
 
 type CtaBandProps = {
@@ -9,12 +11,14 @@ type CtaBandProps = {
   subtitle: string;
   /** External link into the NextReach app (free trial). */
   primary?: { label: string; href: string };
-  /** Internal link, e.g. /contact. */
+  /** Internal link, e.g. /about. */
   secondary?: { label: string; href: string };
+  /** Opens the guided query form in a dialog (falls back to /contact without JS). */
+  secondaryDialog?: { label: string; source: QuerySource };
 };
 
 /** Closing call-to-action block used at the bottom of pages. */
-export function CtaBand({ title, subtitle, primary, secondary }: CtaBandProps) {
+export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }: CtaBandProps) {
   return (
     <section className="py-16 sm:py-20">
       <div className="container-page">
@@ -52,6 +56,16 @@ export function CtaBand({ title, subtitle, primary, secondary }: CtaBandProps) {
                 >
                   <Link href={secondary.href}>{secondary.label}</Link>
                 </Button>
+              ) : null}
+              {secondaryDialog ? (
+                <QueryDialogButton
+                  source={secondaryDialog.source}
+                  size="lg"
+                  variant="outline"
+                  className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                >
+                  {secondaryDialog.label}
+                </QueryDialogButton>
               ) : null}
             </div>
           </div>

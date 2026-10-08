@@ -71,11 +71,14 @@ describe("message catalogues", () => {
       "modules.labels.crm",
       "features.areas.crm.nav",
       "featurePages.pages.ai.name",
+      "queryForm.questions.modules.options.crm",
     ]);
     // The character class below is the Arabic-script block, U+0600 to U+06FF.
     const latinOnly = Object.entries(urFlat).filter(
       ([key, value]) =>
         !/[؀-ۿ]/.test(value) &&
+        // Numbers and ranges (e.g. "1,000–10,000") read the same in both languages.
+        /[A-Za-z]/.test(value) &&
         !key.startsWith("common.language.names") &&
         !intentionallyLatin.has(key),
     );

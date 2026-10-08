@@ -1439,7 +1439,12 @@
       "link": "See current pricing",
       "noPlans": "Plans are being updated right now. See the app for current pricing."
     },
-    "productDescription": "WhatsApp marketing, shared inbox, CRM and sales tools for businesses in Pakistan."
+    "productDescription": "WhatsApp marketing, shared inbox, CRM and sales tools for businesses in Pakistan.",
+    "talk": {
+      "title": "Not sure which plan fits?",
+      "body": "Tell us about your business and we will suggest the right plan.",
+      "button": "Ask about pricing"
+    }
   },
   "validation": {
     "required": "This field is required.",
@@ -1574,5 +1579,304 @@
     "welcome": "Signed in as a Super Admin ({email}).",
     "comingSoon": "The queries inbox, dashboard and settings arrive in the next phases.",
     "backToSite": "Back to the website"
+  },
+  "contact": {
+    "metaTitle": "Contact us",
+    "metaDescription": "Ask about pricing, book a demo, get technical or billing help, or talk to us about partnerships. We reply by email.",
+    "eyebrow": "Contact",
+    "title": "How can we help?",
+    "subtitle": "Answer a few quick questions so your message reaches the right person with everything they need.",
+    "nextTitle": "What happens next",
+    "next": {
+      "s1": "You get an email confirming we received your question, with a reference number.",
+      "s2": "Our team reads it and replies by email.",
+      "s3": "With a free support account, you can follow every reply in one place."
+    },
+    "accountTitle": "Already have a support account?",
+    "accountBody": "Sign in first and your details are filled in for you.",
+    "accountLink": "Sign in"
+  },
+  "queryForm": {
+    "dialogTitle": "Talk to us",
+    "dialogDescription": "Send us a question in a few quick steps.",
+    "close": "Close",
+    "loading": "Loading the form…",
+    "progressLabel": "Progress",
+    "stepOf": "Step {current} of {total}",
+    "steps": {
+      "topic": "Topic",
+      "details": "Details",
+      "message": "Message",
+      "review": "Review"
+    },
+    "headings": {
+      "topic": "What would you like to talk about?",
+      "details": "A few quick questions",
+      "message": "Your message and contact details",
+      "review": "Check and send"
+    },
+    "hints": {
+      "details": "Choose the options that fit best. It helps us reply with the right answer.",
+      "modules": "Choose all that apply."
+    },
+    "topics": {
+      "pricing": {
+        "title": "Pricing & plans",
+        "description": "Which plan fits, limits, yearly billing."
+      },
+      "demo": {
+        "title": "Book a demo",
+        "description": "See NextReach with someone from our team."
+      },
+      "technical": {
+        "title": "Technical help",
+        "description": "Connecting WhatsApp, templates, campaigns and more."
+      },
+      "billing": {
+        "title": "Billing & payments",
+        "description": "Payment approval, invoices, changing plan."
+      },
+      "partnership": {
+        "title": "Partnership / agency",
+        "description": "Agencies, resellers and integrations."
+      },
+      "other": {
+        "title": "Other",
+        "description": "Anything else. Just write to us."
+      }
+    },
+    "questions": {
+      "teamSize": {
+        "label": "How big is your team?",
+        "options": {
+          "1": "Just me",
+          "2-5": "2–5 people",
+          "6-20": "6–20 people",
+          "20+": "More than 20"
+        }
+      },
+      "contacts": {
+        "label": "How many customer contacts do you have?",
+        "options": {
+          "under1k": "Under 1,000",
+          "1k-10k": "1,000–10,000",
+          "10k-50k": "10,000–50,000",
+          "50k+": "More than 50,000"
+        }
+      },
+      "modules": {
+        "label": "Which modules interest you?",
+        "options": {
+          "whatsapp": "WhatsApp Marketing",
+          "crm": "CRM",
+          "sales": "Products & Catalog",
+          "leads": "Lead board",
+          "automations": "Automations",
+          "reporting": "Reporting",
+          "ai": "AI Assistant & Auto-reply",
+          "lead_scoring": "AI Lead scoring",
+          "employees": "Employee Management"
+        }
+      },
+      "billingPreference": {
+        "label": "How would you like to pay?",
+        "options": {
+          "monthly": "Monthly",
+          "yearly": "Yearly"
+        }
+      },
+      "industry": {
+        "label": "What's your industry?",
+        "options": {
+          "retail": "Retail",
+          "realEstate": "Real estate",
+          "education": "Education",
+          "clinics": "Clinics & healthcare",
+          "ecommerce": "E-commerce",
+          "services": "Services",
+          "agency": "Agency",
+          "other": "Other"
+        }
+      },
+      "timeSlot": {
+        "label": "When suits you best? (Pakistan time)",
+        "options": {
+          "morning": "Morning (9am–12pm)",
+          "afternoon": "Afternoon (12pm–4pm)",
+          "evening": "Evening (4pm–8pm)"
+        }
+      },
+      "channel": {
+        "label": "How should we meet?",
+        "options": {
+          "whatsappCall": "WhatsApp call",
+          "googleMeet": "Google Meet",
+          "phone": "Phone call"
+        }
+      },
+      "area": {
+        "label": "What do you need help with?",
+        "options": {
+          "whatsappConnection": "Connecting WhatsApp",
+          "templates": "Templates",
+          "campaigns": "Campaigns",
+          "inbox": "Inbox",
+          "automations": "Automations",
+          "ai": "AI features",
+          "other": "Something else"
+        }
+      },
+      "urgency": {
+        "label": "How urgent is it?",
+        "options": {
+          "low": "Low: whenever you can",
+          "normal": "Normal",
+          "urgent": "Urgent: it's blocking us"
+        }
+      },
+      "issue": {
+        "label": "What's the issue?",
+        "options": {
+          "paymentNotApproved": "Payment not approved yet",
+          "wrongAmount": "Wrong amount",
+          "changePlan": "Change my plan",
+          "invoice": "I need an invoice",
+          "other": "Something else"
+        }
+      },
+      "paymentMethod": {
+        "label": "How did you pay?",
+        "options": {
+          "jazzcash": "JazzCash",
+          "easypaisa": "EasyPaisa",
+          "bankTransfer": "Bank transfer"
+        }
+      },
+      "partnershipType": {
+        "label": "What kind of partnership?",
+        "options": {
+          "agency": "Agency",
+          "reseller": "Reseller",
+          "integration": "Integration"
+        }
+      },
+      "clientCount": {
+        "label": "How many clients do you manage?",
+        "options": {
+          "1-5": "1–5",
+          "6-20": "6–20",
+          "21-50": "21–50",
+          "50+": "More than 50"
+        }
+      }
+    },
+    "fields": {
+      "subject": "Subject",
+      "message": "Message",
+      "messageCount": "{count} / {max} characters",
+      "messageHint": "At least {min} characters. Please don't include passwords or payment details.",
+      "attachment": "Attachment (optional)",
+      "attachmentHint": "One PNG, JPG or PDF file, up to 5 MB.",
+      "chooseFile": "Choose a file",
+      "removeFile": "Remove {name}",
+      "name": "Your name",
+      "email": "Email",
+      "phone": "Phone",
+      "phoneHint": "Pakistani number, e.g. 0300 1234567",
+      "lockedHint": "Filled in from your account.",
+      "consent": "I agree that NextReach may use these details to reply to me, as described in the <privacy>Privacy Policy</privacy>.",
+      "website": "Leave this field empty"
+    },
+    "review": {
+      "topic": "Topic",
+      "details": "Details",
+      "subject": "Subject",
+      "message": "Message",
+      "contact": "Contact",
+      "attachment": "Attachment",
+      "none": "None",
+      "edit": "Edit",
+      "editStep": "Edit {step}"
+    },
+    "actions": {
+      "next": "Continue",
+      "back": "Back",
+      "submit": "Send question",
+      "submitting": "Sending…",
+      "another": "Send another question"
+    },
+    "errors": {
+      "chooseTopic": "Please choose a topic.",
+      "chooseOption": "Please choose an option.",
+      "chooseAtLeastOne": "Please choose at least one.",
+      "subjectLength": "Enter a subject (3 to 200 characters).",
+      "messageShort": "Please write at least 20 characters.",
+      "messageLong": "Please keep your message under 2,000 characters.",
+      "attachmentType": "Please attach a PNG, JPG or PDF file.",
+      "attachmentSize": "The file is larger than 5 MB.",
+      "tooFast": "That was quick! Please check your answers and send again.",
+      "expired": "This form was open for a long time. Please send it again.",
+      "rateLimited": "You've sent several questions in the last hour. Please try again later.",
+      "captcha": "Please complete the check and try again.",
+      "suspended": "This account can't send questions right now. Please contact us another way.",
+      "generic": "We couldn't send your question. Please try again in a moment.",
+      "summary": "Please fix the highlighted fields."
+    },
+    "turnstile": "Security check",
+    "success": {
+      "title": "Thanks, we've got your question",
+      "reference": "Your reference",
+      "copy": "Copy reference",
+      "copied": "Copied",
+      "body": "We've emailed you a confirmation. We'll reply to {email} as soon as we can.",
+      "signedInBody": "You can follow our replies in your account.",
+      "viewInAccount": "View in your account",
+      "trackTitle": "Want to track replies?",
+      "trackBody": "Create a free support account with {email} and this question will appear there, with every reply.",
+      "createAccount": "Create an account to track replies"
+    }
+  },
+  "emails": {
+    "footer": "NextReach · WhatsApp marketing for businesses in Pakistan. You're receiving this because of a question sent to NextReach.",
+    "newQuery": {
+      "subject": "New query {reference}: {subject}",
+      "preheader": "{name} asked about {topic}.",
+      "heading": "New query from {name}",
+      "intro": "A new query has arrived on the website.",
+      "reference": "Reference",
+      "topic": "Topic",
+      "from": "From",
+      "attachment": "Attachment",
+      "yes": "Yes",
+      "message": "Message",
+      "cta": "Open in the admin"
+    },
+    "acknowledgement": {
+      "subject": "We received your question ({reference})",
+      "preheader": "Your reference is {reference}.",
+      "heading": "Thanks for contacting NextReach",
+      "reference": "Your reference",
+      "subjectLabel": "Subject",
+      "message": "Your message",
+      "accountBody": "You can follow our replies in your support account.",
+      "accountCta": "View your question",
+      "signUpBody": "Create a free support account with this email to see our replies in one place.",
+      "signUpCta": "Create an account"
+    },
+    "adminReply": {
+      "subject": "New reply to your question ({reference})",
+      "preheader": "We've replied to {reference}.",
+      "heading": "We've replied to your question",
+      "intro": "Here is our reply to “{subject}”.",
+      "reply": "Our reply",
+      "cta": "View and reply"
+    },
+    "customerReply": {
+      "subject": "Customer replied to {reference}",
+      "preheader": "{name} replied.",
+      "heading": "{name} replied to {reference}",
+      "reply": "Their reply",
+      "cta": "Open in the admin"
+    }
   }
 }

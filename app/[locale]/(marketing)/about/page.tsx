@@ -96,7 +96,7 @@ export default async function AboutPage() {
       <CtaBand
         title={t("cta.title")}
         subtitle={t("cta.subtitle")}
-        secondary={{ label: t("cta.button"), href: "/contact" }}
+        secondaryDialog={{ label: t("cta.button"), source: "dialog" }}
       />
     </>
   );

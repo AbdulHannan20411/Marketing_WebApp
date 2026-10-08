@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
   experimental: {
     // Styled 404 for URLs outside /en and /ur (app/global-not-found.tsx).
     globalNotFound: true,
+    serverActions: {
+      // Query attachments are up to 5 MB; allow for multipart overhead.
+      bodySizeLimit: "6mb",
+    },
   },
   reactStrictMode: true,
   turbopack: {

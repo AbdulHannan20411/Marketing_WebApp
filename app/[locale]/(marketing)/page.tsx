@@ -50,7 +50,7 @@ export default async function HomePage() {
         title={t("title")}
         subtitle={t("subtitle")}
         primary={{ label: t("primary"), href: appLinks.startTrial }}
-        secondary={{ label: t("secondary"), href: "/contact" }}
+        secondaryDialog={{ label: t("secondary"), source: "dialog" }}
       />
     </>
   );

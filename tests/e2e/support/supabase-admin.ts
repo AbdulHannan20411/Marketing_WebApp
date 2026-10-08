@@ -61,3 +61,56 @@ export async function profileOf(user: TestUser) {
     .single();
   return data;
 }
+
+export type StoredQuery = {
+  id: string;
+  reference: string;
+  customer_id: string | null;
+  topic: string;
+  answers: Record<string, unknown>;
+  source: string;
+  locale: string;
+  phone: string | null;
+  ip_hash: string | null;
+  utm: Record<string, unknown>;
+  query_attachments: {
+    storage_path: string;
+    content_type: string;
+    file_name: string;
+    size_bytes: number;
+  }[];
+};
+
+/** Queries sent with an email address, newest first (with attachments). */
+export async function queriesByEmail(email: string): Promise<StoredQuery[]> {
+  const { data, error } = await admin()
+    .from("queries")
+    .select(
+      "id, reference, customer_id, topic, answers, source, locale, phone, ip_hash, utm, query_attachments(storage_path, content_type, file_name, size_bytes)",
+    )
+    .eq("email", email.toLowerCase())
+    .order("created_at", { ascending: false });
+  if (error) throw new Error(error.message);
+  return (data ?? []) as unknown as StoredQuery[];
+}
+
+/** Deletes test queries and their stored files. */
+export async function deleteQueriesByEmail(email: string) {
+  const queries = await queriesByEmail(email);
+  const paths = queries.flatMap((query) => query.query_attachments.map((a) => a.storage_path));
+  if (paths.length) await admin().storage.from("query-attachments").remove(paths);
+  if (queries.length) {
+    await admin()
+      .from("queries")
+      .delete()
+      .in(
+        "id",
+        queries.map((query) => query.id),
+      );
+  }
+}
+
+export async function storageObjectExists(path: string): Promise<boolean> {
+  const { data } = await admin().storage.from("query-attachments").download(path);
+  return Boolean(data);
+}

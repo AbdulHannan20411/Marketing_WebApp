@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { locale as rootLocale } from "next/root-params";
 import { getTranslations } from "next-intl/server";
+import { Suspense } from "react";
 
 import { AuthCard } from "@/features/auth/components/auth-card";
 import { SignUpForm } from "@/features/auth/components/sign-up-form";
@@ -17,7 +18,10 @@ export default async function SignUpPage() {
   const locale = isLocale(localeValue) ? localeValue : "en";
   return (
     <AuthCard title={t("title")} subtitle={t("subtitle")} showAppNotice>
-      <SignUpForm locale={locale} />
+      {/* Reads ?email= (from the query success screen), so it renders at request time. */}
+      <Suspense fallback={<div className="h-[36rem]" />}>
+        <SignUpForm locale={locale} />
+      </Suspense>
     </AuthCard>
   );
 }

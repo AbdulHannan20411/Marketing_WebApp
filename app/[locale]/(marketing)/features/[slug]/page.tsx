@@ -198,7 +198,7 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
         title={cta("title")}
         subtitle={cta("subtitle")}
         primary={{ label: cta("primary"), href: appLinks.startTrial }}
-        secondary={{ label: cta("secondary"), href: "/contact" }}
+        secondaryDialog={{ label: cta("secondary"), source: "dialog" }}
       />
     </>
   );

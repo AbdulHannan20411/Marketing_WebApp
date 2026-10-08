@@ -5,8 +5,8 @@ import { getTranslations } from "next-intl/server";
 import { FaqExplorer } from "@/components/marketing/faq-explorer";
 import { QUERY_TOKEN } from "@/components/marketing/faq-search";
 import { PageHero } from "@/components/marketing/page-hero";
+import { QueryDialogButton } from "@/features/queries/components/query-dialog-button";
 import { faqGroups } from "@/content/faq";
-import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
 
@@ -38,12 +38,10 @@ export default async function FaqPage() {
   return (
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("title")}>
-        <p className="max-w-2xl text-lg text-muted-foreground">
-          {t("subtitle")}{" "}
-          <Link href="/contact" className="font-semibold text-primary underline underline-offset-4">
-            {t("askUs")}
-          </Link>
-        </p>
+        <p className="max-w-2xl text-lg text-muted-foreground">{t("subtitle")}</p>
+        <QueryDialogButton source="dialog" variant="outline">
+          {t("askUs")}
+        </QueryDialogButton>
       </PageHero>
       <div className="container-page py-12 sm:py-16">
         <FaqExplorer

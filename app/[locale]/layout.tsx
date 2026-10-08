@@ -4,6 +4,7 @@ import { locale as rootLocale } from "next/root-params";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
+import { UtmCapture } from "@/components/analytics/utm-capture";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { latinFont, urduFont } from "@/lib/fonts";
@@ -77,6 +78,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
         </a>
         <NextIntlClientProvider messages={clientMessages}>
           <MotionProvider>{children}</MotionProvider>
+          <UtmCapture />
         </NextIntlClientProvider>
       </body>
     </html>

@@ -10,6 +10,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { ComparisonTable } from "@/components/pricing/comparison-table";
 import { PricingPlans } from "@/components/pricing/pricing-plans";
 import { JsonLd } from "@/components/seo/json-ld";
+import { QueryDialogButton } from "@/features/queries/components/query-dialog-button";
 import { fallbackPlans } from "@/content/fallback-plans";
 import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
@@ -195,6 +196,13 @@ export default async function PricingPage() {
             >
               {t("faq.more")}
             </Link>
+            <div className="mt-4 flex flex-col items-start gap-3 rounded-2xl border bg-card p-5">
+              <h3 className="font-semibold">{t("talk.title")}</h3>
+              <p className="text-sm text-muted-foreground">{t("talk.body")}</p>
+              <QueryDialogButton source="pricing" topic="pricing" variant="outline">
+                {t("talk.button")}
+              </QueryDialogButton>
+            </div>
           </div>
           <Reveal>
             <FaqAccordion
