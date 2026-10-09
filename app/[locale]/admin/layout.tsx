@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { locale as rootLocale } from "next/root-params";
 import { NextIntlClientProvider } from "next-intl";
@@ -6,6 +7,7 @@ import { Suspense, type ReactNode } from "react";
 
 import { Logo } from "@/components/layout/logo";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { AdminNav } from "@/features/admin/components/admin-nav";
 import { privatePageMetadata } from "@/features/auth/metadata";
 import { requireSuperadmin } from "@/lib/auth/session";
 import { BASE_CLIENT_NAMESPACES, pickMessages } from "@/lib/i18n/client-messages";
@@ -32,12 +34,7 @@ export default async function AdminLayout({ children }: LayoutProps<"/[locale]/a
 
   return (
     <NextIntlClientProvider
-      messages={pickMessages(messages, [
-        ...BASE_CLIENT_NAMESPACES,
-        "account",
-        "admin",
-        "validation",
-      ])}
+      messages={pickMessages(messages, [...BASE_CLIENT_NAMESPACES, "admin", "validation"])}
     >
       <header className="border-b bg-background">
         <div className="container-page flex h-14 items-center justify-between gap-4">
@@ -47,19 +44,41 @@ export default async function AdminLayout({ children }: LayoutProps<"/[locale]/a
               {t("title")}
             </span>
           </Link>
-          <ThemeToggle />
+          <div className="flex items-center gap-1">
+            <Link
+              href="/"
+              className="hidden min-h-10 items-center gap-1.5 rounded-md px-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground sm:flex"
+            >
+              {t("nav.site")}
+              <ExternalLinkIcon className="size-3.5" aria-hidden="true" />
+            </Link>
+            <ThemeToggle />
+          </div>
         </div>
       </header>
-      <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
-        <Suspense fallback={<div className="container-page py-20" />}>
-          <AdminGate locale={locale}>{children}</AdminGate>
-        </Suspense>
-      </main>
+      <Suspense
+        fallback={
+          <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
+            <p role="status" className="container-page py-20 text-center text-muted-foreground">
+              {t("loading")}
+            </p>
+          </main>
+        }
+      >
+        <AdminGate locale={locale}>{children}</AdminGate>
+      </Suspense>
     </NextIntlClientProvider>
   );
 }
 
 async function AdminGate({ locale, children }: { locale: Locale; children: ReactNode }) {
   await requireSuperadmin(locale);
-  return <>{children}</>;
+  return (
+    <>
+      <AdminNav />
+      <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
+        <div className="container-page py-8">{children}</div>
+      </main>
+    </>
+  );
 }

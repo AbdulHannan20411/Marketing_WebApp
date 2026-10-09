@@ -5,7 +5,8 @@ import { useEffect } from "react";
 
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
-type Subscription = { table: "queries" | "query_messages"; filter: string };
+/** `filter` is a Realtime row filter such as `id=eq.<uuid>`; omit it for every row. */
+type Subscription = { table: "queries" | "query_messages"; filter?: string };
 
 /**
  * Refreshes the page's server data when matching rows change (Supabase Realtime,
@@ -45,7 +46,11 @@ export function LiveRefresh({
       if (cancelled) return;
       realtime = supabase.channel(channel);
       for (const { table, filter } of JSON.parse(key) as Subscription[]) {
-        realtime.on("postgres_changes", { event: "*", schema: "public", table, filter }, refresh);
+        realtime.on(
+          "postgres_changes",
+          { event: "*", schema: "public", table, ...(filter ? { filter } : {}) },
+          refresh,
+        );
       }
       realtime.subscribe();
     });

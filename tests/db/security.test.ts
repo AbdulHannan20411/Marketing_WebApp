@@ -427,3 +427,60 @@ describe("rate limiting", () => {
       });
     }));
 });
+
+describe("admin dashboard stats", () => {
+  it("counts by status and topic, new this week and the first-response time", () =>
+    rollback(db, async () => {
+      const admin = await createUser(db);
+      await makeSuperadmin(db, admin.email);
+      const before = await as(
+        db,
+        admin.id,
+        async () => (await db.query("select public.admin_query_stats() as s")).rows[0].s,
+      );
+
+      const answered = await createQuery(db);
+      await createQuery(db, { status: "open" });
+      // Received two hours ago, answered one hour later.
+      await db.query(
+        "update public.queries set created_at = now() - interval '2 hours' where id = $1",
+        [answered.id],
+      );
+      await db.query(
+        `insert into public.query_messages (query_id, author_id, author_role, body, created_at)
+         values ($1, $2, 'superadmin', 'Hello!', now() - interval '1 hour')`,
+        [answered.id, admin.id],
+      );
+
+      const after = await as(
+        db,
+        admin.id,
+        async () => (await db.query("select public.admin_query_stats() as s")).rows[0].s,
+      );
+      const count = (stats: Record<string, Record<string, number>>, group: string, key: string) =>
+        stats[group]?.[key] ?? 0;
+      expect(count(after, "by_status", "awaiting_customer")).toBe(
+        count(before, "by_status", "awaiting_customer") + 1,
+      );
+      expect(count(after, "by_status", "open")).toBe(count(before, "by_status", "open") + 1);
+      expect(count(after, "by_topic", "pricing")).toBe(count(before, "by_topic", "pricing") + 2);
+      expect(after.new_this_week).toBe(before.new_this_week + 2);
+      expect(after.responded_last_30_days).toBe(before.responded_last_30_days + 1);
+      expect(after.avg_first_response_seconds).toBeGreaterThan(0);
+    }));
+
+  it("refuses everyone but Super Admins", () =>
+    rollback(db, async () => {
+      const customer = await createUser(db);
+      await as(db, customer.id, async () => {
+        expect(await expectDenied(db, () => db.query("select public.admin_query_stats()"))).toBe(
+          "42501",
+        );
+      });
+      await as(db, null, async () => {
+        expect(await expectDenied(db, () => db.query("select public.admin_query_stats()"))).toBe(
+          "42501",
+        );
+      });
+    }));
+});

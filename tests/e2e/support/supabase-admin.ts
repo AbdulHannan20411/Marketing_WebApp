@@ -121,11 +121,13 @@ export async function insertQuery(options: {
   customerId?: string | null;
   status?: "new" | "open" | "awaiting_customer" | "resolved" | "closed";
   withAttachment?: boolean;
+  subject?: string;
+  name?: string;
 }): Promise<{ id: string; reference: string; attachmentId: string | null }> {
   const { data, error } = await admin()
     .from("queries")
     .insert({
-      name: "Portal Tester",
+      name: options.name ?? "Portal Tester",
       email: options.email.toLowerCase(),
       phone: "+923001234567",
       topic: "pricing",
@@ -135,7 +137,7 @@ export async function insertQuery(options: {
         modules: ["whatsapp"],
         billingPreference: "monthly",
       },
-      subject: "Plan for my shop",
+      subject: options.subject ?? "Plan for my shop",
       message: "Which plan suits a shop with about 3,000 customers?",
       customer_id: options.customerId ?? null,
       status: options.status ?? "new",
@@ -193,4 +195,42 @@ export async function insertTeamMessage(
 export async function queryStatus(queryId: string): Promise<string | null> {
   const { data } = await admin().from("queries").select("status").eq("id", queryId).single();
   return data?.status ?? null;
+}
+
+export async function queryRow(queryId: string) {
+  const { data } = await admin()
+    .from("queries")
+    .select("status, assignee_id")
+    .eq("id", queryId)
+    .single();
+  return data as { status: string; assignee_id: string | null } | null;
+}
+
+export async function messagesOf(queryId: string) {
+  const { data } = await admin()
+    .from("query_messages")
+    .select("body, is_internal, author_role")
+    .eq("query_id", queryId)
+    .order("created_at", { ascending: true });
+  return (data ?? []) as { body: string; is_internal: boolean; author_role: string }[];
+}
+
+type Settings = { notification_recipients: string[]; auto_ack_en: string; auto_ack_ur: string };
+
+export async function getSettings(): Promise<Settings> {
+  const { data, error } = await admin()
+    .from("admin_settings")
+    .select("notification_recipients, auto_ack_en, auto_ack_ur")
+    .eq("id", true)
+    .single();
+  if (error || !data) throw new Error(`Could not read settings: ${error?.message}`);
+  return data as Settings;
+}
+
+export async function restoreSettings(settings: Settings) {
+  await admin().from("admin_settings").update(settings).eq("id", true);
+}
+
+export async function deleteSavedRepliesTitled(prefix: string) {
+  await admin().from("saved_replies").delete().like("title", `${prefix}%`);
 }

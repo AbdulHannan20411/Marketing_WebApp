@@ -132,7 +132,7 @@ test("a Super Admin can open the admin area", async ({ page }) => {
   await expect(page).toHaveURL(/\/en\/account$/, AUTH_NAV);
   await page.getByRole("link", { name: "Admin area" }).click();
   await expect(page).toHaveURL(/\/en\/admin$/, AUTH_NAV);
-  await expect(page.getByText(`Signed in as a Super Admin (${admin!.email}).`)).toBeVisible();
+  await expect(page.getByRole("heading", { level: 1, name: "Dashboard" })).toBeVisible();
 });
 
 test("Urdu auth pages render right-to-left", async ({ page }) => {
