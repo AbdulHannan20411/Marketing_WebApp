@@ -59,14 +59,14 @@ export default async function AdminInboxPage({
     <div className="flex flex-col gap-6">
       <LiveRefresh channel="admin-inbox" subscriptions={[{ table: "queries" }]} />
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{t("inbox.title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("inbox.title")}</h1>
         <p className="mt-1 text-muted-foreground">{t("inbox.subtitle")}</p>
       </div>
 
       <Form
         action={`/${locale}/admin/queries`}
         aria-label={t("inbox.filters")}
-        className="grid gap-3 rounded-2xl border bg-card p-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="grid gap-3 rounded-2xl border bg-card p-4 shadow-card sm:grid-cols-2 lg:grid-cols-4"
       >
         {filters.customer ? <input type="hidden" name="customer" value={filters.customer} /> : null}
         <label className="flex flex-col gap-1.5 text-sm font-medium sm:col-span-2">
@@ -172,7 +172,7 @@ export default async function AdminInboxPage({
           {t("inbox.empty")}
         </p>
       ) : (
-        <ul className="flex flex-col divide-y rounded-2xl border bg-card">
+        <ul className="flex flex-col divide-y rounded-2xl border bg-card shadow-card">
           {page.rows.map((query) => (
             <li key={query.id}>
               <Link

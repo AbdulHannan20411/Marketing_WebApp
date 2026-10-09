@@ -4,6 +4,7 @@ import { locale as rootLocale } from "next/root-params";
 import { getTranslations } from "next-intl/server";
 
 import { CtaBand } from "@/components/marketing/cta-band";
+import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Reveal } from "@/components/motion/reveal";
@@ -46,7 +47,7 @@ export default async function FeaturesPage() {
             <li key={area.id} className="shrink-0">
               <a
                 href={`#${area.id}`}
-                className="inline-flex h-9 items-center gap-1.5 rounded-full border bg-card px-3 text-sm font-medium transition-colors hover:border-brand/50 hover:bg-accent"
+                className="inline-flex h-9 items-center gap-1.5 rounded-full border bg-card px-3.5 text-sm font-medium shadow-xs transition-colors hover:border-brand/40 hover:bg-accent"
               >
                 <area.icon className="size-4 text-brand" aria-hidden="true" />
                 {tf(`${area.id}.nav`)}
@@ -64,19 +65,28 @@ export default async function FeaturesPage() {
             key={area.id}
             id={area.id}
             aria-labelledby={`${area.id}-title`}
-            className={cn("scroll-mt-32 py-16 sm:py-20", reversed && "bg-surface-subtle")}
+            className={cn(
+              "scroll-mt-32 py-20 [contain-intrinsic-size:auto_700px] [content-visibility:auto] sm:py-24",
+              reversed && "border-y border-border/70 bg-surface-subtle",
+            )}
           >
             <div className="container-page grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <Reveal className={cn("flex flex-col items-start gap-5", reversed && "lg:order-2")}>
-                <p className="flex items-center gap-2 text-sm font-semibold text-primary">
-                  <span className="flex size-8 items-center justify-center rounded-lg bg-brand-soft text-accent-foreground">
+                <p className="flex items-center gap-2.5 text-sm font-semibold text-primary">
+                  <span
+                    aria-hidden="true"
+                    className="font-mono text-xs font-medium text-muted-foreground tabular-nums"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="flex size-8 items-center justify-center rounded-lg border border-brand/20 bg-accent text-accent-foreground">
                     <area.icon className="size-4" aria-hidden="true" />
                   </span>
                   {tf(`${area.id}.title`)}
                 </p>
                 <h2
                   id={`${area.id}-title`}
-                  className="text-3xl font-bold tracking-tight text-balance sm:text-4xl"
+                  className="text-3xl font-semibold tracking-[-0.03em] text-balance sm:text-4xl"
                 >
                   {tf(`${area.id}.headline`)}
                 </h2>
@@ -104,7 +114,9 @@ export default async function FeaturesPage() {
                 ) : null}
               </Reveal>
               <Reveal delay={120} className={cn(reversed && "lg:order-1")}>
-                <Mockup id={area.mockup} />
+                <MockupStage>
+                  <Mockup id={area.mockup} />
+                </MockupStage>
               </Reveal>
             </div>
           </section>

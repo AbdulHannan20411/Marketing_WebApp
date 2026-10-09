@@ -23,7 +23,10 @@ export function SavedRepliesManager({ replies }: { replies: SavedReply[] }) {
 
   return (
     <div className="flex flex-col gap-6">
-      <section aria-labelledby="new-saved-reply" className="rounded-2xl border bg-card p-5">
+      <section
+        aria-labelledby="new-saved-reply"
+        className="rounded-2xl border bg-card p-5 shadow-card"
+      >
         <h2 id="new-saved-reply" className="font-semibold">
           {t("new")}
         </h2>
@@ -43,7 +46,7 @@ export function SavedRepliesManager({ replies }: { replies: SavedReply[] }) {
       ) : (
         <ul className="flex flex-col gap-3">
           {replies.map((reply) => (
-            <li key={reply.id} className="rounded-2xl border bg-card p-5">
+            <li key={reply.id} className="rounded-2xl border bg-card p-5 shadow-card">
               {editing === reply.id ? (
                 <ReplyForm
                   reply={reply}

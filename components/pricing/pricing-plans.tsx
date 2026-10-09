@@ -62,22 +62,38 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
     <div className="flex flex-col gap-10">
       <BillingToggle value={period} onChange={setPeriod} labels={labels.billing} />
 
-      <ul className={cn("mx-auto grid w-full gap-6", gridCols, plans.length < 3 && "max-w-4xl")}>
+      <ul
+        className={cn(
+          "mx-auto grid w-full items-stretch gap-5",
+          gridCols,
+          plans.length < 3 && "max-w-4xl",
+        )}
+      >
         {plans.map((plan) => {
           const featured = plan.badge !== null;
+          // The most popular plan is the statement card (deep "ink" surface).
+          const hero = plan.badge === "mostPopular";
           const price = period === "monthly" ? plan.monthly : plan.yearly;
           return (
             <li key={plan.id}>
               <article
                 aria-labelledby={`plan-${plan.id}`}
                 className={cn(
-                  "relative flex h-full flex-col rounded-2xl border bg-card p-6 transition-shadow hover:shadow-lg",
-                  featured && "border-brand/60 shadow-md ring-1 ring-brand/30",
+                  "relative isolate flex h-full flex-col overflow-hidden rounded-2xl border bg-card p-7 shadow-card transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-lift",
+                  hero && "border-transparent surface-ink shadow-lift",
+                  featured && !hero && "border-brand/40 ring-1 ring-brand/20",
                 )}
               >
+                {hero ? (
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute -end-24 -top-28 -z-10 size-64 rounded-full bg-brand/25 blur-3xl"
+                  />
+                ) : null}
                 <div className="flex min-h-7 flex-wrap items-center gap-2">
                   {plan.badge ? (
-                    <span className="rounded-full bg-primary px-3 py-0.5 text-xs font-semibold text-primary-foreground">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                      <SparklesIcon className="size-3" aria-hidden="true" />
                       {plan.badge === "mostPopular" ? labels.mostPopular : labels.recommended}
                     </span>
                   ) : null}
@@ -89,7 +105,11 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                 </div>
 
                 {/* Plan names, taglines and highlights come from the API in English. */}
-                <h3 id={`plan-${plan.id}`} lang="en" className="mt-3 text-xl font-semibold">
+                <h3
+                  id={`plan-${plan.id}`}
+                  lang="en"
+                  className="mt-4 text-xl font-semibold tracking-tight"
+                >
                   {plan.name}
                 </h3>
                 {plan.tagline ? (
@@ -98,11 +118,14 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                   </p>
                 ) : null}
 
-                <div className="mt-6 min-h-24">
+                <div className="mt-6 min-h-20">
                   <AnimatePresence mode="wait" initial={false}>
                     <m.div key={period} {...swap}>
                       <p className="flex flex-wrap items-baseline gap-x-1">
-                        <span className="text-3xl font-bold tracking-tight sm:text-4xl" dir="ltr">
+                        <span
+                          className="text-4xl font-semibold tracking-[-0.03em] tabular-nums sm:text-[2.75rem]"
+                          dir="ltr"
+                        >
                           {price.price}
                         </span>
                         <span className="text-sm text-muted-foreground">{price.period}</span>
@@ -137,7 +160,7 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                   </a>
                 </Button>
 
-                <div className="mt-6 flex flex-1 flex-col gap-5 border-t pt-6 text-sm">
+                <div className="mt-7 flex flex-1 flex-col gap-6 border-t pt-6 text-sm">
                   {plan.highlights.length > 0 ? (
                     <ul lang="en" className="flex flex-col gap-2 font-medium">
                       {plan.highlights.map((highlight) => (
@@ -153,7 +176,7 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                   ) : null}
 
                   <div>
-                    <h4 className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                    <h4 className="font-mono text-[0.6875rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
                       {labels.includes}
                     </h4>
                     <ul className="mt-2 flex flex-col gap-2">
@@ -171,7 +194,7 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
 
                   {plan.autoReplies.length > 0 ? (
                     <div>
-                      <h4 className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                      <h4 className="font-mono text-[0.6875rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
                         {labels.autoReplyTitle}
                       </h4>
                       <ul className="mt-2 flex flex-col gap-2">
@@ -189,14 +212,17 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                   ) : null}
 
                   <div>
-                    <h4 className="text-xs font-semibold tracking-wide text-muted-foreground uppercase">
+                    <h4 className="font-mono text-[0.6875rem] font-medium tracking-[0.14em] text-muted-foreground uppercase">
                       {labels.limitsTitle}
                     </h4>
-                    <dl className="mt-2 flex flex-col gap-1.5">
+                    <dl className="mt-2 flex flex-col">
                       {plan.limits.map((limit) => (
-                        <div key={limit.label} className="flex justify-between gap-3">
+                        <div
+                          key={limit.label}
+                          className="flex justify-between gap-3 border-b border-dashed py-1.5 last:border-b-0"
+                        >
                           <dt className="text-muted-foreground">{limit.label}</dt>
-                          <dd className="font-medium">{limit.value}</dd>
+                          <dd className="font-medium tabular-nums">{limit.value}</dd>
                         </div>
                       ))}
                     </dl>
@@ -222,13 +248,22 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
       {custom ? (
         <section
           aria-labelledby="custom-plan-title"
-          className="mx-auto grid w-full max-w-5xl gap-8 rounded-2xl border border-dashed border-brand/50 bg-accent/40 p-6 sm:p-8 lg:grid-cols-[1.1fr_1fr]"
+          className="relative isolate mx-auto grid w-full gap-10 overflow-hidden rounded-2xl border bg-card p-7 shadow-card sm:p-10 lg:grid-cols-[1.1fr_1fr]"
         >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 -z-10 bg-dots mask-fade text-foreground opacity-40"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand/0 via-brand to-brand/0"
+          />
           <div className="flex flex-col items-start gap-4">
-            <span className="rounded-full bg-brand-soft px-3 py-1 text-xs font-semibold text-accent-foreground">
+            <span className="inline-flex items-center gap-2.5 font-mono text-xs font-medium tracking-[0.16em] text-primary uppercase">
+              <span aria-hidden="true" className="h-px w-6 bg-brand" />
               {labels.custom.eyebrow}
             </span>
-            <h3 id="custom-plan-title" className="text-2xl font-bold tracking-tight">
+            <h3 id="custom-plan-title" className="text-3xl font-semibold tracking-tight">
               {labels.custom.title}
             </h3>
             <AnimatePresence mode="wait" initial={false}>
@@ -269,7 +304,7 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                   {custom.addOns.map((addOn) => (
                     <li
                       key={addOn.key}
-                      className="flex justify-between gap-3 rounded-md bg-card px-3 py-2"
+                      className="flex justify-between gap-3 rounded-lg border bg-background px-3.5 py-2.5"
                     >
                       <span>{addOn.label}</span>
                       <span className="font-medium whitespace-nowrap">{addOn.price}</span>

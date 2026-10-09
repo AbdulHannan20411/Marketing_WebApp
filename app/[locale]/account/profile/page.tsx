@@ -19,7 +19,7 @@ export default async function ProfilePage() {
 
   return (
     <div className="flex max-w-xl flex-col gap-10">
-      <h1 className="text-3xl font-bold tracking-tight">{t("title")}</h1>
+      <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("title")}</h1>
       <section aria-labelledby="details-title" className="flex flex-col gap-5">
         <h2 id="details-title" className="text-lg font-semibold">
           {t("detailsTitle")}

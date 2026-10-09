@@ -45,7 +45,7 @@ export default async function AdminCustomersPage({
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{t("title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("title")}</h1>
         <p className="mt-1 text-muted-foreground">{t("subtitle")}</p>
       </div>
 
@@ -77,7 +77,7 @@ export default async function AdminCustomersPage({
           {t("empty")}
         </p>
       ) : (
-        <ul className="flex flex-col divide-y rounded-2xl border bg-card">
+        <ul className="flex flex-col divide-y rounded-2xl border bg-card shadow-card">
           {page.rows.map((customer) => (
             <li
               key={customer.id}

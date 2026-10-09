@@ -20,7 +20,7 @@ export async function NotFoundContent() {
         <CompassIcon className="size-8" aria-hidden="true" />
       </span>
       <p className="mt-6 text-sm font-semibold tracking-widest text-primary">{t("code")}</p>
-      <h1 className="mt-2 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+      <h1 className="mt-2 text-3xl font-semibold tracking-[-0.03em] text-balance sm:text-4xl">
         {t("title")}
       </h1>
       <p className="mt-4 max-w-md text-lg text-muted-foreground">{t("description")}</p>

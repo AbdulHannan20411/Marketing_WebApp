@@ -42,12 +42,12 @@ export function BillingToggle({ value, onChange, labels }: BillingToggleProps) {
       <div
         role="radiogroup"
         aria-label={labels.group}
-        className="relative grid grid-cols-2 rounded-full border bg-muted p-1"
+        className="relative grid grid-cols-2 rounded-full border bg-card p-1 shadow-card"
       >
         <span
           aria-hidden="true"
           className={cn(
-            "absolute inset-y-1 start-1 w-[calc(50%-0.25rem)] rounded-full bg-background shadow-sm transition-transform duration-300 ease-out",
+            "absolute inset-y-1 start-1 w-[calc(50%-0.25rem)] rounded-full bg-primary shadow-sm transition-transform duration-300 ease-out",
             value === "yearly" && "translate-x-full rtl:-translate-x-full",
           )}
         />
@@ -65,7 +65,9 @@ export function BillingToggle({ value, onChange, labels }: BillingToggleProps) {
             onKeyDown={onKeyDown}
             className={cn(
               "relative z-10 min-w-28 rounded-full px-5 py-2 text-sm font-semibold transition-colors",
-              value === period ? "text-foreground" : "text-muted-foreground hover:text-foreground",
+              value === period
+                ? "text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground",
             )}
           >
             {labels[period]}

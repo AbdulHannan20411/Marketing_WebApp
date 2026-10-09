@@ -48,7 +48,7 @@ export async function LegalPage({ page }: { page: LegalPageId }) {
   return (
     <article className="container-page py-12 sm:py-16">
       <header className="mx-auto max-w-3xl border-b pb-8">
-        <h1 className="text-4xl font-bold tracking-tight">{t("title")}</h1>
+        <h1 className="text-4xl font-semibold tracking-[-0.03em]">{t("title")}</h1>
         <p className="mt-3 text-sm text-muted-foreground">
           {shared("effective", { date: legalDetails.effectiveDate })}
         </p>

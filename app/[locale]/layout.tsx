@@ -9,7 +9,7 @@ import { UtmCapture } from "@/components/analytics/utm-capture";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { ThemeScript } from "@/components/theme/theme-script";
 import { publicEnv } from "@/lib/env/public";
-import { latinFont, urduFont } from "@/lib/fonts";
+import { latinFont, monoFont, urduFont } from "@/lib/fonts";
 import { BASE_CLIENT_NAMESPACES, pickMessages } from "@/lib/i18n/client-messages";
 import { localeMeta, routing } from "@/lib/i18n/routing";
 import { siteConfig } from "@/lib/site";
@@ -69,7 +69,7 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
     <html
       lang={htmlLang}
       dir={dir}
-      className={cn(latinFont.variable, urduFont.variable)}
+      className={cn(latinFont.variable, monoFont.variable, urduFont.variable)}
       // The inline theme script adds the `dark` class before React hydrates.
       suppressHydrationWarning
     >

@@ -30,7 +30,7 @@ export default function GlobalNotFound() {
               dir={locale === "ur" ? "rtl" : "ltr"}
               className="flex flex-col items-center gap-3 rounded-2xl border bg-card p-8 text-center"
             >
-              <h1 className="text-2xl font-bold">{messages[locale].notFoundTitle}</h1>
+              <h1 className="text-2xl font-semibold">{messages[locale].notFoundTitle}</h1>
               <p className="text-muted-foreground">{messages[locale].notFoundDescription}</p>
               <a
                 href={`/${locale}`}

@@ -71,7 +71,10 @@ export default async function QueryThreadPage({ params }: Props) {
             <span className="text-sm text-muted-foreground">{tq(`${query.topic}.title`)}</span>
           ) : null}
         </div>
-        <h1 className="text-2xl font-bold tracking-tight break-words sm:text-3xl" dir="auto">
+        <h1
+          className="text-2xl font-semibold tracking-[-0.03em] break-words sm:text-3xl"
+          dir="auto"
+        >
           {query.subject}
         </h1>
         <dl className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-muted-foreground">
@@ -140,7 +143,7 @@ export default async function QueryThreadPage({ params }: Props) {
         <p className="text-center text-xs text-muted-foreground">{t("thread.live")}</p>
       </section>
 
-      <section className="flex flex-col gap-4 rounded-2xl border bg-card p-5">
+      <section className="flex flex-col gap-4 rounded-2xl border bg-card p-5 shadow-card">
         {closed ? (
           <div className="flex flex-col items-start gap-3">
             <FormAlert tone="info">

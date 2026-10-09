@@ -252,7 +252,7 @@ async function PaymentsSection() {
         <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <li key={step} className="flex gap-3 rounded-xl border bg-card p-4">
-              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
                 {index + 1}
               </span>
               <span className="text-sm">{t(`steps.${step}`)}</span>

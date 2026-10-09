@@ -45,7 +45,11 @@ export function QuerySuccess({ result, onAnother }: QuerySuccessProps) {
       <span className="flex size-14 items-center justify-center rounded-full bg-brand-soft text-accent-foreground">
         <CircleCheckIcon className="size-7" aria-hidden="true" />
       </span>
-      <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-bold tracking-tight outline-none">
+      <h2
+        ref={headingRef}
+        tabIndex={-1}
+        className="text-2xl font-semibold tracking-[-0.03em] outline-none"
+      >
         {t("title")}
       </h2>
 

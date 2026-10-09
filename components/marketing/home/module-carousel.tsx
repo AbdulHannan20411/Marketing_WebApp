@@ -115,12 +115,12 @@ export function ModuleCarousel({ slides, labels }: ModuleCarouselProps) {
             className="w-[85%] shrink-0 snap-start sm:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.667rem)]"
           >
             {/* The group role sits on the article so the <li> stays a list item. */}
-            <article
+            <div
               role="group"
               aria-roledescription={labels.slide}
               aria-label={labels.positions[index]}
               className={cn(
-                "flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 transition-[border-color,transform] duration-300",
+                "flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card transition-[border-color,transform,box-shadow] duration-300",
                 index === state.active ? "border-brand/50" : "hover:-translate-y-0.5",
               )}
             >
@@ -129,7 +129,7 @@ export function ModuleCarousel({ slides, labels }: ModuleCarouselProps) {
               </span>
               <h3 className="text-lg font-semibold">{slide.title}</h3>
               <p className="text-muted-foreground">{slide.description}</p>
-            </article>
+            </div>
           </li>
         ))}
       </ul>

@@ -22,32 +22,35 @@ export function PageHero({
   title,
   subtitle,
   children,
-  align = "center",
+  align = "start",
   className,
 }: PageHeroProps) {
   return (
     <section
-      className={cn(
-        "relative overflow-hidden border-b bg-gradient-to-b from-accent/60 to-background",
-        className,
-      )}
+      className={cn("relative isolate overflow-hidden border-b bg-surface-subtle", className)}
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 -top-40 mx-auto h-80 max-w-3xl rounded-full bg-brand/15 blur-3xl"
+        className="pointer-events-none absolute inset-0 -z-10 bg-grid mask-fade text-foreground opacity-70"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 -top-48 -z-10 mx-auto h-96 max-w-4xl rounded-full bg-brand/15 blur-3xl"
       />
       <div
         className={cn(
-          "relative container-page flex flex-col gap-5 py-16 sm:py-20",
+          "container-page flex flex-col gap-6 pt-16 pb-14 sm:pt-24 sm:pb-20",
           align === "center" ? "items-center text-center" : "items-start text-start",
         )}
       >
         {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-        <h1 className="max-w-4xl text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+        <h1 className="max-w-4xl text-4xl font-semibold tracking-[-0.035em] text-balance sm:text-5xl lg:text-6xl">
           {title}
         </h1>
         {subtitle ? (
-          <p className="max-w-2xl text-lg text-pretty text-muted-foreground">{subtitle}</p>
+          <p className="max-w-2xl text-lg text-pretty text-muted-foreground sm:text-xl">
+            {subtitle}
+          </p>
         ) : null}
         {children}
       </div>

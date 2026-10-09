@@ -28,7 +28,7 @@ export function ComparisonTable({ data, labels }: ComparisonTableProps) {
         tabIndex={0}
         role="region"
         aria-label={labels.caption}
-        className="relative overflow-x-auto rounded-2xl border bg-card focus-visible:outline-offset-4"
+        className="relative overflow-x-auto rounded-2xl border bg-card shadow-card focus-visible:outline-offset-4"
       >
         <table className="w-full min-w-[40rem] border-collapse text-sm">
           <caption className="sr-only">{labels.caption}</caption>
@@ -58,7 +58,7 @@ export function ComparisonTable({ data, labels }: ComparisonTableProps) {
                 <th
                   scope="colgroup"
                   colSpan={data.columns.length + 1}
-                  className="sticky start-0 px-4 py-2.5 text-start text-xs font-semibold tracking-wide text-muted-foreground uppercase"
+                  className="sticky start-0 px-4 py-2.5 text-start font-mono text-[0.6875rem] font-medium tracking-[0.14em] text-muted-foreground uppercase"
                 >
                   {labels.groups[group.key]}
                 </th>

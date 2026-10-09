@@ -23,7 +23,7 @@ export async function SiteHeader() {
   const t = await getTranslations();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl backdrop-saturate-150 supports-[backdrop-filter]:bg-background/65">
       <div className="container-page flex h-16 items-center justify-between gap-4">
         <Link href="/" aria-label={t("common.brandHome")} className="-m-1 rounded-md p-1">
           <Logo />
@@ -41,11 +41,11 @@ export async function SiteHeader() {
               <LanguageSwitcher />
             </Suspense>
             <ThemeToggle />
-            <Button asChild variant="ghost" className="h-10">
+            <Button asChild variant="ghost" className="h-10 rounded-full px-4">
               <a href={appLinks.signIn}>{t("cta.signIn")}</a>
             </Button>
           </div>
-          <Button asChild className="hidden h-10 sm:inline-flex">
+          <Button asChild className="hidden h-10 rounded-full px-5 sm:inline-flex">
             <a href={appLinks.startTrial}>{t("cta.startTrial")}</a>
           </Button>
           <Suspense fallback={<span className="block size-10 lg:hidden" aria-hidden="true" />}>
@@ -66,7 +66,7 @@ async function NavLinksFallback() {
         <li key={item.key}>
           <Link
             href={item.href}
-            className="inline-flex h-10 items-center rounded-md px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            className="inline-flex h-9 items-center rounded-full px-3.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             {t(item.key)}
           </Link>

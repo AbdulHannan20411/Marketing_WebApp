@@ -67,7 +67,7 @@ export default async function UseCasesPage() {
               <div>
                 <h2
                   id={`${useCase.id}-title`}
-                  className="text-2xl font-bold tracking-tight sm:text-3xl"
+                  className="text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"
                 >
                   {ti(`${useCase.id}.name`)}
                 </h2>

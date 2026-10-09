@@ -18,24 +18,28 @@
 :root {
   --radius: 0.75rem;
 
-  --background: #ffffff;
-  --foreground: #0f172a;
+  /*
+   * "Evergreen" palette: warm, faintly green-tinted neutrals (not cold slate), white
+   * cards layered on an ivory page, and a deep forest "ink" for statement surfaces.
+   */
+  --background: #fbfbf8;
+  --foreground: #0b1a13;
   --card: #ffffff;
-  --card-foreground: #0f172a;
+  --card-foreground: #0b1a13;
   --popover: #ffffff;
-  --popover-foreground: #0f172a;
+  --popover-foreground: #0b1a13;
 
   --brand: #16a34a;
   --brand-soft: #dcfce7;
   --primary: #15803d;
-  --primary-hover: #166534;
+  --primary-hover: #116a32;
   --primary-foreground: #ffffff;
 
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #475569;
-  --accent: #f0fdf4;
+  --secondary: #eef2ee;
+  --secondary-foreground: #0b1a13;
+  --muted: #eef2ee;
+  --muted-foreground: #4a5a52;
+  --accent: #ecf7ef;
   --accent-foreground: #14532d;
 
   --destructive: #dc2626;
@@ -43,35 +47,45 @@
   --success: #15803d;
   --warning: #b45309;
 
-  --border: #e2e8f0;
-  --input: #7c8aa0;
+  --border: #e2e8e3;
+  --input: #7b8a82;
   --ring: #16a34a;
 
-  --surface-subtle: #f8fafc;
+  --surface-subtle: #f3f6f2;
+
+  /* Statement surfaces (CTA, automation band, footer): deep forest green. */
+  --ink: #062a1c;
+  --ink-raised: #0b3826;
+  --ink-foreground: #effbf4;
+  --ink-muted: #a9c9b8;
+  --ink-border: #1a4a35;
+
   --whatsapp-bubble-out: #d9fdd3;
   --whatsapp-bubble-in: #ffffff;
   --whatsapp-wallpaper: #efeae2;
+
+  --shadow-color: 150 30% 12%;
 }
 
 .dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
+  --background: #07110d;
+  --foreground: #eef5f1;
+  --card: #0c1a14;
+  --card-foreground: #eef5f1;
+  --popover: #0c1a14;
+  --popover-foreground: #eef5f1;
 
   --brand: #22c55e;
-  --brand-soft: #052e16;
+  --brand-soft: #0b2e1c;
   --primary: #22c55e;
   --primary-hover: #4ade80;
   --primary-foreground: #052e16;
 
-  --secondary: #1e293b;
-  --secondary-foreground: #f8fafc;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #052e16;
+  --secondary: #13241c;
+  --secondary-foreground: #eef5f1;
+  --muted: #13241c;
+  --muted-foreground: #9cb4a8;
+  --accent: #0e2b1d;
   --accent-foreground: #bbf7d0;
 
   --destructive: #b91c1c;
@@ -79,14 +93,23 @@
   --success: #4ade80;
   --warning: #fbbf24;
 
-  --border: #1e293b;
-  --input: #64748b;
+  --border: #1c3027;
+  --input: #6b8478;
   --ring: #22c55e;
 
-  --surface-subtle: #0b1222;
+  --surface-subtle: #0a1611;
+
+  --ink: #0b241a;
+  --ink-raised: #113022;
+  --ink-foreground: #effbf4;
+  --ink-muted: #a9c9b8;
+  --ink-border: #1f4434;
+
   --whatsapp-bubble-out: #005c4b;
   --whatsapp-bubble-in: #1f2c34;
   --whatsapp-wallpaper: #0b141a;
+
+  --shadow-color: 150 60% 2%;
 
   color-scheme: dark;
 }
@@ -109,6 +132,8 @@
   --text-5xl--line-height: 1.75;
   --text-6xl--line-height: 1.7;
   --text-7xl--line-height: 1.7;
+  --text-display--line-height: 1.75;
+  --text-hero--line-height: 1.6;
   --leading-tight: 1.8;
   --leading-snug: 1.9;
   --leading-normal: 2;
@@ -120,10 +145,18 @@
   --tracking-widest: 0;
 }
 
+/* Display sizes (not inline, so the Urdu overrides above can change line-height). */
+@theme {
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.1;
+  --text-hero: 4.25rem;
+  --text-hero--line-height: 1.02;
+}
+
 @theme inline {
   --font-sans: var(--font-latin), ui-sans-serif, system-ui, sans-serif;
   --font-urdu: var(--font-nastaliq), var(--font-latin), serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -150,6 +183,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-surface-subtle: var(--surface-subtle);
+  --color-ink: var(--ink);
+  --color-ink-raised: var(--ink-raised);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-border: var(--ink-border);
   --color-wa-out: var(--whatsapp-bubble-out);
   --color-wa-in: var(--whatsapp-bubble-in);
   --color-wa-wallpaper: var(--whatsapp-wallpaper);
@@ -159,6 +197,13 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
+
+  /* Two-step elevation: resting cards, and lifted (hover, popovers, featured). */
+  --shadow-card:
+    0 1px 2px hsl(var(--shadow-color) / 0.05), 0 4px 14px -6px hsl(var(--shadow-color) / 0.08);
+  --shadow-lift:
+    0 2px 4px hsl(var(--shadow-color) / 0.05), 0 18px 40px -16px hsl(var(--shadow-color) / 0.22);
+  --shadow-glow: 0 0 0 1px rgb(22 163 74 / 0.25), 0 18px 50px -18px rgb(22 163 74 / 0.45);
 }
 
 /* Page container: 16px gutter on phones (360px+), wider on larger screens. */
@@ -173,6 +218,62 @@
   @media (width >= 64rem) {
     padding-inline: 2rem;
   }
+}
+
+/*
+ * Deep forest "ink" surface. It re-maps the colour tokens, so any component placed on
+ * it (cards, badges, muted text, borders) adapts without special cases.
+ */
+@utility surface-ink {
+  --background: var(--ink);
+  --foreground: var(--ink-foreground);
+  --card: var(--ink-raised);
+  --card-foreground: var(--ink-foreground);
+  --muted: color-mix(in oklab, var(--ink-raised) 80%, white 4%);
+  --muted-foreground: var(--ink-muted);
+  --border: var(--ink-border);
+  --color-border: var(--ink-border);
+  --accent: color-mix(in oklab, var(--ink-raised) 70%, #22c55e 18%);
+  --accent-foreground: #d1fae5;
+  --brand-soft: color-mix(in oklab, var(--ink-raised) 70%, #22c55e 22%);
+  --primary: #4ade80;
+  --primary-hover: #86efac;
+  --primary-foreground: #052e16;
+  --brand: #4ade80;
+  --ring: #4ade80;
+  --shadow-color: 150 70% 3%;
+  background-color: var(--ink);
+  color: var(--ink-foreground);
+}
+
+/* Subtle structure for heroes and statement bands (decorative, behind content). */
+@utility bg-grid {
+  background-image:
+    linear-gradient(
+      to right,
+      color-mix(in oklab, currentColor 7%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, currentColor 7%, transparent) 1px,
+      transparent 1px
+    );
+  background-size: 48px 48px;
+}
+@utility bg-dots {
+  background-image: radial-gradient(
+    color-mix(in oklab, currentColor 16%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+}
+/* Fades a decorative layer out towards its edges. */
+@utility mask-fade {
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, #000 30%, transparent 75%);
+}
+@utility mask-fade-b {
+  mask-image: linear-gradient(to bottom, #000 30%, transparent);
 }
 
 @layer base {
@@ -199,6 +300,14 @@
   :lang(ur) body {
     font-family: var(--font-urdu);
     line-height: 2.1;
+  }
+  /* Letter-spacing breaks the joins of cursive script, including explicit tracking-[…]. */
+  :lang(ur) [class*="tracking-"] {
+    letter-spacing: 0 !important;
+  }
+  /* Geist Mono has no Urdu glyphs: Urdu labels keep the Urdu font. */
+  :lang(ur) .font-mono {
+    font-family: var(--font-urdu);
   }
   :lang(ur) :is(h1, h2, h3, h4) {
     line-height: 1.9;

@@ -54,10 +54,10 @@ export default async function HomePage() {
         ]}
       />
       <HomeHero />
+      <FactsSection />
       {/* TODO: real customer logos — add a logo strip here once customers agree to be listed. */}
       <ProblemSection />
       <FeatureGridSection />
-      <FactsSection />
       <HowItWorksSection />
       <AutomationSection />
       <ModulesSection />

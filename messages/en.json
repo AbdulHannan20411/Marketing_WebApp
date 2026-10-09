@@ -81,8 +81,9 @@
   },
   "home": {
     "hero": {
+      "badge": "Made for Pakistan",
       "eyebrow": "WhatsApp marketing for growing businesses",
-      "title": "Turn WhatsApp chats into sales",
+      "title": "Turn WhatsApp chats <hl>into sales</hl>",
       "subtitle": "Send campaigns your customers actually read, answer every message from one shared inbox, and see exactly who is ready to buy.",
       "primaryCta": "Start free trial",
       "secondaryCta": "See how it works",

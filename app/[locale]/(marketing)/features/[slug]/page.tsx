@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 
 import { CtaBand } from "@/components/marketing/cta-band";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
+import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { Eyebrow, Section, SectionHeader } from "@/components/marketing/section";
 import { Reveal } from "@/components/motion/reveal";
@@ -61,8 +62,16 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
 
   return (
     <>
-      <section className="relative overflow-hidden border-b bg-gradient-to-b from-accent/60 to-background">
-        <div className="container-page grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-2">
+      <section className="relative isolate overflow-hidden border-b bg-surface-subtle">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 bg-grid mask-fade text-foreground opacity-70"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -end-40 -top-40 -z-10 size-[36rem] rounded-full bg-brand/15 blur-3xl"
+        />
+        <div className="container-page grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-2 lg:py-24">
           <div className="flex flex-col items-start gap-5">
             <nav aria-label={shared("breadcrumb")}>
               <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">
@@ -80,7 +89,7 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
               </ol>
             </nav>
             <Eyebrow>{t("eyebrow")}</Eyebrow>
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl">
+            <h1 className="text-4xl font-semibold tracking-[-0.035em] text-balance sm:text-5xl lg:text-6xl">
               {t("title")}
             </h1>
             <p className="max-w-xl text-lg text-pretty text-muted-foreground">{t("subtitle")}</p>
@@ -96,19 +105,26 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
               </Button>
             </div>
           </div>
-          <Mockup id={page.mockup} />
+          <MockupStage>
+            <Mockup id={page.mockup} />
+          </MockupStage>
         </div>
       </section>
 
       <Section labelledBy="benefits-title">
-        <SectionHeader id="benefits-title" title={shared("benefitsTitle")} />
-        <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <SectionHeader id="benefits-title" title={shared("benefitsTitle")} align="start" />
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border shadow-card sm:grid-cols-2 lg:grid-cols-4">
           {page.benefits.map((key, index) => (
-            <Reveal as="li" key={key} delay={index * 80} className="rounded-2xl border bg-card p-6">
-              <span className="flex size-10 items-center justify-center rounded-xl bg-brand-soft text-accent-foreground">
-                <page.icon className="size-5" aria-hidden="true" />
+            <Reveal as="li" key={key} delay={index * 80} className="flex flex-col bg-card p-7">
+              <span
+                aria-hidden="true"
+                className="font-mono text-xs font-medium text-primary tabular-nums"
+              >
+                {String(index + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-4 font-semibold">{tk(`benefits.${key}.title`)}</h3>
+              <h3 className="mt-6 text-lg font-semibold tracking-tight">
+                {tk(`benefits.${key}.title`)}
+              </h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 {tk(`benefits.${key}.description`)}
               </p>
@@ -118,19 +134,28 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
       </Section>
 
       <Section tone="subtle" labelledBy="steps-title">
-        <SectionHeader id="steps-title" title={shared("stepsTitle")} />
-        <ol className="mt-12 grid gap-6 md:grid-cols-3">
+        <SectionHeader id="steps-title" title={shared("stepsTitle")} align="start" />
+        <ol className="mt-12 grid gap-5 md:grid-cols-3">
           {page.steps.map((key, index) => (
             <Reveal
               as="li"
               key={key}
               delay={index * 120}
-              className="rounded-2xl border bg-card p-6"
+              className="rounded-2xl border bg-card p-7 shadow-card"
             >
-              <span className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground">
-                {index + 1}
-              </span>
-              <h3 className="mt-4 text-lg font-semibold">{tk(`steps.${key}.title`)}</h3>
+              <div className="flex items-center justify-between">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_8px_20px_-8px_rgb(21_128_61/0.6)]">
+                  <page.icon className="size-5" aria-hidden="true" />
+                </span>
+                <span
+                  aria-hidden="true"
+                  data-step={String(index + 1).padStart(2, "0")}
+                  className="font-mono text-4xl font-medium tracking-tight text-foreground/10 before:content-[attr(data-step)]"
+                />
+              </div>
+              <h3 className="mt-5 text-lg font-semibold tracking-tight">
+                {tk(`steps.${key}.title`)}
+              </h3>
               <p className="mt-2 text-muted-foreground">{tk(`steps.${key}.description`)}</p>
             </Reveal>
           ))}
@@ -146,8 +171,13 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
           />
           <Reveal as="ul" className="grid gap-3 sm:grid-cols-2">
             {page.capabilities.map((key) => (
-              <li key={key} className="flex items-start gap-3 rounded-xl border bg-card p-4">
-                <CheckIcon className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
+              <li
+                key={key}
+                className="flex items-start gap-3 rounded-xl border bg-card p-4 shadow-card transition-colors hover:border-brand/30"
+              >
+                <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                  <CheckIcon className="size-3.5" aria-hidden="true" />
+                </span>
                 <span className="font-medium">{tk(`capabilities.${key}`)}</span>
               </li>
             ))}

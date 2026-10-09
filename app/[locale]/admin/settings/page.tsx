@@ -19,7 +19,7 @@ export default async function AdminSettingsPage() {
   return (
     <div className="flex max-w-3xl flex-col gap-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{t("title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("title")}</h1>
         <p className="mt-1 text-muted-foreground">{t("subtitle")}</p>
       </div>
 
@@ -37,7 +37,7 @@ export default async function AdminSettingsPage() {
 
       <section
         aria-labelledby="saved-replies"
-        className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border bg-card p-5"
+        className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border bg-card p-5 shadow-card"
       >
         <div>
           <h2 id="saved-replies" className="font-semibold">

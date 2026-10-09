@@ -32,7 +32,7 @@ export default async function ContactPage() {
     <>
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
       <div className="container-page grid gap-10 py-12 sm:py-16 lg:grid-cols-[1.6fr_1fr]">
-        <section className="rounded-2xl border bg-card p-5 shadow-sm sm:p-8">
+        <section className="rounded-2xl border bg-card p-5 shadow-lift sm:p-8">
           {/* Its own Suspense boundary: the form hydrates separately from the page. */}
           <Suspense>
             <QueryMessagesProvider>

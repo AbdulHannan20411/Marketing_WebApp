@@ -22,9 +22,9 @@ export function NavLinks() {
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "inline-flex h-10 items-center rounded-md px-3 text-sm font-medium transition-colors",
+                "relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-medium transition-colors",
                 "text-muted-foreground hover:bg-muted hover:text-foreground",
-                active && "text-foreground",
+                active && "bg-muted text-foreground",
               )}
             >
               {t(item.key)}

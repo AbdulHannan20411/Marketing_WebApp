@@ -1,4 +1,4 @@
-import { Geist, Noto_Nastaliq_Urdu } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Nastaliq_Urdu } from "next/font/google";
 
 /** Latin UI font (variable). Preloaded on every route. */
 export const latinFont = Geist({
@@ -17,4 +17,12 @@ export const urduFont = Noto_Nastaliq_Urdu({
   variable: "--font-nastaliq",
   display: "swap",
   preload: false,
+});
+
+/** Monospace accent font for small labels and figures. Small, so it can preload. */
+export const monoFont = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+  weight: ["500"],
 });

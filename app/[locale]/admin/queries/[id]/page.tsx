@@ -93,7 +93,10 @@ export default async function AdminQueryPage({
             {query.reference}
           </code>
         </div>
-        <h1 className="text-2xl font-bold tracking-tight break-words sm:text-3xl" dir="auto">
+        <h1
+          className="text-2xl font-semibold tracking-[-0.03em] break-words sm:text-3xl"
+          dir="auto"
+        >
           {query.subject}
         </h1>
         <dl className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-muted-foreground">
@@ -195,7 +198,7 @@ export default async function AdminQueryPage({
         </div>
 
         <aside className="flex flex-col gap-6">
-          <div className="rounded-2xl border bg-card p-5">
+          <div className="rounded-2xl border bg-card p-5 shadow-card">
             <QueryControls
               queryId={query.id}
               status={query.status}
@@ -204,7 +207,7 @@ export default async function AdminQueryPage({
             />
           </div>
 
-          <section aria-labelledby="sender" className="rounded-2xl border bg-card p-5">
+          <section aria-labelledby="sender" className="rounded-2xl border bg-card p-5 shadow-card">
             <h2 id="sender" className="font-semibold">
               {t("detail.sender")}
             </h2>
@@ -270,7 +273,10 @@ export default async function AdminQueryPage({
             </dl>
           </section>
 
-          <section aria-labelledby="activity" className="rounded-2xl border bg-card p-5">
+          <section
+            aria-labelledby="activity"
+            className="rounded-2xl border bg-card p-5 shadow-card"
+          >
             <h2 id="activity" className="font-semibold">
               {t("detail.activity")}
             </h2>

@@ -32,7 +32,7 @@ export default function MarketingError({
       <span className="flex size-16 items-center justify-center rounded-2xl bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200">
         <TriangleAlertIcon className="size-8" aria-hidden="true" />
       </span>
-      <h1 className="mt-6 text-3xl font-bold tracking-tight text-balance sm:text-4xl">
+      <h1 className="mt-6 text-3xl font-semibold tracking-[-0.03em] text-balance sm:text-4xl">
         {t("title")}
       </h1>
       <p className="mt-4 max-w-md text-lg text-muted-foreground">{t("description")}</p>

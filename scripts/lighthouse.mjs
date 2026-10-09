@@ -43,7 +43,10 @@ async function reachable(url) {
 }
 
 let server;
-if (!(await reachable(`${base}/en`))) {
+if (await reachable(`${base}/en`)) {
+  // Make sure it's serving the latest build: a stale server gives misleading results.
+  console.log(`Using the server already running at ${base}.`);
+} else {
   const { port, hostname } = new URL(base);
   if (!["localhost", "127.0.0.1"].includes(hostname)) {
     console.error(`${base} is not reachable.`);

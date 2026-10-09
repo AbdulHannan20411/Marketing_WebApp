@@ -38,7 +38,7 @@ export default async function AccountHomePage({ searchParams }: PageProps<"/[loc
 
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">{t("list.title")}</h1>
+          <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("list.title")}</h1>
           <p className="mt-1 text-muted-foreground">{t("list.subtitle")}</p>
           {unread > 0 ? (
             <p className="mt-2 text-sm font-semibold text-primary">
@@ -67,7 +67,7 @@ export default async function AccountHomePage({ searchParams }: PageProps<"/[loc
               <Link
                 href={`/account/queries/${query.id}`}
                 aria-label={t("list.open", { reference: query.reference })}
-                className="group flex items-center gap-4 rounded-2xl border bg-card p-4 transition-[border-color,box-shadow] hover:border-brand/50 hover:shadow-sm sm:p-5"
+                className="group flex items-center gap-4 rounded-2xl border bg-card p-4 shadow-card transition-[border-color,box-shadow] hover:border-brand/50 hover:shadow-sm sm:p-5"
               >
                 <span
                   className="relative flex w-3 shrink-0 justify-center"

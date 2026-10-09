@@ -18,8 +18,8 @@ export async function AuthCard({
 }) {
   const t = await getTranslations("auth");
   return (
-    <div className="w-full max-w-md rounded-2xl border bg-card p-6 shadow-xl shadow-slate-900/5 sm:p-8 dark:shadow-black/30">
-      <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
+    <div className="w-full max-w-md rounded-2xl border bg-card p-6 shadow-card shadow-lift sm:p-9">
+      <h1 className="text-2xl font-semibold tracking-[-0.03em] sm:text-[1.75rem]">{title}</h1>
       {subtitle ? <p className="mt-2 text-muted-foreground">{subtitle}</p> : null}
       {showAppNotice ? (
         <p className="mt-5 flex items-start gap-2 rounded-lg bg-muted px-3 py-2.5 text-sm">

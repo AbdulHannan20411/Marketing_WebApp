@@ -30,7 +30,7 @@ export default function GlobalError({
     <html lang={locale} dir={locale === "ur" ? "rtl" : "ltr"} suppressHydrationWarning>
       <body className="flex min-h-dvh items-center justify-center bg-background p-6 text-foreground">
         <main role="alert" className="flex max-w-md flex-col items-center gap-4 text-center">
-          <h1 className="text-3xl font-bold">{t.errorTitle}</h1>
+          <h1 className="text-3xl font-semibold">{t.errorTitle}</h1>
           <p className="text-muted-foreground">{t.errorDescription}</p>
           <div className="mt-4 flex gap-3">
             <button

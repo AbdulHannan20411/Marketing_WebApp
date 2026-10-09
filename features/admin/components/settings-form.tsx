@@ -72,7 +72,7 @@ export function SettingsForm({ initial }: { initial: Settings }) {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="flex flex-col gap-5 rounded-2xl border bg-card p-5"
+      className="flex flex-col gap-5 rounded-2xl border bg-card p-5 shadow-card"
     >
       {field("recipients", t("recipients"), t("recipientsHint"), recipients, setRecipients, {
         rows: 4,

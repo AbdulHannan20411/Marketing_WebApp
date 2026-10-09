@@ -42,7 +42,7 @@ export default async function AccountLayout({ children }: LayoutProps<"/[locale]
       ])}
     >
       <SiteHeader />
-      <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
+      <main id="main-content" tabIndex={-1} className="flex-1 bg-surface-subtle outline-none">
         <div className="container-page py-8 sm:py-12">
           <Suspense
             fallback={
@@ -65,7 +65,7 @@ async function AccountGate({ locale, children }: { locale: Locale; children: Rea
   const unread = await unreadCount(profile);
   return (
     <div className="grid gap-8 md:grid-cols-[14rem_1fr]">
-      <aside className="md:sticky md:top-24 md:self-start">
+      <aside className="md:sticky md:top-24 md:self-start md:rounded-2xl md:border md:bg-card md:p-4 md:shadow-card">
         <AccountNav
           email={profile.email}
           isSuperadmin={profile.role === "superadmin"}

@@ -45,7 +45,7 @@ export default async function AdminDashboardPage() {
     <div className="flex flex-col gap-8">
       <LiveRefresh channel="admin-dashboard" subscriptions={[{ table: "queries" }]} />
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">{t("dashboard.title")}</h1>
+        <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("dashboard.title")}</h1>
         <p className="mt-1 text-muted-foreground">{t("dashboard.subtitle")}</p>
       </div>
 
@@ -79,7 +79,10 @@ export default async function AdminDashboardPage() {
           </ul>
 
           <div className="grid gap-6 lg:grid-cols-2">
-            <section aria-labelledby="by-status" className="rounded-2xl border bg-card p-5">
+            <section
+              aria-labelledby="by-status"
+              className="rounded-2xl border bg-card p-5 shadow-card"
+            >
               <h2 id="by-status" className="font-semibold">
                 {t("dashboard.byStatus")}
               </h2>
@@ -100,7 +103,10 @@ export default async function AdminDashboardPage() {
               </ul>
             </section>
 
-            <section aria-labelledby="by-topic" className="rounded-2xl border bg-card p-5">
+            <section
+              aria-labelledby="by-topic"
+              className="rounded-2xl border bg-card p-5 shadow-card"
+            >
               <h2 id="by-topic" className="font-semibold">
                 {t("dashboard.byTopic")}
               </h2>
@@ -135,7 +141,7 @@ export default async function AdminDashboardPage() {
         </>
       )}
 
-      <section aria-labelledby="waiting" className="rounded-2xl border bg-card p-5">
+      <section aria-labelledby="waiting" className="rounded-2xl border bg-card p-5 shadow-card">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
             <h2 id="waiting" className="font-semibold">
@@ -192,12 +198,12 @@ function StatCard({
   children: ReactNode;
 }) {
   return (
-    <li className="flex flex-col gap-2 rounded-2xl border bg-card p-5">
+    <li className="flex flex-col gap-2 rounded-2xl border bg-card p-5 shadow-card">
       <span className="flex items-center gap-2 text-sm text-muted-foreground [&_svg]:size-4">
         <span aria-hidden="true">{icon}</span>
         {label}
       </span>
-      <span className="text-3xl font-bold tracking-tight tabular-nums">{children}</span>
+      <span className="text-3xl font-semibold tracking-[-0.03em] tabular-nums">{children}</span>
       {hint ? <span className="text-xs text-muted-foreground">{hint}</span> : null}
     </li>
   );

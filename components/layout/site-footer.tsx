@@ -1,3 +1,4 @@
+import { BadgeCheckIcon, GiftIcon, WalletIcon } from "lucide-react";
 import { cacheLife } from "next/cache";
 import { getTranslations } from "next-intl/server";
 
@@ -16,7 +17,11 @@ async function getCurrentYear() {
 }
 
 export async function SiteFooter() {
-  const [t, consent] = await Promise.all([getTranslations("footer"), getTranslations("consent")]);
+  const [t, consent, assurances] = await Promise.all([
+    getTranslations("footer"),
+    getTranslations("consent"),
+    getTranslations("home.hero.assurances"),
+  ]);
   const year = await getCurrentYear();
 
   const columns = [
@@ -27,17 +32,35 @@ export async function SiteFooter() {
 
   return (
     <footer className="border-t bg-surface-subtle">
-      <div className="container-page grid gap-10 py-12 md:grid-cols-[1fr_2fr] md:py-16">
-        <div className="max-w-xs space-y-3">
+      <div className="container-page grid gap-12 py-14 md:grid-cols-[1.1fr_2fr] md:py-20">
+        <div className="flex max-w-sm flex-col gap-5">
           <Logo />
-          <p className="text-sm text-muted-foreground">{t("tagline")}</p>
+          <p className="text-sm leading-relaxed text-muted-foreground">{t("tagline")}</p>
+          <ul className="flex flex-col gap-2.5 text-sm text-muted-foreground">
+            {(
+              [
+                { key: "official", icon: BadgeCheckIcon },
+                { key: "payments", icon: WalletIcon },
+                { key: "trial", icon: GiftIcon },
+              ] as const
+            ).map(({ key, icon: Icon }) => (
+              <li key={key} className="flex items-center gap-2.5">
+                <span className="flex size-7 items-center justify-center rounded-md border bg-card text-brand shadow-xs">
+                  <Icon className="size-3.5" aria-hidden="true" />
+                </span>
+                {assurances(key)}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <nav aria-label={t("navLabel")} className="grid grid-cols-2 gap-8 sm:grid-cols-3">
           {columns.map((column) => (
             <div key={column.key}>
-              <h2 className="text-sm font-semibold">{t(`columns.${column.key}`)}</h2>
-              <ul className="mt-3 space-y-1">
+              <h2 className="font-mono text-xs font-medium tracking-[0.14em] text-foreground uppercase">
+                {t(`columns.${column.key}`)}
+              </h2>
+              <ul className="mt-4 space-y-0.5">
                 {column.links.map((link) => (
                   <li key={link.key}>
                     <Link

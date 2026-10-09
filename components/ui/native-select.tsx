@@ -10,7 +10,7 @@ function NativeSelect({ className, children, ...props }: React.ComponentProps<"s
       <select
         data-slot="native-select"
         className={cn(
-          "h-10 w-full appearance-none rounded-md border border-input bg-background ps-3 pe-9 text-sm shadow-xs outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/20",
+          "h-10 w-full appearance-none rounded-lg border border-input bg-card ps-3 pe-9 text-sm shadow-xs outline-none disabled:cursor-not-allowed disabled:opacity-50 dark:bg-input/20",
           "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
         )}
         {...props}
@@ -30,7 +30,7 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
     <textarea
       data-slot="textarea"
       className={cn(
-        "min-h-28 w-full rounded-md border border-input bg-background px-3 py-2 text-base shadow-xs outline-none placeholder:text-muted-foreground disabled:opacity-50 dark:bg-input/20",
+        "min-h-28 w-full rounded-lg border border-input bg-card px-3.5 py-2.5 text-base shadow-xs outline-none placeholder:text-muted-foreground disabled:opacity-50 dark:bg-input/20",
         "focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50",
         "aria-invalid:border-destructive aria-invalid:ring-destructive/20",
         className,
