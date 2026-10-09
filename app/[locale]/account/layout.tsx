@@ -8,6 +8,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { AccountNav } from "@/features/auth/components/account-nav";
 import { privatePageMetadata } from "@/features/auth/metadata";
+import { unreadCount } from "@/features/portal/data";
 import { requireUser } from "@/lib/auth/session";
 import { BASE_CLIENT_NAMESPACES, pickMessages } from "@/lib/i18n/client-messages";
 import { isLocale, type Locale } from "@/lib/i18n/routing";
@@ -37,6 +38,7 @@ export default async function AccountLayout({ children }: LayoutProps<"/[locale]
         "auth",
         "validation",
         "account",
+        "portal",
       ])}
     >
       <SiteHeader />
@@ -60,10 +62,15 @@ export default async function AccountLayout({ children }: LayoutProps<"/[locale]
 
 async function AccountGate({ locale, children }: { locale: Locale; children: ReactNode }) {
   const profile = await requireUser(locale, `/${locale}/account`);
+  const unread = await unreadCount(profile);
   return (
     <div className="grid gap-8 md:grid-cols-[14rem_1fr]">
       <aside className="md:sticky md:top-24 md:self-start">
-        <AccountNav email={profile.email} isSuperadmin={profile.role === "superadmin"} />
+        <AccountNav
+          email={profile.email}
+          isSuperadmin={profile.role === "superadmin"}
+          unreadCount={unread}
+        />
       </aside>
       <div className="min-w-0">{children}</div>
     </div>

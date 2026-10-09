@@ -10,14 +10,24 @@ import { cn } from "@/lib/utils";
 import { signOutAction } from "../actions";
 
 /** Account navigation with the current page marked, plus sign out. */
-export function AccountNav({ email, isSuperadmin }: { email: string; isSuperadmin: boolean }) {
+export function AccountNav({
+  email,
+  isSuperadmin,
+  unreadCount = 0,
+}: {
+  email: string;
+  isSuperadmin: boolean;
+  /** Queries with a team reply the customer hasn't opened yet. */
+  unreadCount?: number;
+}) {
   const t = useTranslations("account");
+  const tp = useTranslations("portal.list");
   const locale = useLocale();
   const pathname = usePathname();
   const [pending, startTransition] = useTransition();
 
   const items = [
-    { href: "/account", label: t("nav.queries"), icon: InboxIcon, exact: true },
+    { href: "/account", label: t("nav.queries"), icon: InboxIcon, exact: true, badge: unreadCount },
     { href: "/account/profile", label: t("nav.profile"), icon: UserRoundIcon, exact: false },
     ...(isSuperadmin
       ? [{ href: "/admin", label: t("nav.admin"), icon: ShieldIcon, exact: false }]
@@ -30,8 +40,12 @@ export function AccountNav({ email, isSuperadmin }: { email: string; isSuperadmi
         {t("signedInAs", { email })}
       </p>
       <ul className="flex gap-1 overflow-x-auto md:flex-col">
-        {items.map(({ href, label, icon: Icon, exact }) => {
-          const active = exact ? pathname === href : pathname.startsWith(href);
+        {items.map(({ href, label, icon: Icon, exact, ...item }) => {
+          const badge = "badge" in item ? item.badge : 0;
+          // "Your queries" stays active on individual query pages too.
+          const active = exact
+            ? pathname === href || pathname.startsWith(`${href}/queries/`)
+            : pathname.startsWith(href);
           return (
             <li key={href} className="shrink-0">
               <Link
@@ -44,6 +58,12 @@ export function AccountNav({ email, isSuperadmin }: { email: string; isSuperadmi
               >
                 <Icon className="size-4" aria-hidden="true" />
                 {label}
+                {badge ? (
+                  <span className="ms-auto rounded-full bg-primary px-1.5 text-xs font-semibold text-primary-foreground">
+                    <span aria-hidden="true">{badge}</span>
+                    <span className="sr-only">{tp("unreadCount", { count: badge })}</span>
+                  </span>
+                ) : null}
               </Link>
             </li>
           );

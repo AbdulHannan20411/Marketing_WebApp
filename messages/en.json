@@ -1878,5 +1878,57 @@
       "reply": "Their reply",
       "cta": "Open in the admin"
     }
+  },
+  "portal": {
+    "list": {
+      "title": "Your queries",
+      "subtitle": "Every question you've sent us, with our replies.",
+      "ask": "Ask a new question",
+      "empty": "You haven't sent us any questions yet.",
+      "emptyHint": "Questions you send with this email address will appear here, with our replies.",
+      "unread": "New reply",
+      "unreadCount": "{count, plural, one {# new reply} other {# new replies}}",
+      "lastActivity": "Last activity {time}",
+      "sent": "Sent {time}",
+      "open": "Open query {reference}"
+    },
+    "status": {
+      "new": "Received",
+      "open": "Open",
+      "awaiting_customer": "Awaiting your reply",
+      "resolved": "Resolved",
+      "closed": "Closed"
+    },
+    "thread": {
+      "metaTitle": "Query {reference}",
+      "back": "All queries",
+      "reference": "Reference",
+      "topic": "Topic",
+      "created": "Sent",
+      "details": "Your answers",
+      "you": "You",
+      "team": "NextReach team",
+      "attachments": "Attachments",
+      "download": "Download {name}",
+      "conversation": "Conversation",
+      "live": "New replies appear here automatically.",
+      "replyLabel": "Your reply",
+      "replyHint": "Our team will be notified by email.",
+      "send": "Send reply",
+      "sending": "Sending…",
+      "sent": "Your reply has been sent.",
+      "resolve": "Mark as resolved",
+      "resolving": "Saving…",
+      "resolvedNotice": "You marked this query as resolved. Reply below if you need anything else, and we'll reopen it.",
+      "closedNotice": "This query is closed. If you need more help, please send a new question.",
+      "newQuestion": "Send a new question",
+      "errors": {
+        "empty": "Please write a reply.",
+        "tooLong": "Please keep your reply under 5,000 characters.",
+        "closed": "This query is closed, so replies are turned off.",
+        "rateLimited": "You've sent a lot of replies recently. Please wait a little and try again.",
+        "generic": "Something went wrong. Please try again."
+      }
+    }
   }
 }
