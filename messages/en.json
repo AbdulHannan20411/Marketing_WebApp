@@ -24,7 +24,6 @@
     "language": {
       "label": "Language",
       "change": "Change language",
-      "current": "Current language: {language}",
       "names": {
         "en": "English",
         "ur": "اردو"
@@ -2158,5 +2157,13 @@
         "generic": "Something went wrong. Please try again."
       }
     }
+  },
+  "consent": {
+    "region": "Analytics choice",
+    "text": "We'd like to use privacy-friendly analytics to see which pages are useful. It sets no advertising cookies and doesn't track you across other sites.",
+    "privacy": "Privacy Policy",
+    "accept": "Allow analytics",
+    "decline": "No thanks",
+    "settings": "Cookie settings"
   }
 }

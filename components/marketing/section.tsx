@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 
 import { Reveal } from "@/components/motion/reveal";
 import { cn } from "@/lib/utils";
@@ -12,19 +12,28 @@ type SectionProps = {
   labelledBy?: string;
 };
 
-/** Page section with consistent vertical rhythm. */
+/**
+ * Page section with consistent vertical rhythm.
+ *
+ * Performance: sections are mostly below the fold, so `content-visibility: auto` lets
+ * the browser skip their layout and paint until they near the viewport (they stay in
+ * the accessibility tree and find-in-page), and each section is its own Suspense
+ * boundary so React hydrates the page in smaller pieces instead of one long task.
+ */
 export function Section({ id, children, className, tone = "default", labelledBy }: SectionProps) {
   return (
     <section
       id={id}
       aria-labelledby={labelledBy}
       className={cn(
-        "scroll-mt-20 py-16 sm:py-20 lg:py-24",
+        "scroll-mt-20 py-16 [contain-intrinsic-size:auto_800px] [content-visibility:auto] sm:py-20 lg:py-24",
         tone === "subtle" && "bg-surface-subtle",
         className,
       )}
     >
-      <div className="container-page">{children}</div>
+      <div className="container-page">
+        <Suspense>{children}</Suspense>
+      </div>
     </section>
   );
 }

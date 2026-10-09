@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { featureSlugs } from "@/content/feature-slugs";
 import { localeMeta, locales, type Locale } from "@/lib/i18n/routing";
 
 /** Absolute path for a locale-less route, e.g. ("ur", "/features") → "/ur/features". */
@@ -48,3 +49,29 @@ export function pageMetadata({
     },
   };
 }
+
+/** Every public, indexable page (locale-less). Drives the sitemap. */
+export const publicPaths = [
+  "/",
+  "/features",
+  ...featureSlugs.map((slug) => `/features/${slug}`),
+  "/pricing",
+  "/use-cases",
+  "/about",
+  "/faq",
+  "/contact",
+  "/privacy",
+  "/terms",
+  "/refund-policy",
+] as const;
+
+/** Areas that are never indexed. */
+export const privatePathPrefixes = [
+  "/account",
+  "/admin",
+  "/sign-in",
+  "/sign-up",
+  "/forgot-password",
+  "/reset-password",
+  "/auth",
+] as const;

@@ -9,12 +9,14 @@ import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { Eyebrow, Section, SectionHeader } from "@/components/marketing/section";
 import { Reveal } from "@/components/motion/reveal";
+import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
 import { featurePages, featureSlugs, isFeatureSlug, type FeatureSlug } from "@/content/features";
 import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
 import { appLinks } from "@/lib/site";
+import { faqPageJsonLd } from "@/lib/structured-data";
 
 export function generateStaticParams() {
   return featureSlugs.map((slug) => ({ slug }));
@@ -51,6 +53,11 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
   ]);
   // Keys below come from the typed content source; a unit test checks they all exist.
   const tk = t as unknown as (key: string) => string;
+  const faqs = page.faqs.map((key) => ({
+    id: `${slug}-${key}`,
+    question: tk(`faqs.${key}.q`),
+    answer: tk(`faqs.${key}.a`),
+  }));
 
   return (
     <>
@@ -152,14 +159,9 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr]">
           <SectionHeader id="faq-title" title={shared("faqTitle")} align="start" />
           <Reveal>
-            <FaqAccordion
-              items={page.faqs.map((key) => ({
-                id: `${slug}-${key}`,
-                question: tk(`faqs.${key}.q`),
-                answer: tk(`faqs.${key}.a`),
-              }))}
-            />
+            <FaqAccordion items={faqs} />
           </Reveal>
+          <JsonLd data={faqPageJsonLd(faqs)} />
         </div>
       </Section>
 

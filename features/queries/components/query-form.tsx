@@ -36,10 +36,19 @@ import {
   type QuestionKey,
   type Topic,
 } from "../definitions";
-import { answersSchema, contactStepSchema, topicStepSchema } from "../schemas";
 import { OptionGroup } from "./option-group";
 import { QuerySuccess } from "./query-success";
 import { Turnstile } from "./turnstile";
+
+// The validation schemas (and Zod) load when the visitor first interacts with the
+// form, not with the page; every check awaits them, so nothing can skip validation.
+const loadSchemas = (() => {
+  let schemas: ReturnType<typeof importSchemas> | null = null;
+  return () => (schemas ??= importSchemas());
+})();
+function importSchemas() {
+  return import("../schemas");
+}
 
 type StepId = "topic" | "details" | "message" | "review";
 type AnswerValue = string | string[];
@@ -185,7 +194,8 @@ export function QueryForm({
   };
 
   /** Validates one step with its Zod schema and shows field errors. */
-  const validateStep = (id: StepId): boolean => {
+  const validateStep = async (id: StepId): Promise<boolean> => {
+    const { answersSchema, contactStepSchema, topicStepSchema } = await loadSchemas();
     const values = getValues();
     if (id === "topic") {
       clearErrors("topic");
@@ -246,8 +256,8 @@ export function QueryForm({
     setFormError(null);
   };
 
-  const next = () => {
-    if (!validateStep(step)) return;
+  const next = async () => {
+    if (!(await validateStep(step))) return;
     focusOnEnter.current = true;
     setFormError(null);
     setDirection(1);
@@ -280,12 +290,12 @@ export function QueryForm({
     setFile(picked);
   };
 
-  const submit = () => {
+  const submit = async () => {
     const values = getValues();
     if (!isTopic(values.topic)) return goTo("topic");
     // Re-check every step before sending; jump to the first one with a problem.
     for (const id of steps) {
-      if (id !== "review" && !validateStep(id)) {
+      if (id !== "review" && !(await validateStep(id))) {
         goTo(id);
         setFormError("summary");
         return;
@@ -353,8 +363,8 @@ export function QueryForm({
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
-    if (step === "review") submit();
-    else next();
+    if (step === "review") void submit();
+    else void next();
   };
 
   const startOver = () => {
@@ -380,7 +390,15 @@ export function QueryForm({
   const offset = locale === "ur" ? -1 : 1;
 
   return (
-    <form onSubmit={onSubmit} noValidate className="flex flex-col gap-6" aria-busy={pending}>
+    <form
+      onSubmit={onSubmit}
+      // Start loading the validation code as soon as the visitor engages.
+      onPointerDownCapture={() => void loadSchemas()}
+      onFocusCapture={() => void loadSchemas()}
+      noValidate
+      className="flex flex-col gap-6"
+      aria-busy={pending}
+    >
       {/* Progress */}
       <nav aria-label={t("progressLabel")} className="flex flex-col gap-3">
         <p className="text-sm font-medium text-muted-foreground">

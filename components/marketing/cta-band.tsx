@@ -20,7 +20,7 @@ type CtaBandProps = {
 /** Closing call-to-action block used at the bottom of pages. */
 export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }: CtaBandProps) {
   return (
-    <section className="py-16 sm:py-20">
+    <section className="py-16 [contain-intrinsic-size:auto_480px] [content-visibility:auto] sm:py-20">
       <div className="container-page">
         <Reveal className="relative overflow-hidden rounded-2xl bg-primary px-6 py-12 text-center text-primary-foreground sm:px-12 sm:py-16">
           <div
@@ -33,7 +33,7 @@ export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }
           />
           <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-4">
             <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">{title}</h2>
-            <p className="text-lg text-pretty opacity-90">{subtitle}</p>
+            <p className="text-lg text-pretty">{subtitle}</p>
             <div className="mt-4 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               {primary ? (
                 <Button
@@ -52,7 +52,7 @@ export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }
                   asChild
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                  className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground dark:border-primary-foreground/40 dark:bg-transparent dark:hover:bg-primary-foreground/10"
                 >
                   <Link href={secondary.href}>{secondary.label}</Link>
                 </Button>
@@ -62,7 +62,7 @@ export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }
                   source={secondaryDialog.source}
                   size="lg"
                   variant="outline"
-                  className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                  className="border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground dark:border-primary-foreground/40 dark:bg-transparent dark:hover:bg-primary-foreground/10"
                 >
                   {secondaryDialog.label}
                 </QueryDialogButton>

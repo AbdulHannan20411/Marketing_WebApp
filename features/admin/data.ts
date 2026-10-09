@@ -1,6 +1,6 @@
 import "server-only";
 
-import { z } from "zod";
+import { z } from "@/lib/validation/zod";
 
 import type { Topic } from "@/features/queries/definitions";
 import type { CurrentProfile } from "@/lib/auth/session";

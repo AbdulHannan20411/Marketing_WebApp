@@ -14,9 +14,11 @@ import {
   ProblemSection,
 } from "@/components/marketing/home/sections";
 import { PricingTeaser } from "@/components/marketing/pricing-teaser";
-import { isLocale } from "@/lib/i18n/routing";
-import { pageMetadata } from "@/lib/seo";
-import { appLinks } from "@/lib/site";
+import { JsonLd } from "@/components/seo/json-ld";
+import { isLocale, localeMeta } from "@/lib/i18n/routing";
+import { localizedPath, pageMetadata } from "@/lib/seo";
+import { appLinks, siteConfig } from "@/lib/site";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await rootLocale();
@@ -31,10 +33,26 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const t = await getTranslations("home.finalCta");
+  const [localeValue, t, meta] = await Promise.all([
+    rootLocale(),
+    getTranslations("home.finalCta"),
+    getTranslations("metadata"),
+  ]);
+  const locale = isLocale(localeValue) ? localeValue : "en";
 
   return (
     <>
+      <JsonLd
+        data={[
+          organizationJsonLd({ siteUrl: siteConfig.url, description: meta("description") }),
+          websiteJsonLd({
+            siteUrl: siteConfig.url,
+            pageUrl: new URL(localizedPath(locale, "/"), siteConfig.url).toString(),
+            name: meta("siteName"),
+            language: localeMeta[locale].htmlLang,
+          }),
+        ]}
+      />
       <HomeHero />
       {/* TODO: real customer logos — add a logo strip here once customers agree to be listed. */}
       <ProblemSection />

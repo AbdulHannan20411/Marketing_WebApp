@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 
 import type { HeroMockupStrings } from "./hero-mockup";
 
@@ -23,7 +24,8 @@ function HeroMockupPlaceholder({ business }: { business: string }) {
   );
 }
 
-// The animation code (and Motion's engine) loads after the page is interactive.
+// The animation code (and Motion's engine) loads once the page has finished loading
+// and the browser is idle, so it never competes with the first render.
 const HeroMockup = dynamic(() => import("./hero-mockup"), {
   ssr: false,
   loading: () => null,
@@ -36,13 +38,33 @@ export function HeroMockupLoader({
   strings: HeroMockupStrings;
   label: string;
 }) {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    let idle = 0;
+    let timer = 0;
+    const start = () => {
+      // Safari has no requestIdleCallback.
+      if (typeof window.requestIdleCallback === "function") {
+        idle = window.requestIdleCallback(() => setReady(true), { timeout: 2500 });
+      } else {
+        timer = window.setTimeout(() => setReady(true), 300);
+      }
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+    return () => {
+      window.removeEventListener("load", start);
+      if (idle) window.cancelIdleCallback(idle);
+      window.clearTimeout(timer);
+    };
+  }, []);
+
   return (
     <figure role="img" aria-label={label} className="relative">
       <div aria-hidden="true" className="grid [&>*]:col-start-1 [&>*]:row-start-1">
         <HeroMockupPlaceholder business={strings.business} />
-        <div className="relative">
-          <HeroMockup strings={strings} />
-        </div>
+        <div className="relative">{ready ? <HeroMockup strings={strings} /> : null}</div>
       </div>
     </figure>
   );

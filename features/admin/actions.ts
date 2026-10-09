@@ -1,7 +1,7 @@
 "use server";
 
 import { after } from "next/server";
-import { z } from "zod";
+import { z } from "@/lib/validation/zod";
 
 import { getCurrentProfile, type CurrentProfile } from "@/lib/auth/session";
 import { createSupabaseServerClient } from "@/lib/supabase/server";

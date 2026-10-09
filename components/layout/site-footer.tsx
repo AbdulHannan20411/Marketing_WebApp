@@ -1,6 +1,8 @@
 import { cacheLife } from "next/cache";
 import { getTranslations } from "next-intl/server";
 
+import { ConsentSettingsButton } from "@/components/analytics/analytics";
+import { publicEnv } from "@/lib/env/public";
 import { Link } from "@/lib/i18n/navigation";
 
 import { Logo } from "./logo";
@@ -14,7 +16,7 @@ async function getCurrentYear() {
 }
 
 export async function SiteFooter() {
-  const t = await getTranslations("footer");
+  const [t, consent] = await Promise.all([getTranslations("footer"), getTranslations("consent")]);
   const year = await getCurrentYear();
 
   const columns = [
@@ -56,7 +58,12 @@ export async function SiteFooter() {
         <div className="container-page flex flex-col gap-2 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           {/* A string, so ICU does not format it as a grouped number ("2,026"). */}
           <p>{t("copyright", { year: String(year) })}</p>
-          <p>{t("madeIn")}</p>
+          <div className="flex flex-wrap items-center gap-x-4">
+            {publicEnv.NEXT_PUBLIC_ANALYTICS_ID ? (
+              <ConsentSettingsButton label={consent("settings")} />
+            ) : null}
+            <p>{t("madeIn")}</p>
+          </div>
         </div>
       </div>
     </footer>

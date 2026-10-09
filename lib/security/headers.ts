@@ -10,7 +10,7 @@
 export type SecurityHeaderOptions = {
   isDev: boolean;
   supabaseUrl?: string;
-  /** Extra origins for analytics (added in a later phase if enabled). */
+  /** Analytics origins (Umami), only when analytics is configured. */
   analyticsOrigins?: string[];
 };
 

@@ -1,6 +1,6 @@
 import "server-only";
 
-import { z } from "zod";
+import { z } from "@/lib/validation/zod";
 
 import type { CurrentProfile } from "@/lib/auth/session";
 import type { Database } from "@/lib/supabase/database.types";

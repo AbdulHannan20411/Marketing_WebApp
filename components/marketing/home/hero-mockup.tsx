@@ -190,7 +190,8 @@ export default function HeroMockup({ strings }: { strings: HeroMockupStrings }) 
       </div>
 
       {/* Lead badge */}
-      <AnimatePresence>
+      {/* With reduced motion everything is shown at once, without fading in. */}
+      <AnimatePresence initial={!showFinal}>
         {current >= 6 ? (
           <m.div
             key="lead"
@@ -204,7 +205,8 @@ export default function HeroMockup({ strings }: { strings: HeroMockupStrings }) 
       </AnimatePresence>
 
       {/* Campaign card */}
-      <AnimatePresence>
+      {/* With reduced motion everything is shown at once, without fading in. */}
+      <AnimatePresence initial={!showFinal}>
         {current >= 6 ? (
           <m.div
             key="campaign"

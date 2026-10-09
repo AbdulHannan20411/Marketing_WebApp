@@ -60,6 +60,30 @@ export default defineConfig([
               message:
                 "Server secrets cannot be read from components. Pass values as props from the server.",
             },
+            {
+              name: "zod",
+              message:
+                'Import { z } from "@/lib/validation/zod" (configured for our CSP) instead of "zod".',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
+    // Zod must come from the configured module (jitless, see lib/validation/zod.ts).
+    files: ["app/**/*.{ts,tsx}", "lib/**/*.ts", "features/**/*.ts"],
+    ignores: ["lib/validation/zod.ts"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "zod",
+              message:
+                'Import { z } from "@/lib/validation/zod" (configured for our CSP) instead of "zod".',
+            },
           ],
         },
       ],
@@ -81,6 +105,7 @@ export default defineConfig([
     "coverage/**",
     "playwright-report/**",
     "test-results/**",
+    "lighthouse-reports/**",
     "next-env.d.ts",
   ]),
 ]);

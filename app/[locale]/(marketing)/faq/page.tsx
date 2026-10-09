@@ -5,10 +5,12 @@ import { getTranslations } from "next-intl/server";
 import { FaqExplorer } from "@/components/marketing/faq-explorer";
 import { QUERY_TOKEN } from "@/components/marketing/faq-search";
 import { PageHero } from "@/components/marketing/page-hero";
+import { JsonLd } from "@/components/seo/json-ld";
 import { QueryDialogButton } from "@/features/queries/components/query-dialog-button";
 import { faqGroups } from "@/content/faq";
 import { isLocale } from "@/lib/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
+import { faqPageJsonLd } from "@/lib/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await rootLocale();
@@ -37,6 +39,7 @@ export default async function FaqPage() {
 
   return (
     <>
+      <JsonLd data={faqPageJsonLd(groups.flatMap((group) => group.items))} />
       <PageHero eyebrow={t("eyebrow")} title={t("title")}>
         <p className="max-w-2xl text-lg text-muted-foreground">{t("subtitle")}</p>
         <QueryDialogButton source="dialog" variant="outline">

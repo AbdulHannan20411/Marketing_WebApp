@@ -42,6 +42,62 @@ export function productJsonLd({
   };
 }
 
+/** schema.org Organization for NextReach (Home). No invented contact details or profiles. */
+export function organizationJsonLd({
+  siteUrl,
+  description,
+}: {
+  siteUrl: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": new URL("/#organization", siteUrl).toString(),
+    name: "NextReach",
+    url: siteUrl,
+    logo: new URL("/icon.svg", siteUrl).toString(),
+    description,
+    areaServed: { "@type": "Country", name: "Pakistan" },
+    // TODO: add `sameAs` with the real social profile URLs once they exist.
+  };
+}
+
+/** schema.org WebSite in the page's language, linked to the Organization. */
+export function websiteJsonLd({
+  siteUrl,
+  pageUrl,
+  name,
+  language,
+}: {
+  siteUrl: string;
+  pageUrl: string;
+  name: string;
+  language: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name,
+    url: pageUrl,
+    inLanguage: language,
+    publisher: { "@id": new URL("/#organization", siteUrl).toString() },
+  };
+}
+
+/** schema.org FAQPage from question/answer pairs shown on the page. */
+export function faqPageJsonLd(items: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
+}
+
 /** Serialises JSON-LD safely for an inline <script> (no `</script>` break-out). */
 export function serializeJsonLd(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");

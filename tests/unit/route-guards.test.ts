@@ -13,6 +13,13 @@ describe("isUnknownDynamicPath", () => {
   it("flags unknown slugs and extra segments", () => {
     expect(isUnknownDynamicPath("/en/features/not-a-feature")).toBe(true);
     expect(isUnknownDynamicPath("/ur/features/inbox/extra")).toBe(true);
+    expect(isUnknownDynamicPath("/en/features/inbox/opengraph-image/x")).toBe(true);
+    expect(isUnknownDynamicPath("/en/features/nope/opengraph-image")).toBe(true);
+  });
+
+  it("lets a feature page's generated social image through", () => {
+    expect(isUnknownDynamicPath("/en/features/inbox/opengraph-image")).toBe(false);
+    expect(isUnknownDynamicPath("/ur/features/ai/opengraph-image-1a2b3c")).toBe(false);
   });
 
   it("ignores other routes", () => {

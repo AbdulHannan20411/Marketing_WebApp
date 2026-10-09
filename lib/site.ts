@@ -1,8 +1,9 @@
+import { BRAND_NAME } from "@/lib/brand";
 import { publicEnv } from "@/lib/env/public";
 
 /** Non-translatable site constants. All human-readable copy lives in `messages/`. */
 export const siteConfig = {
-  name: "NextReach",
+  name: BRAND_NAME,
   url: publicEnv.NEXT_PUBLIC_SITE_URL,
   appUrl: publicEnv.NEXT_PUBLIC_APP_URL,
 } as const;

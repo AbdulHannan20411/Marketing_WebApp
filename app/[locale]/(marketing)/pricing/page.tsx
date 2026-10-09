@@ -24,7 +24,7 @@ import {
 } from "@/lib/pricing/view-model";
 import { localizedPath, pageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { productJsonLd } from "@/lib/structured-data";
+import { faqPageJsonLd, productJsonLd } from "@/lib/structured-data";
 
 const appPricingUrl = new URL("/pricing", siteConfig.appUrl).toString();
 const appCustomPlanUrl = new URL("/pricing/custom", siteConfig.appUrl).toString();
@@ -72,6 +72,11 @@ export default async function PricingPage() {
     : null;
   const saving = maxYearlySaving(plans);
   const strong = (chunks: React.ReactNode) => <strong className="text-foreground">{chunks}</strong>;
+  const faqItems = pricingFaqIds.map((id) => ({
+    id: `pricing-${id}`,
+    question: t(`faq.items.${id}.q`),
+    answer: t(`faq.items.${id}.a`),
+  }));
 
   return (
     <>
@@ -205,14 +210,9 @@ export default async function PricingPage() {
             </div>
           </div>
           <Reveal>
-            <FaqAccordion
-              items={pricingFaqIds.map((id) => ({
-                id: `pricing-${id}`,
-                question: t(`faq.items.${id}.q`),
-                answer: t(`faq.items.${id}.a`),
-              }))}
-            />
+            <FaqAccordion items={faqItems} />
           </Reveal>
+          <JsonLd data={faqPageJsonLd(faqItems)} />
         </div>
       </Section>
     </>

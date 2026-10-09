@@ -408,7 +408,7 @@ function Attachments({
   if (items.length === 0) return null;
   return (
     <div className="mt-3 border-t border-current/10 pt-3">
-      <p className="text-xs font-semibold opacity-80">{label}</p>
+      <p className="text-xs font-semibold">{label}</p>
       <ul className="mt-2 flex flex-col gap-1.5">
         {items.map((item) => (
           <li key={item.id}>
@@ -420,9 +420,7 @@ function Attachments({
               <span className="truncate" dir="auto">
                 {item.fileName}
               </span>
-              <span className="shrink-0 text-xs opacity-75">
-                {formatFileSize(locale, item.sizeBytes)}
-              </span>
+              <span className="shrink-0 text-xs">{formatFileSize(locale, item.sizeBytes)}</span>
             </a>
           </li>
         ))}

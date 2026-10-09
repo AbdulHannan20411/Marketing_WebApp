@@ -1,6 +1,5 @@
 "use client";
 
-import { inView } from "motion";
 import { useEffect, useRef, useState } from "react";
 
 type AnimatedNumberProps = {
@@ -31,9 +30,11 @@ export function AnimatedNumber({
     if (!element || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
-    const stop = inView(
-      element,
-      () => {
+    // A plain IntersectionObserver: no animation library needed for a counter.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        observer.disconnect();
         const start = performance.now();
         const tick = (now: number) => {
           const progress = Math.min(1, (now - start) / durationMs);
@@ -43,11 +44,12 @@ export function AnimatedNumber({
         };
         frame = requestAnimationFrame(tick);
       },
-      { amount: 0.6 },
+      { threshold: 0.6 },
     );
+    observer.observe(element);
 
     return () => {
-      stop();
+      observer.disconnect();
       cancelAnimationFrame(frame);
     };
   }, [value, durationMs]);

@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
+import { UMAMI_ORIGINS } from "./lib/analytics";
 import { buildSecurityHeaders } from "./lib/security/headers";
 
 const withNextIntl = createNextIntlPlugin("./lib/i18n/request.ts");
@@ -28,6 +29,8 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  // HarfBuzz loads its WebAssembly file from its own folder at runtime (OG images).
+  serverExternalPackages: ["harfbuzzjs"],
   images: {
     formats: ["image/avif", "image/webp"],
   },
@@ -38,6 +41,7 @@ const nextConfig: NextConfig = {
         headers: buildSecurityHeaders({
           isDev,
           supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+          analyticsOrigins: process.env.NEXT_PUBLIC_ANALYTICS_ID ? UMAMI_ORIGINS : [],
         }),
       },
     ];

@@ -31,14 +31,14 @@ function admin(): SupabaseClient {
 export type TestUser = { id: string; email: string; password: string };
 
 export async function createTestUser(
-  options: { fullName?: string; superadmin?: boolean; email?: string } = {},
+  options: { fullName?: string; superadmin?: boolean; email?: string; confirmed?: boolean } = {},
 ): Promise<TestUser> {
   const email = options.email ?? `e2e-${randomUUID().slice(0, 8)}@example.com`;
   const password = `E2e-${randomUUID()}`;
   const { data, error } = await admin().auth.admin.createUser({
     email,
     password,
-    email_confirm: true,
+    email_confirm: options.confirmed ?? true,
     user_metadata: { full_name: options.fullName ?? "E2E Tester", locale: "en" },
   });
   if (error || !data.user) throw new Error(`Could not create test user: ${error?.message}`);
@@ -233,4 +233,10 @@ export async function restoreSettings(settings: Settings) {
 
 export async function deleteSavedRepliesTitled(prefix: string) {
   await admin().from("saved_replies").delete().like("title", `${prefix}%`);
+}
+
+/** Confirms a test user's email, as clicking the confirmation link would. */
+export async function confirmTestUser(user: TestUser) {
+  const { error } = await admin().auth.admin.updateUserById(user.id, { email_confirm: true });
+  if (error) throw new Error(`Could not confirm test user: ${error.message}`);
 }

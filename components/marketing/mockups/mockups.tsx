@@ -314,7 +314,7 @@ export async function LeadScoringMockup() {
         </p>
         <ArrowDownIcon className="size-4 text-muted-foreground" aria-hidden="true" />
         <p
-          className="mock-pop rounded-full bg-brand px-4 py-1.5 text-sm font-semibold text-white"
+          className="mock-pop rounded-full bg-primary px-4 py-1.5 text-sm font-semibold text-primary-foreground"
           style={stagger(2)}
         >
           {t("result")}

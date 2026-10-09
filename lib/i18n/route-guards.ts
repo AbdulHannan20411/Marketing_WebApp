@@ -2,6 +2,9 @@ import { isFeatureSlug } from "@/content/feature-slugs";
 
 import { isLocale } from "./routing";
 
+/** Generated metadata images, e.g. "opengraph-image" or "opengraph-image-abc123". */
+const OG_IMAGE = /^(opengraph|twitter)-image(-[\w-]+)?$/;
+
 /**
  * Detects requests for dynamic routes whose param is not a real page, e.g.
  * /en/features/not-a-feature.
@@ -15,7 +18,10 @@ export function isUnknownDynamicPath(pathname: string): boolean {
   if (!isLocale(locale) || section !== "features" || slug === undefined || slug === "") {
     return false;
   }
-  return rest.some(Boolean) || !isFeatureSlug(decodeURIComponent(slug));
+  if (!isFeatureSlug(decodeURIComponent(slug))) return true;
+  // A real feature page may serve its generated social image; anything else is unknown.
+  const extra = rest.filter(Boolean);
+  return extra.length > 0 && !(extra.length === 1 && OG_IMAGE.test(extra[0]!));
 }
 
 /** Path the proxy rewrites unknown dynamic paths to (matched by the catch-all route). */

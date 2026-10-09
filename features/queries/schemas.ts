@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/lib/validation/zod";
 
 import { normalisePakistaniPhone } from "@/lib/validation/phone";
 

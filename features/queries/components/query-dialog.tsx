@@ -2,35 +2,18 @@
 
 import { type VariantProps } from "class-variance-authority";
 import dynamic from "next/dynamic";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { useRef, useState, type ReactNode } from "react";
 
 import { Button, type buttonVariants } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
 import type { Locale } from "@/lib/i18n/routing";
 
 import type { QuerySource, Topic } from "../definitions";
 
-function FormLoading() {
-  const t = useTranslations("queryForm");
-  return (
-    <p role="status" className="py-16 text-center text-muted-foreground">
-      {t("loading")}
-    </p>
-  );
-}
-
-// The form (and its validation code) loads the first time the dialog opens.
-const QueryForm = dynamic(() => import("./query-form").then((mod) => mod.QueryForm), {
-  ssr: false,
-  loading: () => <FormLoading />,
-});
+// The dialog (Radix) and the form load on first use, not with the page. Hovering or
+// focusing the link starts the download so the dialog opens without a wait.
+const loadPanel = () => import("./query-dialog-panel").then((mod) => mod.QueryDialogPanel);
+const QueryDialogPanel = dynamic(loadPanel, { ssr: false });
 
 type QueryDialogTriggerProps = {
   children: ReactNode;
@@ -53,9 +36,9 @@ export function QueryDialogTrigger({
   variant,
   size,
 }: QueryDialogTriggerProps) {
-  const t = useTranslations("queryForm");
   const locale = useLocale() as Locale;
   const [open, setOpen] = useState(false);
+  const [used, setUsed] = useState(false);
   const triggerRef = useRef<HTMLAnchorElement>(null);
   const href = `/${locale}/contact${topic ? `?topic=${topic}` : ""}`;
 
@@ -65,9 +48,12 @@ export function QueryDialogTrigger({
         <a
           ref={triggerRef}
           href={href}
+          onPointerEnter={() => void loadPanel()}
+          onFocus={() => void loadPanel()}
           onClick={(event) => {
             if (event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
             event.preventDefault();
+            setUsed(true);
             setOpen(true);
           }}
           aria-haspopup="dialog"
@@ -75,30 +61,17 @@ export function QueryDialogTrigger({
           {children}
         </a>
       </Button>
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent
-          closeLabel={t("close")}
-          className="max-h-[92dvh] overflow-y-auto sm:max-w-2xl"
-          // Return focus to the link that opened the dialog.
-          onCloseAutoFocus={(event) => {
-            event.preventDefault();
-            triggerRef.current?.focus();
-          }}
-        >
-          <DialogHeader>
-            <DialogTitle>{t("dialogTitle")}</DialogTitle>
-            <DialogDescription>{t("dialogDescription")}</DialogDescription>
-          </DialogHeader>
-          {open ? (
-            <QueryForm
-              locale={locale}
-              source={source}
-              initialTopic={topic}
-              turnstileSiteKey={turnstileSiteKey}
-            />
-          ) : null}
-        </DialogContent>
-      </Dialog>
+      {used ? (
+        <QueryDialogPanel
+          open={open}
+          onOpenChange={setOpen}
+          triggerRef={triggerRef}
+          locale={locale}
+          source={source}
+          topic={topic}
+          turnstileSiteKey={turnstileSiteKey}
+        />
+      ) : null}
     </>
   );
 }

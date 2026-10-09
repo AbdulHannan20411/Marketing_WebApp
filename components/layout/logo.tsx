@@ -1,4 +1,4 @@
-import { siteConfig } from "@/lib/site";
+import { BRAND_NAME } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 /** Brand mark: a chat bubble with an outgoing arrow. Decorative; the wordmark carries the name. */
@@ -33,7 +33,7 @@ export function Logo({ className }: { className?: string }) {
       <LogoMark />
       {/* The brand name is always Latin script, even on Urdu pages. */}
       <span lang="en" dir="ltr" className="font-sans text-lg font-semibold tracking-tight">
-        {siteConfig.name}
+        {BRAND_NAME}
       </span>
     </span>
   );

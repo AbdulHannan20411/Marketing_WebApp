@@ -1,7 +1,7 @@
 import "server-only";
 
 import { cacheLife, cacheTag } from "next/cache";
-import { z } from "zod";
+import { z } from "@/lib/validation/zod";
 
 import { serverEnv } from "@/lib/env/server";
 import { fetchResource, type ApiResult } from "@/lib/pricing/fetch-resource";

@@ -4,9 +4,11 @@ import { locale as rootLocale } from "next/root-params";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 
+import { Analytics } from "@/components/analytics/analytics";
 import { UtmCapture } from "@/components/analytics/utm-capture";
 import { MotionProvider } from "@/components/motion/motion-provider";
 import { ThemeScript } from "@/components/theme/theme-script";
+import { publicEnv } from "@/lib/env/public";
 import { latinFont, urduFont } from "@/lib/fonts";
 import { BASE_CLIENT_NAMESPACES, pickMessages } from "@/lib/i18n/client-messages";
 import { localeMeta, routing } from "@/lib/i18n/routing";
@@ -55,7 +57,12 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
   if (!hasLocale(routing.locales, locale)) notFound();
 
   const { dir, htmlLang } = localeMeta[locale];
-  const [messages, t] = await Promise.all([getMessages(), getTranslations("common")]);
+  const [messages, t, consent] = await Promise.all([
+    getMessages(),
+    getTranslations("common"),
+    getTranslations("consent"),
+  ]);
+  const analyticsId = publicEnv.NEXT_PUBLIC_ANALYTICS_ID;
   const clientMessages = pickMessages(messages, BASE_CLIENT_NAMESPACES);
 
   return (
@@ -79,6 +86,18 @@ export default async function LocaleLayout({ children }: LayoutProps<"/[locale]"
         <NextIntlClientProvider messages={clientMessages}>
           <MotionProvider>{children}</MotionProvider>
           <UtmCapture />
+          {analyticsId ? (
+            <Analytics
+              websiteId={analyticsId}
+              labels={{
+                region: consent("region"),
+                text: consent("text"),
+                privacy: consent("privacy"),
+                accept: consent("accept"),
+                decline: consent("decline"),
+              }}
+            />
+          ) : null}
         </NextIntlClientProvider>
       </body>
     </html>

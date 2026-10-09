@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from "@/lib/validation/zod";
 
 /**
  * Zod schemas mirroring the NextReach public pricing API.

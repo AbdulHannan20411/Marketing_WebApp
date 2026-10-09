@@ -59,10 +59,13 @@ test.describe("desktop header", () => {
 
   test("language switcher keeps the page and switches to Urdu", async ({ page }) => {
     await page.goto("/en");
-    await page.getByRole("button", { name: /Change language/ }).click();
-    await page.getByRole("menuitem", { name: "اردو" }).click();
+    await page.getByRole("link", { name: "Change language: اردو" }).click();
     await expect(page).toHaveURL(/\/ur$/);
     await expect(page.locator("html")).toHaveAttribute("dir", "rtl");
+    // And back, keeping the page.
+    await page.goto("/ur/pricing");
+    await page.getByRole("link", { name: "زبان تبدیل کریں: English" }).click();
+    await expect(page).toHaveURL(/\/en\/pricing$/);
   });
 });
 
