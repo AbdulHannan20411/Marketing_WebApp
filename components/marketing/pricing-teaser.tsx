@@ -119,7 +119,7 @@ export async function PricingTeaser() {
                   <p className="mt-6 flex flex-wrap items-baseline gap-x-1.5">
                     <span className="text-sm text-muted-foreground">{t("from")}</span>
                     <span
-                      className="text-4xl font-semibold tracking-[-0.03em] tabular-nums"
+                      className="text-4xl font-semibold tracking-[-0.03em] tabular-nums md:text-3xl lg:text-4xl"
                       dir="ltr"
                     >
                       {formatMoney(locale, plan.monthlyPrice, plan.currency)}

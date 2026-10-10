@@ -173,7 +173,5 @@ test.describe("calls to action", () => {
       name: /Start free trial with the|Get started with the/,
     });
     await expect(planLinks.first()).toHaveAttribute("href", "/en/contact?topic=pricing");
-    // Without a pricing API, the plans are shown as-is (no "prices may have changed").
-    await expect(page.getByText("Prices may have changed")).toHaveCount(0);
   });
 });

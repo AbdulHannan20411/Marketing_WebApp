@@ -67,6 +67,8 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
           "mx-auto grid w-full items-stretch gap-5",
           gridCols,
           plans.length < 3 && "max-w-4xl",
+          // Stacked (below lg), cards stay a comfortable width instead of spanning a tablet.
+          plans.length === 3 && "max-w-xl lg:max-w-none",
         )}
       >
         {plans.map((plan) => {
