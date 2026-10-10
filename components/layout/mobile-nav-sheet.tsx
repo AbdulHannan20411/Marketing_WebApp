@@ -21,8 +21,10 @@ import { Logo } from "./logo";
 import { isActivePath, primaryNav } from "./nav-config";
 
 export type MobileNavProps = {
-  signInHref: string;
-  startTrialHref: string;
+  /** null while the main app isn't live: the sign-in button is hidden. */
+  signInHref: string | null;
+  /** null while the main app isn't live: the button goes to the query form. */
+  startTrialHref: string | null;
 };
 
 /** The menu itself. Loaded on first use by MobileNav. */
@@ -108,14 +110,22 @@ export function MobileNavSheet({
 
           <div className="flex flex-col gap-2">
             <Button asChild size="lg" className="w-full">
-              <a href={startTrialHref}>
-                {t("cta.startTrial")}
-                <ArrowUpRightIcon className="size-4 rtl:-scale-x-100" aria-hidden="true" />
-              </a>
+              {startTrialHref ? (
+                <a href={startTrialHref}>
+                  {t("cta.startTrial")}
+                  <ArrowUpRightIcon className="size-4 rtl:-scale-x-100" aria-hidden="true" />
+                </a>
+              ) : (
+                <Link href={{ pathname: "/contact", query: { topic: "pricing" } }}>
+                  {t("cta.startTrial")}
+                </Link>
+              )}
             </Button>
-            <Button asChild size="lg" variant="outline" className="w-full">
-              <a href={signInHref}>{t("cta.signInToApp")}</a>
-            </Button>
+            {signInHref ? (
+              <Button asChild size="lg" variant="outline" className="w-full">
+                <a href={signInHref}>{t("cta.signInToApp")}</a>
+              </Button>
+            ) : null}
           </div>
         </div>
       </SheetContent>

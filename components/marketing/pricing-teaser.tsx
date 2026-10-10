@@ -8,13 +8,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/i18n/navigation";
 import { getCustomPlanOffer, getPublicPlans } from "@/lib/nextreach-api";
 import { formatMoney } from "@/lib/pricing/format";
-import { siteConfig } from "@/lib/site";
+import { appLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 import { Section, SectionHeader } from "./section";
-
-const appPricingUrl = new URL("/pricing", siteConfig.appUrl).toString();
-const appCustomPlanUrl = new URL("/pricing/custom", siteConfig.appUrl).toString();
 
 /**
  * Home page pricing teaser: up to three live plans (or the typed fallback when the
@@ -29,7 +26,11 @@ export async function PricingTeaser() {
     getTranslations("modules.labels"),
   ]);
 
-  const usingFallback = !plansResult.ok;
+  // Only warn when a pricing API is set up but failing (see the Pricing page).
+  const usingFallback = !plansResult.ok && plansResult.reason !== "not_configured";
+  const contactPricing = `/${locale}/contact?topic=pricing`;
+  const appPricingUrl = appLinks.pricing ?? contactPricing;
+  const appCustomPlanUrl = appLinks.customPlan ?? contactPricing;
   const plans = (plansResult.ok ? plansResult.data : fallbackPlans).slice(0, 3);
   const custom = customResult.ok && customResult.data.enabled ? customResult.data : null;
 

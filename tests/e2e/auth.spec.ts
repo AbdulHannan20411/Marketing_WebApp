@@ -7,6 +7,7 @@ import {
   supabaseConfigured,
   type TestUser,
 } from "./support/supabase-admin";
+import { appUrl } from "./support/site-mode";
 
 /** Sign-in makes several round trips to Supabase; allow for a remote region under load. */
 const AUTH_NAV = { timeout: 15_000 };
@@ -45,8 +46,8 @@ test("signed-out visitors are sent to sign-in with a safe return path", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Sign in to your support account",
   );
-  // Explains this is not the NextReach app account.
-  await expect(page.getByRole("link", { name: "sign in to the app" })).toBeVisible();
+  // Explains this is not the NextReach app account (once the app is live).
+  await expect(page.getByRole("link", { name: "sign in to the app" })).toHaveCount(appUrl ? 1 : 0);
 });
 
 test("wrong password shows a generic error", async ({ page }) => {

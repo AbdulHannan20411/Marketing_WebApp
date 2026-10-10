@@ -1,5 +1,4 @@
-import { ArrowUpRightIcon } from "lucide-react";
-
+import { TrialCta } from "@/components/marketing/trial-cta";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import type { QuerySource } from "@/features/queries/definitions";
@@ -9,8 +8,8 @@ import { Link } from "@/lib/i18n/navigation";
 type CtaBandProps = {
   title: string;
   subtitle: string;
-  /** External link into the NextReach app (free trial). */
-  primary?: { label: string; href: string };
+  /** "Start free trial": the app when it's live, otherwise the query form. */
+  trial?: { label: string };
   /** Internal link, e.g. /about. */
   secondary?: { label: string; href: string };
   /** Opens the guided query form in a dialog (falls back to /contact without JS). */
@@ -21,7 +20,7 @@ type CtaBandProps = {
  * Closing call-to-action: a deep "ink" panel with a quiet grid and a brand glow.
  * Copy sits on the reading side, actions on the other (stacked on small screens).
  */
-export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }: CtaBandProps) {
+export function CtaBand({ title, subtitle, trial, secondary, secondaryDialog }: CtaBandProps) {
   return (
     <section className="py-16 [contain-intrinsic-size:auto_480px] [content-visibility:auto] sm:py-24">
       <div className="container-page">
@@ -46,14 +45,7 @@ export function CtaBand({ title, subtitle, primary, secondary, secondaryDialog }
               <p className="text-lg text-pretty text-muted-foreground">{subtitle}</p>
             </div>
             <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
-              {primary ? (
-                <Button asChild size="lg" variant="inverse">
-                  <a href={primary.href}>
-                    {primary.label}
-                    <ArrowUpRightIcon className="size-4 rtl:-scale-x-100" aria-hidden="true" />
-                  </a>
-                </Button>
-              ) : null}
+              {trial ? <TrialCta label={trial.label} size="lg" variant="inverse" /> : null}
               {secondary ? (
                 <Button asChild size="lg" variant="outline">
                   <Link href={secondary.href}>{secondary.label}</Link>

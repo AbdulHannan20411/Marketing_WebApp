@@ -12,7 +12,6 @@ import { featureAreas } from "@/content/features";
 import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
-import { appLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -126,7 +125,7 @@ export default async function FeaturesPage() {
       <CtaBand
         title={cta("title")}
         subtitle={cta("subtitle")}
-        primary={{ label: cta("primary"), href: appLinks.startTrial }}
+        trial={{ label: cta("primary") }}
         secondaryDialog={{ label: cta("secondary"), source: "dialog" }}
       />
     </>

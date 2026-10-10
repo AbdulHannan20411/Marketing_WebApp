@@ -1,8 +1,8 @@
-import { ArrowUpRightIcon, BadgeCheckIcon, GiftIcon, WalletIcon } from "lucide-react";
+import { BadgeCheckIcon, GiftIcon, WalletIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
+import { TrialCta } from "@/components/marketing/trial-cta";
 import { Button } from "@/components/ui/button";
-import { appLinks } from "@/lib/site";
 
 import { HeroMockupLoader } from "./hero-mockup-loader";
 
@@ -73,12 +73,11 @@ export async function HomeHero() {
             {t("subtitle")}
           </p>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-            <Button asChild size="lg" className="h-12 rounded-full px-7 text-base">
-              <a href={appLinks.startTrial}>
-                {t("primaryCta")}
-                <ArrowUpRightIcon className="size-4 rtl:-scale-x-100" aria-hidden="true" />
-              </a>
-            </Button>
+            <TrialCta
+              label={t("primaryCta")}
+              size="lg"
+              className="h-12 rounded-full px-7 text-base"
+            />
             <Button
               asChild
               size="lg"

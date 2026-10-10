@@ -13,6 +13,12 @@ Pakistan. It has:
 The NextReach product itself is a separate app. Every "Start free trial" and "Sign in" link goes to
 `NEXT_PUBLIC_APP_URL`; this site never handles app accounts.
 
+**Standalone mode (before the app is live).** Leave `NEXT_PUBLIC_APP_URL` and `NEXTREACH_API_URL`
+empty and the site works on its own: every "Start free trial" and plan button opens the query
+form (so each request lands in **Admin → Queries**), app sign-in links are hidden, and Pricing
+shows your plans from `content/fallback-plans.ts` with no warning. When the app launches, set both
+variables on Vercel and redeploy; no code changes are needed.
+
 **Stack:** Next.js 16 (App Router, Cache Components, Server Actions), React 19, TypeScript (strict),
 Tailwind CSS v4 + shadcn/ui, Motion, next-intl, Supabase (Auth, Postgres + RLS, Storage, Realtime),
 Zod + React Hook Form, Resend, Vitest and Playwright.
@@ -55,21 +61,21 @@ shows the fallback plans with a "prices may have changed" note.
 Put real values in `.env.local` (never committed). `.env.example` lists every variable with a
 placeholder. On Vercel, set the same names under **Project → Settings → Environment Variables**.
 
-| Variable                        | Required            | Where it's used                                                                                                             |
-| ------------------------------- | ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`          | Production          | This site's public URL, e.g. `https://nextreach.pk`. Canonical URLs, sitemap, Open Graph images and email links.            |
-| `NEXT_PUBLIC_APP_URL`           | Production          | The NextReach app. All "Start free trial" / "Sign in" links. Pricing CTAs go to `${APP_URL}/pricing` and `/pricing/custom`. |
-| `NEXTREACH_API_URL`             | For live prices     | Base URL of the NextReach API (`/api/v1/public/plans`, `/api/v1/public/custom-plan`). Server only.                          |
-| `REVALIDATE_SECRET`             | For instant updates | Shared secret for `POST /api/revalidate-pricing` (section 6). Use a long random string.                                     |
-| `NEXT_PUBLIC_SUPABASE_URL`      | Yes, for accounts   | Supabase project URL.                                                                                                       |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes, for accounts   | Supabase **publishable** (anon) key. Safe in the browser; Row Level Security protects the data.                             |
-| `SUPABASE_SERVICE_ROLE_KEY`     | Yes, for accounts   | Supabase **secret** (service role) key. **Server only.** Also keys the form tokens and IP hashing.                          |
-| `SUPABASE_DB_URL`               | Scripts only        | Postgres connection string for migrations, types and DB tests. Never read by the app.                                       |
-| `RESEND_API_KEY`                | For real email      | Resend API key. Without it, emails are printed to the server log instead.                                                   |
-| `EMAIL_FROM`                    | With Resend         | Sender, e.g. `NextReach <hello@nextreach.pk>`. The domain must be verified in Resend.                                       |
-| `TURNSTILE_SITE_KEY`            | Optional            | Cloudflare Turnstile site key. Turnstile is on only when **both** Turnstile keys are set.                                   |
-| `TURNSTILE_SECRET_KEY`          | Optional            | Cloudflare Turnstile secret key. Server only.                                                                               |
-| `NEXT_PUBLIC_ANALYTICS_ID`      | Optional            | Umami Cloud **website ID**. Leave empty to disable analytics and the consent notice.                                        |
+| Variable                        | Required             | Where it's used                                                                                                                                           |
+| ------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`          | Production           | This site's public URL, e.g. `https://nextreach.pk`. Canonical URLs, sitemap, Open Graph images and email links.                                          |
+| `NEXT_PUBLIC_APP_URL`           | When the app is live | The NextReach app. "Start free trial" / "Sign in" links, and plan buttons (`${APP_URL}/pricing`, `/pricing/custom`). Empty = standalone mode (see above). |
+| `NEXTREACH_API_URL`             | When the app is live | Base URL of the NextReach API (`/api/v1/public/plans`, `/api/v1/public/custom-plan`). Server only. Empty = plans from `content/fallback-plans.ts`.        |
+| `REVALIDATE_SECRET`             | For instant updates  | Shared secret for `POST /api/revalidate-pricing` (section 6). Use a long random string.                                                                   |
+| `NEXT_PUBLIC_SUPABASE_URL`      | Yes, for accounts    | Supabase project URL.                                                                                                                                     |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes, for accounts    | Supabase **publishable** (anon) key. Safe in the browser; Row Level Security protects the data.                                                           |
+| `SUPABASE_SERVICE_ROLE_KEY`     | Yes, for accounts    | Supabase **secret** (service role) key. **Server only.** Also keys the form tokens and IP hashing.                                                        |
+| `SUPABASE_DB_URL`               | Scripts only         | Postgres connection string for migrations, types and DB tests. Never read by the app.                                                                     |
+| `RESEND_API_KEY`                | For real email       | Resend API key. Without it, emails are printed to the server log instead.                                                                                 |
+| `EMAIL_FROM`                    | With Resend          | Sender, e.g. `NextReach <hello@nextreach.pk>`. The domain must be verified in Resend.                                                                     |
+| `TURNSTILE_SITE_KEY`            | Optional             | Cloudflare Turnstile site key. Turnstile is on only when **both** Turnstile keys are set.                                                                 |
+| `TURNSTILE_SECRET_KEY`          | Optional             | Cloudflare Turnstile secret key. Server only.                                                                                                             |
+| `NEXT_PUBLIC_ANALYTICS_ID`      | Optional             | Umami Cloud **website ID**. Leave empty to disable analytics and the consent notice.                                                                      |
 
 `npm run check:bundle` (part of `npm run ci`) fails the build if any server-only name or value
 appears in the browser bundle.
@@ -321,5 +327,5 @@ tests/                     unit, db and e2e tests
 | No emails arrive                        | Check `RESEND_API_KEY` / `EMAIL_FROM` and the Resend domain. Without them, look for `[email]` lines in the server log. |
 | `/admin` shows "page not found"         | Your account isn't a Super Admin yet (section 4), or it is suspended.                                                  |
 | The inbox or portal doesn't update live | Realtime is published by the migrations; check the browser can reach `wss://<project>.supabase.co` (CSP and network).  |
-| Pricing shows "Prices may have changed" | `NEXTREACH_API_URL` is missing or the API returned an error; see `[nextreach-api]` lines in the server log.            |
+| Pricing shows "Prices may have changed" | `NEXTREACH_API_URL` is set but the API returned an error; see `[nextreach-api]` lines in the server log.               |
 | `npm run db:push` can't connect         | Use the **Session pooler** string and URL-encode the password.                                                         |

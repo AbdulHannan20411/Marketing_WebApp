@@ -7,7 +7,8 @@ describe("public env", () => {
   it("applies local defaults when values are empty", () => {
     const env = parsePublicEnv({ NEXT_PUBLIC_SITE_URL: "", NEXT_PUBLIC_APP_URL: "" });
     expect(env.NEXT_PUBLIC_SITE_URL).toBe("http://localhost:3000");
-    expect(env.NEXT_PUBLIC_APP_URL).toBe("http://localhost:4200");
+    // No app URL = the site runs on its own (see lib/site.ts).
+    expect(env.NEXT_PUBLIC_APP_URL).toBeUndefined();
     expect(env.NEXT_PUBLIC_SUPABASE_URL).toBeUndefined();
   });
 

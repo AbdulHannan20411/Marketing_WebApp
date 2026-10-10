@@ -1,6 +1,7 @@
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
 
 import { E2E_REVALIDATE_SECRET, MOCK_API_URL } from "../../playwright.config";
+import { appUrl, expectedCustomPlanHref, expectedPricingHref, siteUrl } from "./support/site-mode";
 
 /*
  * Pricing page against a mock NextReach API. Each test switches the mock's mode and
@@ -61,11 +62,11 @@ test("live plans: order, badges, toggle, comparison, custom plan and JSON-LD", a
   await expect(growth.getByText("10% off")).toBeVisible();
   await expect(scale.getByText("Recommended")).toBeVisible();
 
-  // CTAs go to the app; "Get started" when there is no trial.
+  // CTAs go to the app (or the query form while it isn't live); "Get started" when there is no trial.
   const growthCta = growth.getByRole("link", {
     name: "Start free trial with the Mock Growth plan",
   });
-  await expect(growthCta).toHaveAttribute("href", "http://localhost:4200/pricing");
+  await expect(growthCta).toHaveAttribute("href", expectedPricingHref);
   await expect(
     scale.getByRole("link", { name: "Get started with the Mock Scale plan" }),
   ).toBeVisible();
@@ -107,7 +108,7 @@ test("live plans: order, badges, toggle, comparison, custom plan and JSON-LD", a
   await expect(custom).toContainText(/\+PKR\s1,500\/month/);
   await expect(custom.getByRole("link", { name: /Build my plan/ })).toHaveAttribute(
     "href",
-    "http://localhost:4200/pricing/custom",
+    expectedCustomPlanHref,
   );
   await page.getByRole("radio", { name: "Yearly" }).click();
   await expect(custom).toContainText(/From PKR\s30,600\/year, save 15%/);
@@ -120,7 +121,10 @@ test("live plans: order, badges, toggle, comparison, custom plan and JSON-LD", a
     "Mock Growth",
     "Mock Scale",
   ]);
-  expect(data.offers[1]).toMatchObject({ price: 5000, url: "http://localhost:4200/pricing" });
+  expect(data.offers[1]).toMatchObject({
+    price: 5000,
+    url: appUrl ? expectedPricingHref : `${siteUrl}/en/pricing`,
+  });
 });
 
 test("disabled custom plan offer hides Build your own plan", async ({ page, request }) => {

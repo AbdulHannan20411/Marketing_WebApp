@@ -23,11 +23,8 @@ import {
   maxYearlySaving,
 } from "@/lib/pricing/view-model";
 import { localizedPath, pageMetadata } from "@/lib/seo";
-import { siteConfig } from "@/lib/site";
+import { appLinks, siteConfig } from "@/lib/site";
 import { faqPageJsonLd, productJsonLd } from "@/lib/structured-data";
-
-const appPricingUrl = new URL("/pricing", siteConfig.appUrl).toString();
-const appCustomPlanUrl = new URL("/pricing/custom", siteConfig.appUrl).toString();
 
 const pricingFaqIds = [
   "currency",
@@ -61,7 +58,15 @@ export default async function PricingPage() {
   ]);
   const locale = isLocale(localeValue) ? localeValue : "en";
 
-  const usingFallback = !plansResult.ok;
+  // No pricing API configured yet: the plans in content/fallback-plans.ts are the
+  // real prices, so no "prices may have changed" warning. The warning is only for an
+  // API that is set up but failing.
+  const usingFallback = !plansResult.ok && plansResult.reason !== "not_configured";
+  // Plan buttons go to the app once it's live; until then, to the query form.
+  const contactPricing = `/${locale}/contact?topic=pricing`;
+  const appPricingUrl = appLinks.pricing ?? contactPricing;
+  const appCustomPlanUrl = appLinks.customPlan ?? contactPricing;
+  const pageUrl = new URL(localizedPath(locale, "/pricing"), siteConfig.url).toString();
   const plans = plansResult.ok ? plansResult.data : fallbackPlans;
   const offer = customResult.ok ? customResult.data : null;
 
@@ -85,8 +90,8 @@ export default async function PricingPage() {
           plans,
           name: siteConfig.name,
           description: t("productDescription"),
-          pageUrl: new URL(localizedPath(locale, "/pricing"), siteConfig.url).toString(),
-          offerUrl: appPricingUrl,
+          pageUrl,
+          offerUrl: appLinks.pricing ?? pageUrl,
         })}
       />
 

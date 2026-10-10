@@ -1,4 +1,4 @@
-import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon, ChevronRightIcon } from "lucide-react";
+import { ArrowRightIcon, CheckIcon, ChevronRightIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locale as rootLocale } from "next/root-params";
@@ -8,6 +8,7 @@ import { CtaBand } from "@/components/marketing/cta-band";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Mockup } from "@/components/marketing/mockups/mockups";
+import { TrialCta } from "@/components/marketing/trial-cta";
 import { Eyebrow, Section, SectionHeader } from "@/components/marketing/section";
 import { Reveal } from "@/components/motion/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -16,7 +17,6 @@ import { featurePages, featureSlugs, isFeatureSlug, type FeatureSlug } from "@/c
 import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
-import { appLinks } from "@/lib/site";
 import { faqPageJsonLd } from "@/lib/structured-data";
 
 export function generateStaticParams() {
@@ -94,12 +94,7 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
             </h1>
             <p className="max-w-xl text-lg text-pretty text-muted-foreground">{t("subtitle")}</p>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-              <Button asChild size="lg">
-                <a href={appLinks.startTrial}>
-                  {cta("primary")}
-                  <ArrowUpRightIcon className="size-4 rtl:-scale-x-100" aria-hidden="true" />
-                </a>
-              </Button>
+              <TrialCta label={cta("primary")} size="lg" />
               <Button asChild size="lg" variant="outline">
                 <Link href="/contact">{cta("secondary")}</Link>
               </Button>
@@ -229,7 +224,7 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
       <CtaBand
         title={cta("title")}
         subtitle={cta("subtitle")}
-        primary={{ label: cta("primary"), href: appLinks.startTrial }}
+        trial={{ label: cta("primary") }}
         secondaryDialog={{ label: cta("secondary"), source: "dialog" }}
       />
     </>

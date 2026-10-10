@@ -17,7 +17,7 @@ import { PricingTeaser } from "@/components/marketing/pricing-teaser";
 import { JsonLd } from "@/components/seo/json-ld";
 import { isLocale, localeMeta } from "@/lib/i18n/routing";
 import { localizedPath, pageMetadata } from "@/lib/seo";
-import { appLinks, siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/structured-data";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -67,7 +67,7 @@ export default async function HomePage() {
       <CtaBand
         title={t("title")}
         subtitle={t("subtitle")}
-        primary={{ label: t("primary"), href: appLinks.startTrial }}
+        trial={{ label: t("primary") }}
         secondaryDialog={{ label: t("secondary"), source: "dialog" }}
       />
     </>

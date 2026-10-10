@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+import { appUrl } from "./support/site-mode";
+
 const pages = [
   "/",
   "/features",
@@ -135,5 +137,43 @@ test.describe("faq", () => {
     await question.focus();
     await page.keyboard.press("Enter");
     await expect(question).toHaveAttribute("aria-expanded", "true");
+  });
+});
+
+test.describe("calls to action", () => {
+  test.skip(({ isMobile }) => isMobile, "checked once, on desktop");
+
+  test("Start free trial goes to the app, or to the query form while it isn't live", async ({
+    page,
+  }) => {
+    await page.goto("/en");
+    const main = page.getByRole("main");
+    const trial = main.getByRole("link", { name: "Start free trial" }).first();
+    const header = page.getByRole("banner");
+
+    if (appUrl) {
+      await expect(trial).toHaveAttribute("href", appUrl);
+      await expect(header.getByRole("link", { name: "Sign in", exact: true })).toBeVisible();
+      return;
+    }
+
+    // Standalone: no app sign-in, and the trial button opens the query form on Pricing.
+    await expect(header.getByRole("link", { name: "Sign in", exact: true })).toHaveCount(0);
+    await expect(trial).toHaveAttribute("href", "/en/contact?topic=pricing");
+    await trial.click();
+    const dialog = page.getByRole("dialog");
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByRole("radio", { name: /Pricing & plans/ })).toBeChecked({
+      timeout: 10_000,
+    });
+
+    // Plan buttons on the Pricing page lead to the query form too.
+    await page.goto("/en/pricing");
+    const planLinks = page.getByRole("link", {
+      name: /Start free trial with the|Get started with the/,
+    });
+    await expect(planLinks.first()).toHaveAttribute("href", "/en/contact?topic=pricing");
+    // Without a pricing API, the plans are shown as-is (no "prices may have changed").
+    await expect(page.getByText("Prices may have changed")).toHaveCount(0);
   });
 });

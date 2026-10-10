@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { TrialCta } from "@/components/marketing/trial-cta";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/i18n/navigation";
 import { appLinks } from "@/lib/site";
@@ -41,13 +42,17 @@ export async function SiteHeader() {
               <LanguageSwitcher />
             </Suspense>
             <ThemeToggle />
-            <Button asChild variant="ghost" className="h-10 rounded-full px-4">
-              <a href={appLinks.signIn}>{t("cta.signIn")}</a>
-            </Button>
+            {appLinks.signIn ? (
+              <Button asChild variant="ghost" className="h-10 rounded-full px-4">
+                <a href={appLinks.signIn}>{t("cta.signIn")}</a>
+              </Button>
+            ) : null}
           </div>
-          <Button asChild className="hidden h-10 rounded-full px-5 sm:inline-flex">
-            <a href={appLinks.startTrial}>{t("cta.startTrial")}</a>
-          </Button>
+          <TrialCta
+            label={t("cta.startTrial")}
+            icon={false}
+            className="hidden h-10 rounded-full px-5 sm:inline-flex"
+          />
           <Suspense fallback={<span className="block size-10 lg:hidden" aria-hidden="true" />}>
             <MobileNav signInHref={appLinks.signIn} startTrialHref={appLinks.startTrial} />
           </Suspense>
