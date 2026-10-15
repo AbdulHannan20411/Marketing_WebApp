@@ -100,6 +100,7 @@ describe("plan cards", () => {
     expect(enabledModules(plan)).toEqual([
       "whatsapp",
       "email",
+      "ecommerce",
       "crm",
       "sales",
       "leads",
@@ -124,7 +125,7 @@ describe("comparison table", () => {
 
   it("lists modules, then limits in the brief's order, then support", () => {
     expect(table.groups.map((group) => group.key)).toEqual(["modules", "limits", "support"]);
-    expect(table.groups[0]?.rows).toHaveLength(10);
+    expect(table.groups[0]?.rows).toHaveLength(11);
     expect(table.groups[1]?.rows.map((row) => row.key)).toEqual([
       "contacts",
       "employees",

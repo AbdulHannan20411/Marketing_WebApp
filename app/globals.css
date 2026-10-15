@@ -229,6 +229,7 @@
   --foreground: var(--ink-foreground);
   --card: var(--ink-raised);
   --card-foreground: var(--ink-foreground);
+  --surface-subtle: color-mix(in oklab, var(--ink-raised) 85%, white 6%);
   --muted: color-mix(in oklab, var(--ink-raised) 80%, white 4%);
   --muted-foreground: var(--ink-muted);
   --border: var(--ink-border);

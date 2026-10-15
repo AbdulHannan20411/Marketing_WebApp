@@ -1,5 +1,7 @@
 import {
   ArrowDownIcon,
+  CircleCheckIcon,
+  StoreIcon,
   AtSignIcon,
   CheckIcon,
   TrophyIcon,
@@ -148,6 +150,52 @@ export async function EmailMockup() {
         </span>
       </div>
       <p className="mt-1.5 text-end text-[11px] text-muted-foreground">{t("warmupNote")}</p>
+    </MockWindow>
+  );
+}
+
+export async function CodMockup() {
+  const t = await getTranslations("mockups.cod");
+  return (
+    <MockWindow
+      title={t("store")}
+      action={
+        <MockPill>
+          <StoreIcon className="size-3" aria-hidden="true" />
+          {t("example")}
+        </MockPill>
+      }
+    >
+      <div className="flex flex-col gap-2 rounded-lg bg-wa-wallpaper p-3">
+        <div className="mock-pop ms-auto flex w-[88%] flex-col gap-1" style={stagger(0)}>
+          <ChatBubble side="out" className="max-w-full">
+            {t("message")}
+          </ChatBubble>
+          <div className="grid grid-cols-2 gap-1">
+            <span className="rounded-lg bg-wa-in py-1.5 text-center text-[12px] font-semibold text-sky-700 shadow-sm dark:text-sky-300">
+              {t("confirm")}
+            </span>
+            <span className="rounded-lg bg-wa-in py-1.5 text-center text-[12px] font-semibold text-sky-700 shadow-sm dark:text-sky-300">
+              {t("cancel")}
+            </span>
+          </div>
+        </div>
+        <ChatBubble side="in" className="mock-pop" style={stagger(2)}>
+          {t("confirm")}
+        </ChatBubble>
+        <div
+          className="mock-pop mx-auto flex flex-col items-center gap-0.5 rounded-lg bg-wa-in/90 px-3 py-1.5 text-center shadow-sm"
+          style={stagger(4)}
+        >
+          <span className="text-[12px] font-semibold text-slate-900 dark:text-slate-50">
+            {t("confirmed")}
+          </span>
+          <span className="flex items-center gap-1 text-[11px] text-slate-600 dark:text-slate-300">
+            <CircleCheckIcon className="size-3 text-brand" aria-hidden="true" />
+            {t("tagged")}
+          </span>
+        </div>
+      </div>
     </MockWindow>
   );
 }
@@ -560,6 +608,7 @@ function Toggle({ on }: { on: boolean }) {
 const mockups: Record<MockupId, () => Promise<React.JSX.Element>> = {
   campaign: CampaignMockup,
   email: EmailMockup,
+  cod: CodMockup,
   inbox: InboxMockup,
   crm: CrmMockup,
   catalog: CatalogMockup,

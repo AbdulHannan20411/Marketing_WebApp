@@ -3,7 +3,7 @@
     "siteName": "NextReach",
     "titleTemplate": "%s | NextReach",
     "defaultTitle": "NextReach — WhatsApp and email marketing for growing businesses",
-    "description": "Reach customers on WhatsApp and email from one app and one contact list. Campaigns, a shared inbox, CRM and sales tools, built for businesses in Pakistan."
+    "description": "Reach customers on WhatsApp and email from one app and one contact list. Confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
   },
   "common": {
     "skipToContent": "Skip to main content",
@@ -95,7 +95,7 @@
       "mockupLabel": "Example: a customer asks about a product on WhatsApp, the business replies with a catalog link, and an Eid campaign is delivered and read."
     },
     "metaTitle": "WhatsApp and email marketing for growing businesses",
-    "metaDescription": "Reach customers on WhatsApp and email from one app, one contact list. Send campaigns people read, answer every chat from a shared inbox, and see who is ready to buy. Free trial, local payments.",
+    "metaDescription": "WhatsApp and email marketing in one app. Confirm cash-on-delivery orders from Shopify and WooCommerce on WhatsApp, send order updates, and reach people on the channel they actually check.",
     "problem": {
       "eyebrow": "Why NextReach",
       "title": "WhatsApp is where your customers are. Managing it shouldn't be chaos.",
@@ -189,26 +189,52 @@
     },
     "whatsNew": {
       "eyebrow": "New in NextReach",
-      "title": "More ways to reach, organise and grow",
-      "subtitle": "Recent additions that make everyday work quicker.",
+      "title": "New ways to reach the right people",
+      "subtitle": "The latest additions to NextReach.",
       "items": {
-        "maps": {
-          "title": "Businesses from Google Maps",
-          "description": "Find businesses by category and area, import them as contacts, and get their public email where their website shows one."
+        "fallback": {
+          "title": "Email, then WhatsApp",
+          "description": "Didn't open your email? Send them the offer on WhatsApp – reach people on the channel they actually check."
         },
-        "oneList": {
-          "title": "One list for both channels",
-          "description": "Filter contacts by number only, email only, or both, and see each contact's email consent."
+        "spamCheck": {
+          "title": "Spam checker",
+          "description": "A 0–100 score and clear fixes before you send, to help your email land in the inbox."
         },
-        "exports": {
-          "title": "One place for exports",
-          "description": "Exports run in the background and wait for you on one Exports page, with or without your filters."
+        "translate": {
+          "title": "AI translation",
+          "description": "Translate emails and WhatsApp templates into 15 languages, including Urdu and Roman Urdu."
         },
-        "renewals": {
-          "title": "Fair renewals",
-          "description": "Renew early and keep your remaining days: 5 days left plus a 30-day renewal gives you 35 days."
+        "segments": {
+          "title": "Smart segments",
+          "description": "Lists built from what people do, like “Repeat buyers” or “Gone quiet”, updated every hour."
+        },
+        "sendTime": {
+          "title": "Smart send time",
+          "description": "Each email arrives at the hour that person usually reads."
+        },
+        "clickMap": {
+          "title": "Email click map",
+          "description": "See which button worked and which didn't, right on the email you sent."
         }
       }
+    },
+    "cod": {
+      "eyebrow": "Online stores",
+      "title": "Stop losing money on fake COD orders.",
+      "subtitle": "Connect your Shopify or WooCommerce store. Every new cash-on-delivery order gets a WhatsApp message with Confirm and Cancel buttons, and your store updates itself.",
+      "steps": {
+        "order": "New COD order? The customer gets Confirm and Cancel on WhatsApp.",
+        "reply": "Confirmed orders are tagged in your store; cancelled ones are cancelled and restocked.",
+        "noReply": "No reply after a reminder? The order is flagged “needs a call”."
+      },
+      "chips": {
+        "shopify": "Works with Shopify",
+        "woocommerce": "Connects to WooCommerce",
+        "updates": "Order updates on WhatsApp",
+        "carts": "Cart recovery on Shopify"
+      },
+      "cta": "See how COD confirmation works",
+      "stepsLabel": "How it works"
     }
   },
   "modules": {
@@ -222,7 +248,8 @@
       "ai": "AI Assistant & Auto-reply",
       "lead_scoring": "AI Lead scoring",
       "employees": "Employee Management",
-      "email": "Email Marketing"
+      "email": "Email Marketing",
+      "ecommerce": "Online stores & COD confirmation"
     },
     "descriptions": {
       "whatsapp": "Approved templates, bulk campaigns on a schedule, and delivery and read tracking for every message.",
@@ -234,7 +261,8 @@
       "ai": "Help writing templates and campaigns, plus automatic replies grounded in your own business details.",
       "lead_scoring": "The AI reads each chat and places the customer on your lead board.",
       "employees": "Invite your team and decide exactly what each person can see and do.",
-      "email": "Campaigns from your own domain, a block editor, A/B subject tests and built-in deliverability protection."
+      "email": "Campaigns from your own domain, a block editor, A/B subject tests and built-in deliverability protection.",
+      "ecommerce": "Connect Shopify or WooCommerce, confirm COD orders on WhatsApp, send order updates and recover carts."
     }
   },
   "pricingTeaser": {
@@ -404,14 +432,23 @@
       "winner": "Winner",
       "warmup": "Domain warm-up",
       "warmupNote": "Growing daily"
+    },
+    "cod": {
+      "store": "Your store",
+      "example": "Example order",
+      "message": "Hi Ayesha! Please confirm your order #1042: 2 items, PKR 4,500, cash on delivery.",
+      "confirm": "Confirm",
+      "cancel": "Cancel",
+      "confirmed": "Order confirmed ✅",
+      "tagged": "Tagged cod-confirmed in your store"
     }
   },
   "features": {
     "metaTitle": "WhatsApp and email marketing features",
-    "metaDescription": "WhatsApp and email campaigns, a shared inbox, CRM with Google Maps business discovery, catalogs, a lead board, AI replies, automations, reports and team permissions.",
+    "metaDescription": "WhatsApp and email campaigns, Shopify and WooCommerce COD confirmation, a spam checker, AI translation, smart segments, a shared inbox, CRM, automations and reports.",
     "eyebrow": "Features",
     "title": "Everything you need to market and sell on WhatsApp and email",
-    "subtitle": "Eleven areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
+    "subtitle": "Twelve areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
     "jumpTo": "Jump to a feature",
     "detailLink": "See {name} in detail",
     "areas": {
@@ -425,7 +462,8 @@
           "templates": "Create approved message templates with text, image or video headers.",
           "campaigns": "Send bulk campaigns now, later, or on a repeating schedule.",
           "tracking": "Track sent, delivered, read and failed for every message.",
-          "quality": "Keep an eye on each number's quality rating."
+          "quality": "Keep an eye on each number's quality rating.",
+          "translate": "Translate a template into 15 languages in one click, including Urdu and Roman Urdu; placeholders like '{{1}}' stay exactly as they are."
         }
       },
       "inbox": {
@@ -450,7 +488,8 @@
           "import": "Import a CSV and match its columns in a few clicks, or export any list.",
           "history": "Full change history on every contact, including group and tag changes.",
           "discovery": "Find businesses on Google Maps by category and area and import them as contacts; NextReach also looks for each business's public email on its website.",
-          "groups": "Import found businesses into a new group (with a suggested name you can edit), an existing group, or no group."
+          "groups": "Import found businesses into a new group (with a suggested name you can edit), an existing group, or no group.",
+          "segments": "Smart segments build lists from what people do – opened or ignored email, replied on WhatsApp, ordered or left a cart – combined with AND, OR and NOT, updated every hour."
         }
       },
       "catalog": {
@@ -507,7 +546,9 @@
           "recipes": "Eight ready-made recipes to start from.",
           "quiet": "Quiet hours, so nobody gets a message at midnight.",
           "cap": "A daily cap on messages per customer.",
-          "stop": "Sequences stop as soon as the customer replies."
+          "stop": "Sequences stop as soon as the customer replies.",
+          "fallback": "Email to WhatsApp fallback: if someone doesn't open your email within the hours you set, they get the offer on WhatsApp – a ready-made recipe.",
+          "storeTriggers": "Start automations on store events: order placed, COD confirmed, shipped, delivered, cancelled or cart abandoned – for example, ask for a review 3 days after delivery."
         }
       },
       "reporting": {
@@ -547,7 +588,31 @@
           "forms": "Signup forms for your website grow your list with real consent.",
           "consent": "Only people who agreed get marketing email. Every email has a one-click unsubscribe, and unsubscribed or spam-reporting addresses are never emailed again.",
           "deliverability": "Built to protect deliverability: automatic warm-up for new domains, fake and undeliverable addresses skipped, bounces and complaints handled, and sending paused if rates get unhealthy.",
-          "reports": "Sent, opened, clicked, bounced and unsubscribed for every campaign, and replies go straight to your own inbox."
+          "reports": "Sent, opened, clicked, bounced and unsubscribed for every campaign, and replies go straight to your own inbox.",
+          "spamCheck": "A spam and deliverability checker scores each email from 0 to 100 before you send and lists clear fixes; AI can suggest better wording you apply in one click.",
+          "clickMap": "A click map shows the email as sent, with the clicks and share of clicks on every link.",
+          "smartTime": "Smart send time delivers each email at the hour that person usually opens email or replies on WhatsApp, all within 24 hours.",
+          "personalised": "Personalised blocks: show a block only to customers or new people, by tag, group or country, so one email says the right thing to each reader.",
+          "translate": "Translate an email into 15 languages in one click, with undo.",
+          "dragDrop": "Drag and drop to reorder blocks in the editor."
+        }
+      },
+      "ecommerce": {
+        "nav": "Stores & COD",
+        "title": "Online stores & COD",
+        "headline": "Stop losing money on fake COD orders",
+        "summary": "Connect your Shopify or WooCommerce store. Every new cash-on-delivery order is confirmed on WhatsApp, and your store updates itself.",
+        "points": {
+          "connect": "Connect Shopify in one click (approve the app in Shopify), or WooCommerce by approving in WordPress or pasting a REST API key.",
+          "codConfirm": "Every new cash-on-delivery order automatically gets a WhatsApp message with Confirm and Cancel buttons.",
+          "outcomes": "Confirm tags the order “cod-confirmed” in your store. Cancel cancels it and restocks the items, or only tags it if you prefer.",
+          "reminder": "No reply? One automatic reminder, then the order is flagged “needs a call” and your team is notified.",
+          "typed": "Customers can also type answers like “yes”, “haan” or “cancel kar dein”.",
+          "updates": "Order updates on WhatsApp: received, shipped (with courier and tracking link), delivered and cancelled, each with your own approved template.",
+          "carts": "Abandoned cart recovery (Shopify): one WhatsApp reminder with a link back to the cart, after a delay you choose. Recovered carts count as revenue.",
+          "sync": "Products sync into your catalog automatically, and every buyer becomes a contact.",
+          "dashboard": "A results dashboard: COD confirmation rate, orders cancelled before shipping, estimated return costs saved, carts and revenue recovered, and WhatsApp delivered and read.",
+          "limits": "Good to know: cart recovery and delivery updates need Shopify (or a tracking plugin on WooCommerce), and messages use WhatsApp templates you get approved by Meta."
         }
       }
     },
@@ -767,7 +832,8 @@
           "exports": "Export any list",
           "recordHistory": "History for every contact",
           "mapSearch": "Google Maps search by category and area",
-          "importBusinesses": "Import found businesses with phone and, where published, email"
+          "importBusinesses": "Import found businesses with phone and, where published, email",
+          "segments": "Smart segments from email, WhatsApp, store and contact data"
         },
         "faqs": {
           "csv": {
@@ -953,7 +1019,9 @@
           "templates": "Send approved templates",
           "conditions": "Check whether the customer replied",
           "alerts": "Alert your team",
-          "limits": "Quiet hours and daily caps"
+          "limits": "Quiet hours and daily caps",
+          "fallback": "Email → WhatsApp fallback for people who didn't open",
+          "storeTriggers": "Start on store events like COD confirmed or delivered"
         },
         "faqs": {
           "recipes": {
@@ -1021,7 +1089,14 @@
           "warmup": "Automatic warm-up for new domains",
           "validation": "Fake and undeliverable addresses skipped",
           "autoPause": "Sending pauses itself if bounces or complaints rise",
-          "reports": "Sent, opened, clicked, bounced and unsubscribed reports"
+          "reports": "Sent, opened, clicked, bounced and unsubscribed reports",
+          "spamCheck": "Spam and deliverability score (0–100) with fixes",
+          "aiWording": "“Ask AI for better wording”, applied in one click",
+          "clickMap": "Click map on the email as sent",
+          "smartTime": "Smart send time for each person",
+          "personalised": "Blocks shown only to some readers",
+          "translate": "One-click translation into 15 languages, with undo",
+          "dragDrop": "Drag-and-drop block ordering"
         },
         "faqs": {
           "warmup": {
@@ -1037,12 +1112,80 @@
             "a": "Replies go straight to your own inbox, so you answer customers from the email you already use."
           }
         }
+      },
+      "ecommerce-cod": {
+        "metaTitle": "Shopify & WooCommerce COD confirmation on WhatsApp",
+        "metaDescription": "Confirm cash-on-delivery orders on WhatsApp with Confirm and Cancel buttons, send order updates, recover Shopify carts and see the results. Works with Shopify and WooCommerce.",
+        "name": "Online stores & COD",
+        "eyebrow": "Online stores & COD",
+        "title": "Stop losing money on fake COD orders",
+        "subtitle": "Connect Shopify or WooCommerce. Every cash-on-delivery order is confirmed on WhatsApp before it ships, so fewer parcels come back unpaid and fewer courier fees are wasted.",
+        "benefits": {
+          "fewerReturns": {
+            "title": "Fewer returned parcels",
+            "description": "Fake and doubtful orders are cancelled before you pay the courier."
+          },
+          "storeUpdates": {
+            "title": "Your store stays in sync",
+            "description": "Confirmed orders are tagged, cancelled ones restocked, products and buyers sync on their own."
+          },
+          "updates": {
+            "title": "Customers stay informed",
+            "description": "Order received, shipped with tracking, delivered or cancelled – on the app they already check."
+          },
+          "recovered": {
+            "title": "Carts come back",
+            "description": "On Shopify, one friendly WhatsApp reminder brings shoppers back to the cart they left."
+          }
+        },
+        "steps": {
+          "order": {
+            "title": "A COD order arrives",
+            "description": "NextReach sends the customer a WhatsApp message with Confirm and Cancel buttons, using your approved template."
+          },
+          "reply": {
+            "title": "The customer answers",
+            "description": "A tap, or a reply like “haan” or “cancel kar dein”. Confirm tags the order “cod-confirmed”; Cancel cancels and restocks it, or only tags it."
+          },
+          "followUp": {
+            "title": "No reply? You'll know",
+            "description": "One automatic reminder, then the order is flagged “needs a call” and your team is notified."
+          }
+        },
+        "capabilities": {
+          "shopify": "Works with Shopify: connect in one click",
+          "woocommerce": "Connects to WooCommerce: approve in WordPress or paste a REST API key",
+          "codButtons": "COD confirmation with Confirm and Cancel buttons",
+          "typedAnswers": "Understands typed answers, including Roman Urdu",
+          "reminder": "One reminder, then “needs a call” and a team alert",
+          "cancelChoice": "Cancel and restock, or tag only – your choice",
+          "orderUpdates": "Order received, shipped with tracking, delivered and cancelled messages",
+          "cartRecovery": "Abandoned cart recovery on Shopify",
+          "productSync": "Products sync into your catalog",
+          "buyersContacts": "Every buyer becomes a contact",
+          "dashboard": "Results dashboard for confirmations, cancellations, savings and carts",
+          "storeTriggers": "Automations that start on store events"
+        },
+        "faqs": {
+          "requirements": {
+            "q": "What do I need for cart recovery and delivery updates?",
+            "a": "Abandoned cart recovery works with Shopify. Delivery status updates need Shopify, or a tracking plugin on WooCommerce. COD confirmation, order received and cancelled messages, and product sync work with both."
+          },
+          "templates": {
+            "q": "Which messages do my customers receive?",
+            "a": "Only messages from WhatsApp templates you write and get approved by Meta, sent through the official WhatsApp Business API. You choose the wording for confirmations, reminders and updates."
+          },
+          "results": {
+            "q": "How do I see whether it's working?",
+            "a": "The results dashboard shows your COD confirmation rate, orders cancelled before shipping, estimated return costs saved, carts and revenue recovered, and WhatsApp delivered and read."
+          }
+        }
       }
     }
   },
   "useCases": {
     "metaTitle": "Use cases by industry",
-    "metaDescription": "How retail shops, boutiques, salons, restaurants, real estate agents, schools, clinics, online stores and agencies in Pakistan use NextReach to market and sell on WhatsApp and email.",
+    "metaDescription": "How online stores on Shopify and WooCommerce, cash-on-delivery sellers, boutiques, salons, restaurants, real estate agents, schools, clinics and agencies in Pakistan use NextReach on WhatsApp and email.",
     "eyebrow": "Use cases",
     "title": "Built for the way Pakistani businesses sell",
     "subtitle": "Whatever you sell, your customers are already on WhatsApp. Here's how businesses like yours can use NextReach.",
@@ -1113,19 +1256,19 @@
         "example": "A dental clinic sends a reminder template the day before follow-up visits. Patients reply to confirm, and receptionists handle the chats from the shared inbox instead of one phone."
       },
       "ecommerce": {
-        "name": "E-commerce",
-        "summary": "Online stores and social sellers.",
+        "name": "E-commerce & online stores",
+        "summary": "Shopify and WooCommerce stores, and social sellers.",
         "challenges": {
           "c1": "Customers ask the same questions about stock, price and delivery.",
           "c2": "Abandoned interest: people ask, then go quiet.",
-          "c3": "It's hard to tell which campaigns actually bring sales."
+          "c3": "Shoppers fill a cart and leave, and nobody follows up."
         },
         "solutions": {
-          "s1": "Share your catalog with a tap-to-open button in every chat.",
+          "s1": "Connect Shopify or WooCommerce: products sync into your catalog and every buyer becomes a contact.",
           "s2": "Let AI lead scoring spot buyers, and automations nudge the quiet ones.",
-          "s3": "Use reports to see which campaigns were read and replied to."
+          "s3": "Send order updates on WhatsApp and, on Shopify, one reminder that brings shoppers back to their cart."
         },
-        "example": "An online store sends a weekend sale campaign. The AI places customers who ask about delivery on the fully interested column, and a follow-up template goes to those who opened the catalog but didn't reply."
+        "example": "A Shopify store sends “Your order has shipped” with the courier's tracking link, and a reminder to shoppers who left a cart. An automation asks for a review 3 days after delivery, and smart segments group “Repeat buyers” for the next campaign."
       },
       "agencies": {
         "name": "Agencies",
@@ -1156,6 +1299,21 @@
           "s3": "Email from your own domain, like info@yourbrand.pk, with deliverability protection built in."
         },
         "example": "A boutique sends a WhatsApp message on Friday morning: the Eid sale starts today. On Sunday, the new collection goes out by email, with product photos from the catalog, to everyone who signed up on the website. Replies land in the owner's own inbox."
+      },
+      "cod": {
+        "name": "Cash-on-delivery businesses",
+        "summary": "Sellers in Pakistan who take most orders as COD.",
+        "challenges": {
+          "c1": "COD parcels come back unpaid, and you still pay the courier.",
+          "c2": "Fake and prank orders tie up stock and staff.",
+          "c3": "Calling every customer to confirm takes hours."
+        },
+        "solutions": {
+          "s1": "Every new COD order gets a WhatsApp message with Confirm and Cancel buttons.",
+          "s2": "Confirmed orders are tagged in your store; cancelled ones are cancelled and restocked before they ship.",
+          "s3": "No reply after one reminder? The order is flagged “needs a call” and your team is notified."
+        },
+        "example": "A clothing store gets a COD order (e.g. PKR 4,500). The customer replies “haan” on WhatsApp, the order is tagged cod-confirmed, and it ships the same day. Another customer taps Cancel before packing, so no courier fee is wasted."
       }
     },
     "cta": {
@@ -1228,7 +1386,8 @@
       "plans": "Plans and payments",
       "data": "Your data and team",
       "support": "Support",
-      "email": "Email marketing"
+      "email": "Email marketing",
+      "stores": "Online stores & COD"
     },
     "items": {
       "whatIs": {
@@ -1326,6 +1485,38 @@
       "mapsImport": {
         "q": "Can I import businesses from Google Maps?",
         "a": "Yes. Search Google Maps by category and area, then import the businesses as contacts with their phone number and, where their website publishes one, their email. Put them into a new group, an existing group, or no group."
+      },
+      "codHow": {
+        "q": "How does COD confirmation work?",
+        "a": "When a new cash-on-delivery order arrives in your Shopify or WooCommerce store, NextReach sends the customer a WhatsApp message with Confirm and Cancel buttons. Confirm tags the order “cod-confirmed” in your store; Cancel cancels it and restocks the items. If there's no reply, NextReach sends one reminder, then flags the order “needs a call” and notifies your team. Customers can also type answers like “yes”, “haan” or “cancel kar dein”."
+      },
+      "shopifyApp": {
+        "q": "Do I need a Shopify app?",
+        "a": "You connect through NextReach's own Shopify app: click connect and approve it in your Shopify admin. There's nothing to code."
+      },
+      "woocommerce": {
+        "q": "Does it work with WooCommerce?",
+        "a": "Yes. Approve the connection in WordPress, or paste a WooCommerce REST API key. COD confirmation, order updates and product sync work with WooCommerce. Delivery updates need a tracking plugin, and abandoned-cart recovery is Shopify only."
+      },
+      "autoCancel": {
+        "q": "Will it cancel orders automatically?",
+        "a": "Only when the customer taps Cancel or replies that they want to cancel. If you prefer, switch it to tag-only: the order is tagged and nothing is cancelled."
+      },
+      "translateLanguages": {
+        "q": "Which languages can I translate into?",
+        "a": "15 languages, including Urdu (in Urdu script), Roman Urdu, Arabic, Hindi, Bengali, Punjabi, Turkish, French, Spanish, German, Chinese, Malay and Indonesian. Placeholders like '{{1}}' and '{first_name}' are kept exactly, so templates stay valid, and email translations can be undone."
+      },
+      "sendTime": {
+        "q": "What is smart send time?",
+        "a": "Each email waits for the hour that person usually opens email or replies on WhatsApp, all within 24 hours of sending. People with little history get your audience's best hour. It works for email campaigns and can't be combined with A/B subject tests."
+      },
+      "spamChecker": {
+        "q": "Does the spam checker guarantee inbox delivery?",
+        "a": "No. No tool can guarantee the inbox. The checker removes common risks – spam words in English and Roman Urdu, ALL CAPS, “!!!”, link shorteners, image-only emails, emails too big for Gmail (cut off at 102 KB) and missing preview text – and gives you a 0–100 score with fixes. Sending only to people who agreed to hear from you matters most."
+      },
+      "segmentsUpdate": {
+        "q": "How often do segments update?",
+        "a": "Every hour, automatically, or on demand when you refresh one. You can use a segment in any WhatsApp or email campaign and in automations."
       }
     }
   },
@@ -2098,7 +2289,8 @@
           "ai": "AI Assistant & Auto-reply",
           "lead_scoring": "AI Lead scoring",
           "employees": "Employee Management",
-          "email": "Email Marketing"
+          "email": "Email Marketing",
+          "ecommerce": "Online stores & COD confirmation"
         }
       },
       "billingPreference": {

@@ -110,6 +110,7 @@ describe("content ↔ message keys", () => {
     expect(en.modules.labels).toEqual({
       whatsapp: "WhatsApp Marketing",
       email: "Email Marketing",
+      ecommerce: "Online stores & COD confirmation",
       crm: "CRM",
       sales: "Products & Catalog",
       leads: "Lead board",

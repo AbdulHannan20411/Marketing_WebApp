@@ -2,6 +2,7 @@ import {
   BuildingIcon,
   GraduationCapIcon,
   HandshakeIcon,
+  PackageCheckIcon,
   PackageIcon,
   ShirtIcon,
   StethoscopeIcon,
@@ -62,7 +63,15 @@ export const useCases = [
     icon: PackageIcon,
     challenges: ["c1", "c2", "c3"],
     solutions: ["s1", "s2", "s3"],
-    modules: ["sales", "leads", "ai", "reporting"],
+    modules: ["ecommerce", "whatsapp", "sales", "automations"],
+  },
+  {
+    // Sellers who take most orders as cash on delivery.
+    id: "cod",
+    icon: PackageCheckIcon,
+    challenges: ["c1", "c2", "c3"],
+    solutions: ["s1", "s2", "s3"],
+    modules: ["ecommerce", "whatsapp", "automations", "reporting"],
   },
   {
     id: "agencies",

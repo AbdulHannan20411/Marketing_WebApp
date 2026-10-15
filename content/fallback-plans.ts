@@ -26,6 +26,8 @@ export const fallbackPlans: Plan[] = [
       whatsapp: true,
       // Every plan includes a monthly email allowance (amount depends on the plan).
       email: true,
+      // TODO: confirm which plans include Online stores & COD confirmation.
+      ecommerce: true,
       crm: true,
       sales: false,
       leads: false,
@@ -68,6 +70,8 @@ export const fallbackPlans: Plan[] = [
       whatsapp: true,
       // Every plan includes a monthly email allowance (amount depends on the plan).
       email: true,
+      // TODO: confirm which plans include Online stores & COD confirmation.
+      ecommerce: true,
       crm: true,
       sales: true,
       leads: true,
@@ -110,6 +114,8 @@ export const fallbackPlans: Plan[] = [
       whatsapp: true,
       // Every plan includes a monthly email allowance (amount depends on the plan).
       email: true,
+      // TODO: confirm which plans include Online stores & COD confirmation.
+      ecommerce: true,
       crm: true,
       sales: true,
       leads: true,

@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/marketing/cta-band";
 import { HomeHero } from "@/components/marketing/home/hero";
 import {
   AutomationSection,
+  CodSection,
   FactsSection,
   FaqTeaserSection,
   FeatureGridSection,
@@ -56,6 +57,7 @@ export default async function HomePage() {
       />
       <HomeHero />
       <FactsSection />
+      <CodSection />
       {/* TODO: real customer logos — add a logo strip here once customers agree to be listed. */}
       <ProblemSection />
       <FeatureGridSection />

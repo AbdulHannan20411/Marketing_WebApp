@@ -5,9 +5,13 @@
 export const faqGroups = [
   { id: "gettingStarted", items: ["whatIs", "whoFor", "needs", "trial"] },
   { id: "whatsapp", items: ["official", "templates", "window", "quality", "numbers"] },
-  { id: "email", items: ["emailCampaigns", "ownDomain", "spam"] },
+  { id: "stores", items: ["codHow", "shopifyApp", "woocommerce", "autoCancel"] },
+  {
+    id: "email",
+    items: ["emailCampaigns", "ownDomain", "spam", "spamChecker", "sendTime", "translateLanguages"],
+  },
   { id: "plans", items: ["plans", "buildOwn", "payment", "approval", "renewal"] },
-  { id: "data", items: ["workspace", "importing", "mapsImport", "team"] },
+  { id: "data", items: ["workspace", "importing", "mapsImport", "segmentsUpdate", "team"] },
   { id: "support", items: ["help", "demo", "agencies"] },
 ] as const;
 

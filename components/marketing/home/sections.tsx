@@ -1,15 +1,20 @@
 import {
   ArrowRightIcon,
-  CalendarPlusIcon,
-  DownloadIcon,
+  ClockIcon,
+  LanguagesIcon,
   ListFilterIcon,
-  MapPinnedIcon,
+  MailIcon,
+  MousePointerClickIcon,
+  ShoppingCartIcon,
+  StoreIcon,
   ArrowUpRightIcon,
   CheckIcon,
   MoonIcon,
   OctagonPauseIcon,
+  PackageCheckIcon,
   PlugZapIcon,
   SendIcon,
+  ShieldCheckIcon,
   ShieldIcon,
   UsersRoundIcon,
   XIcon,
@@ -19,6 +24,7 @@ import { getTranslations } from "next-intl/server";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { moduleIcons } from "@/components/marketing/module-icons";
+import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Section, SectionHeader } from "@/components/marketing/section";
 import { AnimatedNumber } from "@/components/motion/animated-number";
 import { Reveal } from "@/components/motion/reveal";
@@ -88,12 +94,13 @@ export async function ProblemSection() {
 }
 
 /**
- * Bento order: the two channels as showcase tiles (with product mock-ups), then nine
- * compact tiles in three rows of three.
+ * Bento order: the two channels as showcase tiles (with product mock-ups), then ten
+ * compact tiles: two rows of three, then two rows of two.
  */
 const bentoOrder = [
   "whatsapp",
   "email",
+  "ecommerce",
   "inbox",
   "crm",
   "catalog",
@@ -135,6 +142,8 @@ export async function FeatureGridSection() {
       <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
         {areas.map((area, index) => {
           const big = showcase.has(area.id);
+          // Compact tiles after the first six sit two to a row on large screens.
+          const wide = !big && index - showcase.size >= 6;
           const href =
             "slug" in area && area.slug ? `/features/${area.slug}` : `/features#${area.id}`;
           return (
@@ -142,7 +151,9 @@ export async function FeatureGridSection() {
               as="li"
               key={area.id}
               delay={(index % 3) * 70}
-              className={cn(big ? "sm:col-span-2 lg:col-span-3" : "lg:col-span-2")}
+              className={cn(
+                big ? "sm:col-span-2 lg:col-span-3" : wide ? "lg:col-span-3" : "lg:col-span-2",
+              )}
             >
               <Link
                 href={href}
@@ -408,10 +419,12 @@ export async function FaqTeaserSection() {
 export async function WhatsNewSection() {
   const t = await getTranslations("home.whatsNew");
   const items = [
-    { key: "maps", icon: MapPinnedIcon },
-    { key: "oneList", icon: ListFilterIcon },
-    { key: "exports", icon: DownloadIcon },
-    { key: "renewals", icon: CalendarPlusIcon },
+    { key: "fallback", icon: MailIcon },
+    { key: "spamCheck", icon: ShieldCheckIcon },
+    { key: "translate", icon: LanguagesIcon },
+    { key: "segments", icon: ListFilterIcon },
+    { key: "sendTime", icon: ClockIcon },
+    { key: "clickMap", icon: MousePointerClickIcon },
   ] as const;
 
   return (
@@ -423,7 +436,7 @@ export async function WhatsNewSection() {
         subtitle={t("subtitle")}
         align="split"
       />
-      <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border shadow-card sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border shadow-card sm:grid-cols-2 lg:grid-cols-3">
         {items.map(({ key, icon: Icon }, index) => (
           <Reveal as="li" key={key} delay={index * 70} className="flex flex-col gap-3 bg-card p-6">
             <span className="flex size-10 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
@@ -436,6 +449,69 @@ export async function WhatsNewSection() {
           </Reveal>
         ))}
       </ul>
+    </Section>
+  );
+}
+
+/** Online stores + COD confirmation: the headline new feature, near the top. */
+export async function CodSection() {
+  const t = await getTranslations("home.cod");
+  const steps = [
+    { key: "order", icon: ShoppingCartIcon },
+    { key: "reply", icon: PackageCheckIcon },
+    { key: "noReply", icon: ClockIcon },
+  ] as const;
+  const chips = ["shopify", "woocommerce", "updates", "carts"] as const;
+
+  return (
+    <Section tone="ink" labelledBy="cod-title">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -start-40 top-0 -z-10 size-[32rem] rounded-full bg-brand/20 blur-3xl"
+      />
+      <div className="grid items-center gap-14 lg:grid-cols-2">
+        <div className="flex flex-col items-start gap-7">
+          <SectionHeader
+            id="cod-title"
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            subtitle={t("subtitle")}
+            align="start"
+          />
+          <ol aria-label={t("stepsLabel")} className="flex flex-col gap-3">
+            {steps.map(({ key, icon: Icon }) => (
+              <li key={key} className="flex items-start gap-3">
+                <span className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand text-primary-foreground">
+                  <Icon className="size-4" aria-hidden="true" />
+                </span>
+                <span className="pt-1">{t(`steps.${key}`)}</span>
+              </li>
+            ))}
+          </ol>
+          <ul className="flex flex-wrap gap-2">
+            {chips.map((key) => (
+              <li
+                key={key}
+                className="flex items-center gap-2 rounded-full border bg-card px-3.5 py-1.5 text-sm font-medium"
+              >
+                <StoreIcon className="size-4 text-brand" aria-hidden="true" />
+                {t(`chips.${key}`)}
+              </li>
+            ))}
+          </ul>
+          <Button asChild variant="inverse">
+            <Link href="/features/ecommerce-cod">
+              {t("cta")}
+              <ArrowRightIcon className="size-4 rtl:rotate-180" aria-hidden="true" />
+            </Link>
+          </Button>
+        </div>
+        <Reveal delay={120}>
+          <MockupStage className="border-ink-border bg-ink-raised bg-none">
+            <Mockup id="cod" className="mx-auto max-w-md" />
+          </MockupStage>
+        </Reveal>
+      </div>
     </Section>
   );
 }

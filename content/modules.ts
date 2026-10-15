@@ -6,6 +6,7 @@
 export const moduleKeys = [
   "whatsapp",
   "email",
+  "ecommerce",
   "crm",
   "sales",
   "leads",
