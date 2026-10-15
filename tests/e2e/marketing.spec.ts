@@ -6,6 +6,7 @@ const pages = [
   "/",
   "/features",
   "/features/whatsapp-campaigns",
+  "/features/email-marketing",
   "/features/inbox",
   "/features/crm-discovery",
   "/features/sales-leads",
@@ -77,6 +78,8 @@ test.describe("home", () => {
     await page.goto("/en");
     const figure = page.getByRole("img", { name: /customer asks about a product/ });
     await expect(figure).toBeVisible();
+    // The animation pauses while off-screen (on phones it starts below the fold).
+    await figure.scrollIntoViewIfNeeded();
     // The final message appears after the typing sequence.
     await expect(figure.getByText("Love it, I'll take two")).toBeVisible({ timeout: 15_000 });
   });

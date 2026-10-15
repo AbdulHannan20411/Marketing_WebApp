@@ -1,5 +1,8 @@
 import {
   ArrowDownIcon,
+  AtSignIcon,
+  CheckIcon,
+  TrophyIcon,
   BellRingIcon,
   CheckCheckIcon,
   ClockIcon,
@@ -75,6 +78,76 @@ export async function CampaignMockup() {
         <ShieldCheckIcon className="size-4" aria-hidden="true" />
         {t("quality")}
       </div>
+    </MockWindow>
+  );
+}
+
+export async function EmailMockup() {
+  const t = await getTranslations("mockups.email");
+  const records = ["SPF", "DKIM", "DMARC"];
+  const subjects = [
+    { variant: "A", text: t("subjectA"), winner: true },
+    { variant: "B", text: t("subjectB"), winner: false },
+  ];
+  return (
+    <MockWindow
+      title={t("title")}
+      action={
+        <MockPill tone="brand">
+          <ShieldCheckIcon className="size-3" aria-hidden="true" />
+          {t("verified")}
+        </MockPill>
+      }
+    >
+      <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        <AtSignIcon className="size-3.5" aria-hidden="true" />
+        {t("from")}
+      </p>
+      <div className="mt-3 flex flex-wrap gap-1.5" dir="ltr">
+        {records.map((record, i) => (
+          <span
+            key={record}
+            className="mock-pop inline-flex items-center gap-1 rounded-full bg-accent px-2 py-0.5 text-[11px] font-medium text-accent-foreground"
+            style={stagger(i)}
+          >
+            <CheckIcon className="size-3" aria-hidden="true" />
+            {record}
+          </span>
+        ))}
+      </div>
+      <ul className="mt-4 flex flex-col gap-2">
+        {subjects.map((subject, i) => (
+          <li
+            key={subject.variant}
+            className={cn(
+              "mock-pop flex items-center gap-2.5 rounded-lg border px-3 py-2 text-xs",
+              subject.winner && "border-brand/40 bg-accent/60",
+            )}
+            style={stagger(i + 3)}
+          >
+            <span className="flex size-5 shrink-0 items-center justify-center rounded-md bg-muted font-mono text-[10px] font-semibold">
+              {subject.variant}
+            </span>
+            <span className="min-w-0 flex-1 truncate font-medium">{subject.text}</span>
+            {subject.winner ? (
+              <MockPill tone="brand">
+                <TrophyIcon className="size-3" aria-hidden="true" />
+                {t("winner")}
+              </MockPill>
+            ) : null}
+          </li>
+        ))}
+      </ul>
+      <div className="mt-4 grid grid-cols-[6.5rem_1fr] items-center gap-3 text-xs">
+        <span className="font-medium">{t("warmup")}</span>
+        <span className="h-2 overflow-hidden rounded-full bg-muted">
+          <span
+            className="mock-grow block h-full rounded-full bg-brand"
+            style={{ width: "35%", ...stagger(5) }}
+          />
+        </span>
+      </div>
+      <p className="mt-1.5 text-end text-[11px] text-muted-foreground">{t("warmupNote")}</p>
     </MockWindow>
   );
 }
@@ -486,6 +559,7 @@ function Toggle({ on }: { on: boolean }) {
 
 const mockups: Record<MockupId, () => Promise<React.JSX.Element>> = {
   campaign: CampaignMockup,
+  email: EmailMockup,
   inbox: InboxMockup,
   crm: CrmMockup,
   catalog: CatalogMockup,

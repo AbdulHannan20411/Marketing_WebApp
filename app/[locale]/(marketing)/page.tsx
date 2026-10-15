@@ -9,6 +9,7 @@ import {
   FactsSection,
   FaqTeaserSection,
   FeatureGridSection,
+  WhatsNewSection,
   HowItWorksSection,
   ModulesSection,
   ProblemSection,
@@ -58,6 +59,7 @@ export default async function HomePage() {
       {/* TODO: real customer logos — add a logo strip here once customers agree to be listed. */}
       <ProblemSection />
       <FeatureGridSection />
+      <WhatsNewSection />
       <HowItWorksSection />
       <AutomationSection />
       <ModulesSection />

@@ -1,4 +1,14 @@
-import { ArrowRightIcon, CheckIcon } from "lucide-react";
+import {
+  ArrowRightIcon,
+  BellIcon,
+  CalendarPlusIcon,
+  CheckIcon,
+  DownloadIcon,
+  HistoryIcon,
+  ReceiptTextIcon,
+  SearchIcon,
+  SunMoonIcon,
+} from "lucide-react";
 import type { Metadata } from "next";
 import { locale as rootLocale } from "next/root-params";
 import { getTranslations } from "next-intl/server";
@@ -7,6 +17,7 @@ import { CtaBand } from "@/components/marketing/cta-band";
 import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { PageHero } from "@/components/marketing/page-hero";
+import { Section, SectionHeader } from "@/components/marketing/section";
 import { Reveal } from "@/components/motion/reveal";
 import { featureAreas } from "@/content/features";
 import { Link } from "@/lib/i18n/navigation";
@@ -32,6 +43,15 @@ export default async function FeaturesPage() {
     getTranslations("featurePages.pages"),
     getTranslations("home.finalCta"),
   ]);
+  const everyday = [
+    { key: "exports", icon: DownloadIcon },
+    { key: "history", icon: HistoryIcon },
+    { key: "renewals", icon: CalendarPlusIcon },
+    { key: "notifications", icon: BellIcon },
+    { key: "themes", icon: SunMoonIcon },
+    { key: "search", icon: SearchIcon },
+    { key: "invoices", icon: ReceiptTextIcon },
+  ] as const;
 
   return (
     <>
@@ -121,6 +141,37 @@ export default async function FeaturesPage() {
           </section>
         );
       })}
+
+      <Section tone="subtle" labelledBy="everyday-title">
+        <SectionHeader
+          id="everyday-title"
+          eyebrow={t("everyday.eyebrow")}
+          title={t("everyday.title")}
+          subtitle={t("everyday.subtitle")}
+          align="split"
+        />
+        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {everyday.map(({ key, icon: Icon }, index) => (
+            <Reveal
+              as="li"
+              key={key}
+              delay={(index % 4) * 70}
+              className={cn(
+                "flex flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card",
+                index === 0 && "lg:col-span-2",
+              )}
+            >
+              <span className="flex size-10 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
+                <Icon className="size-5" aria-hidden="true" />
+              </span>
+              <h3 className="font-semibold tracking-tight">{t(`everyday.items.${key}.title`)}</h3>
+              <p className="text-sm text-pretty text-muted-foreground">
+                {t(`everyday.items.${key}.description`)}
+              </p>
+            </Reveal>
+          ))}
+        </ul>
+      </Section>
 
       <CtaBand
         title={cta("title")}

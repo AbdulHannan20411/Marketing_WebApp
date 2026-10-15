@@ -1,4 +1,4 @@
-import { BanknoteIcon, InfoIcon, SmartphoneIcon, WalletIcon } from "lucide-react";
+import { BanknoteIcon, InfoIcon, MailIcon, SmartphoneIcon, WalletIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { locale as rootLocale } from "next/root-params";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -102,6 +102,10 @@ export default async function PricingPage() {
           <h2 id="plans-title" className="sr-only">
             {t("metaTitle")}
           </h2>
+          <p className="mx-auto flex max-w-2xl items-center justify-center gap-2 text-center text-sm text-muted-foreground">
+            <MailIcon className="size-4 shrink-0 text-brand" aria-hidden="true" />
+            {t("emailAllowance")}
+          </p>
 
           {usingFallback ? (
             <p

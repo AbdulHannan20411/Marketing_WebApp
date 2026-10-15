@@ -90,14 +90,16 @@ describe("plan cards", () => {
     expect(buildPlanCard(growth, "en", labels, checkout).autoReplies).toEqual([]);
   });
 
-  it("ignores modules that are not launched (email, social, api)", () => {
+  it("ignores modules that are not launched (social, api)", () => {
     const plan = {
       ...growth,
       modules: { ...growth.modules, email: true, social: true, api: true },
     };
-    expect(enabledModules(plan)).not.toContain("email");
+    expect(enabledModules(plan)).not.toContain("social");
+    expect(enabledModules(plan)).not.toContain("api");
     expect(enabledModules(plan)).toEqual([
       "whatsapp",
+      "email",
       "crm",
       "sales",
       "leads",
@@ -122,7 +124,7 @@ describe("comparison table", () => {
 
   it("lists modules, then limits in the brief's order, then support", () => {
     expect(table.groups.map((group) => group.key)).toEqual(["modules", "limits", "support"]);
-    expect(table.groups[0]?.rows).toHaveLength(9);
+    expect(table.groups[0]?.rows).toHaveLength(10);
     expect(table.groups[1]?.rows.map((row) => row.key)).toEqual([
       "contacts",
       "employees",
@@ -185,7 +187,7 @@ describe("custom plan card", () => {
     const card = buildCustomPlanCard(offer, "en", labels, (p) => `+${p}/month`);
     expect(card?.monthlyPrice).toBe(`PKR${NBSP}3,000`);
     expect(card?.yearlyPrice).toBe(`PKR${NBSP}30,600`);
-    expect(card?.alwaysIncluded).toEqual(["module:whatsapp", "module:crm"]);
+    expect(card?.alwaysIncluded).toEqual(["module:whatsapp", "module:email", "module:crm"]);
     expect(card?.addOns.map((addOn) => addOn.key)).toEqual(["sales", "reporting", "ai"]);
     expect(card?.addOns[0]?.price).toBe(`+PKR${NBSP}1,500/month`);
   });

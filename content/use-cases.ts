@@ -3,6 +3,7 @@ import {
   GraduationCapIcon,
   HandshakeIcon,
   PackageIcon,
+  ShirtIcon,
   StethoscopeIcon,
   StoreIcon,
   type LucideIcon,
@@ -26,6 +27,14 @@ export const useCases = [
     challenges: ["c1", "c2", "c3"],
     solutions: ["s1", "s2", "s3"],
     modules: ["whatsapp", "sales", "leads", "automations"],
+  },
+  {
+    // Quick offers on WhatsApp, newsletters and new collections by email.
+    id: "lifestyle",
+    icon: ShirtIcon,
+    challenges: ["c1", "c2", "c3"],
+    solutions: ["s1", "s2", "s3"],
+    modules: ["whatsapp", "email", "sales", "automations"],
   },
   {
     id: "realEstate",

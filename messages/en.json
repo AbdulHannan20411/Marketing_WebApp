@@ -2,8 +2,8 @@
   "metadata": {
     "siteName": "NextReach",
     "titleTemplate": "%s | NextReach",
-    "defaultTitle": "NextReach — WhatsApp marketing and sales for growing businesses",
-    "description": "Run WhatsApp campaigns, answer every customer from one inbox, and turn chats into sales. Built for businesses in Pakistan."
+    "defaultTitle": "NextReach — WhatsApp and email marketing for growing businesses",
+    "description": "Reach customers on WhatsApp and email from one app and one contact list. Campaigns, a shared inbox, CRM and sales tools, built for businesses in Pakistan."
   },
   "common": {
     "skipToContent": "Skip to main content",
@@ -82,9 +82,9 @@
   "home": {
     "hero": {
       "badge": "Made for Pakistan",
-      "eyebrow": "WhatsApp marketing for growing businesses",
+      "eyebrow": "WhatsApp and email marketing for growing businesses",
       "title": "Turn WhatsApp chats <hl>into sales</hl>",
-      "subtitle": "Send campaigns your customers actually read, answer every message from one shared inbox, and see exactly who is ready to buy.",
+      "subtitle": "Reach customers on WhatsApp and email – from one app, one contact list. Send campaigns people actually read, answer every chat from a shared inbox, and see who is ready to buy.",
       "primaryCta": "Start free trial",
       "secondaryCta": "See how it works",
       "assurances": {
@@ -94,8 +94,8 @@
       },
       "mockupLabel": "Example: a customer asks about a product on WhatsApp, the business replies with a catalog link, and an Eid campaign is delivered and read."
     },
-    "metaTitle": "WhatsApp marketing and sales for growing businesses",
-    "metaDescription": "Send WhatsApp campaigns your customers read, answer every chat from one shared inbox, and see who is ready to buy. Free trial, local payments.",
+    "metaTitle": "WhatsApp and email marketing for growing businesses",
+    "metaDescription": "Reach customers on WhatsApp and email from one app, one contact list. Send campaigns people read, answer every chat from a shared inbox, and see who is ready to buy. Free trial, local payments.",
     "problem": {
       "eyebrow": "Why NextReach",
       "title": "WhatsApp is where your customers are. Managing it shouldn't be chaos.",
@@ -116,7 +116,7 @@
     },
     "features": {
       "eyebrow": "Everything in one place",
-      "title": "One app for marketing, chats and sales on WhatsApp",
+      "title": "One app for marketing, chats and sales on WhatsApp and email",
       "subtitle": "Switch on the modules you need. Each one works on its own and gets better together.",
       "cta": "Explore all features"
     },
@@ -186,6 +186,29 @@
       "subtitle": "Start your free trial today, or talk to us and we'll show you around.",
       "primary": "Start free trial",
       "secondary": "Talk to us"
+    },
+    "whatsNew": {
+      "eyebrow": "New in NextReach",
+      "title": "More ways to reach, organise and grow",
+      "subtitle": "Recent additions that make everyday work quicker.",
+      "items": {
+        "maps": {
+          "title": "Businesses from Google Maps",
+          "description": "Find businesses by category and area, import them as contacts, and get their public email where their website shows one."
+        },
+        "oneList": {
+          "title": "One list for both channels",
+          "description": "Filter contacts by number only, email only, or both, and see each contact's email consent."
+        },
+        "exports": {
+          "title": "One place for exports",
+          "description": "Exports run in the background and wait for you on one Exports page, with or without your filters."
+        },
+        "renewals": {
+          "title": "Fair renewals",
+          "description": "Renew early and keep your remaining days: 5 days left plus a 30-day renewal gives you 35 days."
+        }
+      }
     }
   },
   "modules": {
@@ -198,7 +221,8 @@
       "reporting": "Reporting",
       "ai": "AI Assistant & Auto-reply",
       "lead_scoring": "AI Lead scoring",
-      "employees": "Employee Management"
+      "employees": "Employee Management",
+      "email": "Email Marketing"
     },
     "descriptions": {
       "whatsapp": "Approved templates, bulk campaigns on a schedule, and delivery and read tracking for every message.",
@@ -209,7 +233,8 @@
       "reporting": "Clear reports on campaigns and your team, ready to export.",
       "ai": "Help writing templates and campaigns, plus automatic replies grounded in your own business details.",
       "lead_scoring": "The AI reads each chat and places the customer on your lead board.",
-      "employees": "Invite your team and decide exactly what each person can see and do."
+      "employees": "Invite your team and decide exactly what each person can see and do.",
+      "email": "Campaigns from your own domain, a block editor, A/B subject tests and built-in deliverability protection."
     }
   },
   "pricingTeaser": {
@@ -369,14 +394,24 @@
     "automation": {
       "title": "Interested follow-up",
       "active": "Active"
+    },
+    "email": {
+      "title": "New collection",
+      "verified": "Domain verified",
+      "from": "From: info@yourbrand.pk",
+      "subjectA": "Our new collection is here",
+      "subjectB": "Fresh arrivals, picked for you",
+      "winner": "Winner",
+      "warmup": "Domain warm-up",
+      "warmupNote": "Growing daily"
     }
   },
   "features": {
-    "metaTitle": "Features",
-    "metaDescription": "WhatsApp campaigns, a shared inbox, CRM with nearby business discovery, catalogs, a lead board, AI replies, automations, reports and team permissions.",
+    "metaTitle": "WhatsApp and email marketing features",
+    "metaDescription": "WhatsApp and email campaigns, a shared inbox, CRM with Google Maps business discovery, catalogs, a lead board, AI replies, automations, reports and team permissions.",
     "eyebrow": "Features",
-    "title": "Everything you need to market and sell on WhatsApp",
-    "subtitle": "Ten areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
+    "title": "Everything you need to market and sell on WhatsApp and email",
+    "subtitle": "Eleven areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
     "jumpTo": "Jump to a feature",
     "detailLink": "See {name} in detail",
     "areas": {
@@ -409,12 +444,13 @@
         "nav": "CRM",
         "title": "CRM & Discovery",
         "headline": "Know your customers, and find new ones nearby",
-        "summary": "Keep every contact organised with groups and tags, and discover businesses around you on a map.",
+        "summary": "Keep every contact organised in one list for WhatsApp and email, and find new businesses on Google Maps.",
         "points": {
-          "contacts": "Contacts, groups and tags that make targeting simple.",
+          "contacts": "One contact list for both channels: filter by number only, email only, or number and email, with each contact's email and email consent shown.",
           "import": "Import a CSV and match its columns in a few clicks, or export any list.",
-          "history": "See the full history of every contact record.",
-          "discovery": "Find businesses on a map within a radius and import them as contacts."
+          "history": "Full change history on every contact, including group and tag changes.",
+          "discovery": "Find businesses on Google Maps by category and area and import them as contacts; NextReach also looks for each business's public email on its website.",
+          "groups": "Import found businesses into a new group (with a suggested name you can edit), an existing group, or no group."
         }
       },
       "catalog": {
@@ -482,7 +518,7 @@
         "points": {
           "campaigns": "Campaign reports: delivered, read, failed and replied.",
           "team": "Team reports that show how your people are doing.",
-          "exports": "Export any report to share or keep."
+          "exports": "Every export runs in the background and is downloaded from one Exports page; with filters applied, choose to export with your filters or everything."
         }
       },
       "employees": {
@@ -493,7 +529,60 @@
         "points": {
           "invite": "Invite employees to your workspace.",
           "permissions": "Fine-grained permissions for every feature.",
-          "security": "Security and session controls to keep your account safe."
+          "security": "Security and session controls to keep your account safe.",
+          "history": "Full change history for employees, including role and permission changes."
+        }
+      },
+      "email": {
+        "nav": "Email",
+        "title": "Email Marketing",
+        "headline": "Email campaigns from your own domain",
+        "summary": "Reach customers on WhatsApp and email from one contact list. Send newsletters and offers from your own domain, with deliverability protection built in.",
+        "points": {
+          "domain": "Send from your own domain, like info@yourbrand.pk. Guided setup gives you the exact SPF, DKIM and DMARC records to copy into GoDaddy or any DNS provider, and checks them automatically.",
+          "trial": "A shared trial address lets you try email before your domain is ready.",
+          "editor": "A simple block editor with headings, text, images, buttons and products from your catalog, with a live desktop and phone preview. AI can write a first draft.",
+          "campaigns": "Send to chosen groups or everyone subscribed, now or on a schedule.",
+          "abTest": "A/B test two subject lines on a small slice; the winner, by opens or clicks, goes to everyone else automatically.",
+          "forms": "Signup forms for your website grow your list with real consent.",
+          "consent": "Only people who agreed get marketing email. Every email has a one-click unsubscribe, and unsubscribed or spam-reporting addresses are never emailed again.",
+          "deliverability": "Built to protect deliverability: automatic warm-up for new domains, fake and undeliverable addresses skipped, bounces and complaints handled, and sending paused if rates get unhealthy.",
+          "reports": "Sent, opened, clicked, bounced and unsubscribed for every campaign, and replies go straight to your own inbox."
+        }
+      }
+    },
+    "everyday": {
+      "eyebrow": "Built in",
+      "title": "The small things that save time every day",
+      "subtitle": "Part of every workspace, whichever modules you use.",
+      "items": {
+        "exports": {
+          "title": "Exports centre",
+          "description": "Exports run in the background and are downloaded from one Exports page. With filters applied, choose “export with filters” or “everything”."
+        },
+        "history": {
+          "title": "Full change history",
+          "description": "An audit trail on contacts, employees and more, including group, tag, role and permission changes."
+        },
+        "renewals": {
+          "title": "Fair renewals",
+          "description": "Renewing early adds the new period on top of the days you have left: 5 days left plus a 30-day renewal gives you 35 days."
+        },
+        "notifications": {
+          "title": "Notifications",
+          "description": "Email and in-app alerts for important events, such as your sending domain being verified or needing attention."
+        },
+        "themes": {
+          "title": "Light, dark or scheduled",
+          "description": "A clean, modern interface with a light, dark or scheduled theme: dark in the evening, light in the morning, automatically."
+        },
+        "search": {
+          "title": "Fast, searchable lists",
+          "description": "Searchable dropdowns everywhere stay quick, even with thousands of groups, tags or products."
+        },
+        "invoices": {
+          "title": "PDF invoices",
+          "description": "A professional PDF invoice for every payment."
         }
       }
     }
@@ -639,7 +728,7 @@
         "name": "CRM & Discovery",
         "eyebrow": "CRM & Discovery",
         "title": "Know your customers, and find new ones nearby",
-        "subtitle": "Keep every contact organised, and discover businesses around you on a map, ready to import.",
+        "subtitle": "Keep every contact organised in one list for WhatsApp and email, and discover businesses on Google Maps, ready to import.",
         "benefits": {
           "organised": {
             "title": "Organised from day one",
@@ -651,7 +740,7 @@
           },
           "discover": {
             "title": "Find new customers",
-            "description": "Search the map for businesses within a radius and add them as contacts."
+            "description": "Search Google Maps by category and area and add the businesses you find as contacts."
           },
           "history": {
             "title": "A clear record",
@@ -677,8 +766,8 @@
           "csvMapping": "CSV import with column matching",
           "exports": "Export any list",
           "recordHistory": "History for every contact",
-          "mapSearch": "Map search for businesses by radius",
-          "importBusinesses": "Import found businesses as contacts"
+          "mapSearch": "Google Maps search by category and area",
+          "importBusinesses": "Import found businesses with phone and, where published, email"
         },
         "faqs": {
           "csv": {
@@ -687,7 +776,7 @@
           },
           "discoveryData": {
             "q": "Where do nearby businesses come from?",
-            "a": "Discovery searches the map around a location you choose, within the radius your plan allows, and lists the businesses it finds."
+            "a": "Discovery searches Google Maps for the category and area you choose, within the radius your plan allows, and lists the businesses it finds with their phone number. NextReach also looks for each business's public email on its website."
           },
           "consent": {
             "q": "Can I message businesses I discover?",
@@ -880,12 +969,80 @@
             "a": "The sequence stops for that customer, and the conversation continues in your shared inbox."
           }
         }
+      },
+      "email-marketing": {
+        "metaTitle": "Email marketing",
+        "metaDescription": "Send email campaigns from your own domain with a block editor, A/B subject tests, signup forms and built-in deliverability protection – from the same app as WhatsApp.",
+        "name": "Email marketing",
+        "eyebrow": "Email Marketing",
+        "title": "Email campaigns from your own domain",
+        "subtitle": "Reach customers on WhatsApp and email – from one app, one contact list. Send newsletters and new collections from an address like info@yourbrand.pk, built to protect your deliverability.",
+        "benefits": {
+          "ownDomain": {
+            "title": "Your own domain",
+            "description": "Email from info@yourbrand.pk looks professional, and guided setup checks your DNS records for you."
+          },
+          "oneList": {
+            "title": "One contact list",
+            "description": "WhatsApp and email share the same contacts, groups and consent, so nothing has to be kept twice."
+          },
+          "protected": {
+            "title": "Deliverability protected",
+            "description": "Warm-up, address checks, bounce handling and automatic pauses help keep your domain's reputation healthy."
+          },
+          "consent": {
+            "title": "Consent built in",
+            "description": "Only people who agreed get marketing email, and every email has a one-click unsubscribe."
+          }
+        },
+        "steps": {
+          "domain": {
+            "title": "Set up your domain",
+            "description": "Copy the DNS records NextReach gives you into GoDaddy or any DNS provider. It takes about 10 minutes, and NextReach checks them automatically. Until then, use the shared trial address."
+          },
+          "design": {
+            "title": "Design your email",
+            "description": "Add headings, text, images, buttons and catalog products, check the desktop and phone preview, or let AI write a first draft."
+          },
+          "send": {
+            "title": "Choose who and when",
+            "description": "Pick groups or everyone subscribed, test two subject lines if you like, then send now or schedule it."
+          }
+        },
+        "capabilities": {
+          "dnsSetup": "Guided SPF, DKIM and DMARC setup, checked automatically",
+          "trialAddress": "Shared trial address to start before your domain is ready",
+          "editor": "Block editor with catalog products",
+          "preview": "Live desktop and phone preview",
+          "aiDraft": "AI writes a first draft",
+          "abTesting": "A/B subject line testing with automatic winner",
+          "signupForms": "Signup forms for your website",
+          "unsubscribe": "One-click unsubscribe in every email",
+          "warmup": "Automatic warm-up for new domains",
+          "validation": "Fake and undeliverable addresses skipped",
+          "autoPause": "Sending pauses itself if bounces or complaints rise",
+          "reports": "Sent, opened, clicked, bounced and unsubscribed reports"
+        },
+        "faqs": {
+          "warmup": {
+            "q": "What is domain warm-up?",
+            "a": "A new sending domain starts with a small number of emails each day, growing over about three weeks so inboxes learn to trust you. If a campaign is bigger than today's allowance, the rest continues automatically the next day."
+          },
+          "badAddresses": {
+            "q": "What happens to fake or mistyped addresses?",
+            "a": "They are detected and skipped: typos like gmial.com, domains with no mail server and throwaway inboxes. When you add a contact, NextReach suggests a fix, like “did you mean gmail.com?”."
+          },
+          "replies": {
+            "q": "Where do replies go?",
+            "a": "Replies go straight to your own inbox, so you answer customers from the email you already use."
+          }
+        }
       }
     }
   },
   "useCases": {
     "metaTitle": "Use cases by industry",
-    "metaDescription": "How retail shops, real estate agents, schools, clinics, online stores and agencies in Pakistan use NextReach to market and sell on WhatsApp.",
+    "metaDescription": "How retail shops, boutiques, salons, restaurants, real estate agents, schools, clinics, online stores and agencies in Pakistan use NextReach to market and sell on WhatsApp and email.",
     "eyebrow": "Use cases",
     "title": "Built for the way Pakistani businesses sell",
     "subtitle": "Whatever you sell, your customers are already on WhatsApp. Here's how businesses like yours can use NextReach.",
@@ -984,6 +1141,21 @@
           "s3": "Export campaign reports to share with clients."
         },
         "example": "An agency sets up a workspace for a client, invites two team members with campaign permissions only, and shares an exported report at the end of each month. Talk to us about partnership options."
+      },
+      "lifestyle": {
+        "name": "Boutiques, salons and restaurants",
+        "summary": "Businesses with regular customers and something new every season.",
+        "challenges": {
+          "c1": "Quick offers need to reach people today, but a new collection or menu needs more room than a chat message.",
+          "c2": "Customer emails sit in a register or a spreadsheet and never get used.",
+          "c3": "Sending newsletters from a personal Gmail account looks unprofessional."
+        },
+        "solutions": {
+          "s1": "Send a same-day offer on WhatsApp and a full newsletter or new-collection email to the same contact list.",
+          "s2": "Grow your email list with a signup form on your website, so everyone on it has agreed to hear from you.",
+          "s3": "Email from your own domain, like info@yourbrand.pk, with deliverability protection built in."
+        },
+        "example": "A boutique sends a WhatsApp message on Friday morning: the Eid sale starts today. On Sunday, the new collection goes out by email, with product photos from the catalog, to everyone who signed up on the website. Replies land in the owner's own inbox."
       }
     },
     "cta": {
@@ -1055,12 +1227,13 @@
       "whatsapp": "WhatsApp",
       "plans": "Plans and payments",
       "data": "Your data and team",
-      "support": "Support"
+      "support": "Support",
+      "email": "Email marketing"
     },
     "items": {
       "whatIs": {
         "q": "What is NextReach?",
-        "a": "NextReach is a web app for marketing and selling on WhatsApp. It brings campaigns, a shared inbox, a CRM, catalogs, a lead board, AI replies, automations and reports together in one workspace."
+        "a": "NextReach is a web app for marketing and selling on WhatsApp and email. It brings campaigns, a shared inbox, a CRM, catalogs, a lead board, AI replies, automations and reports together in one workspace, with one contact list for both channels."
       },
       "whoFor": {
         "q": "Who is NextReach for?",
@@ -1133,6 +1306,26 @@
       "agencies": {
         "q": "Do you work with agencies?",
         "a": "Yes. Choose “Partnership / agency” on the contact page and tell us about your clients."
+      },
+      "emailCampaigns": {
+        "q": "Can I send email campaigns as well as WhatsApp?",
+        "a": "Yes. The Email Marketing module lets you send email campaigns from the same app and the same contact list you use for WhatsApp, and see sent, opened, clicked, bounced and unsubscribed for each campaign."
+      },
+      "ownDomain": {
+        "q": "Do I need my own domain for email?",
+        "a": "It's recommended for real campaigns, because email from your own domain, like info@yourbrand.pk, is trusted more. A shared trial address lets you start before your domain is ready. Setup takes about 10 minutes of copying DNS records into GoDaddy or any DNS provider, and NextReach checks them for you."
+      },
+      "spam": {
+        "q": "Will my emails go to spam?",
+        "a": "No tool can guarantee the inbox. NextReach gives you the best chance: it authenticates your domain, warms new domains up gradually, removes fake and undeliverable addresses, and handles bounces and complaints automatically. Sending only to people who agreed to hear from you matters most."
+      },
+      "renewal": {
+        "q": "What happens if I renew before my plan ends?",
+        "a": "Your remaining days are kept. Renewing early adds the new period on top of the days you have left, so 5 days left plus a 30-day renewal gives you 35 days."
+      },
+      "mapsImport": {
+        "q": "Can I import businesses from Google Maps?",
+        "a": "Yes. Search Google Maps by category and area, then import the businesses as contacts with their phone number and, where their website publishes one, their email. Put them into a new group, an existing group, or no group."
       }
     }
   },
@@ -1301,7 +1494,7 @@
   },
   "pricing": {
     "metaTitle": "Pricing",
-    "metaDescription": "Simple plans for WhatsApp marketing and sales, billed monthly or yearly, with a free trial. Pay with JazzCash, EasyPaisa or bank transfer.",
+    "metaDescription": "Simple plans for WhatsApp and email marketing and sales, billed monthly or yearly, with a free trial. Pay with JazzCash, EasyPaisa or bank transfer.",
     "eyebrow": "Pricing",
     "title": "Simple plans, paid the way you already pay",
     "subtitle": "Start with a free trial, then pay monthly or yearly with JazzCash, EasyPaisa or bank transfer. Payment happens in the app.",
@@ -1439,12 +1632,13 @@
       "link": "See current pricing",
       "noPlans": "Plans are being updated right now. See the app for current pricing."
     },
-    "productDescription": "WhatsApp marketing, shared inbox, CRM and sales tools for businesses in Pakistan.",
+    "productDescription": "WhatsApp and email marketing, shared inbox, CRM and sales tools for businesses in Pakistan.",
     "talk": {
       "title": "Not sure which plan fits?",
       "body": "Tell us about your business and we will suggest the right plan.",
       "button": "Ask about pricing"
-    }
+    },
+    "emailAllowance": "Every plan includes a monthly email allowance. The amount depends on your plan."
   },
   "validation": {
     "required": "This field is required.",
@@ -1903,7 +2097,8 @@
           "reporting": "Reporting",
           "ai": "AI Assistant & Auto-reply",
           "lead_scoring": "AI Lead scoring",
-          "employees": "Employee Management"
+          "employees": "Employee Management",
+          "email": "Email Marketing"
         }
       },
       "billingPreference": {

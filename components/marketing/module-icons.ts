@@ -4,6 +4,7 @@ import {
   ContactRoundIcon,
   GaugeIcon,
   KanbanSquareIcon,
+  MailIcon,
   MegaphoneIcon,
   ShoppingBagIcon,
   UsersRoundIcon,
@@ -15,6 +16,7 @@ import type { ModuleKey } from "@/content/modules";
 
 export const moduleIcons: Record<ModuleKey, LucideIcon> = {
   whatsapp: MegaphoneIcon,
+  email: MailIcon,
   crm: ContactRoundIcon,
   sales: ShoppingBagIcon,
   leads: KanbanSquareIcon,

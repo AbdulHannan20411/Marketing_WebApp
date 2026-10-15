@@ -109,6 +109,7 @@ describe("content ↔ message keys", () => {
   it("keeps the brief's module labels", () => {
     expect(en.modules.labels).toEqual({
       whatsapp: "WhatsApp Marketing",
+      email: "Email Marketing",
       crm: "CRM",
       sales: "Products & Catalog",
       leads: "Lead board",

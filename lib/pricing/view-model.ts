@@ -217,7 +217,11 @@ export function buildCustomPlanCard(
     yearlyPrice: formatMoney(locale, offer.startingYearlyPrice, offer.currency),
     yearlyDiscountPercent: offer.yearlyDiscountPercent,
     trial: offer.trialDays > 0 ? labels.trial(offer.trialDays) : null,
-    alwaysIncluded: offer.includedModules.filter(isModuleKey).map(labels.module),
+    alwaysIncluded: offer.includedModules
+      .filter(isModuleKey)
+      // Site order, like the add-ons below.
+      .sort((a, b) => moduleKeys.indexOf(a) - moduleKeys.indexOf(b))
+      .map(labels.module),
     addOns: Object.entries(offer.modulePrices)
       .filter((entry): entry is [ModuleKey, number] => isModuleKey(entry[0]))
       // Keep the site's module order, not the API's object order.

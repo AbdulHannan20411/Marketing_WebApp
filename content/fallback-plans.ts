@@ -24,6 +24,8 @@ export const fallbackPlans: Plan[] = [
     supportLevel: "community",
     modules: {
       whatsapp: true,
+      // Every plan includes a monthly email allowance (amount depends on the plan).
+      email: true,
       crm: true,
       sales: false,
       leads: false,
@@ -64,6 +66,8 @@ export const fallbackPlans: Plan[] = [
     supportLevel: "email",
     modules: {
       whatsapp: true,
+      // Every plan includes a monthly email allowance (amount depends on the plan).
+      email: true,
       crm: true,
       sales: true,
       leads: true,
@@ -104,6 +108,8 @@ export const fallbackPlans: Plan[] = [
     supportLevel: "priority",
     modules: {
       whatsapp: true,
+      // Every plan includes a monthly email allowance (amount depends on the plan).
+      email: true,
       crm: true,
       sales: true,
       leads: true,

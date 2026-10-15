@@ -5,8 +5,9 @@
 export const faqGroups = [
   { id: "gettingStarted", items: ["whatIs", "whoFor", "needs", "trial"] },
   { id: "whatsapp", items: ["official", "templates", "window", "quality", "numbers"] },
-  { id: "plans", items: ["plans", "buildOwn", "payment", "approval"] },
-  { id: "data", items: ["workspace", "importing", "team"] },
+  { id: "email", items: ["emailCampaigns", "ownDomain", "spam"] },
+  { id: "plans", items: ["plans", "buildOwn", "payment", "approval", "renewal"] },
+  { id: "data", items: ["workspace", "importing", "mapsImport", "team"] },
   { id: "support", items: ["help", "demo", "agencies"] },
 ] as const;
 

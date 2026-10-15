@@ -1,5 +1,9 @@
 import {
   ArrowRightIcon,
+  CalendarPlusIcon,
+  DownloadIcon,
+  ListFilterIcon,
+  MapPinnedIcon,
   ArrowUpRightIcon,
   CheckIcon,
   MoonIcon,
@@ -83,20 +87,24 @@ export async function ProblemSection() {
   );
 }
 
-/** Bento order: two showcase tiles, six compact ones, two showcase tiles. */
+/**
+ * Bento order: the two channels as showcase tiles (with product mock-ups), then nine
+ * compact tiles in three rows of three.
+ */
 const bentoOrder = [
   "whatsapp",
+  "email",
   "inbox",
   "crm",
   "catalog",
   "leads",
+  "aiAssistant",
   "leadScoring",
+  "automations",
   "reporting",
   "employees",
-  "aiAssistant",
-  "automations",
 ] as const;
-const showcase = new Set<string>(["whatsapp", "inbox", "aiAssistant", "automations"]);
+const showcase = new Set<string>(["whatsapp", "email"]);
 
 export async function FeatureGridSection() {
   const [t, ta, tc] = await Promise.all([
@@ -392,6 +400,42 @@ export async function FaqTeaserSection() {
           />
         </Reveal>
       </div>
+    </Section>
+  );
+}
+
+/** A few recent additions, each with a one-line benefit. */
+export async function WhatsNewSection() {
+  const t = await getTranslations("home.whatsNew");
+  const items = [
+    { key: "maps", icon: MapPinnedIcon },
+    { key: "oneList", icon: ListFilterIcon },
+    { key: "exports", icon: DownloadIcon },
+    { key: "renewals", icon: CalendarPlusIcon },
+  ] as const;
+
+  return (
+    <Section labelledBy="whats-new-title">
+      <SectionHeader
+        id="whats-new-title"
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        align="split"
+      />
+      <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border shadow-card sm:grid-cols-2 lg:grid-cols-4">
+        {items.map(({ key, icon: Icon }, index) => (
+          <Reveal as="li" key={key} delay={index * 70} className="flex flex-col gap-3 bg-card p-6">
+            <span className="flex size-10 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
+              <Icon className="size-5" aria-hidden="true" />
+            </span>
+            <h3 className="font-semibold tracking-tight">{t(`items.${key}.title`)}</h3>
+            <p className="text-sm text-pretty text-muted-foreground">
+              {t(`items.${key}.description`)}
+            </p>
+          </Reveal>
+        ))}
+      </ul>
     </Section>
   );
 }

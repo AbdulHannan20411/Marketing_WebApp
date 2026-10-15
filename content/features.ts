@@ -5,6 +5,7 @@ import {
   GaugeIcon,
   InboxIcon,
   KanbanSquareIcon,
+  MailIcon,
   MegaphoneIcon,
   ShoppingBagIcon,
   UsersRoundIcon,
@@ -21,6 +22,7 @@ import type { FeatureSlug } from "./feature-slugs";
 
 export const mockupIds = [
   "campaign",
+  "email",
   "inbox",
   "crm",
   "catalog",
@@ -53,6 +55,23 @@ export const featureAreas = [
     points: ["connect", "templates", "campaigns", "tracking", "quality"],
   },
   {
+    id: "email",
+    icon: MailIcon,
+    mockup: "email",
+    slug: "email-marketing",
+    points: [
+      "domain",
+      "trial",
+      "editor",
+      "campaigns",
+      "abTest",
+      "forms",
+      "consent",
+      "deliverability",
+      "reports",
+    ],
+  },
+  {
     id: "inbox",
     icon: InboxIcon,
     mockup: "inbox",
@@ -64,7 +83,7 @@ export const featureAreas = [
     icon: ContactRoundIcon,
     mockup: "crm",
     slug: "crm-discovery",
-    points: ["contacts", "import", "history", "discovery"],
+    points: ["contacts", "import", "history", "discovery", "groups"],
   },
   {
     id: "catalog",
@@ -111,7 +130,7 @@ export const featureAreas = [
     id: "employees",
     icon: UsersRoundIcon,
     mockup: "employees",
-    points: ["invite", "permissions", "security"],
+    points: ["invite", "permissions", "security", "history"],
   },
 ] as const satisfies readonly Area[];
 
@@ -147,7 +166,31 @@ export const featurePages = {
       "qualityRating",
     ],
     faqs: ["approval", "bulk", "cost"],
-    related: ["inbox", "automations", "crm-discovery"],
+    related: ["email-marketing", "inbox", "automations"],
+  },
+  "email-marketing": {
+    slug: "email-marketing",
+    icon: MailIcon,
+    mockup: "email",
+    areas: ["email"],
+    benefits: ["ownDomain", "oneList", "protected", "consent"],
+    steps: ["domain", "design", "send"],
+    capabilities: [
+      "dnsSetup",
+      "trialAddress",
+      "editor",
+      "preview",
+      "aiDraft",
+      "abTesting",
+      "signupForms",
+      "unsubscribe",
+      "warmup",
+      "validation",
+      "autoPause",
+      "reports",
+    ],
+    faqs: ["warmup", "badAddresses", "replies"],
+    related: ["whatsapp-campaigns", "crm-discovery", "automations"],
   },
   inbox: {
     slug: "inbox",
@@ -222,7 +265,7 @@ export const featurePages = {
 
 /** Facts used for counters. Real product numbers only. */
 export const productFacts = {
-  modules: 9,
+  modules: 10,
   automationRecipes: 8,
   paymentMethods: 3,
   languages: 2,

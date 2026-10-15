@@ -1,10 +1,11 @@
 /**
  * Plan modules shown on the site, in display order. Labels live in messages under
- * `modules.<key>`. The API also returns `email`, `social` and `api`; those features are
- * not launched, so they are deliberately absent here and ignored everywhere.
+ * `modules.<key>`. The API also returns `social` and `api`; those features are not
+ * launched, so they are deliberately absent here and ignored everywhere.
  */
 export const moduleKeys = [
   "whatsapp",
+  "email",
   "crm",
   "sales",
   "leads",

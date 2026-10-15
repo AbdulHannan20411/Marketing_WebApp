@@ -4,6 +4,7 @@
  */
 export const featureSlugs = [
   "whatsapp-campaigns",
+  "email-marketing",
   "inbox",
   "crm-discovery",
   "sales-leads",
