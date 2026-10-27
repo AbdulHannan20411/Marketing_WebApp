@@ -3,6 +3,7 @@ import {
   BellIcon,
   CalendarPlusIcon,
   CheckIcon,
+  CompassIcon,
   DownloadIcon,
   HistoryIcon,
   ReceiptTextIcon,
@@ -53,6 +54,7 @@ export default async function FeaturesPage() {
     { key: "themes", icon: SunMoonIcon },
     { key: "search", icon: SearchIcon },
     { key: "invoices", icon: ReceiptTextIcon },
+    { key: "simple", icon: CompassIcon },
   ] as const;
 
   return (
@@ -159,10 +161,7 @@ export default async function FeaturesPage() {
               as="li"
               key={key}
               delay={(index % 4) * 70}
-              className={cn(
-                "flex flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card",
-                index === 0 && "lg:col-span-2",
-              )}
+              className="flex flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card"
             >
               <span className="flex size-10 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
                 <Icon className="size-5" aria-hidden="true" />

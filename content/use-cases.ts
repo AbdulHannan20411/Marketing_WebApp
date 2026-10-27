@@ -26,8 +26,8 @@ export const useCases = [
     id: "retail",
     icon: StoreIcon,
     challenges: ["c1", "c2", "c3"],
-    solutions: ["s1", "s2", "s3"],
-    modules: ["whatsapp", "sales", "leads", "automations"],
+    solutions: ["s1", "s2", "s3", "s4"],
+    modules: ["whatsapp", "ads", "sales", "leads", "automations"],
   },
   {
     // Quick offers on WhatsApp, newsletters and new collections by email.
@@ -41,29 +41,29 @@ export const useCases = [
     id: "realEstate",
     icon: BuildingIcon,
     challenges: ["c1", "c2", "c3"],
-    solutions: ["s1", "s2", "s3"],
-    modules: ["crm", "leads", "automations", "employees"],
+    solutions: ["s1", "s2", "s3", "s4"],
+    modules: ["whatsapp", "ads", "crm", "leads", "automations", "employees"],
   },
   {
     id: "education",
     icon: GraduationCapIcon,
     challenges: ["c1", "c2", "c3"],
-    solutions: ["s1", "s2", "s3"],
-    modules: ["whatsapp", "crm", "ai", "automations"],
+    solutions: ["s1", "s2", "s3", "s4"],
+    modules: ["whatsapp", "ads", "crm", "ai", "automations"],
   },
   {
     id: "clinics",
     icon: StethoscopeIcon,
     challenges: ["c1", "c2", "c3"],
-    solutions: ["s1", "s2", "s3"],
-    modules: ["whatsapp", "crm", "ai", "employees"],
+    solutions: ["s1", "s2", "s3", "s4"],
+    modules: ["whatsapp", "ads", "crm", "ai", "employees"],
   },
   {
     id: "ecommerce",
     icon: PackageIcon,
     challenges: ["c1", "c2", "c3"],
-    solutions: ["s1", "s2", "s3"],
-    modules: ["ecommerce", "whatsapp", "sales", "automations"],
+    solutions: ["s1", "s2", "s3", "s4"],
+    modules: ["ecommerce", "whatsapp", "ads", "sales", "automations"],
   },
   {
     // Sellers who take most orders as cash on delivery.

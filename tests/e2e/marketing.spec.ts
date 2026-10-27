@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 
+import { E2E_REVALIDATE_SECRET } from "../../playwright.config";
 import { appUrl } from "./support/site-mode";
 
 const pages = [
@@ -103,7 +104,13 @@ test.describe("home", () => {
 
   test("pricing teaser falls back to typed plans with a notice when the API is unavailable", async ({
     page,
+    request,
   }) => {
+    // The build caches "no API configured"; refresh so this page sees the (down) mock API.
+    const refreshed = await request.post("/api/revalidate-pricing", {
+      headers: { "x-revalidate-secret": E2E_REVALIDATE_SECRET },
+    });
+    expect(refreshed.status()).toBe(200);
     await page.goto("/en");
     const pricing = page.locator("#pricing");
     await expect(

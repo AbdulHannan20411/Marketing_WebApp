@@ -1,10 +1,11 @@
 import {
   ArrowRightIcon,
+  BellRingIcon,
+  CircleFadingPlusIcon,
+  ClipboardListIcon,
   ClockIcon,
-  LanguagesIcon,
-  ListFilterIcon,
-  MailIcon,
-  MousePointerClickIcon,
+  LayoutTemplateIcon,
+  LibraryBigIcon,
   ShoppingCartIcon,
   StoreIcon,
   ArrowUpRightIcon,
@@ -428,12 +429,12 @@ export async function FaqTeaserSection() {
 export async function WhatsNewSection() {
   const t = await getTranslations("home.whatsNew");
   const items = [
-    { key: "fallback", icon: MailIcon },
-    { key: "spamCheck", icon: ShieldCheckIcon },
-    { key: "translate", icon: LanguagesIcon },
-    { key: "segments", icon: ListFilterIcon },
-    { key: "sendTime", icon: ClockIcon },
-    { key: "clickMap", icon: MousePointerClickIcon },
+    { key: "statusAds", icon: CircleFadingPlusIcon },
+    { key: "knowledge", icon: LibraryBigIcon },
+    { key: "push", icon: BellRingIcon },
+    { key: "templateCheck", icon: ShieldCheckIcon },
+    { key: "emailStudio", icon: LayoutTemplateIcon },
+    { key: "formBuilder", icon: ClipboardListIcon },
   ] as const;
 
   return (

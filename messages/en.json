@@ -195,29 +195,29 @@
       "title": "New ways to reach the right people",
       "subtitle": "The latest additions to NextReach.",
       "items": {
-        "fallback": {
-          "title": "Email, then WhatsApp",
-          "description": "Didn't open your email? Send them the offer on WhatsApp – reach people on the channel they actually check."
+        "statusAds": {
+          "title": "WhatsApp Status ads",
+          "description": "Ads in Status that open a chat with you, run from NextReach on your own Meta ad account."
         },
-        "spamCheck": {
-          "title": "Spam checker",
-          "description": "A 0–100 score and clear fixes before you send, to help your email land in the inbox."
+        "knowledge": {
+          "title": "AI knowledge base",
+          "description": "Auto-replies answer from your website, documents and business info, and never quote a price that isn't there."
         },
-        "translate": {
-          "title": "AI translation",
-          "description": "Translate emails and WhatsApp templates into 15 languages, including Urdu and Roman Urdu."
+        "push": {
+          "title": "Push notifications",
+          "description": "New messages and alerts reach you even when the NextReach tab is closed."
         },
-        "segments": {
-          "title": "Smart segments",
-          "description": "Lists built from what people do, like “Repeat buyers” or “Gone quiet”, updated every hour."
+        "templateCheck": {
+          "title": "Meta review check",
+          "description": "See what Meta would reject while you type a template, before you submit it."
         },
-        "sendTime": {
-          "title": "Smart send time",
-          "description": "Each email arrives at the hour that person usually reads."
+        "emailStudio": {
+          "title": "Drag-and-drop email studio",
+          "description": "Build emails from blocks and ready-made sections, with columns and a mobile preview."
         },
-        "clickMap": {
-          "title": "Email click map",
-          "description": "See which button worked and which didn't, right on the email you sent."
+        "formBuilder": {
+          "title": "Signup form builder",
+          "description": "Drag fields into a signup form for your website and grow your list with consent."
         }
       }
     },
@@ -484,11 +484,13 @@
         "summary": "Reach your whole customer list through WhatsApp's official platform, on your schedule, and see what happened to every message.",
         "points": {
           "connect": "Connect your WhatsApp Business number with Meta's official sign-up.",
-          "templates": "Create approved message templates with text, image or video headers.",
+          "templates": "Create approved message templates with text, image, video or document headers, with the example file Meta asks for.",
           "campaigns": "Send bulk campaigns now, later, or on a repeating schedule.",
           "tracking": "Track sent, delivered, read and failed for every message.",
           "quality": "Keep an eye on each number's quality rating.",
-          "translate": "Translate a template into 15 languages in one click, including Urdu and Roman Urdu; placeholders like '{{1}}' stay exactly as they are."
+          "translate": "Translate a template into 15 languages in one click, including Urdu and Roman Urdu; placeholders like '{{1}}' stay exactly as they are.",
+          "reviewCheck": "A live Meta review check flags what Meta would reject while you type a template.",
+          "displayName": "See your WhatsApp display name's approval status at a glance."
         }
       },
       "inbox": {
@@ -500,7 +502,9 @@
           "oneInbox": "All WhatsApp conversations together, with photos, videos and documents.",
           "window": "WhatsApp's 24-hour reply window is tracked for you, with templates ready when it closes.",
           "media": "Send and receive media without leaving the chat.",
-          "assign": "Assign chats to team members so everyone knows who is answering."
+          "assign": "Assign chats to team members so everyone knows who is answering.",
+          "suggest": "AI suggests a reply from your own knowledge, ready for you to check and send.",
+          "push": "Browser push notifications for new messages, even when the NextReach tab is closed."
         }
       },
       "crm": {
@@ -543,11 +547,16 @@
         "nav": "AI Assistant",
         "title": "AI Assistant & Auto-reply",
         "headline": "Help when you write, answers when you're busy",
-        "summary": "Write templates and campaigns faster, and reply automatically to greetings, first messages or chats nobody has answered yet.",
+        "summary": "Write templates, campaigns and ads faster, and reply automatically from your own knowledge base: business info, website pages, documents and pasted text.",
         "points": {
-          "writing": "AI help writing templates and campaign messages.",
+          "writing": "AI help writing templates, campaigns and WhatsApp Status ads.",
           "autoReply": "Automatic replies to greetings, first messages or unanswered chats.",
-          "grounded": "Replies use your own business details and never invent prices."
+          "grounded": "Replies stick to your own knowledge: an answer that quotes a price not found there is never sent.",
+          "knowledge": "One knowledge base for the AI: business info you edit directly, website pages, documents (PDF, Word, text) and pasted text.",
+          "websites": "Add your website: pages are read from its sitemap, you choose pages to skip, and it's read again daily, weekly or monthly.",
+          "extract": "The AI pulls question-and-answer pairs out of your sources for you to review and add.",
+          "control": "Hide any passage the AI shouldn't use, or correct its wording; your changes stay when the page is read again.",
+          "gaps": "Questions the AI couldn't answer are listed for you. Answer one, and the AI uses it from then on."
         }
       },
       "leadScoring": {
@@ -568,12 +577,13 @@
         "summary": "Build sequences like: customer became interested, wait a day, send a template, and alert the team if there's no reply.",
         "points": {
           "sequences": "Follow-up sequences with waits, templates, checks and team alerts.",
-          "recipes": "Eight ready-made recipes to start from.",
+          "recipes": "Fourteen ready-made recipes, from a birthday offer to winning back cancelled COD orders.",
           "quiet": "Quiet hours, so nobody gets a message at midnight.",
           "cap": "A daily cap on messages per customer.",
           "stop": "Sequences stop as soon as the customer replies.",
           "fallback": "Email to WhatsApp fallback: if someone doesn't open your email within the hours you set, they get the offer on WhatsApp – a ready-made recipe.",
-          "storeTriggers": "Start automations on store events: order placed, COD confirmed, shipped, delivered, cancelled or cart abandoned – for example, ask for a review 3 days after delivery."
+          "storeTriggers": "Start automations on store events: order placed, COD confirmed, shipped, delivered, cancelled or cart abandoned – for example, ask for a review 3 days after delivery.",
+          "triggers": "Start on many kinds of events: birthdays, keywords, catalog activity, email opens and clicks, orders and COD, abandoned carts, tags, groups and lead stage changes."
         }
       },
       "reporting": {
@@ -610,7 +620,7 @@
           "editor": "A simple block editor with headings, text, images, buttons and products from your catalog, with a live desktop and phone preview. AI can write a first draft.",
           "campaigns": "Send to chosen groups or everyone subscribed, now or on a schedule.",
           "abTest": "A/B test two subject lines on a small slice; the winner, by opens or clicks, goes to everyone else automatically.",
-          "forms": "Signup forms for your website grow your list with real consent.",
+          "forms": "A drag-and-drop signup form builder with contact, question, choice and layout fields – including a date field that can fill in a contact's birthday – to grow your list with real consent.",
           "consent": "Only people who agreed get marketing email. Every email has a one-click unsubscribe, and unsubscribed or spam-reporting addresses are never emailed again.",
           "deliverability": "Built to protect deliverability: automatic warm-up for new domains, fake and undeliverable addresses skipped, bounces and complaints handled, and sending paused if rates get unhealthy.",
           "reports": "Sent, opened, clicked, bounced and unsubscribed for every campaign, and replies go straight to your own inbox.",
@@ -619,7 +629,7 @@
           "smartTime": "Smart send time delivers each email at the hour that person usually opens email or replies on WhatsApp, all within 24 hours.",
           "personalised": "Personalised blocks: show a block only to customers or new people, by tag, group or country, so one email says the right thing to each reader.",
           "translate": "Translate an email into 15 languages in one click, with undo.",
-          "dragDrop": "Drag and drop to reorder blocks in the editor."
+          "dragDrop": "Drag-and-drop email studio: drag in blocks and ready-made sections, use columns, preview on desktop and mobile, undo any change, or start from a ready-made design."
         }
       },
       "ecommerce": {
@@ -677,7 +687,7 @@
         },
         "notifications": {
           "title": "Notifications",
-          "description": "Email and in-app alerts for important events, such as your sending domain being verified or needing attention."
+          "description": "Email, in-app and browser push notifications – even with the NextReach tab closed, where the browser supports it. Each person chooses which messages, campaign, team and billing alerts they get; security and system alerts always come through."
         },
         "themes": {
           "title": "Light, dark or scheduled",
@@ -690,6 +700,10 @@
         "invoices": {
           "title": "PDF invoices",
           "description": "A professional PDF invoice for every payment."
+        },
+        "simple": {
+          "title": "Built to feel fast and simple",
+          "description": "Guided tours show you around each part of the app, and campaigns show a live view while they send."
         }
       }
     }
@@ -739,7 +753,7 @@
           },
           "template": {
             "title": "Create a template",
-            "description": "Write your message with a text, image or video header and submit it for approval."
+            "description": "Write your message with a text, image, video or document header and submit it for approval. A live check flags what Meta would reject as you type."
           },
           "send": {
             "title": "Pick an audience and send",
@@ -748,11 +762,13 @@
         },
         "capabilities": {
           "signup": "Meta's official Embedded Signup",
-          "templateTypes": "Templates with text, image and video headers",
+          "templateTypes": "Templates with text, image, video and document headers",
           "audiences": "Target by group or tag",
           "recurrence": "Scheduled and repeating campaigns",
           "statuses": "Sent, delivered, read and failed tracking",
-          "qualityRating": "Quality rating for each number"
+          "qualityRating": "Quality rating for each number",
+          "reviewCheck": "Live Meta review check while you type",
+          "displayName": "Display name approval status"
         },
         "faqs": {
           "approval": {
@@ -814,7 +830,9 @@
           "windowTimer": "24-hour reply window shown on every chat",
           "media": "Send and receive photos, videos and documents",
           "templatesOutside": "Templates ready when the window has closed",
-          "history": "Full message history for each customer"
+          "history": "Full message history for each customer",
+          "suggestedReplies": "AI suggested replies from your own knowledge",
+          "push": "Browser push notifications for new messages"
         },
         "faqs": {
           "window": {
@@ -958,7 +976,7 @@
       },
       "ai": {
         "metaTitle": "AI assistant, auto-reply and lead scoring",
-        "metaDescription": "AI that helps write WhatsApp templates and campaigns, replies automatically using your own business details, and scores leads from chats.",
+        "metaDescription": "AI that writes WhatsApp templates, campaigns and Status ads, replies automatically from your own knowledge base – business info, website pages, documents and text – and scores leads from chats.",
         "name": "AI",
         "eyebrow": "AI Assistant, Auto-reply & Lead scoring",
         "title": "An assistant that knows your business",
@@ -974,7 +992,7 @@
           },
           "grounded": {
             "title": "Grounded in your facts",
-            "description": "Auto-replies use the business details you provide and never make up prices."
+            "description": "Answers come from your own knowledge base, and a reply that quotes a price that isn't in it is never sent."
           },
           "scoring": {
             "title": "Leads sorted for you",
@@ -983,8 +1001,8 @@
         },
         "steps": {
           "teach": {
-            "title": "Add your business details",
-            "description": "Opening hours, services, policies and anything customers often ask about."
+            "title": "Build your knowledge base",
+            "description": "Add business info, your website, documents or pasted text. The AI suggests questions and answers from them for you to check."
           },
           "choose": {
             "title": "Choose when to auto-reply",
@@ -992,7 +1010,7 @@
           },
           "review": {
             "title": "Review and adjust",
-            "description": "Read what the AI sent and improve your details at any time."
+            "description": "See which sources each answer used, hide or correct any passage, and answer the questions the AI couldn't."
           }
         },
         "capabilities": {
@@ -1001,12 +1019,20 @@
           "greetingReplies": "Auto-reply to greetings",
           "firstMessage": "Auto-reply to first messages",
           "unanswered": "Auto-reply to unanswered chats",
-          "leadScoring": "AI lead scoring from conversations"
+          "leadScoring": "AI lead scoring from conversations",
+          "adCopy": "AI writing for WhatsApp Status ads",
+          "knowledgeBase": "One knowledge base, with business info you edit directly",
+          "websites": "Website pages from your sitemap, with pages to skip and a refresh schedule",
+          "documents": "PDF, Word, text and Markdown documents, and pasted text",
+          "extracted": "Question-and-answer pairs pulled from your sources, for you to approve",
+          "hideCorrect": "Hide or correct any passage",
+          "gaps": "A list of questions the AI couldn't answer",
+          "citations": "The sources each answer used, shown to your team"
         },
         "faqs": {
           "prices": {
             "q": "Will the AI make up prices or promises?",
-            "a": "No. Auto-replies are grounded in the information you provide. If a price isn't in your details, the AI won't invent one."
+            "a": "No. Auto-replies come from your own knowledge base. A reply that quotes a price that isn't in it is never sent; when the AI isn't sure, the chat goes to your team and the question is listed for you to answer."
           },
           "control": {
             "q": "Can I switch auto-reply off?",
@@ -1015,12 +1041,16 @@
           "language": {
             "q": "Which languages can it write in?",
             "a": "Tell the assistant the language you want, such as English, Urdu or Roman Urdu, and review the draft before you use it."
+          },
+          "sources": {
+            "q": "What can the AI learn from?",
+            "a": "Business info you type in, your website (pages read from its sitemap, minus any you choose to skip, refreshed daily, weekly or monthly), documents such as PDF and Word files, and pasted text. Your plan sets how many sources and pages you can add."
           }
         }
       },
       "automations": {
         "metaTitle": "WhatsApp automations and follow-ups",
-        "metaDescription": "Automatic WhatsApp follow-up sequences with eight ready-made recipes, quiet hours, a daily cap per customer and stop-on-reply.",
+        "metaDescription": "Automatic WhatsApp and email follow-ups with fourteen ready-made recipes, triggers from birthdays to COD orders, quiet hours, a daily cap per customer and stop-on-reply.",
         "name": "Automations",
         "eyebrow": "Automations",
         "title": "Follow-ups that run themselves",
@@ -1032,7 +1062,7 @@
           },
           "recipes": {
             "title": "Start from a recipe",
-            "description": "Eight ready-made recipes cover the most common follow-ups."
+            "description": "Fourteen ready-made recipes cover the most common follow-ups."
           },
           "polite": {
             "title": "Polite by design",
@@ -1058,7 +1088,7 @@
           }
         },
         "capabilities": {
-          "triggers": "Start when a customer's stage changes",
+          "triggers": "Start on birthdays, keywords, catalog activity, email opens and clicks, lead stages and more",
           "waits": "Wait for hours or days",
           "templates": "Send approved templates",
           "conditions": "Check whether the customer replied",
@@ -1070,7 +1100,7 @@
         "faqs": {
           "recipes": {
             "q": "What are the ready-made recipes?",
-            "a": "Eight common sequences, such as following up with interested customers or nudging people who opened your catalog. Each one can be edited before you turn it on."
+            "a": "Fourteen common sequences, such as following up with interested customers, a birthday offer, back-in-stock and price-drop alerts, asking for a review after delivery, or winning back cancelled COD orders. Some need a module such as Email or Online stores. Each one can be edited before you turn it on."
           },
           "spam": {
             "q": "Will customers get too many messages?",
@@ -1128,7 +1158,7 @@
           "preview": "Live desktop and phone preview",
           "aiDraft": "AI writes a first draft",
           "abTesting": "A/B subject line testing with automatic winner",
-          "signupForms": "Signup forms for your website",
+          "signupForms": "Drag-and-drop signup form builder for your website",
           "unsubscribe": "One-click unsubscribe in every email",
           "warmup": "Automatic warm-up for new domains",
           "validation": "Fake and undeliverable addresses skipped",
@@ -1140,7 +1170,7 @@
           "smartTime": "Smart send time for each person",
           "personalised": "Blocks shown only to some readers",
           "translate": "One-click translation into 15 languages, with undo",
-          "dragDrop": "Drag-and-drop block ordering"
+          "dragDrop": "Drag-and-drop studio with sections, columns and undo"
         },
         "faqs": {
           "warmup": {
@@ -1340,7 +1370,8 @@
         "solutions": {
           "s1": "Send a new-arrivals campaign with photos to the customers who want it.",
           "s2": "Share one catalog link with prices instead of sending dozens of screenshots.",
-          "s3": "See who opened the catalog and follow up with the interested ones."
+          "s3": "See who opened the catalog and follow up with the interested ones.",
+          "s4": "Run a WhatsApp Status ad for a sale or new arrival; one tap opens a chat with you, with the customer's message already typed."
         },
         "example": "A boutique sends its Eid collection to regular customers on Friday morning. Customers open the catalog from the button, ask about sizes in the shared inbox, and the lead board shows the staff who to call first."
       },
@@ -1355,7 +1386,8 @@
         "solutions": {
           "s1": "Keep every enquiry in one CRM with tags for area, budget and property type.",
           "s2": "Use the lead board to see who is fully interested and ready to visit.",
-          "s3": "Let automations follow up with new enquiries and alert an agent if there's no reply."
+          "s3": "Let automations follow up with new enquiries and alert an agent if there's no reply.",
+          "s4": "Promote a new listing in WhatsApp Status, so buyers tap straight into a chat with your team."
         },
         "example": "A property dealer tags each enquiry by society and budget. When a buyer becomes interested, an automation sends the brochure the next day and alerts the agent if the buyer hasn't replied."
       },
@@ -1370,7 +1402,8 @@
         "solutions": {
           "s1": "Send admission dates, fee reminders and notices to the right class or group.",
           "s2": "Auto-reply to common questions with your own details, even after hours.",
-          "s3": "Track enquiries from first message to enrolment on the lead board."
+          "s3": "Track enquiries from first message to enrolment on the lead board.",
+          "s4": "Announce admissions in WhatsApp Status; parents tap to ask about fees and dates in a chat."
         },
         "example": "An academy groups contacts by class. During admissions, auto-reply answers questions about timings and documents from the academy's own details, and staff pick up the chats that need a person."
       },
@@ -1385,7 +1418,8 @@
         "solutions": {
           "s1": "Answer common questions automatically using your clinic's own information.",
           "s2": "Send reminders and health-camp announcements with approved templates.",
-          "s3": "Give each receptionist their own access in a shared inbox."
+          "s3": "Give each receptionist their own access in a shared inbox.",
+          "s4": "Announce a health camp in WhatsApp Status; patients tap to ask questions in a chat with your front desk."
         },
         "example": "A dental clinic sends a reminder template the day before follow-up visits. Patients reply to confirm, and receptionists handle the chats from the shared inbox instead of one phone."
       },
@@ -1400,7 +1434,8 @@
         "solutions": {
           "s1": "Connect Shopify or WooCommerce: products sync into your catalog and every buyer becomes a contact.",
           "s2": "Let AI lead scoring spot buyers, and automations nudge the quiet ones.",
-          "s3": "Send order updates on WhatsApp and, on Shopify, one reminder that brings shoppers back to their cart."
+          "s3": "Send order updates on WhatsApp and, on Shopify, one reminder that brings shoppers back to their cart.",
+          "s4": "Bring new shoppers into a WhatsApp chat with a Status ad, then follow them from the tap to their order."
         },
         "example": "A Shopify store sends “Your order has shipped” with the courier's tracking link, and a reminder to shoppers who left a cart. An automation asks for a review 3 days after delivery, and smart segments group “Repeat buyers” for the next campaign."
       },
@@ -1546,7 +1581,7 @@
       },
       "templates": {
         "q": "What is a message template?",
-        "a": "A pre-approved message format that Meta allows businesses to send first, for example an offer or a reminder. Templates can include text and an image or video header."
+        "a": "A pre-approved message format that Meta allows businesses to send first, for example an offer or a reminder. Templates can include text and an image, video or document header."
       },
       "window": {
         "q": "What is the 24-hour reply window?",

@@ -80,6 +80,14 @@ describe("content ↔ message keys", () => {
     expect(missing(paths)).toEqual([]);
   });
 
+  it("use cases with Status ads also list WhatsApp, which the ads module needs", () => {
+    const missingWhatsApp = useCases
+      .filter((useCase) => (useCase.modules as readonly string[]).includes("ads"))
+      .filter((useCase) => !(useCase.modules as readonly string[]).includes("whatsapp"))
+      .map((useCase) => useCase.id);
+    expect(missingWhatsApp).toEqual([]);
+  });
+
   it("FAQ", () => {
     const paths = faqGroups.flatMap((group) => [
       `faq.groups.${group.id}`,
