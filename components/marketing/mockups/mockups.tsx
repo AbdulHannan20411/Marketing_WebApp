@@ -1,5 +1,8 @@
 import {
   ArrowDownIcon,
+  CircleFadingPlusIcon,
+  ShoppingBagIcon,
+  MessageCircleIcon,
   CircleCheckIcon,
   StoreIcon,
   AtSignIcon,
@@ -79,6 +82,109 @@ export async function CampaignMockup() {
       <div className="mt-4 flex items-center gap-1.5 text-xs font-medium text-success">
         <ShieldCheckIcon className="size-4" aria-hidden="true" />
         {t("quality")}
+      </div>
+    </MockWindow>
+  );
+}
+
+/** A Status ad on a phone, the chat a tap opens, and where the people went (example). */
+export async function StatusAdMockup() {
+  const t = await getTranslations("mockups.statusAd");
+  const business = t("business");
+  // Illustrative bar lengths only: the mock-up shows no numbers.
+  const funnel = [
+    { key: "reached", width: "100%" },
+    { key: "tapped", width: "64%" },
+    { key: "chatted", width: "46%" },
+    { key: "leads", width: "30%" },
+    { key: "ordered", width: "18%" },
+  ] as const;
+  return (
+    <MockWindow
+      title={t("title")}
+      action={
+        <MockPill>
+          <CircleFadingPlusIcon className="size-3" aria-hidden="true" />
+          {t("example")}
+        </MockPill>
+      }
+    >
+      <div className="@container">
+        <div className="grid gap-4 @sm:grid-cols-[9.5rem_1fr]">
+          <div
+            className="mock-pop mx-auto w-[9.5rem] rounded-[1.4rem] bg-slate-900 p-1.5 shadow-lg"
+            style={stagger(0)}
+          >
+            <div className="flex aspect-[9/16] flex-col overflow-hidden rounded-[1.05rem] bg-gradient-to-b from-emerald-600 via-emerald-800 to-slate-900 p-2.5 text-white">
+              <div className="flex gap-0.5">
+                {[0, 1, 2].map((bar) => (
+                  <span key={bar} className="h-0.5 flex-1 overflow-hidden rounded-full bg-white/35">
+                    {bar === 0 ? (
+                      <span
+                        className="mock-grow block h-full rounded-full bg-white"
+                        style={stagger(1)}
+                      />
+                    ) : null}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-2 flex items-center gap-1.5">
+                <span className="flex size-5 shrink-0 items-center justify-center rounded-full bg-white/20 text-[9px] font-semibold">
+                  {Array.from(business)[0]}
+                </span>
+                <span className="min-w-0 leading-tight">
+                  <span className="block truncate text-[10px] font-semibold">{business}</span>
+                  <span className="block text-[9px] text-white/75">{t("sponsored")}</span>
+                </span>
+              </div>
+              <span className="flex flex-1 items-center justify-center">
+                <ShoppingBagIcon className="size-12 text-white/30" aria-hidden="true" />
+              </span>
+              <div className="flex flex-col gap-1.5">
+                <p className="text-[13px] leading-tight font-semibold">{t("headline")}</p>
+                <p className="text-[10px] leading-snug text-white/85">{t("text")}</p>
+                <span className="relative mt-1 flex items-center justify-center gap-1 rounded-full bg-white py-1.5 text-[10px] font-semibold text-emerald-800">
+                  <MessageCircleIcon className="size-3" aria-hidden="true" />
+                  {t("button")}
+                  {/* The tap: a ring around the button. */}
+                  <span
+                    className="mock-pop absolute -inset-1 rounded-full border-2 border-emerald-300"
+                    style={stagger(2)}
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 rounded-lg bg-wa-wallpaper p-3">
+            <span
+              className="mock-pop mx-auto flex items-center gap-1 rounded-md bg-wa-in/90 px-2 py-0.5 text-[11px] text-slate-600 shadow-sm dark:text-slate-300"
+              style={stagger(3)}
+            >
+              <CircleFadingPlusIcon className="size-3 text-brand" aria-hidden="true" />
+              {t("fromAd")}
+            </span>
+            <ChatBubble side="in" className="mock-pop" style={stagger(4)}>
+              {t("prefilled")}
+            </ChatBubble>
+            <ChatBubble side="out" className="mock-pop" style={stagger(5)}>
+              {t("greeting")}
+            </ChatBubble>
+          </div>
+        </div>
+        <p className="mt-4 text-[11px] font-semibold text-muted-foreground">{t("funnelTitle")}</p>
+        <ul className="mt-2 flex flex-col gap-1.5">
+          {funnel.map((stage, i) => (
+            <li key={stage.key} className="grid grid-cols-[7rem_1fr] items-center gap-3 text-xs">
+              <span className="truncate">{t(`funnel.${stage.key}`)}</span>
+              <span className="h-2 overflow-hidden rounded-full bg-muted">
+                <span
+                  className="mock-grow block h-full rounded-full bg-brand"
+                  style={{ width: stage.width, ...stagger(i + 6) }}
+                />
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </MockWindow>
   );
@@ -607,6 +713,7 @@ function Toggle({ on }: { on: boolean }) {
 
 const mockups: Record<MockupId, () => Promise<React.JSX.Element>> = {
   campaign: CampaignMockup,
+  statusAd: StatusAdMockup,
   email: EmailMockup,
   cod: CodMockup,
   inbox: InboxMockup,

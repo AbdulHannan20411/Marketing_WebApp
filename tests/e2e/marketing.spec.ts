@@ -8,6 +8,7 @@ const pages = [
   "/features/whatsapp-campaigns",
   "/features/email-marketing",
   "/features/ecommerce-cod",
+  "/features/status-ads",
   "/features/inbox",
   "/features/crm-discovery",
   "/features/sales-leads",

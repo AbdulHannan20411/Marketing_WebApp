@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import { fallbackPlans } from "@/content/fallback-plans";
-import type { CustomPlanOffer, Plan } from "@/lib/pricing/schemas";
+import { moduleKeys } from "@/content/modules";
+import { planSchema, type CustomPlanOffer, type Plan } from "@/lib/pricing/schemas";
 import {
   buildComparison,
   buildCustomPlanCard,
@@ -41,6 +42,16 @@ const labels: PricingLabels = {
 const growth = fallbackPlans[1] as Plan;
 const business = fallbackPlans[2] as Plan;
 const checkout = "https://app.example.com/pricing";
+
+describe("fallback plans", () => {
+  it("parse with the API schema, every module key present, Status ads off", () => {
+    for (const plan of fallbackPlans) {
+      const parsed = planSchema.parse(plan);
+      expect(Object.keys(parsed.modules)).toEqual(expect.arrayContaining([...moduleKeys]));
+      expect(parsed.modules.ads).toBe(false);
+    }
+  });
+});
 
 describe("plan cards", () => {
   it("shows monthly and yearly prices, the per-month equivalent and the saving", () => {
@@ -125,7 +136,7 @@ describe("comparison table", () => {
 
   it("lists modules, then limits in the brief's order, then support", () => {
     expect(table.groups.map((group) => group.key)).toEqual(["modules", "limits", "support"]);
-    expect(table.groups[0]?.rows).toHaveLength(11);
+    expect(table.groups[0]?.rows).toHaveLength(12);
     expect(table.groups[1]?.rows.map((row) => row.key)).toEqual([
       "contacts",
       "employees",

@@ -1,4 +1,4 @@
-import { ArrowRightIcon, CheckIcon, ChevronRightIcon } from "lucide-react";
+import { ArrowRightIcon, CheckIcon, ChevronRightIcon, InfoIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { locale as rootLocale } from "next/root-params";
@@ -54,6 +54,10 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
   ]);
   // Keys below come from the typed content source; a unit test checks they all exist.
   const tk = t as unknown as (key: string) => string;
+  const requirements: readonly string[] = "requirements" in page ? page.requirements : [];
+  const notes: readonly string[] = "notes" in page ? page.notes : [];
+  // The extra section shifts the alternating section backgrounds by one.
+  const shifted = requirements.length > 0;
   const faqs = page.faqs.map((key) => ({
     id: `${slug}-${key}`,
     question: tk(`faqs.${key}.q`),
@@ -157,7 +161,42 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
         </ol>
       </Section>
 
-      <Section labelledBy="capabilities-title">
+      {requirements.length > 0 ? (
+        <Section labelledBy="requirements-title">
+          <div className="grid gap-5 lg:grid-cols-2">
+            <Reveal className="rounded-2xl border bg-card p-7 shadow-card sm:p-9">
+              <h2 id="requirements-title" className="text-2xl font-semibold tracking-tight">
+                {shared("requirementsTitle")}
+              </h2>
+              <ul className="mt-6 flex flex-col gap-4">
+                {requirements.map((key) => (
+                  <li key={key} className="flex gap-3">
+                    <span className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
+                      <CheckIcon className="size-3.5" aria-hidden="true" />
+                    </span>
+                    <span>{tk(`requirements.${key}`)}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+            {notes.length > 0 ? (
+              <Reveal delay={120} className="rounded-2xl border bg-surface-subtle p-7 sm:p-9">
+                <h2 className="text-2xl font-semibold tracking-tight">{shared("notesTitle")}</h2>
+                <ul className="mt-6 flex flex-col gap-4">
+                  {notes.map((key) => (
+                    <li key={key} className="flex gap-3">
+                      <InfoIcon className="mt-0.5 size-5 shrink-0 text-brand" aria-hidden="true" />
+                      <span className="text-muted-foreground">{tk(`notes.${key}`)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            ) : null}
+          </div>
+        </Section>
+      ) : null}
+
+      <Section tone={shifted ? "subtle" : "default"} labelledBy="capabilities-title">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr]">
           <SectionHeader
             id="capabilities-title"
@@ -180,7 +219,7 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
         </div>
       </Section>
 
-      <Section tone="subtle" labelledBy="faq-title">
+      <Section tone={shifted ? "default" : "subtle"} labelledBy="faq-title">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.5fr]">
           <SectionHeader id="faq-title" title={shared("faqTitle")} align="start" />
           <Reveal>
@@ -190,7 +229,7 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
         </div>
       </Section>
 
-      <Section labelledBy="related-title">
+      <Section tone={shifted ? "subtle" : "default"} labelledBy="related-title">
         <SectionHeader id="related-title" title={shared("relatedTitle")} />
         <ul className="mt-10 grid gap-4 md:grid-cols-3">
           {page.related.map((related) => {

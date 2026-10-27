@@ -24,6 +24,7 @@ import { getTranslations } from "next-intl/server";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { moduleIcons } from "@/components/marketing/module-icons";
+import { NewBadge } from "@/components/marketing/new-badge";
 import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Section, SectionHeader } from "@/components/marketing/section";
 import { AnimatedNumber } from "@/components/motion/animated-number";
@@ -31,7 +32,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { homeFaqIds } from "@/content/faq";
 import { featureAreas, productFacts } from "@/content/features";
-import { moduleKeys } from "@/content/modules";
+import { moduleKeys, newModuleKeys } from "@/content/modules";
 import { Link } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +41,7 @@ import { ModuleCarousel } from "./module-carousel";
 
 export async function ProblemSection() {
   const t = await getTranslations("home.problem");
-  const points = ["p1", "p2", "p3", "p4"] as const;
+  const points = ["p1", "p2", "p3", "p4", "p5"] as const;
 
   return (
     <Section labelledBy="problem-title">
@@ -94,12 +95,13 @@ export async function ProblemSection() {
 }
 
 /**
- * Bento order: the two channels as showcase tiles (with product mock-ups), then ten
- * compact tiles: two rows of three, then two rows of two.
+ * Bento order: the two channels as showcase tiles (with product mock-ups), then eleven
+ * compact tiles: three rows of three, then one row of two.
  */
 const bentoOrder = [
   "whatsapp",
   "email",
+  "statusAds",
   "ecommerce",
   "inbox",
   "crm",
@@ -142,8 +144,8 @@ export async function FeatureGridSection() {
       <ul className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
         {areas.map((area, index) => {
           const big = showcase.has(area.id);
-          // Compact tiles after the first six sit two to a row on large screens.
-          const wide = !big && index - showcase.size >= 6;
+          // Compact tiles after the first nine sit two to a row on large screens.
+          const wide = !big && index - showcase.size >= 9;
           const href =
             "slug" in area && area.slug ? `/features/${area.slug}` : `/features#${area.id}`;
           return (
@@ -169,8 +171,14 @@ export async function FeatureGridSection() {
                       aria-hidden="true"
                     />
                   </div>
-                  <h3 className={cn("font-semibold", big ? "text-xl" : "text-base")}>
+                  <h3
+                    className={cn(
+                      "flex flex-wrap items-center gap-2 font-semibold",
+                      big ? "text-xl" : "text-base",
+                    )}
+                  >
                     {ta(`${area.id}.title`)}
+                    {"isNew" in area && area.isNew ? <NewBadge label={tc("new")} /> : null}
                   </h3>
                   <p className="text-sm text-pretty text-muted-foreground">
                     {ta(`${area.id}.summary`)}
@@ -365,6 +373,7 @@ export async function ModulesSection() {
             title: tl(key),
             description: td(key),
             icon: <Icon className="size-5" aria-hidden="true" />,
+            badge: newModuleKeys.includes(key) ? tc("new") : undefined,
           };
         })}
         labels={{

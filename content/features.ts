@@ -1,6 +1,7 @@
 import {
   BarChart3Icon,
   BotIcon,
+  CircleFadingPlusIcon,
   ContactRoundIcon,
   GaugeIcon,
   InboxIcon,
@@ -23,6 +24,7 @@ import type { FeatureSlug } from "./feature-slugs";
 
 export const mockupIds = [
   "campaign",
+  "statusAd",
   "email",
   "cod",
   "inbox",
@@ -45,6 +47,8 @@ type Area = {
   mockup: MockupId;
   /** Detail page that covers this area, if any. */
   slug?: FeatureSlug;
+  /** Recently launched: shown with a "New" badge. */
+  isNew?: boolean;
   points: readonly string[];
 };
 
@@ -55,6 +59,24 @@ export const featureAreas = [
     mockup: "campaign",
     slug: "whatsapp-campaigns",
     points: ["connect", "templates", "campaigns", "tracking", "quality", "translate"],
+  },
+  {
+    id: "statusAds",
+    icon: CircleFadingPlusIcon,
+    mockup: "statusAd",
+    slug: "status-ads",
+    isNew: true,
+    points: [
+      "connect",
+      "builder",
+      "aiCopy",
+      "audience",
+      "budget",
+      "review",
+      "control",
+      "results",
+      "contacts",
+    ],
   },
   {
     id: "email",
@@ -171,6 +193,10 @@ type FeaturePage = {
   benefits: readonly string[];
   steps: readonly string[];
   capabilities: readonly string[];
+  /** Optional "What you need" list, before the capabilities. */
+  requirements?: readonly string[];
+  /** Optional "Good to know" list shown beside the requirements. */
+  notes?: readonly string[];
   faqs: readonly string[];
   related: readonly FeatureSlug[];
 };
@@ -192,7 +218,35 @@ export const featurePages = {
       "qualityRating",
     ],
     faqs: ["approval", "bulk", "cost"],
-    related: ["email-marketing", "inbox", "automations"],
+    related: ["status-ads", "email-marketing", "inbox"],
+  },
+  "status-ads": {
+    slug: "status-ads",
+    icon: CircleFadingPlusIcon,
+    mockup: "statusAd",
+    areas: ["statusAds"],
+    benefits: ["newCustomers", "oneTap", "ownAccount", "spendToSales"],
+    steps: ["connect", "build", "launch"],
+    capabilities: [
+      "oneSignIn",
+      "aiCopy",
+      "media",
+      "prefilled",
+      "greeting",
+      "audience",
+      "groups",
+      "lookalike",
+      "budget",
+      "preview",
+      "review",
+      "control",
+      "results",
+      "contacts",
+    ],
+    requirements: ["adAccount", "page", "number", "plan"],
+    notes: ["instagram", "billing", "privacy", "availability"],
+    faqs: ["spend", "instagram", "review", "privacy", "stop"],
+    related: ["whatsapp-campaigns", "automations", "sales-leads"],
   },
   "email-marketing": {
     slug: "email-marketing",
@@ -332,7 +386,7 @@ export const featurePages = {
 
 /** Facts used for counters. Real product numbers only. */
 export const productFacts = {
-  modules: 11,
+  modules: 12,
   automationRecipes: 8,
   paymentMethods: 3,
   languages: 2,

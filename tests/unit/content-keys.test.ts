@@ -56,6 +56,10 @@ describe("content ↔ message keys", () => {
           `${base}.steps.${key}.description`,
         ]),
         ...page.capabilities.map((key) => `${base}.capabilities.${key}`),
+        ...("requirements" in page ? page.requirements : []).map(
+          (key) => `${base}.requirements.${key}`,
+        ),
+        ...("notes" in page ? page.notes : []).map((key) => `${base}.notes.${key}`),
         ...page.faqs.flatMap((key) => [`${base}.faqs.${key}.q`, `${base}.faqs.${key}.a`]),
       ];
     });
@@ -111,6 +115,7 @@ describe("content ↔ message keys", () => {
       whatsapp: "WhatsApp Marketing",
       email: "Email Marketing",
       ecommerce: "Online stores & COD confirmation",
+      ads: "WhatsApp Status ads",
       crm: "CRM",
       sales: "Products & Catalog",
       leads: "Lead board",

@@ -1,6 +1,7 @@
 import {
   BarChart3Icon,
   BotIcon,
+  CircleFadingPlusIcon,
   ContactRoundIcon,
   GaugeIcon,
   KanbanSquareIcon,
@@ -19,6 +20,7 @@ export const moduleIcons: Record<ModuleKey, LucideIcon> = {
   whatsapp: MegaphoneIcon,
   email: MailIcon,
   ecommerce: ShoppingCartIcon,
+  ads: CircleFadingPlusIcon,
   crm: ContactRoundIcon,
   sales: ShoppingBagIcon,
   leads: KanbanSquareIcon,

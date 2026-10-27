@@ -15,6 +15,7 @@ import { getTranslations } from "next-intl/server";
 
 import { CtaBand } from "@/components/marketing/cta-band";
 import { MockupStage } from "@/components/marketing/mockup-stage";
+import { NewBadge } from "@/components/marketing/new-badge";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
@@ -37,11 +38,12 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function FeaturesPage() {
-  const [t, tf, tp, cta] = await Promise.all([
+  const [t, tf, tp, cta, tc] = await Promise.all([
     getTranslations("features"),
     getTranslations("features.areas"),
     getTranslations("featurePages.pages"),
     getTranslations("home.finalCta"),
+    getTranslations("common"),
   ]);
   const everyday = [
     { key: "exports", icon: DownloadIcon },
@@ -102,6 +104,7 @@ export default async function FeaturesPage() {
                     <area.icon className="size-4" aria-hidden="true" />
                   </span>
                   {tf(`${area.id}.title`)}
+                  {"isNew" in area && area.isNew ? <NewBadge label={tc("new")} /> : null}
                 </p>
                 <h2
                   id={`${area.id}-title`}

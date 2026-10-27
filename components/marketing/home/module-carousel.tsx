@@ -3,6 +3,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
 
+import { NewBadge } from "@/components/marketing/new-badge";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -11,6 +12,8 @@ export type ModuleSlide = {
   title: string;
   description: string;
   icon: ReactNode;
+  /** Optional short label, such as "New". */
+  badge?: string;
 };
 
 type ModuleCarouselProps = {
@@ -124,9 +127,12 @@ export function ModuleCarousel({ slides, labels }: ModuleCarouselProps) {
                 index === state.active ? "border-brand/50" : "hover:-translate-y-0.5",
               )}
             >
-              <span className="flex size-11 items-center justify-center rounded-xl bg-brand-soft text-accent-foreground">
-                {slide.icon}
-              </span>
+              <div className="flex items-start justify-between gap-3">
+                <span className="flex size-11 items-center justify-center rounded-xl bg-brand-soft text-accent-foreground">
+                  {slide.icon}
+                </span>
+                {slide.badge ? <NewBadge label={slide.badge} /> : null}
+              </div>
               <h3 className="text-lg font-semibold">{slide.title}</h3>
               <p className="text-muted-foreground">{slide.description}</p>
             </div>

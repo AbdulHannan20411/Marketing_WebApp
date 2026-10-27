@@ -28,6 +28,8 @@ export const fallbackPlans: Plan[] = [
       email: true,
       // TODO: confirm which plans include Online stores & COD confirmation.
       ecommerce: true,
+      // TODO: mirror the live API. New module; no plan has it until a Super Admin enables it.
+      ads: false,
       crm: true,
       sales: false,
       leads: false,
@@ -72,6 +74,8 @@ export const fallbackPlans: Plan[] = [
       email: true,
       // TODO: confirm which plans include Online stores & COD confirmation.
       ecommerce: true,
+      // TODO: mirror the live API. New module; no plan has it until a Super Admin enables it.
+      ads: false,
       crm: true,
       sales: true,
       leads: true,
@@ -116,6 +120,8 @@ export const fallbackPlans: Plan[] = [
       email: true,
       // TODO: confirm which plans include Online stores & COD confirmation.
       ecommerce: true,
+      // TODO: mirror the live API. New module; no plan has it until a Super Admin enables it.
+      ads: false,
       crm: true,
       sales: true,
       leads: true,

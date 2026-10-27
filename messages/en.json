@@ -3,7 +3,7 @@
     "siteName": "NextReach",
     "titleTemplate": "%s | NextReach",
     "defaultTitle": "NextReach — WhatsApp and email marketing for growing businesses",
-    "description": "Reach customers on WhatsApp and email from one app and one contact list. Confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
+    "description": "Reach customers on WhatsApp and email from one app and one contact list. Run WhatsApp Status ads and confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
   },
   "common": {
     "skipToContent": "Skip to main content",
@@ -39,7 +39,8 @@
     "carousel": "carousel",
     "slide": "slide",
     "included": "Included",
-    "notIncluded": "Not included"
+    "notIncluded": "Not included",
+    "new": "New"
   },
   "nav": {
     "primaryLabel": "Main",
@@ -95,7 +96,7 @@
       "mockupLabel": "Example: a customer asks about a product on WhatsApp, the business replies with a catalog link, and an Eid campaign is delivered and read."
     },
     "metaTitle": "WhatsApp and email marketing for growing businesses",
-    "metaDescription": "WhatsApp and email marketing in one app. Confirm cash-on-delivery orders from Shopify and WooCommerce on WhatsApp, send order updates, and reach people on the channel they actually check.",
+    "metaDescription": "WhatsApp and email marketing in one app. Bring new customers into WhatsApp with Status ads, confirm cash-on-delivery orders from Shopify and WooCommerce, and reach people on the channel they actually check.",
     "problem": {
       "eyebrow": "Why NextReach",
       "title": "WhatsApp is where your customers are. Managing it shouldn't be chaos.",
@@ -105,13 +106,15 @@
         "p1": "Chats are spread across personal phones, and messages slip through the cracks.",
         "p2": "Bulk messages from a normal number get ignored, reported or blocked.",
         "p3": "You can't tell who is just browsing and who is ready to buy.",
-        "p4": "Follow-ups only happen if someone remembers."
+        "p4": "Follow-ups only happen if someone remembers.",
+        "p5": "New customers can only message you if they already have your number."
       },
       "after": {
         "p1": "One shared inbox where your whole team sees and answers every chat.",
         "p2": "Campaigns through WhatsApp's official platform, with approved templates.",
         "p3": "A lead board that shows who is cold, warm, interested or won.",
-        "p4": "Follow-ups that run on their own and stop when the customer replies."
+        "p4": "Follow-ups that run on their own and stop when the customer replies.",
+        "p5": "WhatsApp Status ads bring new customers straight into a chat with you."
       }
     },
     "features": {
@@ -249,7 +252,8 @@
       "lead_scoring": "AI Lead scoring",
       "employees": "Employee Management",
       "email": "Email Marketing",
-      "ecommerce": "Online stores & COD confirmation"
+      "ecommerce": "Online stores & COD confirmation",
+      "ads": "WhatsApp Status ads"
     },
     "descriptions": {
       "whatsapp": "Approved templates, bulk campaigns on a schedule, and delivery and read tracking for every message.",
@@ -262,7 +266,8 @@
       "lead_scoring": "The AI reads each chat and places the customer on your lead board.",
       "employees": "Invite your team and decide exactly what each person can see and do.",
       "email": "Campaigns from your own domain, a block editor, A/B subject tests and built-in deliverability protection.",
-      "ecommerce": "Connect Shopify or WooCommerce, confirm COD orders on WhatsApp, send order updates and recover carts."
+      "ecommerce": "Connect Shopify or WooCommerce, confirm COD orders on WhatsApp, send order updates and recover carts.",
+      "ads": "Ads in WhatsApp Status that open a chat with you, run on your own Meta ad account."
     }
   },
   "pricingTeaser": {
@@ -441,14 +446,34 @@
       "cancel": "Cancel",
       "confirmed": "Order confirmed ✅",
       "tagged": "Tagged cod-confirmed in your store"
+    },
+    "statusAd": {
+      "title": "Eid sale ad",
+      "example": "Example",
+      "business": "Your shop",
+      "sponsored": "Sponsored",
+      "headline": "Eid sale: new arrivals",
+      "text": "Tap to chat and ask about sizes and prices.",
+      "button": "Send message",
+      "fromAd": "Chat started from your ad",
+      "prefilled": "Hi! I saw your Eid sale. Is this still available?",
+      "greeting": "Hi! Thanks for getting in touch. Yes, it is. Which size would you like?",
+      "funnelTitle": "From ad to order (example)",
+      "funnel": {
+        "reached": "Reached",
+        "tapped": "Tapped",
+        "chatted": "Chatted",
+        "leads": "On the lead board",
+        "ordered": "Ordered"
+      }
     }
   },
   "features": {
     "metaTitle": "WhatsApp and email marketing features",
-    "metaDescription": "WhatsApp and email campaigns, Shopify and WooCommerce COD confirmation, a spam checker, AI translation, smart segments, a shared inbox, CRM, automations and reports.",
+    "metaDescription": "WhatsApp and email campaigns, WhatsApp Status ads, Shopify and WooCommerce COD confirmation, a spam checker, AI translation, smart segments, a shared inbox, CRM, automations and reports.",
     "eyebrow": "Features",
     "title": "Everything you need to market and sell on WhatsApp and email",
-    "subtitle": "Twelve areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
+    "subtitle": "Thirteen areas that work together, so a message becomes a conversation and a conversation becomes a sale.",
     "jumpTo": "Jump to a feature",
     "detailLink": "See {name} in detail",
     "areas": {
@@ -614,6 +639,23 @@
           "dashboard": "A results dashboard: COD confirmation rate, orders cancelled before shipping, estimated return costs saved, carts and revenue recovered, and WhatsApp delivered and read.",
           "limits": "Good to know: cart recovery and delivery updates need Shopify (or a tracking plugin on WooCommerce), and messages use WhatsApp templates you get approved by Meta."
         }
+      },
+      "statusAds": {
+        "nav": "Status ads",
+        "title": "WhatsApp Status ads",
+        "headline": "Bring new customers into WhatsApp",
+        "summary": "Create ads that appear in WhatsApp Status. One tap opens a chat with you, with a message already typed for the customer to send. Everything runs from NextReach, on your own Meta ad account.",
+        "points": {
+          "connect": "Connect your own Meta ad account with one Facebook sign-in, then pick the ad account and the Facebook Page linked to your WhatsApp number.",
+          "builder": "Build the ad in four steps – creative, audience, budget and dates, then review and launch – with a live phone preview all the way.",
+          "aiCopy": "AI writes the ad text, headline and pre-filled message from a one-line brief.",
+          "audience": "Choose countries, age and gender; show the ad to your contact groups or keep it from them, and optionally reach people like them.",
+          "budget": "Set a daily or total budget with start and end dates, and see the most the ad can spend before you launch.",
+          "review": "Follow Meta's review: In review, Active, or Rejected with Meta's reason and a way to fix it.",
+          "control": "Pause, resume or stop an ad at any time.",
+          "results": "Results from spend to sales: reach, taps, chats, cost per chat, leads, orders, revenue and return on spend.",
+          "contacts": "Every chat an ad starts becomes a contact linked to that ad, and your instant reply goes out automatically."
+        }
       }
     },
     "everyday": {
@@ -660,7 +702,9 @@
       "faqTitle": "Common questions",
       "relatedTitle": "Works well with",
       "allFeatures": "All features",
-      "breadcrumb": "Breadcrumb"
+      "breadcrumb": "Breadcrumb",
+      "requirementsTitle": "What you need",
+      "notesTitle": "Good to know"
     },
     "pages": {
       "whatsapp-campaigns": {
@@ -1178,6 +1222,96 @@
           "results": {
             "q": "How do I see whether it's working?",
             "a": "The results dashboard shows your COD confirmation rate, orders cancelled before shipping, estimated return costs saved, carts and revenue recovered, and WhatsApp delivered and read."
+          }
+        }
+      },
+      "status-ads": {
+        "metaTitle": "WhatsApp Status ads that start chats",
+        "metaDescription": "Create WhatsApp Status ads from NextReach on your own Meta ad account. One tap opens a chat with your business. AI ad text, contact-group audiences, Meta review status and results from spend to sales.",
+        "name": "Status ads",
+        "eyebrow": "WhatsApp Status ads",
+        "title": "Turn a tap on your ad into a WhatsApp chat",
+        "subtitle": "Run ads in WhatsApp Status without opening Meta Ads Manager. One tap opens a chat with your business, with the customer's first message already typed, and NextReach follows every chat from the tap to the order.",
+        "benefits": {
+          "newCustomers": {
+            "title": "Reach new customers",
+            "description": "Show your offer in the Updates tab to people who don't have your number yet."
+          },
+          "oneTap": {
+            "title": "One tap to a chat",
+            "description": "No forms and no website: the customer taps, and a WhatsApp chat with you opens with their message ready to send."
+          },
+          "ownAccount": {
+            "title": "Your account, your spend",
+            "description": "Ads run on your own Meta ad account, and Meta bills your payment method directly. NextReach never handles your ad spend."
+          },
+          "spendToSales": {
+            "title": "From spend to sales",
+            "description": "See what each ad cost, how many chats it started, and which of those people became leads and placed orders."
+          }
+        },
+        "steps": {
+          "connect": {
+            "title": "Connect Meta",
+            "description": "Sign in with Facebook once, then choose your ad account and the Facebook Page linked to your WhatsApp number."
+          },
+          "build": {
+            "title": "Build the ad",
+            "description": "Add a picture or video, let AI write the text, choose who sees it and set the budget. The phone preview shows the ad as you go."
+          },
+          "launch": {
+            "title": "Launch and follow it",
+            "description": "Meta reviews the ad before it shows. Then follow its results, and pause, resume or stop it whenever you like."
+          }
+        },
+        "capabilities": {
+          "oneSignIn": "Connect your Meta ad account with one Facebook sign-in",
+          "aiCopy": "AI writes the ad text, headline and message from a one-line brief",
+          "media": "Picture or video; vertical 9:16 works best in Status",
+          "prefilled": "A message already typed for the customer to send",
+          "greeting": "An optional instant reply when the chat starts",
+          "audience": "Countries, age and gender",
+          "groups": "Show the ad to contact groups, or keep it from them",
+          "lookalike": "Optionally reach people like your contacts",
+          "budget": "Daily or total budget, with start and end dates",
+          "preview": "A live phone preview, and the most it can spend before you launch",
+          "review": "Meta's review status, with the reason if an ad is rejected",
+          "control": "Pause, resume or stop at any time",
+          "results": "Spend, reach, taps, chats and cost per chat, day by day",
+          "contacts": "Every chat becomes a contact linked to its ad, followed to leads, orders and revenue"
+        },
+        "requirements": {
+          "adAccount": "A Meta ad account with a payment method added. Meta charges it for your ad spend.",
+          "page": "A Facebook Page linked to your WhatsApp Business number.",
+          "number": "That WhatsApp number connected to NextReach.",
+          "plan": "A NextReach plan with WhatsApp Status ads switched on. It works together with WhatsApp Marketing."
+        },
+        "notes": {
+          "instagram": "Meta shows Status ads together with Instagram Stories; it doesn't allow Status on its own. The same button opens WhatsApp in both.",
+          "billing": "Your NextReach plan is separate from your ad spend. Meta bills ad spend to your own ad account.",
+          "privacy": "If you use contact groups, phone numbers and emails are hashed before they reach Meta, and opted-out contacts are never sent. A group needs at least 100 reachable contacts to become an audience.",
+          "availability": "Status ads depend on Meta's rollout in your country. Meta decides where and how often an ad shows, so reach, approval and results can't be promised."
+        },
+        "faqs": {
+          "spend": {
+            "q": "Is ad spend included in my NextReach plan?",
+            "a": "No. Ads run on your own Meta ad account, and Meta charges your payment method directly. NextReach never collects or holds your ad spend. Your NextReach plan is billed separately."
+          },
+          "instagram": {
+            "q": "Why does my ad also show in Instagram Stories?",
+            "a": "Meta shows Status ads together with Instagram Stories and doesn't allow Status on its own. The button works the same way in both: it opens a WhatsApp chat with you."
+          },
+          "review": {
+            "q": "How long does Meta's review take?",
+            "a": "Meta reviews every ad before it shows, usually within a day. NextReach shows the status – In review, Active or Rejected – and, if an ad is rejected, Meta's reason, so you can fix it and try again."
+          },
+          "privacy": {
+            "q": "What contact data is sent to Meta?",
+            "a": "Only what's needed when you show an ad to a contact group or keep it from one. Phone numbers and emails are hashed before they leave NextReach, so no contact detail is sent in readable form, and opted-out contacts are never sent. When you stop the ad, the audiences made for it are removed from Meta."
+          },
+          "stop": {
+            "q": "Can I stop an ad at any time?",
+            "a": "Yes. Pause it and resume it later, or stop it for good. A stopped ad stops spending, and its results stay."
           }
         }
       }
@@ -2290,7 +2424,8 @@
           "lead_scoring": "AI Lead scoring",
           "employees": "Employee Management",
           "email": "Email Marketing",
-          "ecommerce": "Online stores & COD confirmation"
+          "ecommerce": "Online stores & COD confirmation",
+          "ads": "WhatsApp Status ads"
         }
       },
       "billingPreference": {
