@@ -31,7 +31,11 @@ const pricingFaqIds = [
   "billing",
   "trialEnd",
   "changePlan",
+  "upgrade",
+  "downgrade",
+  "renewEarly",
   "custom",
+  "adSpend",
   "approval",
   "refunds",
 ] as const;

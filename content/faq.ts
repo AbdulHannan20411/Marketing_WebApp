@@ -10,7 +10,7 @@ export const faqGroups = [
     id: "email",
     items: ["emailCampaigns", "ownDomain", "spam", "spamChecker", "sendTime", "translateLanguages"],
   },
-  { id: "plans", items: ["plans", "buildOwn", "payment", "approval", "renewal"] },
+  { id: "plans", items: ["plans", "buildOwn", "planChange", "payment", "approval", "renewal"] },
   { id: "data", items: ["workspace", "importing", "mapsImport", "segmentsUpdate", "team"] },
   { id: "support", items: ["help", "demo", "agencies"] },
 ] as const;

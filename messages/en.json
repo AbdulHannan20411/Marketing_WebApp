@@ -682,8 +682,8 @@
           "description": "An audit trail on contacts, employees and more, including group, tag, role and permission changes."
         },
         "renewals": {
-          "title": "Fair renewals",
-          "description": "Renewing early adds the new period on top of the days you have left: 5 days left plus a 30-day renewal gives you 35 days."
+          "title": "Fair upgrades and renewals",
+          "description": "Upgrade any time with your unused days credited. Renewing early adds the new period on top of the days you have left: 5 days left plus a 30-day renewal gives you 35 days."
         },
         "notifications": {
           "title": "Notifications",
@@ -1686,6 +1686,10 @@
       "segmentsUpdate": {
         "q": "How often do segments update?",
         "a": "Every hour, automatically, or on demand when you refresh one. You can use a segment in any WhatsApp or email campaign and in automations."
+      },
+      "planChange": {
+        "q": "Can I upgrade or downgrade my plan?",
+        "a": "Upgrade any time: the new plan starts when your payment is approved, with a full new period, and the unused days of your current plan are credited against its price. Moving to a smaller plan is possible once your current plan ends; until then the app shows the date it becomes available."
       }
     }
   },
@@ -1920,8 +1924,8 @@
     "custom": {
       "eyebrow": "Flexible",
       "title": "Build your own plan",
-      "descriptionMonthly": "Pick only the modules you need. From <strong>{price}/month</strong>.",
-      "descriptionYearly": "Pick only the modules you need. From <strong>{price}/year</strong>, save {percent}%.",
+      "descriptionMonthly": "Pick only the modules you need. From <strong>{price}/month</strong>. Already on a plan? You'll see the upgrade price with your unused days credited.",
+      "descriptionYearly": "Pick only the modules you need. From <strong>{price}/year</strong>, save {percent}%. Already on a plan? You'll see the upgrade price with your unused days credited.",
       "alwaysIncluded": "Always included",
       "addOns": "Add what you need",
       "addOnPrice": "+{price}/month",
@@ -1970,11 +1974,11 @@
         },
         "changePlan": {
           "q": "Can I change my plan later?",
-          "a": "Yes. You can move to a different plan in the app as your business grows. Contact us if you'd like help choosing."
+          "a": "Yes. You can move to a bigger plan at any time, and to a smaller one once your current plan ends. The same rules apply to ready-made plans and to Build your own plan."
         },
         "custom": {
           "q": "How does “Build your own plan” work?",
-          "a": "Some modules are always included, and you add only the others you need. The price updates as you choose, so you only pay for what you use."
+          "a": "Some modules are always included, and you add only the others you need, such as WhatsApp Status ads where available. The price updates as you choose. If you're already on a plan, the builder shows the upgrade price with the credit for your unused days, and one click takes you back to your current plan."
         },
         "approval": {
           "q": "How long does payment approval take?",
@@ -1983,6 +1987,22 @@
         "refunds": {
           "q": "Can I get a refund?",
           "a": "Refunds follow our Refund Policy, which explains when they're available and how to ask for one."
+        },
+        "upgrade": {
+          "q": "What happens when I upgrade in the middle of my plan?",
+          "a": "The new plan starts when your payment is approved, with a full new period. The unused days of your current plan are credited against its price, and checkout shows the credit and the amount due. If the credit already covers the bigger plan, it applies straight away with nothing to pay."
+        },
+        "downgrade": {
+          "q": "Can I move to a smaller plan?",
+          "a": "Yes, once your current plan ends. A smaller plan means cheaper, fewer modules, lower limits, or yearly to monthly. Until then the app shows the date it becomes available, and you can still renew or move to a bigger plan."
+        },
+        "renewEarly": {
+          "q": "What happens if I renew early?",
+          "a": "The new period is added on top of the days you have left, so no paid days are lost: 5 days left plus a 30-day renewal gives you 35 days. Your renewals are listed under Billing in the app."
+        },
+        "adSpend": {
+          "q": "Is ad spend for WhatsApp Status ads included?",
+          "a": "No. Status ads run on your own Meta ad account, and Meta bills your payment method directly. NextReach never collects or holds ad spend; your plan only decides whether the WhatsApp Status ads module is included."
         }
       },
       "more": "More questions? See the full FAQ"
