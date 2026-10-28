@@ -12,6 +12,11 @@ describe("public env", () => {
     expect(env.NEXT_PUBLIC_SUPABASE_URL).toBeUndefined();
   });
 
+  it("keeps only the origin of the site URL, so canonical URLs don't repeat a path", () => {
+    const env = parsePublicEnv({ NEXT_PUBLIC_SITE_URL: "https://example.com/en/" });
+    expect(env.NEXT_PUBLIC_SITE_URL).toBe("https://example.com");
+  });
+
   it("rejects malformed URLs loudly", () => {
     expect(() => parsePublicEnv({ NEXT_PUBLIC_SITE_URL: "not a url" })).toThrow(
       /NEXT_PUBLIC_SITE_URL/,

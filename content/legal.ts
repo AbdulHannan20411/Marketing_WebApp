@@ -22,6 +22,8 @@ export const legalPages = {
       "collect",
       "use",
       "whatsapp",
+      // TODO: legal review — Status ads: customer is controller; hashed contacts sent to Meta.
+      "statusAds",
       "sharing",
       "retention",
       "security",
@@ -39,6 +41,8 @@ export const legalPages = {
       "accounts",
       "acceptableUse",
       "payments",
+      // TODO: legal review — Status ads: customer's own Meta ad account; Meta bills ad spend.
+      "statusAds",
       "trials",
       "cancellation",
       "content",

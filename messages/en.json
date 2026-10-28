@@ -1538,7 +1538,7 @@
   },
   "faq": {
     "metaTitle": "Frequently asked questions",
-    "metaDescription": "Answers about NextReach: getting started, WhatsApp's official platform, templates, the 24-hour window, plans, payments, data and support.",
+    "metaDescription": "Answers about NextReach: getting started, the official WhatsApp platform, templates, Status ads, online stores, email, plans, payments and support.",
     "eyebrow": "FAQ",
     "title": "Frequently asked questions",
     "subtitle": "Can't find what you're looking for? Send us a question and we'll reply.",
@@ -1552,6 +1552,7 @@
     "groups": {
       "gettingStarted": "Getting started",
       "whatsapp": "WhatsApp",
+      "statusAds": "WhatsApp Status ads",
       "plans": "Plans and payments",
       "data": "Your data and team",
       "support": "Support",
@@ -1690,6 +1691,38 @@
       "planChange": {
         "q": "Can I upgrade or downgrade my plan?",
         "a": "Upgrade any time: the new plan starts when your payment is approved, with a full new period, and the unused days of your current plan are credited against its price. Moving to a smaller plan is possible once your current plan ends; until then the app shows the date it becomes available."
+      },
+      "adsNeeds": {
+        "q": "What do I need to run WhatsApp Status ads?",
+        "a": "A Meta ad account with a payment method added, a Facebook Page linked to your WhatsApp Business number, that number connected to NextReach, and a NextReach plan with WhatsApp Status ads switched on. Status ads work together with WhatsApp Marketing."
+      },
+      "adsSpend": {
+        "q": "Who pays for the ads?",
+        "a": "You do, through your own Meta ad account: Meta charges your payment method directly. NextReach never collects or holds your ad spend, and your NextReach plan is billed separately."
+      },
+      "adsInstagram": {
+        "q": "Why does my Status ad also show in Instagram Stories?",
+        "a": "Meta shows Status ads together with Instagram Stories and doesn't allow Status on its own. The button works the same way in both: it opens a WhatsApp chat with you."
+      },
+      "adsReview": {
+        "q": "Does Meta review my ad?",
+        "a": "Yes. Meta reviews every ad before it shows, usually within a day. NextReach shows the status, In review, Active or Rejected, and if an ad is rejected, Meta's reason, so you can fix it and try again."
+      },
+      "adsPrivacy": {
+        "q": "What contact data is sent to Meta?",
+        "a": "Only what's needed when you show an ad to a contact group or keep it from one. Phone numbers and emails are hashed before they leave NextReach, so no contact detail is sent in readable form, and opted-out contacts are never sent. When you stop the ad, the audiences made for it are removed from Meta."
+      },
+      "adsContacts": {
+        "q": "Can I send campaigns to people who message me from an ad?",
+        "a": "Everyone who taps your ad and writes in is saved as a contact linked to that ad, so you can follow them to leads and orders. Writing in isn't the same as agreeing to marketing: you still need their opt-in before sending them campaigns, as with any contact."
+      },
+      "adsCountries": {
+        "q": "Are Status ads available in my country?",
+        "a": "It depends on Meta's rollout in your country. Meta decides where and how often an ad shows, so reach, approval and results can't be promised."
+      },
+      "adsStop": {
+        "q": "Can I stop an ad at any time?",
+        "a": "Yes. Pause it and resume it later, or stop it for good. A stopped ad stops spending, and its results stay."
       }
     }
   },
@@ -1720,6 +1753,10 @@
         "whatsapp": {
           "title": "WhatsApp and Meta",
           "body": "The NextReach service connects to the WhatsApp Business Platform operated by Meta. Messages you send and receive through NextReach are processed by Meta under its own terms and policies. Businesses using NextReach are responsible for having their customers' permission to message them."
+        },
+        "statusAds": {
+          "title": "WhatsApp Status ads",
+          "body": "The customer is the controller of their contact data. NextReach processes it on the customer's behalf and, only when the customer uses contact groups in a Status ad, sends hashed phone numbers and emails to Meta under the customer's ad account. Opted-out contacts are never sent, and no contact detail is sent in readable form."
         },
         "sharing": {
           "title": "Who we share it with",
@@ -1780,6 +1817,10 @@
         "payments": {
           "title": "Plans and payments",
           "body": "Prices are shown in the app. Payments are made by JazzCash, EasyPaisa or bank transfer and confirmed by our team after you upload a receipt. Your plan starts once payment is approved."
+        },
+        "statusAds": {
+          "title": "WhatsApp Status ads",
+          "body": "The customer is responsible for their own Meta ad account, its billing and its compliance with Meta's advertising terms. Ad spend is billed by Meta directly; NextReach doesn't collect or hold it."
         },
         "trials": {
           "title": "Free trials",
@@ -2525,6 +2566,7 @@
           "whatsappConnection": "Connecting WhatsApp",
           "templates": "Templates",
           "campaigns": "Campaigns",
+          "statusAds": "WhatsApp Status ads",
           "inbox": "Inbox",
           "automations": "Automations",
           "ai": "AI features",

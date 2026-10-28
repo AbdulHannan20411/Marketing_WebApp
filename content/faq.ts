@@ -5,6 +5,19 @@
 export const faqGroups = [
   { id: "gettingStarted", items: ["whatIs", "whoFor", "needs", "trial"] },
   { id: "whatsapp", items: ["official", "templates", "window", "quality", "numbers"] },
+  {
+    id: "statusAds",
+    items: [
+      "adsNeeds",
+      "adsSpend",
+      "adsInstagram",
+      "adsReview",
+      "adsPrivacy",
+      "adsContacts",
+      "adsCountries",
+      "adsStop",
+    ],
+  },
   { id: "stores", items: ["codHow", "shopifyApp", "woocommerce", "autoCancel"] },
   {
     id: "email",

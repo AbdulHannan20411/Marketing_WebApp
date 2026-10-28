@@ -9,7 +9,10 @@ import { optionalString, optionalUrl, urlWithDefault } from "./schema-helpers";
  * accessed literally, so each variable is read by name below rather than by iterating.
  */
 export const publicEnvSchema = z.object({
-  NEXT_PUBLIC_SITE_URL: urlWithDefault("http://localhost:3000"),
+  // Only the origin is kept: a path such as "/en" here would be prefixed to every canonical URL.
+  NEXT_PUBLIC_SITE_URL: urlWithDefault("http://localhost:3000").transform(
+    (url) => new URL(url).origin,
+  ),
   // The main NextReach app. Empty = the site runs on its own (see lib/site.ts).
   NEXT_PUBLIC_APP_URL: optionalUrl,
   NEXT_PUBLIC_SUPABASE_URL: optionalUrl,

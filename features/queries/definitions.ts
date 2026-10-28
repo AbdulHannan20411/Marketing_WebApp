@@ -71,6 +71,7 @@ export const questions = {
       "whatsappConnection",
       "templates",
       "campaigns",
+      "statusAds",
       "inbox",
       "automations",
       "ai",

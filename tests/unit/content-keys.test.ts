@@ -96,6 +96,18 @@ describe("content ↔ message keys", () => {
     expect(missing(paths)).toEqual([]);
     const allIds = faqGroups.flatMap((group) => group.items as readonly string[]);
     expect(homeFaqIds.every((id) => allIds.includes(id))).toBe(true);
+    // FAQ item ids are shared across groups, so none may appear twice.
+    expect(new Set(allIds).size).toBe(allIds.length);
+  });
+
+  it("Status ads have their own FAQ group and legal sections", () => {
+    const group = faqGroups.find((g) => g.id === "statusAds");
+    expect(group?.items).toEqual(
+      expect.arrayContaining(["adsSpend", "adsInstagram", "adsReview", "adsNeeds", "adsPrivacy"]),
+    );
+    expect(group?.items).toEqual(expect.arrayContaining(["adsCountries", "adsStop"]));
+    expect(legalPages.privacy.sections).toContain("statusAds");
+    expect(legalPages.terms.sections).toContain("statusAds");
   });
 
   it("legal pages", () => {
