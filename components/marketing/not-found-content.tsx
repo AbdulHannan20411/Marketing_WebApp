@@ -1,6 +1,8 @@
 import { ArrowRightIcon, CompassIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
+import { spotlight } from "@/components/motion/effects";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/i18n/navigation";
 
@@ -33,7 +35,10 @@ export async function NotFoundContent() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="group flex items-center justify-between rounded-xl border bg-card px-4 py-3 font-medium transition-colors hover:border-brand/50"
+                className={cn(
+                  "group flex items-center justify-between rounded-xl border bg-card px-4 py-3 font-medium hover:border-brand/50",
+                  spotlight({ small: true }),
+                )}
               >
                 {link.label}
                 <ArrowRightIcon

@@ -40,6 +40,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       type="button"
       variant="ghost"
       size="icon"
+      data-hover-glow=""
       className={cn("size-10", className)}
       aria-label={next === "dark" ? t("switchToDark") : t("switchToLight")}
       title={next === "dark" ? t("switchToDark") : t("switchToLight")}

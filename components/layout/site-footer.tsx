@@ -65,7 +65,8 @@ export async function SiteFooter() {
                   <li key={link.key}>
                     <Link
                       href={link.href}
-                      className="inline-flex min-h-9 items-center rounded-sm text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      data-hover-glow=""
+                      className="-mx-2 inline-flex min-h-9 items-center rounded-md px-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                     >
                       {t(`links.${link.key}`)}
                     </Link>

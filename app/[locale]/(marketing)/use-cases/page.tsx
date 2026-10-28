@@ -6,6 +6,7 @@ import { getTranslations } from "next-intl/server";
 import { CtaBand } from "@/components/marketing/cta-band";
 import { moduleIcons } from "@/components/marketing/module-icons";
 import { PageHero } from "@/components/marketing/page-hero";
+import { spotlight } from "@/components/motion/effects";
 import { Reveal } from "@/components/motion/reveal";
 import { anchorForUseCase, useCases } from "@/content/use-cases";
 import { isLocale } from "@/lib/i18n/routing";
@@ -76,7 +77,7 @@ export default async function UseCasesPage() {
             </Reveal>
 
             <div className="mt-8 grid gap-6 lg:grid-cols-3">
-              <Reveal className="rounded-2xl border bg-card p-6">
+              <Reveal className={cn("rounded-2xl border bg-card p-6", spotlight())}>
                 <h3 className="flex items-center gap-2 font-semibold">
                   <CircleAlertIcon className="size-5 text-warning" aria-hidden="true" />
                   {t("challengesTitle")}
@@ -87,7 +88,10 @@ export default async function UseCasesPage() {
                   ))}
                 </ul>
               </Reveal>
-              <Reveal delay={100} className="rounded-2xl border border-brand/40 bg-card p-6">
+              <Reveal
+                index={1}
+                className={cn("rounded-2xl border border-brand/40 bg-card p-6", spotlight())}
+              >
                 <h3 className="flex items-center gap-2 font-semibold">
                   <CircleCheckIcon className="size-5 text-brand" aria-hidden="true" />
                   {t("solutionsTitle")}
@@ -104,7 +108,7 @@ export default async function UseCasesPage() {
                   ))}
                 </ul>
               </Reveal>
-              <Reveal delay={200} className="flex flex-col gap-6">
+              <Reveal index={2} className="flex flex-col gap-6">
                 <div className="rounded-2xl bg-accent p-6 text-accent-foreground">
                   <h3 className="flex items-center gap-2 font-semibold">
                     <LightbulbIcon className="size-5" aria-hidden="true" />

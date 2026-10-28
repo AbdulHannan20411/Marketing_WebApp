@@ -72,6 +72,7 @@ export async function LegalPage({ page }: { page: LegalPageId }) {
               <li key={key}>
                 <a
                   href={`#${key}`}
+                  data-hover-glow=""
                   className="block rounded-md px-2 py-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {`${index + 1}. ${tk(`sections.${key}.title`)}`}

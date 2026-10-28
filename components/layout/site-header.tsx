@@ -71,6 +71,7 @@ async function NavLinksFallback() {
         <li key={item.key}>
           <Link
             href={item.href}
+            data-hover-glow=""
             className="inline-flex h-9 items-center rounded-full px-3.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
             {t(item.key)}

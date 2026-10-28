@@ -1,5 +1,6 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from "lucide-react";
 
+import { magnetic } from "@/components/motion/effects";
 import { Button, type buttonVariants } from "@/components/ui/button";
 import type { QuerySource } from "@/features/queries/definitions";
 import { QueryDialogButton } from "@/features/queries/components/query-dialog-button";
@@ -19,6 +20,7 @@ type TrialCtaProps = {
  * "Start free trial". With the main app live it links there; until then it opens
  * the guided query form on "Pricing & plans", so the visitor's request reaches the
  * admin inbox (and works as a link to /contact without JavaScript).
+ * The main call to action, so it is magnetic (pulls towards the pointer).
  */
 export function TrialCta({
   label,
@@ -30,7 +32,7 @@ export function TrialCta({
 }: TrialCtaProps) {
   if (appLinks.startTrial) {
     return (
-      <Button asChild variant={variant} size={size} className={className}>
+      <Button asChild variant={variant} size={size} className={className} {...magnetic}>
         <a href={appLinks.startTrial}>
           {label}
           {icon ? (
@@ -47,6 +49,7 @@ export function TrialCta({
       variant={variant}
       size={size}
       className={className}
+      magnetic
     >
       {label}
       {icon ? <ArrowRightIcon className="size-4 rtl:rotate-180" aria-hidden="true" /> : null}

@@ -2,6 +2,7 @@ import { BadgeCheckIcon, GiftIcon, WalletIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { TrialCta } from "@/components/marketing/trial-cta";
+import { magnetic } from "@/components/motion/effects";
 import { Button } from "@/components/ui/button";
 
 import { HeroMockupLoader } from "./hero-mockup-loader";
@@ -83,6 +84,7 @@ export async function HomeHero() {
               size="lg"
               variant="outline"
               className="h-12 rounded-full px-7 text-base"
+              {...magnetic}
             >
               <a href="#how-it-works">{t("secondaryCta")}</a>
             </Button>

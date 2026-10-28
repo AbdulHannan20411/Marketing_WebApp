@@ -64,6 +64,7 @@ export function MobileNavSheet({
                     <Link
                       href={item.href}
                       aria-current={active ? "page" : undefined}
+                      data-hover-glow=""
                       className={cn(
                         "flex min-h-12 items-center rounded-md px-3 text-base font-medium transition-colors hover:bg-muted",
                         active ? "bg-muted text-foreground" : "text-foreground/80",
@@ -94,6 +95,7 @@ export function MobileNavSheet({
                   hrefLang={localeMeta[option].htmlLang}
                   lang={localeMeta[option].htmlLang}
                   aria-current={option === locale ? "true" : undefined}
+                  data-hover-glow=""
                   className={cn(
                     "inline-flex h-9 min-w-16 items-center justify-center rounded-md px-3 text-sm font-medium transition-colors",
                     option === locale

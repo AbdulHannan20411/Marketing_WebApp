@@ -32,6 +32,7 @@ export function FaqAccordion({ items, className, value, onValueChange }: FaqAcco
           key={item.id}
           value={item.id}
           id={`faq-${item.id}`}
+          data-hover-glow=""
           className="scroll-mt-24 rounded-xl border bg-card px-5 shadow-card transition-[border-color,box-shadow] duration-200 last:border-b hover:border-foreground/15 data-[state=open]:border-brand/30 data-[state=open]:shadow-lift"
         >
           <AccordionTrigger className="text-start text-base font-semibold">

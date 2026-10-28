@@ -6,6 +6,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
+import { spotlight } from "@/components/motion/effects";
 import { Reveal } from "@/components/motion/reveal";
 import { ComparisonTable } from "@/components/pricing/comparison-table";
 import { PricingPlans } from "@/components/pricing/pricing-plans";
@@ -13,6 +14,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { QueryDialogButton } from "@/features/queries/components/query-dialog-button";
 import { fallbackPlans } from "@/content/fallback-plans";
 import { Link } from "@/lib/i18n/navigation";
+import { cn } from "@/lib/utils";
 import { isLocale } from "@/lib/i18n/routing";
 import { getCustomPlanOffer, getPublicPlans } from "@/lib/nextreach-api";
 import { getPricingLabels } from "@/lib/pricing/labels";
@@ -251,7 +253,12 @@ async function PaymentsSection() {
       />
       <ul className="mt-12 grid gap-6 md:grid-cols-3">
         {methods.map(({ key, icon: Icon }, index) => (
-          <Reveal as="li" key={key} delay={index * 100} className="rounded-2xl border bg-card p-6">
+          <Reveal
+            as="li"
+            key={key}
+            index={index}
+            className={cn("rounded-2xl border bg-card p-6", spotlight())}
+          >
             <span className="flex size-11 items-center justify-center rounded-xl bg-brand-soft text-accent-foreground">
               <Icon className="size-5" aria-hidden="true" />
             </span>
@@ -264,7 +271,10 @@ async function PaymentsSection() {
         <h3 className="text-center text-lg font-semibold">{t("stepsTitle")}</h3>
         <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
-            <li key={step} className="flex gap-3 rounded-xl border bg-card p-4">
+            <li
+              key={step}
+              className={cn("flex gap-3 rounded-xl border bg-card p-4", spotlight({ small: true }))}
+            >
               <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
                 {index + 1}
               </span>

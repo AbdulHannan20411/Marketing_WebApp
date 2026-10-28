@@ -4,6 +4,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useCallback, useEffect, useId, useRef, useState, type ReactNode } from "react";
 
 import { NewBadge } from "@/components/marketing/new-badge";
+import { spotlight } from "@/components/motion/effects";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -123,8 +124,9 @@ export function ModuleCarousel({ slides, labels }: ModuleCarouselProps) {
               aria-roledescription={labels.slide}
               aria-label={labels.positions[index]}
               className={cn(
-                "flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card transition-[border-color,transform,box-shadow] duration-300",
-                index === state.active ? "border-brand/50" : "hover:-translate-y-0.5",
+                "flex h-full flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card",
+                spotlight(),
+                index === state.active && "border-brand/50",
               )}
             >
               <div className="flex items-start justify-between gap-3">

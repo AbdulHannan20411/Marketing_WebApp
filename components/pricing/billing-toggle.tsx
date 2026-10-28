@@ -42,7 +42,7 @@ export function BillingToggle({ value, onChange, labels }: BillingToggleProps) {
       <div
         role="radiogroup"
         aria-label={labels.group}
-        className="relative grid grid-cols-2 rounded-full border bg-card p-1 shadow-card"
+        className="segmented relative grid grid-cols-2 rounded-full border bg-card p-1 shadow-card"
       >
         <span
           aria-hidden="true"
@@ -60,6 +60,7 @@ export function BillingToggle({ value, onChange, labels }: BillingToggleProps) {
             type="button"
             role="radio"
             aria-checked={value === period}
+            data-no-hover={value === period ? "" : undefined}
             tabIndex={value === period ? 0 : -1}
             onClick={() => onChange(period)}
             onKeyDown={onKeyDown}

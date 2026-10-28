@@ -7,6 +7,7 @@ import {
   LayoutTemplateIcon,
   LibraryBigIcon,
   ShoppingCartIcon,
+  SmartphoneIcon,
   StoreIcon,
   ArrowUpRightIcon,
   CheckIcon,
@@ -21,6 +22,7 @@ import {
   XIcon,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
+import type { CSSProperties } from "react";
 
 import { FaqAccordion } from "@/components/marketing/faq-accordion";
 import { Mockup } from "@/components/marketing/mockups/mockups";
@@ -29,6 +31,7 @@ import { NewBadge } from "@/components/marketing/new-badge";
 import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Section, SectionHeader } from "@/components/marketing/section";
 import { AnimatedNumber } from "@/components/motion/animated-number";
+import { spotlight } from "@/components/motion/effects";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { homeFaqIds } from "@/content/faq";
@@ -68,7 +71,7 @@ export async function ProblemSection() {
           </ul>
         </Reveal>
         <Reveal
-          delay={120}
+          index={1}
           className="relative isolate overflow-hidden rounded-2xl surface-ink p-7 shadow-lift sm:p-9"
         >
           <div
@@ -153,14 +156,17 @@ export async function FeatureGridSection() {
             <Reveal
               as="li"
               key={area.id}
-              delay={(index % 3) * 70}
+              index={index % 3}
               className={cn(
                 big ? "sm:col-span-2 lg:col-span-3" : wide ? "lg:col-span-3" : "lg:col-span-2",
               )}
             >
               <Link
                 href={href}
-                className="group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-0.5 hover:border-brand/35 hover:shadow-lift"
+                className={cn(
+                  "group flex h-full flex-col rounded-2xl border bg-card shadow-card hover:border-brand/35",
+                  spotlight(),
+                )}
               >
                 <div className="flex flex-col gap-3 p-6">
                   <div className="flex items-center justify-between gap-3">
@@ -189,7 +195,7 @@ export async function FeatureGridSection() {
                 {big ? (
                   <div
                     aria-hidden="true"
-                    className="relative mt-auto h-56 overflow-hidden border-t bg-surface-subtle mask-fade-b px-6 pt-6"
+                    className="relative mt-auto h-56 overflow-hidden rounded-b-[calc(var(--radius-2xl)-1px)] border-t bg-surface-subtle mask-fade-b px-6 pt-6"
                   >
                     <div className="pointer-events-none mx-auto max-w-sm origin-top transition-transform duration-500 group-hover:scale-[1.02]">
                       <Mockup id={area.mockup} />
@@ -235,6 +241,41 @@ export async function FactsSection() {
   );
 }
 
+/** Stacking order for the three step cards: first on top, so its connector arrow shows. */
+const stepLayers = ["z-30", "z-20", "z-10"] as const;
+
+/**
+ * The app's campaign "sending flow": green message dots travel a lane to a phone, which
+ * pings as each one lands. Decorative; the motion lives in globals.css (.send-*).
+ */
+function SendingFlow() {
+  return (
+    <div aria-hidden="true" className="mt-auto flex items-center gap-3 pt-2">
+      <span className="relative h-px flex-1 bg-border">
+        {[0, 1, 2].map((i) => (
+          <span
+            key={i}
+            className="send-track absolute inset-0"
+            style={{ "--i": i } as CSSProperties}
+          >
+            <span className="send-dot absolute start-0 top-1/2 size-2 -translate-y-1/2 rounded-full bg-brand" />
+          </span>
+        ))}
+      </span>
+      <span className="relative flex size-9 shrink-0 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
+        {[0, 1, 2].map((i) => (
+          <span
+            key={i}
+            className="send-ping absolute inset-0 rounded-xl border-2 border-brand/60"
+            style={{ "--i": i } as CSSProperties}
+          />
+        ))}
+        <SmartphoneIcon className="size-4" />
+      </span>
+    </div>
+  );
+}
+
 export async function HowItWorksSection() {
   const t = await getTranslations("home.steps");
   const steps = [
@@ -251,8 +292,12 @@ export async function HowItWorksSection() {
           <Reveal
             as="li"
             key={key}
-            delay={index * 120}
-            className="relative flex flex-col gap-5 rounded-2xl border bg-card p-7 shadow-card"
+            index={index}
+            className={cn(
+              "flex flex-col gap-5 rounded-2xl border bg-card p-7 shadow-card",
+              spotlight(),
+              stepLayers[index],
+            )}
           >
             <div className="flex items-center justify-between">
               <span className="flex size-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_8px_20px_-8px_rgb(21_128_61/0.6)]">
@@ -268,6 +313,7 @@ export async function HowItWorksSection() {
               {t(`items.${key}.title`)}
             </h3>
             <p className="text-pretty text-muted-foreground">{t(`items.${key}.description`)}</p>
+            {key === "sell" ? <SendingFlow /> : null}
             {index < steps.length - 1 ? (
               <span
                 aria-hidden="true"
@@ -448,7 +494,12 @@ export async function WhatsNewSection() {
       />
       <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border shadow-card sm:grid-cols-2 lg:grid-cols-3">
         {items.map(({ key, icon: Icon }, index) => (
-          <Reveal as="li" key={key} delay={index * 70} className="flex flex-col gap-3 bg-card p-6">
+          <Reveal
+            as="li"
+            key={key}
+            index={index}
+            className={cn("flex flex-col gap-3 bg-card p-6", spotlight({ lift: false }))}
+          >
             <span className="flex size-10 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
               <Icon className="size-5" aria-hidden="true" />
             </span>
@@ -516,7 +567,7 @@ export async function CodSection() {
             </Link>
           </Button>
         </div>
-        <Reveal delay={120}>
+        <Reveal index={1}>
           <MockupStage className="border-ink-border bg-ink-raised bg-none">
             <Mockup id="cod" className="mx-auto max-w-md" />
           </MockupStage>

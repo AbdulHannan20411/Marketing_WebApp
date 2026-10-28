@@ -3,6 +3,8 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
+import { tilt } from "@/components/motion/effects";
+
 import type { HeroMockupStrings } from "./hero-mockup";
 
 /** Same footprint as the real mock-up, so swapping it in causes no layout shift. */
@@ -62,7 +64,8 @@ export function HeroMockupLoader({
 
   return (
     <figure role="img" aria-label={label} className="relative">
-      <div aria-hidden="true" className="grid [&>*]:col-start-1 [&>*]:row-start-1">
+      {/* Tilts a few degrees towards the pointer (fine pointers only, see globals.css). */}
+      <div aria-hidden="true" className="grid [&>*]:col-start-1 [&>*]:row-start-1" {...tilt}>
         <HeroMockupPlaceholder business={strings.business} />
         <div className="relative">{ready ? <HeroMockup strings={strings} /> : null}</div>
       </div>

@@ -10,6 +10,7 @@ import { MockupStage } from "@/components/marketing/mockup-stage";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { TrialCta } from "@/components/marketing/trial-cta";
 import { Eyebrow, Section, SectionHeader } from "@/components/marketing/section";
+import { magnetic, spotlight, tilt } from "@/components/motion/effects";
 import { Reveal } from "@/components/motion/reveal";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,7 @@ import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
 import { pageMetadata } from "@/lib/seo";
 import { faqPageJsonLd } from "@/lib/structured-data";
+import { cn } from "@/lib/utils";
 
 export function generateStaticParams() {
   return featureSlugs.map((slug) => ({ slug }));
@@ -99,14 +101,16 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
             <p className="max-w-xl text-lg text-pretty text-muted-foreground">{t("subtitle")}</p>
             <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <TrialCta label={cta("primary")} size="lg" />
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" {...magnetic}>
                 <Link href="/contact">{cta("secondary")}</Link>
               </Button>
             </div>
           </div>
-          <MockupStage>
-            <Mockup id={page.mockup} />
-          </MockupStage>
+          <div {...tilt}>
+            <MockupStage>
+              <Mockup id={page.mockup} />
+            </MockupStage>
+          </div>
         </div>
       </section>
 
@@ -114,7 +118,12 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
         <SectionHeader id="benefits-title" title={shared("benefitsTitle")} align="start" />
         <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border bg-border shadow-card sm:grid-cols-2 lg:grid-cols-4">
           {page.benefits.map((key, index) => (
-            <Reveal as="li" key={key} delay={index * 80} className="flex flex-col bg-card p-7">
+            <Reveal
+              as="li"
+              key={key}
+              index={index}
+              className={cn("flex flex-col bg-card p-7", spotlight({ lift: false }))}
+            >
               <span
                 aria-hidden="true"
                 className="font-mono text-xs font-medium text-primary tabular-nums"
@@ -139,8 +148,8 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
             <Reveal
               as="li"
               key={key}
-              delay={index * 120}
-              className="rounded-2xl border bg-card p-7 shadow-card"
+              index={index}
+              className={cn("rounded-2xl border bg-card p-7 shadow-card", spotlight())}
             >
               <div className="flex items-center justify-between">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-[0_8px_20px_-8px_rgb(21_128_61/0.6)]">
@@ -164,7 +173,12 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
       {requirements.length > 0 ? (
         <Section labelledBy="requirements-title">
           <div className="grid gap-5 lg:grid-cols-2">
-            <Reveal className="rounded-2xl border bg-card p-7 shadow-card sm:p-9">
+            <Reveal
+              className={cn(
+                "rounded-2xl border bg-card p-7 shadow-card sm:p-9",
+                spotlight({ lift: false }),
+              )}
+            >
               <h2 id="requirements-title" className="text-2xl font-semibold tracking-tight">
                 {shared("requirementsTitle")}
               </h2>
@@ -180,7 +194,13 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
               </ul>
             </Reveal>
             {notes.length > 0 ? (
-              <Reveal delay={120} className="rounded-2xl border bg-surface-subtle p-7 sm:p-9">
+              <Reveal
+                index={1}
+                className={cn(
+                  "rounded-2xl border bg-surface-subtle p-7 sm:p-9",
+                  spotlight({ lift: false }),
+                )}
+              >
                 <h2 className="text-2xl font-semibold tracking-tight">{shared("notesTitle")}</h2>
                 <ul className="mt-6 flex flex-col gap-4">
                   {notes.map((key) => (
@@ -207,7 +227,10 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
             {page.capabilities.map((key) => (
               <li
                 key={key}
-                className="flex items-start gap-3 rounded-xl border bg-card p-4 shadow-card transition-colors hover:border-brand/30"
+                className={cn(
+                  "flex items-start gap-3 rounded-xl border bg-card p-4 shadow-card hover:border-brand/30",
+                  spotlight({ small: true }),
+                )}
               >
                 <span className="flex size-6 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground">
                   <CheckIcon className="size-3.5" aria-hidden="true" />
@@ -238,7 +261,10 @@ async function FeatureDetail({ slug }: { slug: FeatureSlug }) {
               <li key={related}>
                 <Link
                   href={`/features/${related}`}
-                  className="group flex h-full items-center gap-4 rounded-2xl border bg-card p-5 transition-[border-color,box-shadow] hover:border-brand/50 hover:shadow-md"
+                  className={cn(
+                    "group flex h-full items-center gap-4 rounded-2xl border bg-card p-5 hover:border-brand/50",
+                    spotlight(),
+                  )}
                 >
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-brand-soft text-accent-foreground">
                     <relatedPage.icon className="size-5" aria-hidden="true" />

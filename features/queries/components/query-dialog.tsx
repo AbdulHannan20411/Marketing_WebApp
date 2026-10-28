@@ -21,6 +21,8 @@ type QueryDialogTriggerProps = {
   topic?: Topic;
   turnstileSiteKey?: string | null;
   className?: string;
+  /** A main call to action: pulls towards the pointer (see components/motion/effects.ts). */
+  magnetic?: boolean;
 } & VariantProps<typeof buttonVariants>;
 
 /**
@@ -35,6 +37,7 @@ export function QueryDialogTrigger({
   className,
   variant,
   size,
+  magnetic = false,
 }: QueryDialogTriggerProps) {
   const locale = useLocale() as Locale;
   const [open, setOpen] = useState(false);
@@ -44,7 +47,13 @@ export function QueryDialogTrigger({
 
   return (
     <>
-      <Button asChild variant={variant} size={size} className={className}>
+      <Button
+        asChild
+        variant={variant}
+        size={size}
+        className={className}
+        data-magnetic={magnetic ? "" : undefined}
+      >
         <a
           ref={triggerRef}
           href={href}

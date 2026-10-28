@@ -1,5 +1,6 @@
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { PointerEffects } from "@/components/motion/pointer-effects";
 
 export default function MarketingLayout({ children }: LayoutProps<"/[locale]">) {
   return (
@@ -9,6 +10,8 @@ export default function MarketingLayout({ children }: LayoutProps<"/[locale]">) 
         {children}
       </main>
       <SiteFooter />
+      {/* Pointer glow, spotlight, tilt and magnetic buttons: marketing pages only. */}
+      <PointerEffects />
     </>
   );
 }

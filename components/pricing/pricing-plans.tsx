@@ -5,6 +5,7 @@ import { AnimatePresence, m } from "motion/react";
 import { useState, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
+import { spotlight, tilt } from "@/components/motion/effects";
 import type { CustomPlanCard, PlanCard } from "@/lib/pricing/view-model";
 import { cn } from "@/lib/utils";
 
@@ -79,9 +80,11 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
           return (
             <li key={plan.id}>
               <article
+                {...tilt}
                 aria-labelledby={`plan-${plan.id}`}
                 className={cn(
-                  "relative isolate flex h-full flex-col overflow-hidden rounded-2xl border bg-card p-7 shadow-card transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-lift",
+                  "flex h-full flex-col rounded-2xl border bg-card p-7 shadow-card",
+                  spotlight(),
                   hero && "border-transparent surface-ink shadow-lift",
                   featured && !hero && "border-brand/40 ring-1 ring-brand/20",
                 )}
@@ -89,8 +92,10 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
                 {hero ? (
                   <div
                     aria-hidden="true"
-                    className="pointer-events-none absolute -end-24 -top-28 -z-10 size-64 rounded-full bg-brand/25 blur-3xl"
-                  />
+                    className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]"
+                  >
+                    <div className="absolute -end-24 -top-28 size-64 rounded-full bg-brand/25 blur-3xl" />
+                  </div>
                 ) : null}
                 <div className="flex min-h-7 flex-wrap items-center gap-2">
                   {plan.badge ? (
@@ -250,7 +255,11 @@ export function PricingPlans({ plans, custom, customHref, labels }: PricingPlans
       {custom ? (
         <section
           aria-labelledby="custom-plan-title"
-          className="relative isolate mx-auto grid w-full gap-10 overflow-hidden rounded-2xl border bg-card p-7 shadow-card sm:p-10 lg:grid-cols-[1.1fr_1fr]"
+          className={cn(
+            "mx-auto grid w-full gap-10 overflow-hidden rounded-2xl border bg-card p-7 shadow-card sm:p-10 lg:grid-cols-[1.1fr_1fr]",
+            // Wide card: the spotlight without lift or tilt.
+            spotlight({ lift: false }),
+          )}
         >
           <div
             aria-hidden="true"

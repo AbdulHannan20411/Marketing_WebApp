@@ -25,6 +25,7 @@ export function LanguageSwitcher({ className }: { className?: string }) {
       prefetch={false}
       hrefLang={localeMeta[other].htmlLang}
       aria-label={`${t("change")}: ${t(`names.${other}`)}`}
+      data-hover-glow=""
       className={cn(
         "inline-flex h-10 items-center gap-1.5 rounded-md px-2.5 text-sm font-medium transition-colors hover:bg-muted",
         className,

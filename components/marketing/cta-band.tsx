@@ -1,4 +1,5 @@
 import { TrialCta } from "@/components/marketing/trial-cta";
+import { magnetic } from "@/components/motion/effects";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import type { QuerySource } from "@/features/queries/definitions";
@@ -47,12 +48,17 @@ export function CtaBand({ title, subtitle, trial, secondary, secondaryDialog }: 
             <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row lg:flex-col xl:flex-row">
               {trial ? <TrialCta label={trial.label} size="lg" variant="inverse" /> : null}
               {secondary ? (
-                <Button asChild size="lg" variant="outline">
+                <Button asChild size="lg" variant="outline" {...magnetic}>
                   <Link href={secondary.href}>{secondary.label}</Link>
                 </Button>
               ) : null}
               {secondaryDialog ? (
-                <QueryDialogButton source={secondaryDialog.source} size="lg" variant="outline">
+                <QueryDialogButton
+                  source={secondaryDialog.source}
+                  size="lg"
+                  variant="outline"
+                  magnetic
+                >
                   {secondaryDialog.label}
                 </QueryDialogButton>
               ) : null}

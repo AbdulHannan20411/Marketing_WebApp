@@ -147,6 +147,9 @@
 
 /* Display sizes (not inline, so the Urdu overrides above can change line-height). */
 @theme {
+  /* The app's motion easing: quick start, long soft settle. Also the `ease-out-soft` utility. */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
   --text-display: 2.75rem;
   --text-display--line-height: 1.1;
   --text-hero: 4.25rem;
@@ -331,20 +334,29 @@
 }
 
 /*
- * Scroll reveals (see components/motion/reveal*.tsx). Only transform and opacity move.
- * Hidden only when JS is running and the visitor allows motion. If the observer never
- * starts (a script error), the failsafe animation shows everything after 4 seconds.
+ * Scroll reveals (see components/motion/reveal*.tsx). Only translate and opacity move, so a
+ * card's own transform (hover lift, tilt) stays free. Hidden only when JS is running and the
+ * visitor allows motion. If the observer never starts (a script error), the failsafe animation
+ * shows everything after 4 seconds.
  */
 @media (prefers-reduced-motion: no-preference) {
   html[data-js] [data-reveal] {
     transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: var(--reveal-delay, 0ms);
+      opacity 0.36s var(--ease-out-soft) var(--reveal-delay, 0ms),
+      translate 0.36s var(--ease-out-soft) var(--reveal-delay, 0ms);
+  }
+  /* A revealed card that also lifts or tilts keeps both sets of transitions. */
+  html[data-js] [data-reveal]:is(.lift, [data-tilt]) {
+    transition:
+      opacity 0.36s var(--ease-out-soft) var(--reveal-delay, 0ms),
+      translate 0.36s var(--ease-out-soft) var(--reveal-delay, 0ms),
+      transform 0.2s var(--ease-out-soft),
+      box-shadow 0.2s var(--ease-out-soft),
+      border-color 0.2s var(--ease-out-soft);
   }
   html[data-js] [data-reveal]:not([data-revealed]) {
     opacity: 0;
-    transform: translate3d(0, 1.5rem, 0);
+    translate: 0 8px;
   }
   html[data-js]:not([data-reveal-ready]) [data-reveal]:not([data-revealed]) {
     animation: reveal-failsafe 0.01s 4s forwards;
@@ -353,7 +365,7 @@
 
 /*
  * Mock-up micro-animations, triggered when the surrounding <Reveal> is revealed.
- * .mock-grow: bars grow from the inline start. .mock-pop: items rise in, staggered by --i.
+ * .mock-grow: bars draw in from the inline start. .mock-pop: items rise in, staggered by --i.
  */
 .mock-grow {
   transform-origin: left center;
@@ -362,15 +374,18 @@
   transform-origin: right center;
 }
 @media (prefers-reduced-motion: no-preference) {
-  html[data-js] .mock-grow,
+  html[data-js] .mock-grow {
+    transition: transform 0.8s var(--ease-out-soft);
+    transition-delay: calc(var(--i, 0) * 120ms + 250ms);
+  }
   html[data-js] .mock-pop {
     transition:
-      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s var(--ease-out-soft),
       opacity 0.6s ease-out;
     transition-delay: calc(var(--i, 0) * 120ms + 250ms);
   }
   html[data-js] [data-reveal]:not([data-revealed]) .mock-grow {
-    transform: scaleX(0.04);
+    transform: scaleX(0);
   }
   html[data-js] [data-reveal]:not([data-revealed]) .mock-pop {
     opacity: 0;
@@ -379,14 +394,190 @@
   html[data-js]:not([data-reveal-ready])
     [data-reveal]:not([data-revealed])
     :is(.mock-grow, .mock-pop) {
-    animation: reveal-failsafe 0.01s 4s forwards;
+    animation: mock-failsafe 0.01s 4s forwards;
   }
 }
 
 @keyframes reveal-failsafe {
   to {
     opacity: 1;
+    translate: none;
+  }
+}
+@keyframes mock-failsafe {
+  to {
+    opacity: 1;
     transform: none;
+  }
+}
+
+/*
+ * Pointer effects (see components/motion/pointer-effects.tsx and effects.ts). One listener
+ * writes CSS variables and data attributes; it runs only for a fine pointer with motion
+ * allowed. Only background, opacity and transform/translate change, so nothing reflows.
+ * Structural defaults sit in the components layer so utilities can override them; the hover
+ * states are unlayered so they win over a card's own shadow and transition utilities.
+ */
+@layer components {
+  .spotlight,
+  .lift {
+    position: relative;
+    isolation: isolate;
+  }
+  [data-magnetic] {
+    translate: var(--mag-x, 0px) var(--mag-y, 0px);
+  }
+}
+
+/* Green glow that follows the pointer over rows, links and tabs. */
+[data-glow] {
+  background-image: radial-gradient(
+    140px circle at var(--glow-x) var(--glow-y),
+    color-mix(in oklab, var(--brand) 16%, transparent),
+    transparent 70%
+  );
+}
+
+/* Spotlight: a larger, softer glow behind a card's content. */
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background-image: radial-gradient(
+    420px circle at var(--spot-x, 50%) var(--spot-y, 0%),
+    color-mix(in oklab, var(--brand) 12%, transparent),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s var(--ease-out-soft);
+}
+
+/* Green text darkens one step under a glow, so it stays AA at the glow's brightest point. */
+:is([data-glow], .spotlight:hover) :is(.text-primary, .hover\:text-primary:hover),
+.text-primary[data-glow] {
+  color: var(--primary-hover);
+}
+
+/* Hover lift. The ::after extends the hit area so a lifted card doesn't flicker at its edge. */
+.lift {
+  --lift-y: -2px;
+  transition:
+    transform 0.2s var(--ease-out-soft),
+    box-shadow 0.2s var(--ease-out-soft),
+    border-color 0.2s var(--ease-out-soft);
+}
+.lift-sm {
+  --lift-y: -1px;
+}
+.lift::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 -4px 0;
+  z-index: -1;
+}
+.lift:hover {
+  box-shadow: var(--shadow-lift);
+}
+
+/* Magnetic buttons ease back along with the rest of the button's transitions. */
+[data-magnetic] {
+  transition:
+    color 0.2s,
+    background-color 0.2s,
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s,
+    translate 0.2s var(--ease-out-soft);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .spotlight:hover::before {
+    opacity: 1;
+  }
+  /* Lift and tilt share one transform; the listener sets --tilt-x/--tilt-y on [data-tilt]. */
+  .lift:hover,
+  [data-tilt]:hover {
+    transform: perspective(900px) translateY(var(--lift-y, 0px)) rotateX(var(--tilt-x, 0deg))
+      rotateY(var(--tilt-y, 0deg));
+  }
+  [data-tilt]:not(.lift) {
+    transition: transform 0.2s var(--ease-out-soft);
+  }
+}
+
+/* Keyboard focus gets the green ring, never the pointer glow. */
+:is([data-hover-glow], .segmented > *, .lift, .spotlight):focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+}
+
+/*
+ * Campaign "sending flow" vignette: message dots travel a lane to a phone, which pings as
+ * each one lands. Static (dots spread along the lane) without JS or with reduced motion.
+ */
+.send-track {
+  --send-dir: 1;
+  translate: calc(var(--send-dir) * var(--i, 0) * 30%) 0;
+}
+[dir="rtl"] .send-track {
+  --send-dir: -1;
+}
+.send-ping {
+  opacity: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html[data-js] [data-revealed] .send-track {
+    animation: send-travel 1.4s linear infinite;
+    animation-delay: calc(var(--i, 0) * -0.4667s);
+  }
+  html[data-js] [data-revealed] .send-dot {
+    animation: send-dot 1.4s linear infinite;
+    animation-delay: calc(var(--i, 0) * -0.4667s);
+  }
+  html[data-js] [data-revealed] .send-ping {
+    animation: send-ping 1.4s var(--ease-out-soft) infinite;
+    animation-delay: calc(var(--i, 0) * -0.4667s);
+  }
+}
+@keyframes send-travel {
+  from {
+    translate: 0 0;
+  }
+  to {
+    translate: calc(var(--send-dir) * 100%) 0;
+  }
+}
+@keyframes send-dot {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  15%,
+  85% {
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+@keyframes send-ping {
+  0%,
+  85% {
+    opacity: 0;
+    scale: 1;
+  }
+  88% {
+    opacity: 0.7;
+    scale: 1;
+  }
+  100% {
+    opacity: 0;
+    scale: 2.2;
   }
 }
 

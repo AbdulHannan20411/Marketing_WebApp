@@ -21,6 +21,7 @@ export function NavLinks() {
             <Link
               href={item.href}
               aria-current={active ? "page" : undefined}
+              data-hover-glow=""
               className={cn(
                 "relative inline-flex h-9 items-center rounded-full px-3.5 text-sm font-medium transition-colors",
                 "text-muted-foreground hover:bg-muted hover:text-foreground",

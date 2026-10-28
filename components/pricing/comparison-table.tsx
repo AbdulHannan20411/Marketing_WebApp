@@ -54,7 +54,7 @@ export function ComparisonTable({ data, labels }: ComparisonTableProps) {
           </thead>
           {data.groups.map((group) => (
             <tbody key={group.key}>
-              <tr className="bg-surface-subtle">
+              <tr className="bg-surface-subtle" data-no-hover="">
                 <th
                   scope="colgroup"
                   colSpan={data.columns.length + 1}
@@ -64,7 +64,7 @@ export function ComparisonTable({ data, labels }: ComparisonTableProps) {
                 </th>
               </tr>
               {group.rows.map((row) => (
-                <tr key={row.key} className="border-t transition-colors hover:bg-muted/50">
+                <tr key={row.key} className="border-t">
                   <th
                     scope="row"
                     className="sticky start-0 z-10 bg-card px-4 py-3 text-start font-medium"

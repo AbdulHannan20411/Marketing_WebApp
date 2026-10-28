@@ -20,6 +20,7 @@ import { NewBadge } from "@/components/marketing/new-badge";
 import { Mockup } from "@/components/marketing/mockups/mockups";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section, SectionHeader } from "@/components/marketing/section";
+import { spotlight } from "@/components/motion/effects";
 import { Reveal } from "@/components/motion/reveal";
 import { featureAreas } from "@/content/features";
 import { Link } from "@/lib/i18n/navigation";
@@ -70,6 +71,7 @@ export default async function FeaturesPage() {
             <li key={area.id} className="shrink-0">
               <a
                 href={`#${area.id}`}
+                data-hover-glow=""
                 className="inline-flex h-9 items-center gap-1.5 rounded-full border bg-card px-3.5 text-sm font-medium shadow-xs transition-colors hover:border-brand/40 hover:bg-accent"
               >
                 <area.icon className="size-4 text-brand" aria-hidden="true" />
@@ -137,7 +139,7 @@ export default async function FeaturesPage() {
                   </Link>
                 ) : null}
               </Reveal>
-              <Reveal delay={120} className={cn(reversed && "lg:order-1")}>
+              <Reveal index={1} className={cn(reversed && "lg:order-1")}>
                 <MockupStage>
                   <Mockup id={area.mockup} />
                 </MockupStage>
@@ -160,8 +162,11 @@ export default async function FeaturesPage() {
             <Reveal
               as="li"
               key={key}
-              delay={(index % 4) * 70}
-              className="flex flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card"
+              index={index % 4}
+              className={cn(
+                "flex flex-col gap-3 rounded-2xl border bg-card p-6 shadow-card",
+                spotlight(),
+              )}
             >
               <span className="flex size-10 items-center justify-center rounded-xl border border-brand/20 bg-accent text-accent-foreground">
                 <Icon className="size-5" aria-hidden="true" />

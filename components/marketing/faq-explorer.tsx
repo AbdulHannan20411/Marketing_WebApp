@@ -80,6 +80,7 @@ export function FaqExplorer({ groups, labels }: FaqExplorerProps) {
               <li key={group.id}>
                 <a
                   href={`#group-${group.id}`}
+                  data-hover-glow=""
                   className="block rounded-md px-3 py-2 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                 >
                   {group.title}

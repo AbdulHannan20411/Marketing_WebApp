@@ -2,6 +2,7 @@ import { ArrowRightIcon, ArrowUpRightIcon, CheckIcon, InfoIcon, SparklesIcon } f
 import { getLocale, getTranslations } from "next-intl/server";
 
 import { fallbackPlans } from "@/content/fallback-plans";
+import { spotlight, tilt } from "@/components/motion/effects";
 import { isModuleKey } from "@/content/modules";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
@@ -85,10 +86,12 @@ export async function PricingTeaser() {
               .filter(isModuleKey)
               .slice(0, 4);
             return (
-              <Reveal as="li" key={plan.id} delay={index * 100}>
+              <Reveal as="li" key={plan.id} index={index}>
                 <article
+                  {...tilt}
                   className={cn(
-                    "relative isolate flex h-full flex-col overflow-hidden rounded-2xl border bg-card p-7 shadow-card transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 hover:shadow-lift",
+                    "flex h-full flex-col rounded-2xl border bg-card p-7 shadow-card",
+                    spotlight(),
                     hero && "border-transparent surface-ink shadow-lift",
                     featured && !hero && "border-brand/40 ring-1 ring-brand/20",
                   )}
@@ -96,8 +99,10 @@ export async function PricingTeaser() {
                   {hero ? (
                     <div
                       aria-hidden="true"
-                      className="pointer-events-none absolute -end-20 -top-24 -z-10 size-56 rounded-full bg-brand/25 blur-3xl"
-                    />
+                      className="pointer-events-none absolute inset-0 -z-10 overflow-hidden rounded-[inherit]"
+                    >
+                      <div className="absolute -end-20 -top-24 size-56 rounded-full bg-brand/25 blur-3xl" />
+                    </div>
                   ) : null}
                   <div className="mb-4 flex min-h-7 items-center">
                     {featured ? (
