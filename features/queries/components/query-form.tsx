@@ -143,6 +143,7 @@ export function QueryForm({
     reference: string | null;
     email: string;
     signedIn: boolean;
+    trackable: boolean;
   } | null>(null);
   const [pending, startTransition] = useTransition();
 
@@ -330,6 +331,7 @@ export function QueryForm({
           reference: response.reference,
           email: response.email,
           signedIn: response.signedIn,
+          trackable: response.trackable,
         });
         return;
       }

@@ -2246,6 +2246,8 @@
     "inbox": {
       "title": "سوالات",
       "subtitle": "ویب سائٹ سے آنے والا ہر سوال۔ فہرست خود بخود اپ ڈیٹ ہوتی ہے۔",
+      "movedToApp": "ویب سائٹ سے آنے والی نئی queries اب ایپ کے Super Admin پورٹل میں Website queries کے تحت آتی ہیں۔ یہاں صرف وہ queries ہیں جو اس تبدیلی سے پہلے آئیں، یا جب ایپ تک رسائی نہ ہو سکی۔",
+      "movedToAppLink": "ایپ میں Website queries کھولیں",
       "filters": "فلٹرز",
       "search": "تلاش",
       "searchPlaceholder": "عنوان، پیغام، ای میل یا ریفرنس",

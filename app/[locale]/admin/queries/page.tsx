@@ -19,10 +19,12 @@ import {
 import { LiveRefresh } from "@/features/portal/components/live-refresh";
 import { StatusBadge } from "@/features/portal/components/status-badge";
 import { topicKeys } from "@/features/queries/definitions";
+import { isAppInquiriesConfigured } from "@/lib/app-inquiries";
 import { requireSuperadmin } from "@/lib/auth/session";
 import { formatDateTime } from "@/lib/format/date";
 import { Link } from "@/lib/i18n/navigation";
 import { isLocale } from "@/lib/i18n/routing";
+import { siteConfig } from "@/lib/site";
 
 /** The queries inbox: filters in the URL, live updates, pagination. */
 export default async function AdminInboxPage({
@@ -62,6 +64,20 @@ export default async function AdminInboxPage({
         <h1 className="text-3xl font-semibold tracking-[-0.03em]">{t("inbox.title")}</h1>
         <p className="mt-1 text-muted-foreground">{t("inbox.subtitle")}</p>
       </div>
+
+      {isAppInquiriesConfigured() ? (
+        <FormAlert tone="info">
+          {t("inbox.movedToApp")}{" "}
+          {siteConfig.appUrl ? (
+            <a
+              href={new URL("/superadmin/inquiries", siteConfig.appUrl).toString()}
+              className="font-medium text-brand underline underline-offset-2"
+            >
+              {t("inbox.movedToAppLink")}
+            </a>
+          ) : null}
+        </FormAlert>
+      ) : null}
 
       <Form
         action={`/${locale}/admin/queries`}

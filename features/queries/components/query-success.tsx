@@ -9,11 +9,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/lib/i18n/navigation";
 
 type QuerySuccessProps = {
-  result: { reference: string | null; email: string; signedIn: boolean };
+  result: { reference: string | null; email: string; signedIn: boolean; trackable: boolean };
   onAnother: () => void;
 };
 
-/** Confirmation with the reference; offers an account to signed-out senders. */
+/**
+ * Confirmation with the reference; offers an account to signed-out senders while
+ * queries can be followed there (not once the app's team inbox handles them).
+ */
 export function QuerySuccess({ result, onAnother }: QuerySuccessProps) {
   const t = useTranslations("queryForm.success");
   const ta = useTranslations("queryForm.actions");
@@ -90,7 +93,7 @@ export function QuerySuccess({ result, onAnother }: QuerySuccessProps) {
         <Button asChild size="lg">
           <Link href="/account">{t("viewInAccount")}</Link>
         </Button>
-      ) : result.email ? (
+      ) : result.email && result.trackable ? (
         <div className="flex w-full max-w-md flex-col items-center gap-3 rounded-2xl border border-dashed border-brand/50 bg-accent/40 p-5">
           <p className="font-semibold">{t("trackTitle")}</p>
           <p className="text-sm text-muted-foreground">{t("trackBody", { email: result.email })}</p>

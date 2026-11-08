@@ -5,6 +5,7 @@ import { randomUUID } from "node:crypto";
 import { headers } from "next/headers";
 import { after } from "next/server";
 
+import { isAppInquiriesConfigured, sendQueryToApp } from "@/lib/app-inquiries";
 import { getCurrentProfile } from "@/lib/auth/session";
 import { isSupabaseConfigured } from "@/lib/env/public";
 import { detectFileType, safeFileName } from "@/lib/security/file-type";
@@ -19,8 +20,13 @@ import { notifyNewQuery } from "./notify";
 import { queryFieldErrors, querySubmissionSchema, type QueryValidationCode } from "./schemas";
 
 /**
- * Visitor and customer query submission. Inserts use the service role (visitors have
- * no database access at all) after every check below has passed on the server.
+ * Visitor and customer query submission.
+ *
+ * When the app is set up (NEXTREACH_API_URL and NEXTREACH_SITE_KEY), every query is
+ * sent to the app, where the platform team answers it in the Super Admin portal under
+ * Website queries. Otherwise - or if the app cannot be reached - it is stored in this
+ * site's own database as before, with the service role (visitors have no database
+ * access at all), after every check below has passed on the server.
  */
 
 const RATE_LIMIT = { attempts: 5, windowSeconds: 60 * 60 };
@@ -55,7 +61,14 @@ export type SubmitQueryError =
   | "generic";
 
 export type SubmitQueryResult =
-  | { ok: true; reference: string | null; email: string; signedIn: boolean }
+  | {
+      ok: true;
+      reference: string | null;
+      email: string;
+      signedIn: boolean;
+      /** Whether the query shows in this site's account area (false once the app handles it). */
+      trackable: boolean;
+    }
   | { ok: false; error: SubmitQueryError; fieldErrors?: Record<string, QueryValidationCode> };
 
 export async function submitQuery(formData: FormData): Promise<SubmitQueryResult> {
@@ -68,8 +81,11 @@ export async function submitQuery(formData: FormData): Promise<SubmitQueryResult
 }
 
 async function handleSubmission(formData: FormData): Promise<SubmitQueryResult> {
-  if (!isSupabaseConfigured()) {
-    console.error("[query] Supabase is not configured; cannot store queries");
+  const toApp = isAppInquiriesConfigured();
+  if (!toApp && !isSupabaseConfigured()) {
+    console.error(
+      "[query] neither the app (NEXTREACH_API_URL + NEXTREACH_SITE_KEY) nor Supabase is configured; cannot store queries",
+    );
     return { ok: false, error: "generic" };
   }
 
@@ -92,7 +108,7 @@ async function handleSubmission(formData: FormData): Promise<SubmitQueryResult> 
     String(json.website ?? "").trim() !== ""
   ) {
     console.warn("[query] honeypot triggered; dropping submission");
-    return { ok: true, reference: null, email: "", signedIn: false };
+    return { ok: true, reference: null, email: "", signedIn: false, trackable: false };
   }
 
   // 3. Full server-side validation.
@@ -135,7 +151,42 @@ async function handleSubmission(formData: FormData): Promise<SubmitQueryResult> 
   const name = (profile?.full_name || input.name).trim();
   const phone = profile?.phone || input.phone;
 
-  // 8. Rate limit: 5 per hour per IP and per email.
+  // 8. The app's Super Admin portal, when it is set up. It limits each sender itself and
+  // emails the team and the sender. If it cannot be reached, fall back to Supabase so the
+  // query is never lost.
+  if (toApp) {
+    const sent = await sendQueryToApp(
+      {
+        name,
+        email,
+        phone,
+        topic: input.topic,
+        subject: input.subject,
+        message: input.message,
+        answers: input.answers as Record<string, unknown>,
+        locale: input.locale,
+        source: input.source,
+        utm: input.utm as Record<string, string>,
+        visitorKey: hashIp(ip),
+      },
+      attachment,
+    );
+    if (sent.ok) {
+      return {
+        ok: true,
+        reference: sent.reference || null,
+        email,
+        signedIn: false,
+        trackable: false,
+      };
+    }
+    if (sent.reason === "rateLimited") return { ok: false, error: "rateLimited" };
+    if (sent.reason === "invalid") return { ok: false, error: "invalid" };
+    if (!isSupabaseConfigured()) return { ok: false, error: "generic" };
+    console.warn("[query] the app could not be reached; storing the query in Supabase instead");
+  }
+
+  // 9. Rate limit: 5 per hour per IP and per email.
   const admin = createSupabaseAdminClient();
   const ipHash = hashIp(ip);
   const [ipLimit, emailLimit] = await Promise.all([
@@ -159,14 +210,14 @@ async function handleSubmission(formData: FormData): Promise<SubmitQueryResult> 
   if (ipLimit.data === false || emailLimit.data === false)
     return { ok: false, error: "rateLimited" };
 
-  // 9. Link to an account: the signed-in user, or a confirmed account with this email.
+  // 10. Link to an account: the signed-in user, or a confirmed account with this email.
   let customerId = profile?.id ?? null;
   if (!customerId) {
     const { data } = await admin.rpc("confirmed_user_id", { p_email: email });
     customerId = data ?? null;
   }
 
-  // 10. Upload first (the path needs the query id), then insert.
+  // 11. Upload first (the path needs the query id), then insert.
   const queryId = randomUUID();
   let storagePath: string | null = null;
   if (attachment) {
@@ -229,7 +280,7 @@ async function handleSubmission(formData: FormData): Promise<SubmitQueryResult> 
     }
   }
 
-  // 11. Emails after the response, so the visitor isn't kept waiting.
+  // 12. Emails after the response, so the visitor isn't kept waiting.
   after(() =>
     notifyNewQuery({
       id: inserted.id,
@@ -247,5 +298,11 @@ async function handleSubmission(formData: FormData): Promise<SubmitQueryResult> 
     }),
   );
 
-  return { ok: true, reference: inserted.reference, email, signedIn: Boolean(profile) };
+  return {
+    ok: true,
+    reference: inserted.reference,
+    email,
+    signedIn: Boolean(profile),
+    trackable: true,
+  };
 }

@@ -2246,6 +2246,8 @@
     "inbox": {
       "title": "Queries",
       "subtitle": "Every query from the website. The list updates automatically.",
+      "movedToApp": "New queries from the website now go to the app's Super Admin portal, under Website queries. This inbox only shows queries received before the switch, or while the app could not be reached.",
+      "movedToAppLink": "Open Website queries in the app",
       "filters": "Filters",
       "search": "Search",
       "searchPlaceholder": "Subject, message, email or reference",

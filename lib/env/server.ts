@@ -10,6 +10,8 @@ import { optionalBaseUrl, optionalString } from "./schema-helpers";
  */
 export const serverEnvSchema = z.object({
   NEXTREACH_API_URL: optionalBaseUrl,
+  /** Shared secret for sending website queries to the app (header X-Site-Key). */
+  NEXTREACH_SITE_KEY: optionalString,
   SUPABASE_SERVICE_ROLE_KEY: optionalString,
   RESEND_API_KEY: optionalString,
   EMAIL_FROM: optionalString,
@@ -29,6 +31,7 @@ export function parseServerEnv(source: Record<string, string | undefined>): Serv
 
 export const serverEnv: ServerEnv = parseServerEnv({
   NEXTREACH_API_URL: process.env.NEXTREACH_API_URL ?? "",
+  NEXTREACH_SITE_KEY: process.env.NEXTREACH_SITE_KEY ?? "",
   SUPABASE_SERVICE_ROLE_KEY: process.env.SUPABASE_SERVICE_ROLE_KEY ?? "",
   RESEND_API_KEY: process.env.RESEND_API_KEY ?? "",
   EMAIL_FROM: process.env.EMAIL_FROM ?? "",
