@@ -51,6 +51,7 @@ describe("sending website queries to the app", () => {
     const [url, init] = fetchImpl.mock.calls[0] as unknown as [string, RequestInit];
     expect(url).toBe("https://api.example.com/api/v1/public/inquiries");
     expect((init.headers as Record<string, string>)["X-Site-Key"]).toBe("shared-secret");
+    expect((init.headers as Record<string, string>)["ngrok-skip-browser-warning"]).toBe("1");
     const form = init.body as FormData;
     expect(JSON.parse(String(form.get("payload")))).toMatchObject({ email: "ayesha@example.com" });
   });

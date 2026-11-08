@@ -75,7 +75,13 @@ export async function sendQueryToApp(
   try {
     response = await fetchImpl(endpoint, {
       method: "POST",
-      headers: { "X-Site-Key": env.NEXTREACH_SITE_KEY, Accept: "application/json" },
+      headers: {
+        "X-Site-Key": env.NEXTREACH_SITE_KEY,
+        Accept: "application/json",
+        // Lets the API sit behind an ngrok tunnel (free plan) while testing: without it ngrok
+        // may answer with its browser warning page instead. Ignored by every other host.
+        "ngrok-skip-browser-warning": "1",
+      },
       body: form,
       cache: "no-store",
       signal: AbortSignal.timeout(timeoutMs),
