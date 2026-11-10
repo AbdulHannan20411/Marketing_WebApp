@@ -71,6 +71,7 @@ describe("message catalogues", () => {
       "modules.labels.crm",
       "features.areas.crm.nav",
       "featurePages.pages.ai.name",
+      "home.pillars.items.ai.title",
       "queryForm.questions.modules.options.crm",
     ]);
     // The character class below is the Arabic-script block, U+0600 to U+06FF.

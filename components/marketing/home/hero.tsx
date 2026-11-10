@@ -8,10 +8,12 @@ import { Button } from "@/components/ui/button";
 import { HeroMockupLoader } from "./hero-mockup-loader";
 
 export async function HomeHero() {
-  const [t, chat, campaign] = await Promise.all([
+  const [t, chat, campaign, extra, email] = await Promise.all([
     getTranslations("home.hero"),
     getTranslations("mockups.chat"),
     getTranslations("mockups.campaign"),
+    getTranslations("mockups.hero"),
+    getTranslations("mockups.email"),
   ]);
 
   const assurances = [
@@ -120,6 +122,10 @@ export async function HomeHero() {
             delivered: campaign("delivered"),
             read: campaign("read"),
             quality: campaign("quality"),
+            aiChip: extra("aiChip"),
+            emailChannel: extra("emailChannel"),
+            emailSubject: email("subjectA"),
+            emailCheck: extra("emailCheck"),
           }}
         />
       </div>

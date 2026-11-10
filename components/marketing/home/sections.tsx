@@ -6,7 +6,10 @@ import {
   ClockIcon,
   LayoutTemplateIcon,
   LibraryBigIcon,
+  MailIcon,
+  MessageCircleIcon,
   ShoppingCartIcon,
+  SparklesIcon,
   SmartphoneIcon,
   StoreIcon,
   ArrowUpRightIcon,
@@ -42,6 +45,97 @@ import { cn } from "@/lib/utils";
 
 import { AutomationFlow } from "./automation-flow";
 import { ModuleCarousel } from "./module-carousel";
+
+/**
+ * The three ways the product grows a business, shown right under the hero so the first
+ * screenful doesn't read as WhatsApp-only. Every point is a shipped feature.
+ */
+const pillars = [
+  {
+    id: "whatsapp",
+    icon: MessageCircleIcon,
+    href: "/features/whatsapp-campaigns",
+    tone: "bg-accent text-accent-foreground border-brand/20",
+    check: "text-primary",
+  },
+  {
+    id: "email",
+    icon: MailIcon,
+    href: "/features/email-marketing",
+    tone: "bg-sky-100 text-sky-800 border-sky-300/50 dark:bg-sky-950 dark:text-sky-200 dark:border-sky-800/60",
+    check: "text-sky-700 dark:text-sky-300",
+  },
+  {
+    id: "ai",
+    icon: SparklesIcon,
+    href: "/features/ai",
+    tone: "bg-violet-100 text-violet-800 border-violet-300/50 dark:bg-violet-950 dark:text-violet-200 dark:border-violet-800/60",
+    check: "text-violet-700 dark:text-violet-300",
+  },
+] as const;
+
+export async function PillarsSection() {
+  const t = await getTranslations("home.pillars");
+  const points = ["p1", "p2", "p3"] as const;
+
+  return (
+    <Section labelledBy="pillars-title">
+      <SectionHeader
+        id="pillars-title"
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+        align="split"
+      />
+      <ul className="mt-14 grid gap-5 md:grid-cols-3">
+        {pillars.map((pillar, index) => (
+          <Reveal
+            as="li"
+            key={pillar.id}
+            index={index}
+            className={cn(
+              "flex flex-col gap-5 rounded-2xl border bg-card p-7 shadow-card hover:border-brand/35",
+              spotlight(),
+            )}
+          >
+            <span
+              className={cn(
+                "flex size-12 items-center justify-center rounded-xl border",
+                pillar.tone,
+              )}
+            >
+              <pillar.icon className="size-6" aria-hidden="true" />
+            </span>
+            <div className="flex flex-col gap-2">
+              <h3 className="text-2xl font-semibold tracking-tight">
+                {t(`items.${pillar.id}.title`)}
+              </h3>
+              <p className="text-pretty text-muted-foreground">{t(`items.${pillar.id}.lead`)}</p>
+            </div>
+            <ul className="flex flex-col gap-3 text-sm">
+              {points.map((point) => (
+                <li key={point} className="flex gap-2.5">
+                  <CheckIcon
+                    className={cn("mt-0.5 size-4 shrink-0", pillar.check)}
+                    aria-hidden="true"
+                  />
+                  <span>{t(`items.${pillar.id}.points.${point}`)}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={pillar.href}
+              className="mt-auto inline-flex items-center gap-1.5 pt-2 text-sm font-semibold text-primary underline-offset-4 hover:underline"
+            >
+              {t(`items.${pillar.id}.cta`)}
+              <ArrowRightIcon className="size-4 rtl:rotate-180" aria-hidden="true" />
+            </Link>
+          </Reveal>
+        ))}
+      </ul>
+    </Section>
+  );
+}
 
 export async function ProblemSection() {
   const t = await getTranslations("home.problem");

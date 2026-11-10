@@ -13,6 +13,7 @@ import {
   WhatsNewSection,
   HowItWorksSection,
   ModulesSection,
+  PillarsSection,
   ProblemSection,
 } from "@/components/marketing/home/sections";
 import { PricingTeaser } from "@/components/marketing/pricing-teaser";
@@ -57,6 +58,7 @@ export default async function HomePage() {
       />
       <HomeHero />
       <FactsSection />
+      <PillarsSection />
       <CodSection />
       {/* TODO: real customer logos — add a logo strip here once customers agree to be listed. */}
       <ProblemSection />

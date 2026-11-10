@@ -2,8 +2,8 @@
   "metadata": {
     "siteName": "GrowBusinesss",
     "titleTemplate": "%s | GrowBusinesss",
-    "defaultTitle": "GrowBusinesss — WhatsApp and email marketing for growing businesses",
-    "description": "Reach customers on WhatsApp and email from one app and one contact list. Run WhatsApp Status ads and confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
+    "defaultTitle": "GrowBusinesss — WhatsApp, email and AI marketing for growing businesses",
+    "description": "Grow your business with WhatsApp, email and AI from one app and one contact list. Run WhatsApp Status ads, let AI answer from your own business info, and confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
   },
   "common": {
     "skipToContent": "Skip to main content",
@@ -83,9 +83,9 @@
   "home": {
     "hero": {
       "badge": "Made for Pakistan",
-      "eyebrow": "WhatsApp and email marketing for growing businesses",
-      "title": "Turn WhatsApp chats <hl>into sales</hl>",
-      "subtitle": "Reach customers on WhatsApp and email – from one app, one contact list. Send campaigns people actually read, answer every chat from a shared inbox, and see who is ready to buy.",
+      "eyebrow": "WhatsApp, email and AI marketing in one app",
+      "title": "Marketing that <hl>grows</hl> your business",
+      "subtitle": "Reach customers on WhatsApp and email from one app and one contact list. Let AI write your messages and answer common questions from your own business info, and follow up automatically, so no lead goes cold.",
       "primaryCta": "Start free trial",
       "secondaryCta": "See how it works",
       "assurances": {
@@ -93,13 +93,50 @@
         "payments": "Pay with JazzCash, EasyPaisa or bank",
         "trial": "Free trial"
       },
-      "mockupLabel": "Example: a customer asks about a product on WhatsApp, the business replies with a catalog link, and an Eid campaign is delivered and read."
+      "mockupLabel": "Example: a customer asks about a product on WhatsApp, AI suggests a reply, the business sends it with a catalog link, an email newsletter passes its spam check, and an Eid campaign is delivered and read."
     },
-    "metaTitle": "WhatsApp and email marketing for growing businesses",
-    "metaDescription": "WhatsApp and email marketing in one app. Bring new customers into WhatsApp with Status ads, confirm cash-on-delivery orders from Shopify and WooCommerce, and reach people on the channel they actually check.",
+    "pillars": {
+      "eyebrow": "Three ways to grow",
+      "title": "WhatsApp, email and AI, working as one",
+      "subtitle": "All three share one contact list, so you reach every customer where they actually look, and never start from scratch.",
+      "items": {
+        "whatsapp": {
+          "title": "WhatsApp",
+          "lead": "Campaigns, chats and Status ads on WhatsApp's official platform.",
+          "points": {
+            "p1": "Campaigns with approved templates and delivery reports",
+            "p2": "A shared inbox for your whole team",
+            "p3": "Status ads that open a chat with you"
+          },
+          "cta": "Explore WhatsApp campaigns"
+        },
+        "email": {
+          "title": "Email",
+          "lead": "Newsletters and campaigns from your own domain.",
+          "points": {
+            "p1": "A drag-and-drop email studio with a mobile preview",
+            "p2": "A spam checker that scores each email before you send",
+            "p3": "Signup forms that grow your list with consent"
+          },
+          "cta": "Explore email marketing"
+        },
+        "ai": {
+          "title": "AI",
+          "lead": "An assistant that knows your business.",
+          "points": {
+            "p1": "Writes templates, campaigns, emails and ad text",
+            "p2": "Auto-replies from your own knowledge base",
+            "p3": "Lead scoring that reads each chat and sorts your leads"
+          },
+          "cta": "Explore the AI assistant"
+        }
+      }
+    },
+    "metaTitle": "WhatsApp, email and AI marketing for growing businesses",
+    "metaDescription": "WhatsApp, email and AI marketing in one app. Bring new customers into WhatsApp with Status ads, send email from your own domain, let AI write and reply from your own business info, and confirm cash-on-delivery orders from Shopify and WooCommerce.",
     "problem": {
       "eyebrow": "Why GrowBusinesss",
-      "title": "WhatsApp is where your customers are. Managing it shouldn't be chaos.",
+      "title": "Your customers are on WhatsApp and email. Reaching them shouldn't be chaos.",
       "beforeTitle": "Without GrowBusinesss",
       "afterTitle": "With GrowBusinesss",
       "before": {
@@ -119,7 +156,7 @@
     },
     "features": {
       "eyebrow": "Everything in one place",
-      "title": "One app for marketing, chats and sales on WhatsApp and email",
+      "title": "One app for marketing, chats and sales on WhatsApp and email, with AI built in",
       "subtitle": "Switch on the modules you need. Each one works on its own and gets better together.",
       "cta": "Explore all features"
     },
@@ -144,7 +181,7 @@
         },
         "sell": {
           "title": "Send, reply and sell",
-          "description": "Launch campaigns, answer every chat from the shared inbox, and watch interested customers move up your lead board."
+          "description": "Launch WhatsApp and email campaigns, let AI help with replies, and watch interested customers move up your lead board."
         }
       }
     },
@@ -185,7 +222,7 @@
       "cta": "See all questions"
     },
     "finalCta": {
-      "title": "Ready to sell more on WhatsApp?",
+      "title": "Ready to grow your business?",
       "subtitle": "Start your free trial today, or talk to us and we'll show you around.",
       "primary": "Start free trial",
       "secondary": "Talk to us"
@@ -466,6 +503,11 @@
         "leads": "On the lead board",
         "ordered": "Ordered"
       }
+    },
+    "hero": {
+      "aiChip": "AI suggested this reply",
+      "emailChannel": "Email",
+      "emailCheck": "Spam check passed"
     }
   },
   "features": {

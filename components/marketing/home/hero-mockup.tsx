@@ -4,8 +4,10 @@ import {
   CheckCheckIcon,
   ClockIcon,
   ExternalLinkIcon,
+  MailIcon,
   SendIcon,
   ShieldCheckIcon,
+  SparklesIcon,
   TrendingUpIcon,
 } from "lucide-react";
 import { AnimatePresence, m, useReducedMotion } from "motion/react";
@@ -32,6 +34,10 @@ export type HeroMockupStrings = {
   delivered: string;
   read: string;
   quality: string;
+  aiChip: string;
+  emailChannel: string;
+  emailSubject: string;
+  emailCheck: string;
 };
 
 /*
@@ -121,7 +127,7 @@ export default function HeroMockup({ strings }: { strings: HeroMockupStrings }) 
           </span>
         </div>
 
-        <div className="flex h-[23rem] flex-col justify-end gap-2 bg-wa-wallpaper px-3 py-3">
+        <div className="flex h-[23rem] flex-col justify-end gap-2 overflow-hidden bg-wa-wallpaper px-3 py-3">
           <span className="mx-auto mb-auto rounded-md bg-white/80 px-2 py-0.5 text-[11px] text-slate-600 shadow-sm dark:bg-slate-800/80 dark:text-slate-300">
             {strings.today}
           </span>
@@ -134,6 +140,10 @@ export default function HeroMockup({ strings }: { strings: HeroMockupStrings }) 
             {current >= 3 ? (
               <m.div key="reply" {...pop} className="flex flex-col gap-2">
                 <Bubble side="out">
+                  <span className="mb-1 flex items-center gap-1 text-[11px] font-semibold text-violet-700 dark:text-violet-200">
+                    <SparklesIcon className="size-3" aria-hidden="true" />
+                    {strings.aiChip}
+                  </span>
                   {strings.reply}
                   <CheckCheckIcon
                     className="ms-1 inline size-3.5 text-sky-600"
@@ -176,6 +186,11 @@ export default function HeroMockup({ strings }: { strings: HeroMockupStrings }) 
           <span className="flex min-h-10 flex-1 items-center rounded-full bg-white px-4 text-[13px] dark:bg-[#2a3942]">
             {composerText ? (
               <span className="line-clamp-1 text-slate-900 dark:text-slate-50">
+                {/* The AI is drafting this reply. */}
+                <SparklesIcon
+                  className="me-1 inline size-3.5 text-violet-600 dark:text-violet-300"
+                  aria-hidden="true"
+                />
                 {composerText}
                 <span className="ms-px inline-block h-4 w-px animate-pulse bg-slate-900 align-middle dark:bg-slate-50" />
               </span>
@@ -200,6 +215,34 @@ export default function HeroMockup({ strings }: { strings: HeroMockupStrings }) 
           >
             <TrendingUpIcon className="size-4 text-brand" aria-hidden="true" />
             {strings.leadMoved}
+          </m.div>
+        ) : null}
+      </AnimatePresence>
+
+      {/* Email card: the same business's newsletter, next to the WhatsApp campaign. It sits
+          beside the catalog, where the chat is empty, and stays off small screens where there
+          is no room beside the phone. */}
+      <AnimatePresence initial={!showFinal}>
+        {current >= 6 ? (
+          <m.div
+            key="email"
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -start-28 top-56 hidden w-48 rounded-xl border bg-card p-3 text-card-foreground shadow-xl sm:block lg:-start-20 xl:-start-28"
+          >
+            <p className="flex items-center gap-2 text-[11px] font-medium text-muted-foreground">
+              <span className="flex size-6 items-center justify-center rounded-md bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-200">
+                <MailIcon className="size-3.5" aria-hidden="true" />
+              </span>
+              {strings.emailChannel}
+            </p>
+            <p className="mt-2 text-sm leading-snug font-semibold">{strings.emailSubject}</p>
+            <p className="mt-1.5 flex items-center gap-1 text-[11px] font-medium text-success">
+              <ShieldCheckIcon className="size-3.5" aria-hidden="true" />
+              {strings.emailCheck}
+            </p>
           </m.div>
         ) : null}
       </AnimatePresence>
