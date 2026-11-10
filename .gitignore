@@ -51,3 +51,6 @@ next-env.d.ts
 supabase/.temp/
 supabase/.branches/
 lighthouse-reports/
+
+# Social media posts and campaign assets: kept locally, never committed.
+/social-media-campaign/

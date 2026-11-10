@@ -1,7 +1,7 @@
 # GrowBusinesss marketing site
 
 The public website for **GrowBusinesss**, a WhatsApp marketing and sales SaaS for businesses in
-Pakistan. It has:
+any country. It has:
 
 - the marketing site (Home, Features, Pricing, Use cases, About, FAQ, Contact, legal pages) in
   **English and Urdu** (right to left);

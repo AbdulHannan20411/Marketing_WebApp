@@ -8,27 +8,41 @@ import {
   signUpSchema,
 } from "@/features/auth/schemas";
 import { classifyPath, safeNextPath } from "@/lib/auth/redirects";
-import { normalisePakistaniPhone } from "@/lib/validation/phone";
+import { normalisePhone } from "@/lib/validation/phone";
 
-describe("Pakistani phone numbers", () => {
+describe("phone numbers", () => {
   it.each([
-    ["0300 1234567", "+923001234567"],
-    ["03001234567", "+923001234567"],
+    // Any country, with the country code written as + or 00.
+    ["+44 7700 900123", "+447700900123"],
+    ["0044 20 7946 0958", "+442079460958"],
+    ["+1 (415) 555-0100", "+14155550100"],
+    ["+971 50 123 4567", "+971501234567"],
     ["+92 300 1234567", "+923001234567"],
     ["0092-300-1234567", "+923001234567"],
-    ["923001234567", "+923001234567"],
-    ["042 35761234", "+924235761234"],
-    ["+92 21 3456789", "+92213456789"],
+    ["+92 42 35761234", "+924235761234"],
+    // Pakistani mobiles typed the local way still work.
+    ["0300 1234567", "+923001234567"],
+    ["03001234567", "+923001234567"],
   ])("normalises %s", (input, expected) => {
-    expect(normalisePakistaniPhone(input)).toBe(expected);
+    expect(normalisePhone(input)).toBe(expected);
   });
 
-  it.each(["12345", "0300 12345", "+1 415 555 0100", "abc", "0300123456789", "+92 0300 1234567"])(
-    "rejects %s",
-    (input) => {
-      expect(normalisePakistaniPhone(input)).toBeNull();
-    },
-  );
+  it.each([
+    "12345",
+    "abc",
+    // No country code: can't tell which country.
+    "07700 900123",
+    "042 35761234",
+    "415 555 0100",
+    "0300 12345",
+    // Not a valid international number.
+    "+0 123 4567",
+    "+12 345",
+    "+1234567890123456",
+    "+44 7700 abc123",
+  ])("rejects %s", (input) => {
+    expect(normalisePhone(input)).toBeNull();
+  });
 });
 
 describe("safeNextPath", () => {

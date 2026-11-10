@@ -69,7 +69,7 @@ test("sign-up validates on the client before anything is sent", async ({ page })
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText("Enter your name (2 to 120 characters).")).toBeVisible();
   await expect(page.getByText("Enter a valid email address.")).toBeVisible();
-  await expect(page.getByText(/Enter a Pakistani number/)).toBeVisible();
+  await expect(page.getByText(/Enter a phone number with its country code/)).toBeVisible();
   await expect(page.getByText("Use at least 8 characters.")).toBeVisible();
   await expect(page.getByText("Please agree to the Terms and Privacy Policy.")).toBeVisible();
   await expect(page.getByLabel("Email", { exact: true })).toHaveAttribute("aria-invalid", "true");

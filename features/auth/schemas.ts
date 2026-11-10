@@ -1,7 +1,7 @@
 import { z } from "@/lib/validation/zod";
 
 import { locales } from "@/lib/i18n/routing";
-import { normalisePakistaniPhone } from "@/lib/validation/phone";
+import { normalisePhone } from "@/lib/validation/phone";
 
 /**
  * Shared by the client forms (React Hook Form) and the server actions, which always
@@ -30,14 +30,14 @@ const password = z.string().min(8, "passwordMin").max(72, "passwordMax");
 
 const fullName = z.string().trim().min(2, "nameLength").max(120, "nameLength");
 
-/** Optional Pakistani phone; empty means "not given". Normalised to +92… */
+/** Optional phone with its country code; empty means "not given". Normalised to E.164. */
 export const optionalPhone = z
   .string()
   .trim()
   .max(32, "phone")
   .transform((value, ctx) => {
     if (value === "") return null;
-    const normalised = normalisePakistaniPhone(value);
+    const normalised = normalisePhone(value);
     if (!normalised) {
       ctx.addIssue({ code: "custom", message: "phone" });
       return z.NEVER;

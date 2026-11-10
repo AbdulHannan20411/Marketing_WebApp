@@ -3,7 +3,7 @@
     "siteName": "GrowBusinesss",
     "titleTemplate": "%s | GrowBusinesss",
     "defaultTitle": "GrowBusinesss — WhatsApp, email and AI marketing for growing businesses",
-    "description": "Grow your business with WhatsApp, email and AI from one app and one contact list. Run WhatsApp Status ads, let AI answer from your own business info, and confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
+    "description": "Grow your business with WhatsApp, email and AI from one app and one contact list. Run WhatsApp Status ads, let AI answer from your own business info, and confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in any country."
   },
   "common": {
     "skipToContent": "Skip to main content",
@@ -58,7 +58,7 @@
     "talkToUs": "Talk to us"
   },
   "footer": {
-    "tagline": "WhatsApp marketing, inbox and sales in one place, made for businesses in Pakistan.",
+    "tagline": "WhatsApp, email and AI marketing in one place, for businesses in any country.",
     "navLabel": "Footer",
     "columns": {
       "product": "Product",
@@ -78,11 +78,11 @@
       "account": "Support account"
     },
     "copyright": "© {year} GrowBusinesss. All rights reserved.",
-    "madeIn": "Made for businesses in Pakistan."
+    "madeIn": "Made for businesses everywhere."
   },
   "home": {
     "hero": {
-      "badge": "Made for Pakistan",
+      "badge": "Works worldwide",
       "eyebrow": "WhatsApp, email and AI marketing in one app",
       "title": "Marketing that <hl>grows</hl> your business",
       "subtitle": "Reach customers on WhatsApp and email from one app and one contact list. Let AI write your messages and answer common questions from your own business info, and follow up automatically, so no lead goes cold.",
@@ -90,7 +90,7 @@
       "secondaryCta": "See how it works",
       "assurances": {
         "official": "Official Meta sign-up",
-        "payments": "Pay with JazzCash, EasyPaisa or bank",
+        "global": "Works in any country",
         "trial": "Free trial"
       },
       "mockupLabel": "Example: a customer asks about a product on WhatsApp, AI suggests a reply, the business sends it with a catalog link, an email newsletter passes its spam check, and an Eid campaign is delivered and read."
@@ -164,7 +164,7 @@
       "title": "GrowBusinesss at a glance",
       "modules": "modules you can switch on",
       "recipes": "ready-made automation recipes",
-      "payments": "local ways to pay",
+      "payments": "ways to pay",
       "languages": "languages on this site"
     },
     "steps": {
@@ -391,7 +391,7 @@
       "c2Text": "Photo",
       "c3Name": "Bilal Traders",
       "c3Text": "Please send the price list",
-      "reply": "Yes, cash on delivery is available in Lahore."
+      "reply": "Yes, cash on delivery is available in your city."
     },
     "crm": {
       "title": "Contacts",
@@ -468,7 +468,7 @@
     "email": {
       "title": "New collection",
       "verified": "Domain verified",
-      "from": "From: info@yourbrand.pk",
+      "from": "From: info@yourbrand.com",
       "subjectA": "Our new collection is here",
       "subjectB": "Fresh arrivals, picked for you",
       "winner": "Winner",
@@ -657,7 +657,7 @@
         "headline": "Email campaigns from your own domain",
         "summary": "Reach customers on WhatsApp and email from one contact list. Send newsletters and offers from your own domain, with deliverability protection built in.",
         "points": {
-          "domain": "Send from your own domain, like info@yourbrand.pk. Guided setup gives you the exact SPF, DKIM and DMARC records to copy into GoDaddy or any DNS provider, and checks them automatically.",
+          "domain": "Send from your own domain, like info@yourbrand.com. Guided setup gives you the exact SPF, DKIM and DMARC records to copy into GoDaddy or any DNS provider, and checks them automatically.",
           "trial": "A shared trial address lets you try email before your domain is ready.",
           "editor": "A simple block editor with headings, text, images, buttons and products from your catalog, with a live desktop and phone preview. AI can write a first draft.",
           "campaigns": "Send to chosen groups or everyone subscribed, now or on a schedule.",
@@ -1160,11 +1160,11 @@
         "name": "Email marketing",
         "eyebrow": "Email Marketing",
         "title": "Email campaigns from your own domain",
-        "subtitle": "Reach customers on WhatsApp and email – from one app, one contact list. Send newsletters and new collections from an address like info@yourbrand.pk, built to protect your deliverability.",
+        "subtitle": "Reach customers on WhatsApp and email – from one app, one contact list. Send newsletters and new collections from an address like info@yourbrand.com, built to protect your deliverability.",
         "benefits": {
           "ownDomain": {
             "title": "Your own domain",
-            "description": "Email from info@yourbrand.pk looks professional, and guided setup checks your DNS records for you."
+            "description": "Email from info@yourbrand.com looks professional, and guided setup checks your DNS records for you."
           },
           "oneList": {
             "title": "One contact list",
@@ -1391,9 +1391,9 @@
   },
   "useCases": {
     "metaTitle": "Use cases by industry",
-    "metaDescription": "How online stores on Shopify and WooCommerce, cash-on-delivery sellers, boutiques, salons, restaurants, real estate agents, schools, clinics and agencies in Pakistan use GrowBusinesss on WhatsApp and email.",
+    "metaDescription": "How online stores on Shopify and WooCommerce, cash-on-delivery sellers, boutiques, salons, restaurants, real estate agents, schools, clinics and agencies use GrowBusinesss on WhatsApp and email.",
     "eyebrow": "Use cases",
-    "title": "Built for the way Pakistani businesses sell",
+    "title": "Built for the way your business sells",
     "subtitle": "Whatever you sell, your customers are already on WhatsApp. Here's how businesses like yours can use GrowBusinesss.",
     "jumpTo": "Choose your industry",
     "challengesTitle": "The challenge",
@@ -1507,13 +1507,13 @@
         "solutions": {
           "s1": "Send a same-day offer on WhatsApp and a full newsletter or new-collection email to the same contact list.",
           "s2": "Grow your email list with a signup form on your website, so everyone on it has agreed to hear from you.",
-          "s3": "Email from your own domain, like info@yourbrand.pk, with deliverability protection built in."
+          "s3": "Email from your own domain, like info@yourbrand.com, with deliverability protection built in."
         },
         "example": "A boutique sends a WhatsApp message on Friday morning: the Eid sale starts today. On Sunday, the new collection goes out by email, with product photos from the catalog, to everyone who signed up on the website. Replies land in the owner's own inbox."
       },
       "cod": {
         "name": "Cash-on-delivery businesses",
-        "summary": "Sellers in Pakistan who take most orders as COD.",
+        "summary": "Sellers who take most orders as cash on delivery.",
         "challenges": {
           "c1": "COD parcels come back unpaid, and you still pay the courier.",
           "c2": "Fake and prank orders tie up stock and staff.",
@@ -1535,14 +1535,14 @@
   },
   "about": {
     "metaTitle": "About us",
-    "metaDescription": "GrowBusinesss helps businesses in Pakistan market and sell on WhatsApp, the app their customers already use every day.",
+    "metaDescription": "GrowBusinesss helps businesses in any country market and sell on WhatsApp and email, the channels their customers already use every day.",
     "eyebrow": "About GrowBusinesss",
-    "title": "We help Pakistani businesses sell where their customers already are",
-    "subtitle": "Almost every customer in Pakistan has WhatsApp. We build the tools that let businesses use it properly, from the first campaign to the final sale.",
+    "title": "We help businesses sell where their customers already are",
+    "subtitle": "Wherever they live, your customers already use WhatsApp and email every day. We build the tools that let businesses use them properly, from the first campaign to the final sale.",
     "story": {
       "title": "Why we built GrowBusinesss",
-      "p1": "Businesses across Pakistan already run on WhatsApp. Orders, enquiries, payments and complaints all arrive in the same chat list, often on one person's phone.",
-      "p2": "That works until it doesn't: messages get missed, broadcasts get ignored, and nobody knows which customer to call back first. We built GrowBusinesss to fix that, with WhatsApp's official platform, local payments and copy that makes sense here."
+      "p1": "Businesses everywhere already run on WhatsApp. Orders, enquiries, payments and complaints all arrive in the same chat list, often on one person's phone.",
+      "p2": "That works until it doesn't: messages get missed, broadcasts get ignored, and nobody knows which customer to call back first. We built GrowBusinesss to fix that, with WhatsApp's official platform, email from your own domain and AI that answers from your own business information."
     },
     "principles": {
       "title": "What we believe",
@@ -1555,8 +1555,8 @@
         "description": "Plain words, clear screens and no jargon. If it needs a manual, we haven't finished designing it."
       },
       "local": {
-        "title": "Built for Pakistan",
-        "description": "Pay with JazzCash, EasyPaisa or bank transfer, and read this site in English or Urdu."
+        "title": "Built for every market",
+        "description": "Use GrowBusinesss in any country. WhatsApp and email reach your customers wherever they are, and this site is in English and Urdu."
       },
       "fair": {
         "title": "Pay for what you use",
@@ -1608,7 +1608,7 @@
       },
       "whoFor": {
         "q": "Who is GrowBusinesss for?",
-        "a": "Small and medium businesses in Pakistan, such as shops, property dealers, schools, clinics and online stores, plus agencies that run WhatsApp marketing for clients."
+        "a": "Small and medium businesses in any country, such as shops, property dealers, schools, clinics and online stores, plus agencies that run WhatsApp and email marketing for clients."
       },
       "needs": {
         "q": "What do I need to get started?",
@@ -1684,7 +1684,7 @@
       },
       "ownDomain": {
         "q": "Do I need my own domain for email?",
-        "a": "It's recommended for real campaigns, because email from your own domain, like info@yourbrand.pk, is trusted more. A shared trial address lets you start before your domain is ready. Setup takes about 10 minutes of copying DNS records into GoDaddy or any DNS provider, and GrowBusinesss checks them for you."
+        "a": "It's recommended for real campaigns, because email from your own domain, like info@yourbrand.com, is trusted more. A shared trial address lets you start before your domain is ready. Setup takes about 10 minutes of copying DNS records into GoDaddy or any DNS provider, and GrowBusinesss checks them for you."
       },
       "spam": {
         "q": "Will my emails go to spam?",
@@ -2095,7 +2095,7 @@
       "link": "See current pricing",
       "noPlans": "Plans are being updated right now. See the app for current pricing."
     },
-    "productDescription": "WhatsApp and email marketing, shared inbox, CRM and sales tools for businesses in Pakistan.",
+    "productDescription": "WhatsApp, email and AI marketing, shared inbox, CRM and sales tools for businesses in any country.",
     "talk": {
       "title": "Not sure which plan fits?",
       "body": "Tell us about your business and we will suggest the right plan.",
@@ -2107,7 +2107,7 @@
     "required": "This field is required.",
     "email": "Enter a valid email address.",
     "nameLength": "Enter your name (2 to 120 characters).",
-    "phone": "Enter a Pakistani number, for example 0300 1234567 or +92 42 35761234.",
+    "phone": "Enter a phone number with its country code, for example +44 7700 900123 or +92 300 1234567.",
     "passwordMin": "Use at least 8 characters.",
     "passwordMax": "Use 72 characters or fewer.",
     "passwordMismatch": "The passwords don't match.",
@@ -2152,7 +2152,7 @@
       "fullName": "Full name",
       "email": "Email",
       "phone": "Phone (optional)",
-      "phoneHint": "Pakistani number, e.g. 0300 1234567",
+      "phoneHint": "Include the country code, e.g. +44 7700 900123",
       "password": "Password",
       "passwordHint": "At least 8 characters.",
       "confirmPassword": "Confirm password",
@@ -2216,7 +2216,7 @@
       "emailHint": "Your sign-in email can't be changed here. Contact us if you need to change it.",
       "fullName": "Full name",
       "phone": "Phone (optional)",
-      "phoneHint": "Pakistani number, e.g. 0300 1234567",
+      "phoneHint": "Include the country code, e.g. +44 7700 900123",
       "language": "Preferred language for emails",
       "save": "Save changes",
       "saving": "Saving…",
@@ -2589,7 +2589,7 @@
         }
       },
       "timeSlot": {
-        "label": "When suits you best? (Pakistan time)",
+        "label": "When suits you best? (our time, UTC+5)",
         "options": {
           "morning": "Morning (9am–12pm)",
           "afternoon": "Afternoon (12pm–4pm)",
@@ -2673,7 +2673,7 @@
       "name": "Your name",
       "email": "Email",
       "phone": "Phone",
-      "phoneHint": "Pakistani number, e.g. 0300 1234567",
+      "phoneHint": "Include the country code, e.g. +44 7700 900123",
       "lockedHint": "Filled in from your account.",
       "consent": "I agree that GrowBusinesss may use these details to reply to me, as described in the <privacy>Privacy Policy</privacy>.",
       "website": "Leave this field empty"
@@ -2728,7 +2728,7 @@
     }
   },
   "emails": {
-    "footer": "GrowBusinesss · WhatsApp marketing for businesses in Pakistan. You're receiving this because of a question sent to GrowBusinesss.",
+    "footer": "GrowBusinesss · WhatsApp, email and AI marketing for businesses everywhere. You're receiving this because of a question sent to GrowBusinesss.",
     "newQuery": {
       "subject": "New query {reference}: {subject}",
       "preheader": "{name} asked about {topic}.",

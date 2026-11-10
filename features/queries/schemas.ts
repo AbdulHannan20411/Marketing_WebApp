@@ -1,6 +1,6 @@
 import { z } from "@/lib/validation/zod";
 
-import { normalisePakistaniPhone } from "@/lib/validation/phone";
+import { normalisePhone } from "@/lib/validation/phone";
 
 import {
   messageLimits,
@@ -59,7 +59,7 @@ const requiredPhone = z
   .min(1, "required")
   .max(32, "phone")
   .transform((value, ctx) => {
-    const normalised = normalisePakistaniPhone(value);
+    const normalised = normalisePhone(value);
     if (!normalised) {
       ctx.addIssue({ code: "custom", message: "phone" });
       return z.NEVER;

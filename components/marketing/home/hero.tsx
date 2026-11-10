@@ -1,4 +1,4 @@
-import { BadgeCheckIcon, GiftIcon, WalletIcon } from "lucide-react";
+import { BadgeCheckIcon, GiftIcon, GlobeIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 import { TrialCta } from "@/components/marketing/trial-cta";
@@ -18,7 +18,7 @@ export async function HomeHero() {
 
   const assurances = [
     { key: "official", icon: BadgeCheckIcon },
-    { key: "payments", icon: WalletIcon },
+    { key: "global", icon: GlobeIcon },
     { key: "trial", icon: GiftIcon },
   ] as const;
 

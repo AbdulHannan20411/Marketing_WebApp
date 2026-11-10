@@ -58,7 +58,6 @@ export function organizationJsonLd({
     url: siteUrl,
     logo: new URL("/icon.svg", siteUrl).toString(),
     description,
-    areaServed: { "@type": "Country", name: "Pakistan" },
     // TODO: add `sameAs` with the real social profile URLs once they exist.
   };
 }
