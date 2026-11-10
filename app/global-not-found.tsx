@@ -8,7 +8,7 @@ import messages from "@/messages/global.json";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${messages.en.notFoundTitle} | NextReach`,
+  title: `${messages.en.notFoundTitle} | GrowBusinesss`,
 };
 
 /**

@@ -13,7 +13,7 @@ import {
 } from "@/lib/pricing/schemas";
 
 /**
- * Server-only client for the NextReach public pricing API.
+ * Server-only client for the GrowBusinesss public pricing API.
  *
  * Caching follows the Cache Components model (fetch `next.revalidate` options do not
  * cache on their own here): results are cached for 10 minutes under the `pricing` tag,

@@ -416,9 +416,9 @@ enabled = true
 
 # Branded, bilingual templates (also paste them into the hosted project's dashboard).
 [auth.email.template.confirmation]
-subject = "Confirm your email | NextReach"
+subject = "Confirm your email | GrowBusinesss"
 content_path = "./supabase/templates/confirm-signup.html"
 
 [auth.email.template.recovery]
-subject = "Reset your password | NextReach"
+subject = "Reset your password | GrowBusinesss"
 content_path = "./supabase/templates/reset-password.html"

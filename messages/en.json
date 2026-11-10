@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "siteName": "NextReach",
-    "titleTemplate": "%s | NextReach",
-    "defaultTitle": "NextReach — WhatsApp and email marketing for growing businesses",
+    "siteName": "GrowBusinesss",
+    "titleTemplate": "%s | GrowBusinesss",
+    "defaultTitle": "GrowBusinesss — WhatsApp and email marketing for growing businesses",
     "description": "Reach customers on WhatsApp and email from one app and one contact list. Run WhatsApp Status ads and confirm COD orders from Shopify and WooCommerce on WhatsApp. Built for businesses in Pakistan."
   },
   "common": {
     "skipToContent": "Skip to main content",
-    "brandHome": "NextReach home",
+    "brandHome": "GrowBusinesss home",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "close": "Close",
@@ -77,7 +77,7 @@
       "refund": "Refund Policy",
       "account": "Support account"
     },
-    "copyright": "© {year} NextReach. All rights reserved.",
+    "copyright": "© {year} GrowBusinesss. All rights reserved.",
     "madeIn": "Made for businesses in Pakistan."
   },
   "home": {
@@ -98,10 +98,10 @@
     "metaTitle": "WhatsApp and email marketing for growing businesses",
     "metaDescription": "WhatsApp and email marketing in one app. Bring new customers into WhatsApp with Status ads, confirm cash-on-delivery orders from Shopify and WooCommerce, and reach people on the channel they actually check.",
     "problem": {
-      "eyebrow": "Why NextReach",
+      "eyebrow": "Why GrowBusinesss",
       "title": "WhatsApp is where your customers are. Managing it shouldn't be chaos.",
-      "beforeTitle": "Without NextReach",
-      "afterTitle": "With NextReach",
+      "beforeTitle": "Without GrowBusinesss",
+      "afterTitle": "With GrowBusinesss",
       "before": {
         "p1": "Chats are spread across personal phones, and messages slip through the cracks.",
         "p2": "Bulk messages from a normal number get ignored, reported or blocked.",
@@ -124,7 +124,7 @@
       "cta": "Explore all features"
     },
     "facts": {
-      "title": "NextReach at a glance",
+      "title": "GrowBusinesss at a glance",
       "modules": "modules you can switch on",
       "recipes": "ready-made automation recipes",
       "payments": "local ways to pay",
@@ -136,7 +136,7 @@
       "items": {
         "connect": {
           "title": "Connect your WhatsApp Business number",
-          "description": "Use Meta's official sign-up inside NextReach. No technical setup, and your number stays yours."
+          "description": "Use Meta's official sign-up inside GrowBusinesss. No technical setup, and your number stays yours."
         },
         "contacts": {
           "title": "Bring in your customers",
@@ -151,7 +151,7 @@
     "automation": {
       "eyebrow": "Automations",
       "title": "Follow-ups that never forget",
-      "subtitle": "Pick a ready-made recipe, adjust the wording, and turn it on. NextReach follows up at the right time and steps back as soon as a customer replies.",
+      "subtitle": "Pick a ready-made recipe, adjust the wording, and turn it on. GrowBusinesss follows up at the right time and steps back as soon as a customer replies.",
       "flowLabel": "Example automation: when a customer becomes interested, wait one day, send a follow-up template, then stop if they reply or alert the team if they don't.",
       "nodes": {
         "trigger": "Customer became interested",
@@ -191,13 +191,13 @@
       "secondary": "Talk to us"
     },
     "whatsNew": {
-      "eyebrow": "New in NextReach",
+      "eyebrow": "New in GrowBusinesss",
       "title": "New ways to reach the right people",
-      "subtitle": "The latest additions to NextReach.",
+      "subtitle": "The latest additions to GrowBusinesss.",
       "items": {
         "statusAds": {
           "title": "WhatsApp Status ads",
-          "description": "Ads in Status that open a chat with you, run from NextReach on your own Meta ad account."
+          "description": "Ads in Status that open a chat with you, run from GrowBusinesss on your own Meta ad account."
         },
         "knowledge": {
           "title": "AI knowledge base",
@@ -205,7 +205,7 @@
         },
         "push": {
           "title": "Push notifications",
-          "description": "New messages and alerts reach you even when the NextReach tab is closed."
+          "description": "New messages and alerts reach you even when the GrowBusinesss tab is closed."
         },
         "templateCheck": {
           "title": "Meta review check",
@@ -504,7 +504,7 @@
           "media": "Send and receive media without leaving the chat.",
           "assign": "Assign chats to team members so everyone knows who is answering.",
           "suggest": "AI suggests a reply from your own knowledge, ready for you to check and send.",
-          "push": "Browser push notifications for new messages, even when the NextReach tab is closed."
+          "push": "Browser push notifications for new messages, even when the GrowBusinesss tab is closed."
         }
       },
       "crm": {
@@ -516,7 +516,7 @@
           "contacts": "One contact list for both channels: filter by number only, email only, or number and email, with each contact's email and email consent shown.",
           "import": "Import a CSV and match its columns in a few clicks, or export any list.",
           "history": "Full change history on every contact, including group and tag changes.",
-          "discovery": "Find businesses on Google Maps by category and area and import them as contacts; NextReach also looks for each business's public email on its website.",
+          "discovery": "Find businesses on Google Maps by category and area and import them as contacts; GrowBusinesss also looks for each business's public email on its website.",
           "groups": "Import found businesses into a new group (with a suggested name you can edit), an existing group, or no group.",
           "segments": "Smart segments build lists from what people do – opened or ignored email, replied on WhatsApp, ordered or left a cart – combined with AND, OR and NOT, updated every hour."
         }
@@ -654,7 +654,7 @@
         "nav": "Status ads",
         "title": "WhatsApp Status ads",
         "headline": "Bring new customers into WhatsApp",
-        "summary": "Create ads that appear in WhatsApp Status. One tap opens a chat with you, with a message already typed for the customer to send. Everything runs from NextReach, on your own Meta ad account.",
+        "summary": "Create ads that appear in WhatsApp Status. One tap opens a chat with you, with a message already typed for the customer to send. Everything runs from GrowBusinesss, on your own Meta ad account.",
         "points": {
           "connect": "Connect your own Meta ad account with one Facebook sign-in, then pick the ad account and the Facebook Page linked to your WhatsApp number.",
           "builder": "Build the ad in four steps – creative, audience, budget and dates, then review and launch – with a live phone preview all the way.",
@@ -687,7 +687,7 @@
         },
         "notifications": {
           "title": "Notifications",
-          "description": "Email, in-app and browser push notifications – even with the NextReach tab closed, where the browser supports it. Each person chooses which messages, campaign, team and billing alerts they get; security and system alerts always come through."
+          "description": "Email, in-app and browser push notifications – even with the GrowBusinesss tab closed, where the browser supports it. Each person chooses which messages, campaign, team and billing alerts they get; security and system alerts always come through."
         },
         "themes": {
           "title": "Light, dark or scheduled",
@@ -749,7 +749,7 @@
         "steps": {
           "connect": {
             "title": "Connect your number",
-            "description": "Use Meta's official sign-up inside NextReach to connect your WhatsApp Business number."
+            "description": "Use Meta's official sign-up inside GrowBusinesss to connect your WhatsApp Business number."
           },
           "template": {
             "title": "Create a template",
@@ -773,7 +773,7 @@
         "faqs": {
           "approval": {
             "q": "Who approves my templates?",
-            "a": "Meta reviews every template before it can be sent. NextReach shows the status of each one, and you can edit and resubmit a template that isn't approved."
+            "a": "Meta reviews every template before it can be sent. GrowBusinesss shows the status of each one, and you can edit and resubmit a template that isn't approved."
           },
           "bulk": {
             "q": "Can I send to my whole customer list?",
@@ -781,13 +781,13 @@
           },
           "cost": {
             "q": "Do I need any technical skills?",
-            "a": "No. Connecting your number, writing templates and sending campaigns all happen through simple screens in NextReach."
+            "a": "No. Connecting your number, writing templates and sending campaigns all happen through simple screens in GrowBusinesss."
           }
         }
       },
       "inbox": {
         "metaTitle": "Shared WhatsApp inbox",
-        "metaDescription": "Answer every WhatsApp chat from one shared inbox. Assign conversations, send media, and let NextReach track the 24-hour reply window.",
+        "metaDescription": "Answer every WhatsApp chat from one shared inbox. Assign conversations, send media, and let GrowBusinesss track the 24-hour reply window.",
         "name": "Shared Inbox",
         "eyebrow": "Shared Inbox",
         "title": "Every customer chat in one place",
@@ -799,7 +799,7 @@
           },
           "window": {
             "title": "The 24-hour rule, handled",
-            "description": "WhatsApp allows free replies for 24 hours after a customer's last message. NextReach shows the time left and offers templates once it closes."
+            "description": "WhatsApp allows free replies for 24 hours after a customer's last message. GrowBusinesss shows the time left and offers templates once it closes."
           },
           "context": {
             "title": "Full context",
@@ -837,11 +837,11 @@
         "faqs": {
           "window": {
             "q": "What is the 24-hour reply window?",
-            "a": "WhatsApp lets a business reply freely for 24 hours after the customer's last message. After that, you can only send an approved template. NextReach shows the time left on every chat."
+            "a": "WhatsApp lets a business reply freely for 24 hours after the customer's last message. After that, you can only send an approved template. GrowBusinesss shows the time left on every chat."
           },
           "phones": {
             "q": "Do my staff need the WhatsApp app on their phones?",
-            "a": "No. Your team replies from NextReach in the browser, so you don't have to share one phone."
+            "a": "No. Your team replies from GrowBusinesss in the browser, so you don't have to share one phone."
           },
           "team": {
             "q": "Can two people reply to the same chat by mistake?",
@@ -904,7 +904,7 @@
           },
           "discoveryData": {
             "q": "Where do nearby businesses come from?",
-            "a": "Discovery searches Google Maps for the category and area you choose, within the radius your plan allows, and lists the businesses it finds with their phone number. NextReach also looks for each business's public email on its website."
+            "a": "Discovery searches Google Maps for the category and area you choose, within the radius your plan allows, and lists the businesses it finds with their phone number. GrowBusinesss also looks for each business's public email on its website."
           },
           "consent": {
             "q": "Can I message businesses I discover?",
@@ -1054,7 +1054,7 @@
         "name": "Automations",
         "eyebrow": "Automations",
         "title": "Follow-ups that run themselves",
-        "subtitle": "Set up a sequence once, and NextReach follows up at the right moment, politely, and stops as soon as the customer replies.",
+        "subtitle": "Set up a sequence once, and GrowBusinesss follows up at the right moment, politely, and stops as soon as the customer replies.",
         "benefits": {
           "followUp": {
             "title": "No lead forgotten",
@@ -1084,7 +1084,7 @@
           },
           "turnOn": {
             "title": "Turn it on",
-            "description": "NextReach handles the timing, and you see every step."
+            "description": "GrowBusinesss handles the timing, and you see every step."
           }
         },
         "capabilities": {
@@ -1140,7 +1140,7 @@
         "steps": {
           "domain": {
             "title": "Set up your domain",
-            "description": "Copy the DNS records NextReach gives you into GoDaddy or any DNS provider. It takes about 10 minutes, and NextReach checks them automatically. Until then, use the shared trial address."
+            "description": "Copy the DNS records GrowBusinesss gives you into GoDaddy or any DNS provider. It takes about 10 minutes, and GrowBusinesss checks them automatically. Until then, use the shared trial address."
           },
           "design": {
             "title": "Design your email",
@@ -1179,7 +1179,7 @@
           },
           "badAddresses": {
             "q": "What happens to fake or mistyped addresses?",
-            "a": "They are detected and skipped: typos like gmial.com, domains with no mail server and throwaway inboxes. When you add a contact, NextReach suggests a fix, like “did you mean gmail.com?”."
+            "a": "They are detected and skipped: typos like gmial.com, domains with no mail server and throwaway inboxes. When you add a contact, GrowBusinesss suggests a fix, like “did you mean gmail.com?”."
           },
           "replies": {
             "q": "Where do replies go?",
@@ -1215,7 +1215,7 @@
         "steps": {
           "order": {
             "title": "A COD order arrives",
-            "description": "NextReach sends the customer a WhatsApp message with Confirm and Cancel buttons, using your approved template."
+            "description": "GrowBusinesss sends the customer a WhatsApp message with Confirm and Cancel buttons, using your approved template."
           },
           "reply": {
             "title": "The customer answers",
@@ -1257,11 +1257,11 @@
       },
       "status-ads": {
         "metaTitle": "WhatsApp Status ads that start chats",
-        "metaDescription": "Create WhatsApp Status ads from NextReach on your own Meta ad account. One tap opens a chat with your business. AI ad text, contact-group audiences, Meta review status and results from spend to sales.",
+        "metaDescription": "Create WhatsApp Status ads from GrowBusinesss on your own Meta ad account. One tap opens a chat with your business. AI ad text, contact-group audiences, Meta review status and results from spend to sales.",
         "name": "Status ads",
         "eyebrow": "WhatsApp Status ads",
         "title": "Turn a tap on your ad into a WhatsApp chat",
-        "subtitle": "Run ads in WhatsApp Status without opening Meta Ads Manager. One tap opens a chat with your business, with the customer's first message already typed, and NextReach follows every chat from the tap to the order.",
+        "subtitle": "Run ads in WhatsApp Status without opening Meta Ads Manager. One tap opens a chat with your business, with the customer's first message already typed, and GrowBusinesss follows every chat from the tap to the order.",
         "benefits": {
           "newCustomers": {
             "title": "Reach new customers",
@@ -1273,7 +1273,7 @@
           },
           "ownAccount": {
             "title": "Your account, your spend",
-            "description": "Ads run on your own Meta ad account, and Meta bills your payment method directly. NextReach never handles your ad spend."
+            "description": "Ads run on your own Meta ad account, and Meta bills your payment method directly. GrowBusinesss never handles your ad spend."
           },
           "spendToSales": {
             "title": "From spend to sales",
@@ -1313,19 +1313,19 @@
         "requirements": {
           "adAccount": "A Meta ad account with a payment method added. Meta charges it for your ad spend.",
           "page": "A Facebook Page linked to your WhatsApp Business number.",
-          "number": "That WhatsApp number connected to NextReach.",
-          "plan": "A NextReach plan with WhatsApp Status ads switched on. It works together with WhatsApp Marketing."
+          "number": "That WhatsApp number connected to GrowBusinesss.",
+          "plan": "A GrowBusinesss plan with WhatsApp Status ads switched on. It works together with WhatsApp Marketing."
         },
         "notes": {
           "instagram": "Meta shows Status ads together with Instagram Stories; it doesn't allow Status on its own. The same button opens WhatsApp in both.",
-          "billing": "Your NextReach plan is separate from your ad spend. Meta bills ad spend to your own ad account.",
+          "billing": "Your GrowBusinesss plan is separate from your ad spend. Meta bills ad spend to your own ad account.",
           "privacy": "If you use contact groups, phone numbers and emails are hashed before they reach Meta, and opted-out contacts are never sent. A group needs at least 100 reachable contacts to become an audience.",
           "availability": "Status ads depend on Meta's rollout in your country. Meta decides where and how often an ad shows, so reach, approval and results can't be promised."
         },
         "faqs": {
           "spend": {
-            "q": "Is ad spend included in my NextReach plan?",
-            "a": "No. Ads run on your own Meta ad account, and Meta charges your payment method directly. NextReach never collects or holds your ad spend. Your NextReach plan is billed separately."
+            "q": "Is ad spend included in my GrowBusinesss plan?",
+            "a": "No. Ads run on your own Meta ad account, and Meta charges your payment method directly. GrowBusinesss never collects or holds your ad spend. Your GrowBusinesss plan is billed separately."
           },
           "instagram": {
             "q": "Why does my ad also show in Instagram Stories?",
@@ -1333,11 +1333,11 @@
           },
           "review": {
             "q": "How long does Meta's review take?",
-            "a": "Meta reviews every ad before it shows, usually within a day. NextReach shows the status – In review, Active or Rejected – and, if an ad is rejected, Meta's reason, so you can fix it and try again."
+            "a": "Meta reviews every ad before it shows, usually within a day. GrowBusinesss shows the status – In review, Active or Rejected – and, if an ad is rejected, Meta's reason, so you can fix it and try again."
           },
           "privacy": {
             "q": "What contact data is sent to Meta?",
-            "a": "Only what's needed when you show an ad to a contact group or keep it from one. Phone numbers and emails are hashed before they leave NextReach, so no contact detail is sent in readable form, and opted-out contacts are never sent. When you stop the ad, the audiences made for it are removed from Meta."
+            "a": "Only what's needed when you show an ad to a contact group or keep it from one. Phone numbers and emails are hashed before they leave GrowBusinesss, so no contact detail is sent in readable form, and opted-out contacts are never sent. When you stop the ad, the audiences made for it are removed from Meta."
           },
           "stop": {
             "q": "Can I stop an ad at any time?",
@@ -1349,13 +1349,13 @@
   },
   "useCases": {
     "metaTitle": "Use cases by industry",
-    "metaDescription": "How online stores on Shopify and WooCommerce, cash-on-delivery sellers, boutiques, salons, restaurants, real estate agents, schools, clinics and agencies in Pakistan use NextReach on WhatsApp and email.",
+    "metaDescription": "How online stores on Shopify and WooCommerce, cash-on-delivery sellers, boutiques, salons, restaurants, real estate agents, schools, clinics and agencies in Pakistan use GrowBusinesss on WhatsApp and email.",
     "eyebrow": "Use cases",
     "title": "Built for the way Pakistani businesses sell",
-    "subtitle": "Whatever you sell, your customers are already on WhatsApp. Here's how businesses like yours can use NextReach.",
+    "subtitle": "Whatever you sell, your customers are already on WhatsApp. Here's how businesses like yours can use GrowBusinesss.",
     "jumpTo": "Choose your industry",
     "challengesTitle": "The challenge",
-    "solutionsTitle": "How NextReach helps",
+    "solutionsTitle": "How GrowBusinesss helps",
     "modulesTitle": "Modules that fit",
     "exampleTitle": "For example",
     "industries": {
@@ -1487,20 +1487,20 @@
     },
     "cta": {
       "title": "Don't see your industry?",
-      "subtitle": "If your customers use WhatsApp, NextReach can help. Tell us about your business and we'll suggest a setup.",
+      "subtitle": "If your customers use WhatsApp, GrowBusinesss can help. Tell us about your business and we'll suggest a setup.",
       "button": "Talk to us"
     }
   },
   "about": {
     "metaTitle": "About us",
-    "metaDescription": "NextReach helps businesses in Pakistan market and sell on WhatsApp, the app their customers already use every day.",
-    "eyebrow": "About NextReach",
+    "metaDescription": "GrowBusinesss helps businesses in Pakistan market and sell on WhatsApp, the app their customers already use every day.",
+    "eyebrow": "About GrowBusinesss",
     "title": "We help Pakistani businesses sell where their customers already are",
     "subtitle": "Almost every customer in Pakistan has WhatsApp. We build the tools that let businesses use it properly, from the first campaign to the final sale.",
     "story": {
-      "title": "Why we built NextReach",
+      "title": "Why we built GrowBusinesss",
       "p1": "Businesses across Pakistan already run on WhatsApp. Orders, enquiries, payments and complaints all arrive in the same chat list, often on one person's phone.",
-      "p2": "That works until it doesn't: messages get missed, broadcasts get ignored, and nobody knows which customer to call back first. We built NextReach to fix that, with WhatsApp's official platform, local payments and copy that makes sense here."
+      "p2": "That works until it doesn't: messages get missed, broadcasts get ignored, and nobody knows which customer to call back first. We built GrowBusinesss to fix that, with WhatsApp's official platform, local payments and copy that makes sense here."
     },
     "principles": {
       "title": "What we believe",
@@ -1528,7 +1528,7 @@
     },
     "team": {
       "title": "The team",
-      "description": "We build NextReach together with the businesses that use it, and we read every message they send us."
+      "description": "We build GrowBusinesss together with the businesses that use it, and we read every message they send us."
     },
     "cta": {
       "title": "Let's talk",
@@ -1538,7 +1538,7 @@
   },
   "faq": {
     "metaTitle": "Frequently asked questions",
-    "metaDescription": "Answers about NextReach: getting started, the official WhatsApp platform, templates, Status ads, online stores, email, plans, payments and support.",
+    "metaDescription": "Answers about GrowBusinesss: getting started, the official WhatsApp platform, templates, Status ads, online stores, email, plans, payments and support.",
     "eyebrow": "FAQ",
     "title": "Frequently asked questions",
     "subtitle": "Can't find what you're looking for? Send us a question and we'll reply.",
@@ -1561,23 +1561,23 @@
     },
     "items": {
       "whatIs": {
-        "q": "What is NextReach?",
-        "a": "NextReach is a web app for marketing and selling on WhatsApp and email. It brings campaigns, a shared inbox, a CRM, catalogs, a lead board, AI replies, automations and reports together in one workspace, with one contact list for both channels."
+        "q": "What is GrowBusinesss?",
+        "a": "GrowBusinesss is a web app for marketing and selling on WhatsApp and email. It brings campaigns, a shared inbox, a CRM, catalogs, a lead board, AI replies, automations and reports together in one workspace, with one contact list for both channels."
       },
       "whoFor": {
-        "q": "Who is NextReach for?",
+        "q": "Who is GrowBusinesss for?",
         "a": "Small and medium businesses in Pakistan, such as shops, property dealers, schools, clinics and online stores, plus agencies that run WhatsApp marketing for clients."
       },
       "needs": {
         "q": "What do I need to get started?",
-        "a": "A Meta business account and a phone number for WhatsApp Business. NextReach walks you through Meta's official sign-up step by step."
+        "a": "A Meta business account and a phone number for WhatsApp Business. GrowBusinesss walks you through Meta's official sign-up step by step."
       },
       "trial": {
         "q": "Is there a free trial?",
-        "a": "Yes. Plans come with a free trial so you can try NextReach before you pay. The length of the trial is shown on each plan."
+        "a": "Yes. Plans come with a free trial so you can try GrowBusinesss before you pay. The length of the trial is shown on each plan."
       },
       "official": {
-        "q": "Does NextReach use the official WhatsApp platform?",
+        "q": "Does GrowBusinesss use the official WhatsApp platform?",
         "a": "Yes. You connect through Meta's official sign-up, and campaigns use templates approved by Meta. That keeps your number in good standing."
       },
       "templates": {
@@ -1586,11 +1586,11 @@
       },
       "window": {
         "q": "What is the 24-hour reply window?",
-        "a": "After a customer messages you, WhatsApp lets you reply freely for 24 hours. After that, you can only start the conversation again with an approved template. NextReach tracks this on every chat."
+        "a": "After a customer messages you, WhatsApp lets you reply freely for 24 hours. After that, you can only start the conversation again with an approved template. GrowBusinesss tracks this on every chat."
       },
       "quality": {
         "q": "What is a quality rating?",
-        "a": "WhatsApp rates each business number based on how customers respond to its messages. NextReach shows the rating so you can adjust before problems grow."
+        "a": "WhatsApp rates each business number based on how customers respond to its messages. GrowBusinesss shows the rating so you can adjust before problems grow."
       },
       "numbers": {
         "q": "Can I connect more than one WhatsApp number?",
@@ -1642,11 +1642,11 @@
       },
       "ownDomain": {
         "q": "Do I need my own domain for email?",
-        "a": "It's recommended for real campaigns, because email from your own domain, like info@yourbrand.pk, is trusted more. A shared trial address lets you start before your domain is ready. Setup takes about 10 minutes of copying DNS records into GoDaddy or any DNS provider, and NextReach checks them for you."
+        "a": "It's recommended for real campaigns, because email from your own domain, like info@yourbrand.pk, is trusted more. A shared trial address lets you start before your domain is ready. Setup takes about 10 minutes of copying DNS records into GoDaddy or any DNS provider, and GrowBusinesss checks them for you."
       },
       "spam": {
         "q": "Will my emails go to spam?",
-        "a": "No tool can guarantee the inbox. NextReach gives you the best chance: it authenticates your domain, warms new domains up gradually, removes fake and undeliverable addresses, and handles bounces and complaints automatically. Sending only to people who agreed to hear from you matters most."
+        "a": "No tool can guarantee the inbox. GrowBusinesss gives you the best chance: it authenticates your domain, warms new domains up gradually, removes fake and undeliverable addresses, and handles bounces and complaints automatically. Sending only to people who agreed to hear from you matters most."
       },
       "renewal": {
         "q": "What happens if I renew before my plan ends?",
@@ -1658,11 +1658,11 @@
       },
       "codHow": {
         "q": "How does COD confirmation work?",
-        "a": "When a new cash-on-delivery order arrives in your Shopify or WooCommerce store, NextReach sends the customer a WhatsApp message with Confirm and Cancel buttons. Confirm tags the order “cod-confirmed” in your store; Cancel cancels it and restocks the items. If there's no reply, NextReach sends one reminder, then flags the order “needs a call” and notifies your team. Customers can also type answers like “yes”, “haan” or “cancel kar dein”."
+        "a": "When a new cash-on-delivery order arrives in your Shopify or WooCommerce store, GrowBusinesss sends the customer a WhatsApp message with Confirm and Cancel buttons. Confirm tags the order “cod-confirmed” in your store; Cancel cancels it and restocks the items. If there's no reply, GrowBusinesss sends one reminder, then flags the order “needs a call” and notifies your team. Customers can also type answers like “yes”, “haan” or “cancel kar dein”."
       },
       "shopifyApp": {
         "q": "Do I need a Shopify app?",
-        "a": "You connect through NextReach's own Shopify app: click connect and approve it in your Shopify admin. There's nothing to code."
+        "a": "You connect through GrowBusinesss's own Shopify app: click connect and approve it in your Shopify admin. There's nothing to code."
       },
       "woocommerce": {
         "q": "Does it work with WooCommerce?",
@@ -1694,11 +1694,11 @@
       },
       "adsNeeds": {
         "q": "What do I need to run WhatsApp Status ads?",
-        "a": "A Meta ad account with a payment method added, a Facebook Page linked to your WhatsApp Business number, that number connected to NextReach, and a NextReach plan with WhatsApp Status ads switched on. Status ads work together with WhatsApp Marketing."
+        "a": "A Meta ad account with a payment method added, a Facebook Page linked to your WhatsApp Business number, that number connected to GrowBusinesss, and a GrowBusinesss plan with WhatsApp Status ads switched on. Status ads work together with WhatsApp Marketing."
       },
       "adsSpend": {
         "q": "Who pays for the ads?",
-        "a": "You do, through your own Meta ad account: Meta charges your payment method directly. NextReach never collects or holds your ad spend, and your NextReach plan is billed separately."
+        "a": "You do, through your own Meta ad account: Meta charges your payment method directly. GrowBusinesss never collects or holds your ad spend, and your GrowBusinesss plan is billed separately."
       },
       "adsInstagram": {
         "q": "Why does my Status ad also show in Instagram Stories?",
@@ -1706,11 +1706,11 @@
       },
       "adsReview": {
         "q": "Does Meta review my ad?",
-        "a": "Yes. Meta reviews every ad before it shows, usually within a day. NextReach shows the status, In review, Active or Rejected, and if an ad is rejected, Meta's reason, so you can fix it and try again."
+        "a": "Yes. Meta reviews every ad before it shows, usually within a day. GrowBusinesss shows the status, In review, Active or Rejected, and if an ad is rejected, Meta's reason, so you can fix it and try again."
       },
       "adsPrivacy": {
         "q": "What contact data is sent to Meta?",
-        "a": "Only what's needed when you show an ad to a contact group or keep it from one. Phone numbers and emails are hashed before they leave NextReach, so no contact detail is sent in readable form, and opted-out contacts are never sent. When you stop the ad, the audiences made for it are removed from Meta."
+        "a": "Only what's needed when you show an ad to a contact group or keep it from one. Phone numbers and emails are hashed before they leave GrowBusinesss, so no contact detail is sent in readable form, and opted-out contacts are never sent. When you stop the ad, the audiences made for it are removed from Meta."
       },
       "adsContacts": {
         "q": "Can I send campaigns to people who message me from an ad?",
@@ -1734,17 +1734,17 @@
     },
     "privacy": {
       "metaTitle": "Privacy Policy",
-      "metaDescription": "How NextReach collects, uses and protects personal information on this website and in the NextReach service.",
+      "metaDescription": "How GrowBusinesss collects, uses and protects personal information on this website and in the GrowBusinesss service.",
       "title": "Privacy Policy",
       "intro": "This policy explains what personal information {company} collects, why, and the choices you have.",
       "sections": {
         "intro": {
           "title": "Who we are",
-          "body": "{company} (“NextReach”, “we”) runs this website and the NextReach service. Our registered address is {address}. For privacy questions, contact {email}."
+          "body": "{company} (“GrowBusinesss”, “we”) runs this website and the GrowBusinesss service. Our registered address is {address}. For privacy questions, contact {email}."
         },
         "collect": {
           "title": "Information we collect",
-          "body": "When you contact us or create an account on this website, we collect your name, email address and phone number, the content of your messages and any file you attach. When you use the NextReach app, we process the business and contact information you add to your workspace. We also collect basic technical data, such as your IP address, browser type and pages visited, to keep the site secure and working."
+          "body": "When you contact us or create an account on this website, we collect your name, email address and phone number, the content of your messages and any file you attach. When you use the GrowBusinesss app, we process the business and contact information you add to your workspace. We also collect basic technical data, such as your IP address, browser type and pages visited, to keep the site secure and working."
         },
         "use": {
           "title": "How we use information",
@@ -1752,15 +1752,15 @@
         },
         "whatsapp": {
           "title": "WhatsApp and Meta",
-          "body": "The NextReach service connects to the WhatsApp Business Platform operated by Meta. Messages you send and receive through NextReach are processed by Meta under its own terms and policies. Businesses using NextReach are responsible for having their customers' permission to message them."
+          "body": "The GrowBusinesss service connects to the WhatsApp Business Platform operated by Meta. Messages you send and receive through GrowBusinesss are processed by Meta under its own terms and policies. Businesses using GrowBusinesss are responsible for having their customers' permission to message them."
         },
         "statusAds": {
           "title": "WhatsApp Status ads",
-          "body": "The customer is the controller of their contact data. NextReach processes it on the customer's behalf and, only when the customer uses contact groups in a Status ad, sends hashed phone numbers and emails to Meta under the customer's ad account. Opted-out contacts are never sent, and no contact detail is sent in readable form."
+          "body": "The customer is the controller of their contact data. GrowBusinesss processes it on the customer's behalf and, only when the customer uses contact groups in a Status ad, sends hashed phone numbers and emails to Meta under the customer's ad account. Opted-out contacts are never sent, and no contact detail is sent in readable form."
         },
         "sharing": {
           "title": "Who we share it with",
-          "body": "We share information only with service providers that help us run NextReach, such as hosting, email delivery and payment processing, and only as needed for that work. We may disclose information if the law requires it."
+          "body": "We share information only with service providers that help us run GrowBusinesss, such as hosting, email delivery and payment processing, and only as needed for that work. We may disclose information if the law requires it."
         },
         "retention": {
           "title": "How long we keep it",
@@ -1780,7 +1780,7 @@
         },
         "children": {
           "title": "Children",
-          "body": "NextReach is a service for businesses and is not intended for children. We do not knowingly collect information from children."
+          "body": "GrowBusinesss is a service for businesses and is not intended for children. We do not knowingly collect information from children."
         },
         "changes": {
           "title": "Changes to this policy",
@@ -1794,17 +1794,17 @@
     },
     "terms": {
       "metaTitle": "Terms of Service",
-      "metaDescription": "The terms that apply when you use the NextReach website and service.",
+      "metaDescription": "The terms that apply when you use the GrowBusinesss website and service.",
       "title": "Terms of Service",
-      "intro": "These terms apply when you use this website and the NextReach service provided by {company}.",
+      "intro": "These terms apply when you use this website and the GrowBusinesss service provided by {company}.",
       "sections": {
         "acceptance": {
           "title": "Accepting these terms",
-          "body": "By using NextReach, you agree to these terms. If you use NextReach for a business, you confirm that you can accept them on its behalf."
+          "body": "By using GrowBusinesss, you agree to these terms. If you use GrowBusinesss for a business, you confirm that you can accept them on its behalf."
         },
         "service": {
           "title": "The service",
-          "body": "NextReach provides tools for WhatsApp marketing, conversations, contacts, catalogs, leads, automations, AI assistance and reporting. Features depend on your plan and may change as we improve the service."
+          "body": "GrowBusinesss provides tools for WhatsApp marketing, conversations, contacts, catalogs, leads, automations, AI assistance and reporting. Features depend on your plan and may change as we improve the service."
         },
         "accounts": {
           "title": "Your account",
@@ -1812,7 +1812,7 @@
         },
         "acceptableUse": {
           "title": "Acceptable use",
-          "body": "You must follow the law and the WhatsApp Business policies set by Meta. Only message people who have agreed to hear from you. Do not send spam, misleading or harmful content, or use NextReach to break anyone's rights."
+          "body": "You must follow the law and the WhatsApp Business policies set by Meta. Only message people who have agreed to hear from you. Do not send spam, misleading or harmful content, or use GrowBusinesss to break anyone's rights."
         },
         "payments": {
           "title": "Plans and payments",
@@ -1820,11 +1820,11 @@
         },
         "statusAds": {
           "title": "WhatsApp Status ads",
-          "body": "The customer is responsible for their own Meta ad account, its billing and its compliance with Meta's advertising terms. Ad spend is billed by Meta directly; NextReach doesn't collect or hold it."
+          "body": "The customer is responsible for their own Meta ad account, its billing and its compliance with Meta's advertising terms. Ad spend is billed by Meta directly; GrowBusinesss doesn't collect or hold it."
         },
         "trials": {
           "title": "Free trials",
-          "body": "Free trials let you try NextReach for the period shown on the plan. At the end of a trial, you need an approved payment to keep using paid features."
+          "body": "Free trials let you try GrowBusinesss for the period shown on the plan. At the end of a trial, you need an approved payment to keep using paid features."
         },
         "cancellation": {
           "title": "Renewal and cancellation",
@@ -1832,19 +1832,19 @@
         },
         "content": {
           "title": "Your content",
-          "body": "You own the content and contact data you add to NextReach. You give us permission to process it only to provide the service to you."
+          "body": "You own the content and contact data you add to GrowBusinesss. You give us permission to process it only to provide the service to you."
         },
         "availability": {
           "title": "Availability",
-          "body": "We work hard to keep NextReach running, but we cannot promise it will always be available or free of errors. Parts of the service depend on Meta and other providers."
+          "body": "We work hard to keep GrowBusinesss running, but we cannot promise it will always be available or free of errors. Parts of the service depend on Meta and other providers."
         },
         "liability": {
           "title": "Limitation of liability",
-          "body": "To the extent the law allows, NextReach is not liable for indirect or consequential losses, and our total liability is limited to the amount you paid us in the three months before the claim."
+          "body": "To the extent the law allows, GrowBusinesss is not liable for indirect or consequential losses, and our total liability is limited to the amount you paid us in the three months before the claim."
         },
         "termination": {
           "title": "Suspension and termination",
-          "body": "We may suspend or close accounts that break these terms or put other users, Meta's platform or NextReach at risk. You may stop using NextReach at any time."
+          "body": "We may suspend or close accounts that break these terms or put other users, Meta's platform or GrowBusinesss at risk. You may stop using GrowBusinesss at any time."
         },
         "law": {
           "title": "Governing law",
@@ -1862,13 +1862,13 @@
     },
     "refund": {
       "metaTitle": "Refund Policy",
-      "metaDescription": "When and how you can request a refund for a NextReach plan.",
+      "metaDescription": "When and how you can request a refund for a GrowBusinesss plan.",
       "title": "Refund Policy",
-      "intro": "We want you to be happy with NextReach. This policy explains when refunds are available and how to ask for one.",
+      "intro": "We want you to be happy with GrowBusinesss. This policy explains when refunds are available and how to ask for one.",
       "sections": {
         "overview": {
           "title": "Overview",
-          "body": "Because every plan comes with a free trial, we encourage you to try NextReach fully before you pay."
+          "body": "Because every plan comes with a free trial, we encourage you to try GrowBusinesss fully before you pay."
         },
         "trials": {
           "title": "Free trials",
@@ -1992,7 +1992,7 @@
       },
       "stepsTitle": "How payment works",
       "steps": {
-        "choose": "Choose a plan in the NextReach app.",
+        "choose": "Choose a plan in the GrowBusinesss app.",
         "pay": "Pay with JazzCash, EasyPaisa or bank transfer.",
         "upload": "Upload your payment receipt in the app.",
         "approve": "Our team checks it and your plan starts."
@@ -2043,7 +2043,7 @@
         },
         "adSpend": {
           "q": "Is ad spend for WhatsApp Status ads included?",
-          "a": "No. Status ads run on your own Meta ad account, and Meta bills your payment method directly. NextReach never collects or holds ad spend; your plan only decides whether the WhatsApp Status ads module is included."
+          "a": "No. Status ads run on your own Meta ad account, and Meta bills your payment method directly. GrowBusinesss never collects or holds ad spend; your plan only decides whether the WhatsApp Status ads module is included."
         }
       },
       "more": "More questions? See the full FAQ"
@@ -2072,7 +2072,7 @@
     "consent": "Please agree to the Terms and Privacy Policy."
   },
   "auth": {
-    "appNotice": "This account is only for messages with the NextReach team. To use NextReach itself, <link>sign in to the app</link>.",
+    "appNotice": "This account is only for messages with the GrowBusinesss team. To use GrowBusinesss itself, <link>sign in to the app</link>.",
     "showPassword": "Show password",
     "hidePassword": "Hide password",
     "errors": {
@@ -2471,7 +2471,7 @@
       },
       "demo": {
         "title": "Book a demo",
-        "description": "See NextReach with someone from our team."
+        "description": "See GrowBusinesss with someone from our team."
       },
       "technical": {
         "title": "Technical help",
@@ -2633,7 +2633,7 @@
       "phone": "Phone",
       "phoneHint": "Pakistani number, e.g. 0300 1234567",
       "lockedHint": "Filled in from your account.",
-      "consent": "I agree that NextReach may use these details to reply to me, as described in the <privacy>Privacy Policy</privacy>.",
+      "consent": "I agree that GrowBusinesss may use these details to reply to me, as described in the <privacy>Privacy Policy</privacy>.",
       "website": "Leave this field empty"
     },
     "review": {
@@ -2686,7 +2686,7 @@
     }
   },
   "emails": {
-    "footer": "NextReach · WhatsApp marketing for businesses in Pakistan. You're receiving this because of a question sent to NextReach.",
+    "footer": "GrowBusinesss · WhatsApp marketing for businesses in Pakistan. You're receiving this because of a question sent to GrowBusinesss.",
     "newQuery": {
       "subject": "New query {reference}: {subject}",
       "preheader": "{name} asked about {topic}.",
@@ -2703,7 +2703,7 @@
     "acknowledgement": {
       "subject": "We received your question ({reference})",
       "preheader": "Your reference is {reference}.",
-      "heading": "Thanks for contacting NextReach",
+      "heading": "Thanks for contacting GrowBusinesss",
       "reference": "Your reference",
       "subjectLabel": "Subject",
       "message": "Your message",
@@ -2756,7 +2756,7 @@
       "created": "Sent",
       "details": "Your answers",
       "you": "You",
-      "team": "NextReach team",
+      "team": "GrowBusinesss team",
       "attachments": "Attachments",
       "download": "Download {name}",
       "conversation": "Conversation",

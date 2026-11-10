@@ -3,7 +3,7 @@ import "server-only";
 import { serverEnv } from "@/lib/env/server";
 
 /**
- * Sends website queries to the NextReach app, where the platform team reads and
+ * Sends website queries to the GrowBusinesss app, where the platform team reads and
  * answers them in the Super Admin portal (Website queries).
  *
  * Server to server only: the site key is a shared secret with the API and never

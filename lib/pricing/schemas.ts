@@ -1,7 +1,7 @@
 import { z } from "@/lib/validation/zod";
 
 /**
- * Zod schemas mirroring the NextReach public pricing API.
+ * Zod schemas mirroring the GrowBusinesss public pricing API.
  *
  * Lenient about extra fields (Zod objects strip unknown keys), strict about the
  * fields this site uses. `null` limits mean "unlimited".

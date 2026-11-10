@@ -51,12 +51,12 @@ describe("robots.txt", () => {
 
 describe("structured data", () => {
   it("describes the organisation without invented contact details", () => {
-    const org = organizationJsonLd({ siteUrl: "https://nextreach.pk", description: "WhatsApp" });
+    const org = organizationJsonLd({ siteUrl: "https://growbusinesss.com", description: "WhatsApp" });
     expect(org).toMatchObject({
       "@type": "Organization",
-      name: "NextReach",
-      url: "https://nextreach.pk",
-      logo: "https://nextreach.pk/icon.svg",
+      name: "GrowBusinesss",
+      url: "https://growbusinesss.com",
+      logo: "https://growbusinesss.com/icon.svg",
     });
     expect(org).not.toHaveProperty("telephone");
     expect(org).not.toHaveProperty("sameAs");
@@ -64,12 +64,12 @@ describe("structured data", () => {
 
   it("links the website to the organisation", () => {
     const site = websiteJsonLd({
-      siteUrl: "https://nextreach.pk",
-      pageUrl: "https://nextreach.pk/ur",
-      name: "NextReach",
+      siteUrl: "https://growbusinesss.com",
+      pageUrl: "https://growbusinesss.com/ur",
+      name: "GrowBusinesss",
       language: "ur",
     });
-    expect(site.publisher["@id"]).toBe("https://nextreach.pk/#organization");
+    expect(site.publisher["@id"]).toBe("https://growbusinesss.com/#organization");
     expect(site.inLanguage).toBe("ur");
   });
 

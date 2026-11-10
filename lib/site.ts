@@ -9,7 +9,7 @@ export const siteConfig = {
 } as const;
 
 /**
- * Links into the main NextReach app, or null while it isn't live.
+ * Links into the main GrowBusinesss app, or null while it isn't live.
  *
  * Until NEXT_PUBLIC_APP_URL is set the site runs on its own: "Start free trial"
  * opens the query form (so every lead lands in the admin inbox), app sign-in links

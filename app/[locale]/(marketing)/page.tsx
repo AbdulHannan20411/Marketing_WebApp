@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return pageMetadata({
     locale: isLocale(locale) ? locale : "en",
     path: "/",
-    title: `${t("metaTitle")} | NextReach`,
+    title: `${t("metaTitle")} | GrowBusinesss`,
     description: t("metaDescription"),
     absoluteTitle: true,
   });

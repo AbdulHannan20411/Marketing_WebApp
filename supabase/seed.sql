@@ -12,7 +12,7 @@ insert into public.saved_replies (id, title, body, locale) values
   ('00000000-0000-4000-8000-000000000002', 'Payment received',
    'We have received your payment receipt. Our team will approve it during working hours and your plan will start right away.', 'en'),
   ('00000000-0000-4000-8000-000000000003', 'Book a demo',
-   'We would be happy to show you NextReach. Please share two or three times that suit you (PKT), and whether you prefer a WhatsApp call, Google Meet or a phone call.', 'en'),
+   'We would be happy to show you GrowBusinesss. Please share two or three times that suit you (PKT), and whether you prefer a WhatsApp call, Google Meet or a phone call.', 'en'),
   ('00000000-0000-4000-8000-000000000004', 'شکریہ، ہم دیکھ رہے ہیں',
    'رابطہ کرنے کا شکریہ۔ ہم اس معاملے کو دیکھ رہے ہیں اور جلد آپ کو جواب دیں گے۔', 'ur'),
   ('00000000-0000-4000-8000-000000000005', 'ادائیگی موصول ہو گئی',

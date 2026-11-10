@@ -81,7 +81,7 @@ test("1. a visitor sends a query while signed out", async ({ page }) => {
   await page.getByLabel("Email", { exact: true }).filter({ visible: true }).fill(email);
   await page.getByLabel("Phone", { exact: true }).filter({ visible: true }).fill("0321 7654321");
   await page
-    .getByRole("checkbox", { name: /I agree that NextReach may use these details/ })
+    .getByRole("checkbox", { name: /I agree that GrowBusinesss may use these details/ })
     .check();
   await page.getByRole("button", { name: "Continue" }).click();
 

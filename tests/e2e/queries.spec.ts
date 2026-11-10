@@ -72,7 +72,7 @@ async function fillMessageStep(page: Page, options: { email?: string; name?: str
   if (options.email)
     await page.getByLabel("Phone", { exact: true }).filter({ visible: true }).fill("0300 1234567");
   await page
-    .getByRole("checkbox", { name: /I agree that NextReach may use these details/ })
+    .getByRole("checkbox", { name: /I agree that GrowBusinesss may use these details/ })
     .check();
 }
 

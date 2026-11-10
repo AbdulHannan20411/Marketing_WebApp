@@ -4,7 +4,7 @@ import { E2E_REVALIDATE_SECRET, MOCK_API_URL } from "../../playwright.config";
 import { appUrl, expectedCustomPlanHref, expectedPricingHref, siteUrl } from "./support/site-mode";
 
 /*
- * Pricing page against a mock NextReach API. Each test switches the mock's mode and
+ * Pricing page against a mock GrowBusinesss API. Each test switches the mock's mode and
  * refreshes prices through the real /api/revalidate-pricing route, exactly as an
  * operator would after changing prices.
  */

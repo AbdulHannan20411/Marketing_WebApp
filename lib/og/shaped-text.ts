@@ -51,7 +51,7 @@ export type ShapedText = { src: string; width: number; height: number };
 
 /**
  * Wraps right-to-left text to `maxWidth` and returns it as an SVG data URL. Lines
- * are right-aligned; words keep their own direction (so "NextReach" or "24" read
+ * are right-aligned; words keep their own direction (so "GrowBusinesss" or "24" read
  * correctly inside Urdu text).
  */
 export function shapeRtlText(

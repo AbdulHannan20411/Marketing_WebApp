@@ -1,6 +1,6 @@
-# NextReach marketing site
+# GrowBusinesss marketing site
 
-The public website for **NextReach**, a WhatsApp marketing and sales SaaS for businesses in
+The public website for **GrowBusinesss**, a WhatsApp marketing and sales SaaS for businesses in
 Pakistan. It has:
 
 - the marketing site (Home, Features, Pricing, Use cases, About, FAQ, Contact, legal pages) in
@@ -10,7 +10,7 @@ Pakistan. It has:
 - a **Super Admin area** (`/admin`): dashboard, live inbox, replies, notes, saved replies,
   customers and settings.
 
-The NextReach product itself is a separate app. Every "Start free trial" and "Sign in" link goes to
+The GrowBusinesss product itself is a separate app. Every "Start free trial" and "Sign in" link goes to
 `NEXT_PUBLIC_APP_URL`; this site never handles app accounts.
 
 **Standalone mode (before the app is live).** Leave `NEXT_PUBLIC_APP_URL` and `NEXTREACH_API_URL`
@@ -63,16 +63,16 @@ placeholder. On Vercel, set the same names under **Project → Settings → Envi
 
 | Variable                        | Required             | Where it's used                                                                                                                                           |
 | ------------------------------- | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`          | Production           | This site's public URL, e.g. `https://nextreach.pk`. Canonical URLs, sitemap, Open Graph images and email links.                                          |
-| `NEXT_PUBLIC_APP_URL`           | When the app is live | The NextReach app. "Start free trial" / "Sign in" links, and plan buttons (`${APP_URL}/pricing`, `/pricing/custom`). Empty = standalone mode (see above). |
-| `NEXTREACH_API_URL`             | When the app is live | Base URL of the NextReach API (`/api/v1/public/plans`, `/api/v1/public/custom-plan`). Server only. Empty = plans from `content/fallback-plans.ts`.        |
+| `NEXT_PUBLIC_SITE_URL`          | Production           | This site's public URL, e.g. `https://growbusinesss.com`. Canonical URLs, sitemap, Open Graph images and email links.                                          |
+| `NEXT_PUBLIC_APP_URL`           | When the app is live | The GrowBusinesss app. "Start free trial" / "Sign in" links, and plan buttons (`${APP_URL}/pricing`, `/pricing/custom`). Empty = standalone mode (see above). |
+| `NEXTREACH_API_URL`             | When the app is live | Base URL of the GrowBusinesss API (`/api/v1/public/plans`, `/api/v1/public/custom-plan`). Server only. Empty = plans from `content/fallback-plans.ts`.        |
 | `REVALIDATE_SECRET`             | For instant updates  | Shared secret for `POST /api/revalidate-pricing` (section 6). Use a long random string.                                                                   |
 | `NEXT_PUBLIC_SUPABASE_URL`      | Yes, for accounts    | Supabase project URL.                                                                                                                                     |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Yes, for accounts    | Supabase **publishable** (anon) key. Safe in the browser; Row Level Security protects the data.                                                           |
 | `SUPABASE_SERVICE_ROLE_KEY`     | Yes, for accounts    | Supabase **secret** (service role) key. **Server only.** Also keys the form tokens and IP hashing.                                                        |
 | `SUPABASE_DB_URL`               | Scripts only         | Postgres connection string for migrations, types and DB tests. Never read by the app.                                                                     |
 | `RESEND_API_KEY`                | For real email       | Resend API key. Without it, emails are printed to the server log instead.                                                                                 |
-| `EMAIL_FROM`                    | With Resend          | Sender, e.g. `NextReach <hello@nextreach.pk>`. The domain must be verified in Resend.                                                                     |
+| `EMAIL_FROM`                    | With Resend          | Sender, e.g. `GrowBusinesss <hello@growbusinesss.com>`. The domain must be verified in Resend.                                                                     |
 | `TURNSTILE_SITE_KEY`            | Optional             | Cloudflare Turnstile site key. Turnstile is on only when **both** Turnstile keys are set.                                                                 |
 | `TURNSTILE_SECRET_KEY`          | Optional             | Cloudflare Turnstile secret key. Server only.                                                                                                             |
 | `NEXT_PUBLIC_ANALYTICS_ID`      | Optional             | Umami Cloud **website ID**. Leave empty to disable analytics and the consent notice.                                                                      |
@@ -114,12 +114,12 @@ These can't be set from migrations. In **Authentication**:
 
 | Setting                                 | Value                                                                                                                           |
 | --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| URL Configuration → **Site URL**        | Your site, e.g. `https://nextreach.pk` (locally `http://localhost:3000`).                                                       |
-| URL Configuration → **Redirect URLs**   | `https://nextreach.pk/**` and `http://localhost:3000/**` (add preview domains if you use them, e.g. `https://*.vercel.app/**`). |
+| URL Configuration → **Site URL**        | Your site, e.g. `https://growbusinesss.com` (locally `http://localhost:3000`).                                                       |
+| URL Configuration → **Redirect URLs**   | `https://growbusinesss.com/**` and `http://localhost:3000/**` (add preview domains if you use them, e.g. `https://*.vercel.app/**`). |
 | Sign In / Providers → Email             | Email provider on, **Confirm email** on.                                                                                        |
 | Sign In / Providers → Email → Password  | Minimum length **8**.                                                                                                           |
-| Emails → Templates → **Confirm signup** | Paste `supabase/templates/confirm-signup.html`. Subject: `Confirm your email \| NextReach`.                                     |
-| Emails → Templates → **Reset password** | Paste `supabase/templates/reset-password.html`. Subject: `Reset your password \| NextReach`.                                    |
+| Emails → Templates → **Confirm signup** | Paste `supabase/templates/confirm-signup.html`. Subject: `Confirm your email \| GrowBusinesss`.                                     |
+| Emails → Templates → **Reset password** | Paste `supabase/templates/reset-password.html`. Subject: `Reset your password \| GrowBusinesss`.                                    |
 | Emails → **SMTP settings**              | Recommended: use Resend's SMTP (`smtp.resend.com`, port 465, user `resend`, password = your Resend API key).                    |
 
 The templates switch between English and Urdu using the language chosen at sign-up. They link to
@@ -186,7 +186,7 @@ Responses are wrapped as `{ data, message, traceId }` and validated with Zod.
 - **Instant updates:** to refresh prices right after you change them in the app, call:
 
 ```bash
-curl -X POST https://nextreach.pk/api/revalidate-pricing -H "x-revalidate-secret: $REVALIDATE_SECRET"
+curl -X POST https://growbusinesss.com/api/revalidate-pricing -H "x-revalidate-secret: $REVALIDATE_SECRET"
 ```
 
 ## 7. Deploy to Vercel

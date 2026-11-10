@@ -47,7 +47,7 @@ test.describe("marketing pages", () => {
 
   test("pages have a title, description, canonical and hreflang alternates", async ({ page }) => {
     await page.goto("/ur/features/inbox");
-    await expect(page).toHaveTitle(/NextReach/);
+    await expect(page).toHaveTitle(/GrowBusinesss/);
     expect(await page.locator('meta[name="description"]').getAttribute("content")).toBeTruthy();
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       "href",
@@ -145,7 +145,7 @@ test.describe("faq", () => {
 
   test("questions are keyboard operable", async ({ page }) => {
     await page.goto("/en/faq");
-    const question = page.getByRole("button", { name: "What is NextReach?" });
+    const question = page.getByRole("button", { name: "What is GrowBusinesss?" });
     await question.focus();
     await page.keyboard.press("Enter");
     await expect(question).toHaveAttribute("aria-expanded", "true");

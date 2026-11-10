@@ -4,7 +4,7 @@ import type { Plan } from "@/lib/pricing/schemas";
  * Shown only when the pricing API is unreachable, always with the banner
  * "Prices may have changed. See the app for current pricing."
  *
- * TODO: keep these in step with the live plans in the NextReach admin. The Growth plan
+ * TODO: keep these in step with the live plans in the GrowBusinesss admin. The Growth plan
  * mirrors the API's documented example; Starter and Business are placeholders that
  * must be replaced with real figures before launch.
  */

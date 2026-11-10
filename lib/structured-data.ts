@@ -23,7 +23,7 @@ export function productJsonLd({
     name,
     description,
     url: pageUrl,
-    brand: { "@type": "Brand", name: "NextReach" },
+    brand: { "@type": "Brand", name: "GrowBusinesss" },
     offers: plans.map((plan) => ({
       "@type": "Offer",
       name: plan.name,
@@ -42,7 +42,7 @@ export function productJsonLd({
   };
 }
 
-/** schema.org Organization for NextReach (Home). No invented contact details or profiles. */
+/** schema.org Organization for GrowBusinesss (Home). No invented contact details or profiles. */
 export function organizationJsonLd({
   siteUrl,
   description,
@@ -54,7 +54,7 @@ export function organizationJsonLd({
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": new URL("/#organization", siteUrl).toString(),
-    name: "NextReach",
+    name: "GrowBusinesss",
     url: siteUrl,
     logo: new URL("/icon.svg", siteUrl).toString(),
     description,

@@ -25,7 +25,7 @@ export function pageMetadata({
   path: string;
   title: string;
   description: string;
-  /** Use the title as-is, without the "| NextReach" template (home page). */
+  /** Use the title as-is, without the "| GrowBusinesss" template (home page). */
   absoluteTitle?: boolean;
 }): Metadata {
   const languages: Record<string, string> = Object.fromEntries(

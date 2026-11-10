@@ -1,5 +1,5 @@
 /**
- * Whether the build under test links to the main NextReach app or runs on its own
+ * Whether the build under test links to the main GrowBusinesss app or runs on its own
  * (NEXT_PUBLIC_APP_URL empty). Read from the same .env.local the build used.
  */
 try {

@@ -209,7 +209,7 @@ describe("Product JSON-LD", () => {
   it("has one Offer per plan with price, currency and url", () => {
     const data = productJsonLd({
       plans: fallbackPlans,
-      name: "NextReach",
+      name: "GrowBusinesss",
       description: "d",
       pageUrl: "https://example.com/en/pricing",
       offerUrl: checkout,

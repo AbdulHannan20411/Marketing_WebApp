@@ -46,7 +46,7 @@ test("signed-out visitors are sent to sign-in with a safe return path", async ({
   await expect(page.getByRole("heading", { level: 1 })).toHaveText(
     "Sign in to your support account",
   );
-  // Explains this is not the NextReach app account (once the app is live).
+  // Explains this is not the GrowBusinesss app account (once the app is live).
   await expect(page.getByRole("link", { name: "sign in to the app" })).toHaveCount(appUrl ? 1 : 0);
 });
 

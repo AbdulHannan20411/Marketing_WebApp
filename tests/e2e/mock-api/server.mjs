@@ -1,5 +1,5 @@
 /**
- * Mock of the NextReach public pricing API for end-to-end tests.
+ * Mock of the GrowBusinesss public pricing API for end-to-end tests.
  *
  *   GET  /api/v1/public/plans
  *   GET  /api/v1/public/custom-plan
@@ -195,5 +195,5 @@ createServer((req, res) => {
     "application/problem+json",
   );
 }).listen(PORT, "127.0.0.1", () => {
-  console.log(`mock NextReach API on http://127.0.0.1:${PORT} (mode: ${mode})`);
+  console.log(`mock GrowBusinesss API on http://127.0.0.1:${PORT} (mode: ${mode})`);
 });

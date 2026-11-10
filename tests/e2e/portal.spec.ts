@@ -79,7 +79,7 @@ test("team replies show as unread, open as a conversation and clear the dot", as
   await item.click();
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Plan for my shop", NAV);
   await expect(page.getByText("Hello! The Growth plan fits a shop your size.")).toBeVisible();
-  await expect(page.getByText("NextReach team").first()).toBeVisible();
+  await expect(page.getByText("GrowBusinesss team").first()).toBeVisible();
   // Structured answers from the form are shown with labels.
   await expect(page.getByText("How big is your team?")).toBeVisible();
   // Internal notes never reach the customer.
