@@ -4,8 +4,10 @@ import {
   CircleFadingPlusIcon,
   ClipboardListIcon,
   ClockIcon,
+  DownloadIcon,
   LayoutTemplateIcon,
   LibraryBigIcon,
+  ListVideoIcon,
   MailIcon,
   MessageCircleIcon,
   ShoppingCartIcon,
@@ -39,12 +41,14 @@ import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { homeFaqIds } from "@/content/faq";
 import { featureAreas, productFacts } from "@/content/features";
+import { investorDeck, playlistUrl, productVideo } from "@/content/media";
 import { moduleKeys, newModuleKeys } from "@/content/modules";
 import { Link } from "@/lib/i18n/navigation";
 import { cn } from "@/lib/utils";
 
 import { AutomationFlow } from "./automation-flow";
 import { ModuleCarousel } from "./module-carousel";
+import { VideoPlayer } from "./video-player";
 
 /**
  * The three ways the product grows a business, shown right under the hero so the first
@@ -133,6 +137,46 @@ export async function PillarsSection() {
           </Reveal>
         ))}
       </ul>
+    </Section>
+  );
+}
+
+/** The product video (first video of the playlist), plus the playlist and the investor deck. */
+export async function VideoSection() {
+  const t = await getTranslations("home.video");
+
+  return (
+    <Section tone="subtle" labelledBy="video-title">
+      <SectionHeader
+        id="video-title"
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        subtitle={t("subtitle")}
+      />
+      <Reveal className="mx-auto mt-12 max-w-4xl">
+        <VideoPlayer
+          videoId={productVideo.videoId}
+          playlistId={productVideo.playlistId}
+          title={t("videoTitle")}
+          playLabel={t("play")}
+        />
+      </Reveal>
+      <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <Button asChild variant="outline" className="h-11 rounded-full px-6">
+          <a href={playlistUrl} target="_blank" rel="noopener noreferrer">
+            <ListVideoIcon className="size-4" aria-hidden="true" />
+            {t("playlist")}
+            <span className="sr-only">{t("newTab")}</span>
+          </a>
+        </Button>
+        <Button asChild className="h-11 rounded-full px-6">
+          <a href={investorDeck.href} download={investorDeck.fileName}>
+            <DownloadIcon className="size-4" aria-hidden="true" />
+            {t("deck")}
+            <span className="font-normal">{t("deckMeta", { size: investorDeck.sizeMb })}</span>
+          </a>
+        </Button>
+      </div>
     </Section>
   );
 }

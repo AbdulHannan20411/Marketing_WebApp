@@ -33,6 +33,10 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["harfbuzzjs"],
   images: {
     formats: ["image/avif", "image/webp"],
+    // YouTube thumbnails for the click-to-play product video (content/media.ts).
+    remotePatterns: [
+      { protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**", search: "" },
+    ],
   },
   async headers() {
     return [

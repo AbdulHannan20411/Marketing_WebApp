@@ -132,6 +132,17 @@
         }
       }
     },
+    "video": {
+      "eyebrow": "See it in action",
+      "title": "Watch GrowBusinesss at work",
+      "subtitle": "Start with a short tour of the Audience module, then keep going through the whole playlist.",
+      "videoTitle": "GrowBusinesss: a tour of the Audience module",
+      "play": "Play video: a tour of the Audience module",
+      "playlist": "Watch the full playlist on YouTube",
+      "newTab": "(opens in a new tab)",
+      "deck": "Download the investor deck",
+      "deckMeta": "PDF, {size} MB"
+    },
     "metaTitle": "WhatsApp, email and AI marketing for growing businesses",
     "metaDescription": "WhatsApp, email and AI marketing in one app. Bring new customers into WhatsApp with Status ads, send email from your own domain, let AI write and reply from your own business info, and confirm cash-on-delivery orders from Shopify and WooCommerce.",
     "problem": {

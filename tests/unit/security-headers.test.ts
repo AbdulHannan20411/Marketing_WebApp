@@ -40,6 +40,15 @@ describe("content security policy", () => {
     expect(buildContentSecurityPolicy({ isDev: true })).not.toContain("upgrade-insecure-requests");
   });
 
+  it("allows framing only Turnstile and YouTube's privacy-enhanced player", () => {
+    expect(directive(prod, "frame-src")).toEqual([
+      "https://challenges.cloudflare.com",
+      "https://www.youtube-nocookie.com",
+    ]);
+    // Thumbnails come through the Next.js image optimiser, so no third-party images.
+    expect(directive(prod, "img-src")).not.toContain("https://i.ytimg.com");
+  });
+
   it("ignores an invalid Supabase URL instead of producing a broken policy", () => {
     const csp = buildContentSecurityPolicy({ isDev: false, supabaseUrl: "not a url" });
     expect(directive(csp, "connect-src")).not.toContain("not");

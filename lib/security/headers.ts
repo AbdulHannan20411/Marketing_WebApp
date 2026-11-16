@@ -15,6 +15,7 @@ export type SecurityHeaderOptions = {
 };
 
 const TURNSTILE_ORIGIN = "https://challenges.cloudflare.com";
+const YOUTUBE_EMBED_ORIGIN = "https://www.youtube-nocookie.com";
 
 function originOf(url: string | undefined): string | undefined {
   if (!url) return undefined;
@@ -54,7 +55,8 @@ export function buildContentSecurityPolicy({
       ...analyticsOrigins,
       ...(isDev ? ["ws:"] : []),
     ],
-    "frame-src": [TURNSTILE_ORIGIN],
+    // YouTube's privacy-enhanced player, loaded only when a visitor presses play.
+    "frame-src": [TURNSTILE_ORIGIN, YOUTUBE_EMBED_ORIGIN],
     "worker-src": ["'self'", "blob:"],
     "media-src": ["'self'"],
     "object-src": ["'none'"],

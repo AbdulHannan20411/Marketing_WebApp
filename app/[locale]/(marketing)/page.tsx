@@ -15,6 +15,7 @@ import {
   ModulesSection,
   PillarsSection,
   ProblemSection,
+  VideoSection,
 } from "@/components/marketing/home/sections";
 import { PricingTeaser } from "@/components/marketing/pricing-teaser";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -59,6 +60,7 @@ export default async function HomePage() {
       <HomeHero />
       <FactsSection />
       <PillarsSection />
+      <VideoSection />
       <CodSection />
       {/* TODO: real customer logos — add a logo strip here once customers agree to be listed. */}
       <ProblemSection />
